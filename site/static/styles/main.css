@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Spectral|Philosopher|Antic|Nunito|Nunito+Sans");
+
+body {
+    padding: 0 6vw 0 6vw;
+    max-width: 960px;
+    min-height: 100vh;
+    /*height:100vh;*/
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ce_background {
+    background-color: rgb(98, 139, 228); /* rgb(98, 139, 228) = bleu lavande */
+}
+
+h1, h2, h3, h4, h5, h6,
+li {
+    font-family: 'Philosopher', sans-serif;
+}
+
+.ce_logo,
+.ce_subtitle {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 1.5em;
+    font-weight: 800;
+}
+
+.ce_logo {
+    padding: 0.5em;
+}
+
+h1 {
+    font-size: 90%;
+    font-weight: 500;
+}
+
+h2,
+li {
+    font-weight: 400;
+}
+
+h3,
+h4 {
+    font-weight: 300;
+}
+
+
+p {
+    font-family: 'Antic', sans-serif;
+    font-size: 95%;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: justify;
+}
+
+.ce_small-text p {
+    font-size: 0.9em;
+}
+
+.ce_logo {
+    font-family: 'Antic', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.2;
+    text-align: justify;
+
+}
