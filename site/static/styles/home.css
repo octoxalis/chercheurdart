@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Spectral|Philosopher|Antic|Nunito|Nunito+Sans");
+.grid_base {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1px;
+  grid-template-areas:
+      "cell_top_left cell_top_left cell_top_center cell_top_center cell_top_center cell_top_right"
+      "cell_top_left cell_top_left cell_top_center cell_top_center cell_top_center cell_top_right"
+      "cell_top_left cell_top_left cell_center cell_center cell_bottom_right cell_bottom_right"
+      "cell_center_left cell_center_left cell_center cell_center cell_bottom_right cell_bottom_right"
+      "cell_bottom_left cell_bottom_left cell_bottom_left cell_bottom_left cell_bottom_right cell_bottom_right"
+      "cell_bottom_left cell_bottom_left cell_bottom_left cell_bottom_left cell_bottom_right cell_bottom_right";
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50vw;
+  height: 80vh;
+  }
+.cell_top_left {
+  grid-area: cell_top_left;
+  background-image: url('../media/images/home/cell_topleft.jpg');
+  }
+.cell_top_center {
+  grid-area: cell_top_center;
+  background-image: url('../media/images/home/cell_topcenter.jpg');
+}
+.cell_top_right {
+  grid-area: cell_top_right;
+  background-image: url('../media/images/home/cell_topright.jpg');
+}
+.cell_center_left {
+  grid-area: cell_center_left;
+  background-image: url('../media/images/home/cell_centerleft.jpg');
+}
+.cell_center {
+  grid-area: cell_center;
+  background-image: url('../media/images/home/cell_center.jpg');
+}
+.cell_bottom_left {
+  grid-area: cell_bottom_left;
+  background-image: url('../media/images/home/cell_bottomleft.jpg');
+}
+.cell_bottom_right {
+  grid-area: cell_bottom_right;
+  background-image: url('../media/images/home/cell_bottomright.jpg');
+}
+.cell_top_left,
+.cell_top_center,
+.cell_top_right,
+.cell_center_left,
+.cell_center,
+.cell_bottom_left,
+.cell_bottom_right {
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  display: flex;
+  align-items: center;
+  justify-content: center 
+  }
+.cell_top_left,
+.cell_top_center,
+.cell_top_right,
+.cell_center_left,
+.cell_center,
+.cell_bottom_left,
+.cell_bottom_right {
+  /* animate */
+  filter: grayscale(1.0);
+  transition: filter 1s ease;
+}
+.cell_top_left:hover,
+.cell_top_center:hover,
+.cell_top_right:hover,
+.cell_center_left:hover,
+.cell_center:hover,
+.cell_bottom_left:hover,
+.cell_bottom_right:hover {
+  /* animate */
+  filter: grayscale(0.0);
+  transition: filter 1s ease;
+}
+.bg_img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url('../media/images/home/backg.jpg');
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: top;
+  /* animate */
+  opacity: 0.1;
+  filter: grayscale(1.0) sepia(.8);
+  transition: all 3s ease;
+  }
+.bg_img:hover {
+   /* animate */
+  opacity: 1.0;
+  filter: grayscale(0.0);
+  transition: all 2s ease;
+  }
+.grid_base {
+  background-color: rgba(20, 20, 20, 1);
+  -moz-box-shadow:    0 0 20px black;
+  -webkit-box-shadow: 0 0 20px black;
+  box-shadow:         0 0 20px black;
+  /* animate */
+  opacity: 0.0;
+  transition: opacity 1s ease;
+  }
+.grid_base:hover {
+  /* animate */
+  opacity: 1.0;
+  transition: opacity 1s ease;
+  }
+.cell_title {
+  position: fixed;
+  bottom: 3%;
+  left: 3%;
+  padding: 4px;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 160%;
+  font-weight: 200;
+  line-height: 1.2;
+  text-align: justify;
+  text-decoration: none;
+  color: rgb(217, 232, 243)
+  /* animate */
+  opacity: 0.4;
+  transition: opacity 0.5s ease;
+  }
+.cell_title:hover {
+  /* animate */
+  opacity: 0.1;
+  transition: opacity 0.5s ease;
+  }
+.cell_title_cap {
+  font-size: 350%;
+  font-weight: 400;
+  }
+  body {
+  background-color: rgba(20, 20, 20, 1);
+  width: 100vw;
+  height: 9100vh;
+}

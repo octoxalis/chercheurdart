@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css?family=Spectral|Philosopher|Antic|Nunito|Nunito+Sans");
+/* Icons */
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: 1.5em;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    opacity: 0.5;
+    -webkit-font-smoothing: antialiased;
+    /* Support for all WebKit browsers. */
+    text-rendering: optimizeLegibility;
+    /* Support for Safari and Chrome. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for Firefox. */
+    font-feature-settings: 'liga';
+    /* Support for IE. */
+}
+
+/*
+body {
+    padding: 0 30px 0 30px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+*/
+
+h1,
+h2,
+h3,
+h4,
+li {
+    font-family: 'Philosopher', sans-serif;
+}
+
+h1 {
+    font-size: 90%;
+    font-weight: 500;
+}
+
+h2,
+li {
+    font-weight: 400;
+}
+
+h3,
+h4 {
+    font-weight: 300;
+}
+
+h6 {
+    margin: 0;
+    font-weight: 300;
+}
+
+p {
+    font-family: 'Nunito+Sans', sans-serif; /* Spectral */
+    font-size: 95%;
+    font-weight: 200; /* 400 */
+    line-height: 1.2;
+    text-align: justify;
+}
+
+.pseudolink {
+    -webkit-text-decoration-skip: objects;
+    outline: none;
+    color: #0f6ecd;
+    text-decoration: underline;
+}
+
+.pseudolink:active,
+.pseudolink:hover {
+    outline: none;
+}
+
+.pseudolink {
+    color: #1e87f0;
+    text-decoration: none;
+}
+
+.pseudolink,
+.ca_image_pan {
+    cursor: pointer;
+}
+
+.ca_animate {
+    /*cursor: url(images/pause-cursor-64x48.svg), auto;*/
+}
+
+.pseudolink:hover {
+    color: #0f6ecd;
+    text-decoration: underline;
+}
+
+.ca_menu_icon {
+    padding: 52px 0 0 16px;
+    max-width: 32px;
+}
+
+.ca_main {
+    padding: 0;
+}
+
+.ca_rouleau {
+    /*padding-top: 10px;*/
+    border-left-style: solid;
+    border-right-style: solid;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-left-color: rgba(5, 5, 5, 0.2);
+    border-right-color: rgba(5, 5, 5, 0.2);
+    background-color: rgba(200, 200, 210, 0.1);
+}
+
+/*
+.ca_header {
+	background: rgba(200, 200, 210, 0.5) url("../images/sangirolamo-borghese.jpg") no-repeat fixed center;
+	opacity: 0.2;
+	overflow: hidden;
+}
+.ca_header_title {
+	color: rgba(5, 5, 5, 1);
+}
+*/
+
+.ca_abstract {
+    padding: 2em 4em 2em 4em;
+    font-style: italic;
+}
+
+/*
+.ca_content {
+    padding: 0 1em 0 1em;
+}
+*/
+
+.ca_lightbox,
+.ca_caption_lightbox,
+.ca_comment,
+.ca_comment_signature {
+    padding: 0 4em 0 4em;
+    font-family: 'Antic', sans-serif;
+    font-style: italic;
+    font-size: 95%;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.ca_caption_lightbox {
+    padding: 0;
+    font-weight: 900;
+}
+
+.ca_text_lightbox {
+    padding: 0;
+    opacity: 0;
+}
+
+.ca_text_lightbox:hover {
+    opacity: 1;
+}
+
+.ca_name,
+.ca_title,
+.ca_subtitle,
+.ca_location {
+    padding: 12px 0 8px 0;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 85%;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.ca_name,
+.ca_location {
+    text-transform: capitalize;
+}
+
+h6.uk-accordion-title {
+    margin: 0;
+    padding-left: 1em;
+}
+
+.ca_section_nav {
+    margin-bottom: 1em;
+}
+
+.ca_icon_tosection_top {
+    margin-right: 1em;
+}
+
+.ca_margin_small_top {
+    margin-top: 2px;
+}
+
+.ca_image_pan,
+.ca_image_nopan {
+    display: inline-block;
+}
+
+.ca_image_pan:hover {
+    color: #666;
+    /* .uk-link-muted a:hover  */
+}
+
+.ca_section_divider {
+    margin: 0 8px 0 8px;
+}
+
+.ca_section_open,
+.ca_section_close {
+    color: rgba(0, 0, 0, 1);
+}
+
+.ca_section_open {
+    /*background-color: rgba(0, 255, 255, 0.1);*/
+}
+
+.ca_section_close {
+    /*background-color: rgba(5, 5, 255, 0.1);*/
+}
+
+.ca_modal,
+.ca_image_open {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(5, 5, 5, 1);
+}
+
+.ca_lightbox_modal {
+    width: 300px;
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ca_lightbox_modal,
+.ca_animation_modal {
+    background-color: rgba(5, 5, 5, 1);
+}
+
+.ca_animation_modal {
+    margin: 0;
+    padding: 0;
+}
+
+.ca_animation_control {
+    /*display: none;*/
+    padding: 0;
+    width: 425px;
+    height: 400px;
+    opacity: 0.05;
+}
+
+.ca_fullscreen_advice {
+    margin-top: 120px;
+    padding: 0;
+}
+
+.ca_fullscreen_advice_text {
+    font-family: 'Nunito Sans', sans-serif;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 100;
+    font-size: 75%;
+}
+
+.ca_animation_control:hover,
+.ca_fullscreen_advice_text:hover {
+    opacity: 1;
+}
+
+@-webkit-keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.ca_fullscreen_advice_text {
+    -moz-animation: fadeout 8s linear forwards;
+}
+
+.ca_image_nopan {
+    opacity: 0;
+}
+
+/* ------------  */
+
+.uk-slideshow-items li {
+    display: block;
+}

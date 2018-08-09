@@ -1,130 +1,39 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zxx">
 
 <head>
-    <!-- block head -->
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chercheur d&#39;Art</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chercheur d'Art</title>
 
-    <!-- block styles -->
-    <link rel="stylesheet" href="static/styles/main.css" />
-<link rel="stylesheet" href="static/styles/uikit.min.css" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static/styles/home.css" />
 </head>
 
-<body class="ce_background">
-	
-    <!-- block navigation -->
-    <nav uk-navbar>
-    <div class="uk-navbar-center">
-        <ul class="uk-subnav uk-subnav-divider" uk-margin>
-            <li><a href="index.html">ACCUEIL</a></li>
-            <!--<li class="uk-active"><a href="index.html">NOUVELLES</a></li>-->
-            <li><a href="apropos.html">À PROPOS</a></li>
-        </ul>
+<body>
+  <div class="bg_img"></div>
+  <div class="grid_base">
+    <div class="cell_top_left">
+      <a href="#"><p class="cell_title"><span class="cell_title_cap">A</span>rtistes</p></a>
     </div>
-</nav>
-
-
-    <!-- block logo -->
-    <div class="uk-container uk-container-expand">
-    <p class="uk-text-center ce_logo">
-        <a href="apropos.html" class="uk-link-heading">CHERCHEUR D'ART</a>
-    </p>
-</div>
-
-
-    
-<main>
-
-    <div uk-grid class="uk-child-width-1-2@s uk-child-width-expand@s uk-height-match uk-grid-collapse">
-            
-                    <div>
-    <div class="uk-height-medium uk-padding uk-background-muted">
-        <p class="ce_subtitle">Tour de chauffe</p>
-        <p class="uk-article-meta">Par <a href="#">Sherlock</a> - 1er Juillet 2018</p>
-        <hr class="uk-divider-small">
-        <p class="uk-text-small">
-        Sur la piste de Merisi...
-        </p>
-        <p class="uk-article-meta"><a href="2018-06-29-tour_de_chauffe.html">LA SUITE...</a></p>
+    <div class="cell_top_center">
+        <a href="#"><p class="cell_title"><span class="cell_title_cap">O</span>euvres</p></a>
+      </div>
+    <div class="cell_top_right">
+        <a href="#"><p class="cell_title"><span class="cell_title_cap">T</span>ech</p></a>
+      </div>
+    <div class="cell_center_left">
+        <a href="#"><p class="cell_title"><span class="cell_title_cap">B</span>ibliographie</p></a>
+      </div>
+    <div class="cell_center">
+        <a href="#"><p class="cell_title"><span class="cell_title_cap">A</span>rticles</p></a>
+      </div>
+    <div class="cell_bottom_left">
+        <a href="#"><p class="cell_title"><span class="cell_title_cap">C</span>ollections</p></a>
+      </div>
+    <div class="cell_bottom_right">
+        <a href="#"><p class="cell_title"><span class="cell_title_cap">S</span>ite</p></a>
     </div>
-</div>
-
-                    <div>
-    <div uk-img data-src="static/media/images/santacatalina-madrid.jpg" class="uk-height-medium uk-background-cover"></div>
-</div>
-
-
-            
-            </div>
-        <div uk-grid class="uk-child-width-1-2@s uk-child-width-expand@s uk-height-match uk-grid-collapse">
-            
-                    <div>
-    <div uk-img data-src="static/media/images/sangiovanni-corsini.jpg" class="uk-height-medium uk-background-cover"></div>
-</div>
-
-
-                    <div>
-    <div class="uk-height-medium uk-padding uk-background-muted">
-        <p class="ce_subtitle">Pour détruire la peinture?</p>
-        <p class="uk-article-meta">Par <a href="#">Sherlock</a> - 30 Juin 2018</p>
-        <hr class="uk-divider-small">
-        <p class="uk-text-small">
-        Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-        </p>
-        <p class="uk-article-meta"><a href="2018-06-30-détruire_peinture.html">LA SUITE...</a></p>
-    </div>
-</div>
-
-           
-            </div>
-        <div uk-grid class="uk-child-width-1-2@s uk-child-width-expand@s uk-height-match uk-grid-collapse">
-            
-                    <div>
-    <div class="uk-height-medium uk-padding uk-background-muted">
-        <p class="ce_subtitle">Herméneutique de l&#39;attribution</p>
-        <p class="uk-article-meta">Par <a href="#">Sherlock</a> - 29 Juin 2018</p>
-        <hr class="uk-divider-small">
-        <p class="uk-text-small">
-        Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire.
-        </p>
-        <p class="uk-article-meta"><a href="2018-06-29-herméneutique_attribution.html">LA SUITE...</a></p>
-    </div>
-</div>
-
-                    <div>
-    <div uk-img data-src="static/media/images/sangirolamo-malta.jpg" class="uk-height-medium uk-background-cover"></div>
-</div>
-
-
-            
-            </div>
-        </main>
-
-
-    <!-- block footer -->
-    <div class="uk-container uk-container-expand">
-    <p class="uk-text-small uk-text-center">
-        &copy; 2018 - Chercheur d'Art [ <a class="uk-link-text" href="https://www.11ty.io">11ty</a> ]
-    </p>
-</div>
-
-    <!-- block scripts -->
-    <script src="static/scripts/uikit.min.js"></script>
-<script src="static/scripts/uikit-icons.min.js"></script>
-<script type="application/json" class="js-hypothesis-config">
-  {
-    "openSidebar": false
-    "theme": "classic"
-  }
-</script>
-<script async src="https://hypothes.is/embed.js"></script>
-
-<script src="static/scripts/main.js"></script>
-
-
+  </div>
 </body>
 
 </html>
