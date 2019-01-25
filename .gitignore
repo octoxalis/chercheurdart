@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 node_modules
 package.json
 package-lock.json
@@ -8,3 +9,14 @@ chercheurd.art.code-workspace
 _workspace_
 @img
 
+=======
+_workspace_
+@img
+node_modules
+prototypes
+source
+chercheurd.art.code-workspace
+package-lock.json
+package.json
+.gitignore
+>>>>>>> Stashed changes

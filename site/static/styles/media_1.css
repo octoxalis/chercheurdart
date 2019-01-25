@@ -1,0 +1,38 @@
+:root
+{
+  --CONTAINER_BG_COLOR: hsl(34,  16%, 72%);
+  --SLIDER_COLOR:       hsl(248,  0%, 100%);
+  --CURSOR_COLOR:       hsl(248, 50%, 70%);
+
+}
+
+.ca_media_1_control
+{
+  position: absolute;
+  width:  0;
+  height: 0;
+  opacity: 0;
+}
+.ca_media_1_processor
+{
+  position: relative;
+  background-color: transparent;
+}
+
+#ca_media_1_processor_wrap
+{
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#ca_media_1_processor_anim
+{
+  position: relative;
+  background-color: transparent;
+}
+#ca_media_1_img
+{
+  position: relative;
+  opacity: 0;  /* initial */
+}
