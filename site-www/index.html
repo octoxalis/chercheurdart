@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chercheur d&#39;Art</title>
+
+<link rel="stylesheet" href="http:/chercheurd.art/static/styles/index.css" />
+
+
+<script>
+  var DEBUG_AT = 0
+  const LOG = ( log ) => { console.log`[ ${DEBUG_AT++} ] ${log}` }
+</script>
+
+</head>
+<body>
+<div id="ca_page" class="ca_page">
+  <div id="ca_content" class="ca_content">
+  <input id="ca_select_area_menu" class="ca_area_switcher" value="ca_select_area_menu" name="area" type="radio">
+<div id="ca_area_menu" class="ca_area_menu ca_area ca_area_list">
+  <label for="ca_select_area_menu" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+  <div class="ca_fold_content">
+    <h3 class="ca_folder ca_folder_inverse" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">chercheurd.art</h3>
+    <div class="ca_fold_content_item ca_is_open">
+      <div class="ca_fold_1col">
+        <div class="__ca_container__">
+          <div class="ca_list_items_centered">
+            <ul class="ca_list_items">
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/index.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Accueil</li>
+  
+  <li class="ca_list_items_legend_abstract">Découverte...</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-8-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Accueil
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/posts/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Articles</li>
+  
+  <li class="ca_list_items_legend_abstract">Articles et annonces publiés</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-3-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Articles
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/site/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Chercheurd.art</li>
+  
+  <li class="ca_list_items_legend_abstract">L'envers de l'écran. Prendre contact. Proposer des écrits, des informations, collaborer</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-5-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Chercheurd.art
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/tech/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Technologie</li>
+  
+  <li class="ca_list_items_legend_abstract">Perspectives technologiques</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-4-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Technologie
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/artists/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Artistes</li>
+  
+  <li class="ca_list_items_legend_abstract">Répertoire des artistes</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-0-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Artistes
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/works/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Œuvres</li>
+  
+  <li class="ca_list_items_legend_abstract">Réperoire des oeuvres</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-7-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Œuvres
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/collectors/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Collections</li>
+  
+  <li class="ca_list_items_legend_abstract">Réperoire des collections privées et publiques, anciennes ou actuelles</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-6-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Collections
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/biblio/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Bibliographie</li>
+  
+  <li class="ca_list_items_legend_abstract">Références bibliographiques</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-2-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Bibliographie
+</h1>
+
+                </a>
+              </li>
+            
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+<input id="ca_select_area_text" class="ca_area_switcher" value="ca_select_area_text" name="area" type="radio">
+<div id="ca_area_text" class="ca_area_text ca_area">
+  <label for="ca_select_area_text" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+  
+
+<div id="ca_blocktxt" class="ca_layout_blocktxt">
+  
+  
+<ul class="ca_post_header">
+  <li class="ca_post_title">Chercheur d&#39;Art</li>
+  <li class="ca_post_signature">23 Janvier 2019</li>
+  <li class="ca_post_subtitle"></li>
+  <li class="ca_post_signature">A. Dupin</li>
+</ul>
+
+  
+  <div class="ca_folder_container"><div class="ca_folder_container_inner">
+<div id="fold-1" class="ca_fold_content">
+    <h3 class="ca_folder"
+    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Un laboratoire pour l'histoire de l'art</h3>
+    <div class="ca_fold_content_item">
+    <div class="ca_fold_xcols">
+<p class="ca_txt">Je suis heureux de vous accueillir pour une visite de ce site. Si c’est votre première venue, je vous recommande de lire attentivement les quelques paragraphes qui suivent, dont le contenu vous sera révèlé en cliquant sur chacun des titres.</p>
+<p class="ca_txt">Chercheur d’Art est avant tout un laboratoire pour l’histoire de l’art et pour les amateurs de peinture. Il revêt, de ce fait, un caractère (hautement) expérimental, tant dans sa forme que dans son contenu. En voici, exposés brièvement, les principaux aspects, qui vous permettront de découvrir les quelques principes de circulation indispensables pour parcourir tout le contenu du site.</p>
+</div>
+    </div></div>
+<div id="fold-2" class="ca_fold_content">
+    <h3 class="ca_folder"
+    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Circuler, voir, agir</h3>
+    <div class="ca_fold_content_item">
+    <div class="ca_fold_xcols">
+<p class="ca_txt">Le principe primordial guidant toute la conception et la mise en oeuvre de Chercheur d’Art est fort simple: donner à l’image des peintures exposées toute la place qu’elles méritent. Le parti adopté est donc de séparer nettement texte et image.</p>
+<p class="ca_txt">Ainsi, chaque page du site est compartimentée en plusieurs secteurs, chacun occupant la totalité de la fenêtre du navigateur, dans le but de concentrer l’attention, soit sur le texte, soit sur l’image, image présente sous de multiples aspects et, dans les coins les plus expérimentaux du site, assortie de possibilités d’interaction afin d’en affiner la perception.
+Et pour mieux éviter toute perturbation du regard, l’utilisation de la présentation en mode “plein écran” permet de magnifier plus encore la qualité des images. Ce mode est facilement accessible: il suffit d’appuyer sur la touche F11 du clavier pour basculer du mode “normal” au mode “plein écran”, ou inversement.</p>
+<p>Le différents secteurs de la page sont présentés en perspective 3D pour pouvoir rapidement basculer de l’un à l’autre.
+<strong class="ca_txt">Pour accéder à cette présentation en 3D, placez le pointeur (souris ou doigt) dans la zone de navigation apparaissant dans le coin supérieur gauche de la fenêtre du navigateur, puis cliquez ou tapez. Chaque secteur de la page peut ensuite être sélectionné en pointant puis cliquant dans le cercle entourant sa fenêtre présentée en modèle réduit.</strong></p>
+</div>
+    </div></div>
+</div></div>
+
+  
+  
+</div>
+
+</div>
+
+
+
+
+
+<input id="ca_select_area_gallery" class="ca_area_switcher" value="ca_select_area_gallery" name="area" type="radio">
+<div id="ca_area_gallery" class="ca_area_gallery ca_area ca_area_active">
+  <label for="ca_select_area_gallery" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+  <div id="ca_home_bg_img"></div>
+
+<div id="ca_home_top_margin"    class="ca_home_side_margin"></div>
+<div id="ca_home_bottom_margin" class="ca_home_side_margin"></div>
+<div id="ca_home_right_margin"  class="ca_home_side_margin"></div>
+
+<svg id="ca_home_svg_area" width="80.9%" height="61.8%">
+  <defs>
+    <linearGradient id="ca_home_gradient" gradientTransform="rotate(75)">
+      <stop offset="15%" stop-color="hsla(220, 92%, 30%, 0.8)" />
+      <stop offset="80%" stop-color="hsla(240, 52%, 60%, 0.9)" />
+    </linearGradient>
+    <mask id="ca_home_mask">
+      <rect width="100%" height="100%" fill="#fff" />
+      <g class="ca_home_logo_text">
+        <text class="ca_home_logo_text_light">chercheur d</text>
+        <text class="ca_home_logo_text_heavy">.art</text>
+      </g>
+    </mask>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#ca_home_gradient)" fill-opacity="0.65" mask="url(#ca_home_mask)" />
+</svg>
+
+<div id="ca_home_perspective"  onclick="areaSelect( 'ca_select_area_menu' )">
+  <div id="ca_home_layer_0" class="ca_home_perspective_layer"></div>
+  <div id="ca_home_layer_1" class="ca_home_perspective_layer"></div>
+  <div id="ca_home_layer_2" class="ca_home_perspective_layer"></div>
+  <div id="ca_home_layer_3" class="ca_home_perspective_layer"></div>
+  <div id="ca_home_layer_4" class="ca_home_perspective_layer"></div>
+  <div id="ca_home_layer_5" class="ca_home_perspective_layer"></div>
+  <div id="ca_home_layer_6" class="ca_home_perspective_layer"></div>
+  <div id="ca_home_layer_7" class="ca_home_perspective_layer"></div>
+</div>
+
+</div>
+
+
+
+
+  </div>
+  <div class="ca_scroll_nav">
+  <svg class="ca_scroll_wheel" viewBox="0 0 18 14">
+      <defs>
+          <linearGradient id="up_gradient">
+              <stop id="ca_grad_up_empty" offset="100%" stop-color="var(--SCROLL_STOP_EMPTY)"/>
+              <stop id="ca_grad_up_fill"  offset="100%" stop-color="var(--SCROLL_STOP_FILL)"/>
+          </linearGradient>
+          <linearGradient id="down_gradient">
+              <stop id="ca_grad_down_empty" offset="0%" stop-color="var(--SCROLL_STOP_EMPTY)"/>
+              <stop id="ca_grad_down_fill"  offset="0%" stop-color="var(--SCROLL_STOP_FILL)"/>
+          </linearGradient>
+      </defs>
+    <circle class="nav_wheel" cx="9" cy="5" r="4.8"/>
+    <path class="ca_scroll_arrow_down" onclick="scroll_page( -0.25 )" d="M  0,5 L 8.7,2 8.7,8 Z" />
+    <path class="ca_scroll_arrow_up"   onclick="scroll_page( +0.25 )" d="M 18,5 L 9.3,2 9.3,8 Z" />
+  </svg>
+</div>
+
+</div>
+<script src="http:/chercheurd.art/static/scripts/main.js"></script>
+
+
+
+</body>
+</html>

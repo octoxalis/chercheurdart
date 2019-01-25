@@ -1,0 +1,131 @@
+/* ::::::::::::::::::::::::::::::::::::::
+Get rid of native scrollbar */
+body::-webkit-scrollbar  /* Chrome */
+{
+  width: 0;
+}
+html
+{
+  scrollbar-width: none; /* Firefox */
+}
+/* :::::::::::::::::::::::::::::::::::::: */
+html
+{
+  background-image: var(--GRADIENT_MAXDARK);
+}
+*
+{
+  box-sizing: border-box;
+}
+
+body
+{
+  margin: 0;
+  padding: 0;
+  min-width:  var(--VIEW_FULL_WIDTH);
+  min-height: var(--VIEW_FULL_HEIGHT);
+  background-color: var(--BODY_BGCOLOR);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li
+{
+  font-family: var(--FONT_TITLE);
+}
+
+h1
+{
+  font-size: var(--FONT_SIZE_MEDIUM);
+  font-weight: var(--FONT_WEIGHT_MEDIUM);
+}
+
+h2,
+h3,
+h4,
+li
+{
+  font-weight: var(--FONT_WEIGHT_MEDIUM);
+}
+
+p
+{
+  font-family: var(--FONT_BODY);
+  font-size: var(--FONT_SIZE_MEDIUM);
+  font-weight: var(--FONT_WEIGHT_MEDIUM);
+  line-height: var(--FONT_LINE_MEDIUM);
+}
+
+img
+{
+  max-width: 100%;
+  height: auto;
+}
+
+/* FOOTNOTES */
+footer ol
+{
+  margin: 0;
+  padding-left: 1rem;
+}
+
+footer ol li
+{
+  padding: 0.5rem 0.3rem 0.5rem 0.3rem;
+  break-inside: avoid;
+}
+
+footer :target
+{
+  border-left:   var(--BORDER_LINK_THIN_TRANSPARENT);
+  border-right:  var(--BORDER_LINK_THIN_TRANSPARENT);
+  border-top:    var(--BORDER_LINK_THIN_DEEP_DARK);
+  border-bottom: var(--BORDER_LINK_THIN_DEEP_DARK);
+  background-color: var(--COLOR_MAXLIGHT);
+  color: var(--COLOR_MAXDARK);
+}
+
+/* LINKS */
+a,
+a:not(.ca_nodeco),
+a:not(.ca_nodeco):visited,
+.ca_nodeco   /* used for links only */
+{
+  text-decoration: none;
+  color: inherit;
+}
+
+a:not(.ca_nodeco)
+{
+  padding: 0 0.6em;
+  border-left:  var(--BORDER_LINK_THIN_DEEP_DARK);
+  border-right: var(--BORDER_LINK_THIN_DEEP_DARK);
+  border-top:    var(--BORDER_LINK_THIN_TRANSPARENT);
+  border-bottom: var(--BORDER_LINK_THIN_TRANSPARENT);
+}
+
+a:not(.ca_nodeco):visited
+{
+  border-left:  var(--BORDER_LINK_THIN_MEDIUM_LIGHT);
+  border-right: var(--BORDER_LINK_THIN_MEDIUM_LIGHT);
+}
+
+a:not(.ca_nodeco):hover
+{
+  border-top:    var(--BORDER_LINK_THIN_DEEP_DARK);
+  border-bottom: var(--BORDER_LINK_THIN_DEEP_DARK);
+  transition: all var(--TRANSITION_1s);
+}
+
+/*
+.vertically_centered
+{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+*/

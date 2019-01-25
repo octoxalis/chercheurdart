@@ -1,0 +1,17 @@
+.ca_layout_blocktxt,
+.ca_layout_blockimg
+{
+  min-width: var(--CONTENT_MIN_WIDTH);
+}
+
+.ca_layout_blocktxt
+{
+  flex-grow: 1;
+  /*display: flex;*/
+}
+
+.ca_layout_blockimg
+{
+  flex-grow: var(--FLEX_GROW);
+  /*display: grid;*/
+}

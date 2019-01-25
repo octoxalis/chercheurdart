@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>François Boucher</title>
+
+<link rel="stylesheet" href="http:/chercheurd.art/static/styles/index.css" />
+
+
+<script>
+  var DEBUG_AT = 0
+  const LOG = ( log ) => { console.log`[ ${DEBUG_AT++} ] ${log}` }
+</script>
+
+</head>
+<body>
+<div id="ca_page" class="ca_page">
+  <div id="ca_content" class="ca_content">
+  <input id="ca_select_area_menu" class="ca_area_switcher" value="ca_select_area_menu" name="area" type="radio">
+<div id="ca_area_menu" class="ca_area_menu ca_area ca_area_list">
+  <label for="ca_select_area_menu" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+  <div class="ca_fold_content">
+    <h3 class="ca_folder ca_folder_inverse" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">chercheurd.art</h3>
+    <div class="ca_fold_content_item ca_is_open">
+      <div class="ca_fold_1col">
+        <div class="__ca_container__">
+          <div class="ca_list_items_centered">
+            <ul class="ca_list_items">
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/index.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Accueil</li>
+  
+  <li class="ca_list_items_legend_abstract">Découverte...</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-8-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Accueil
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/posts/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Articles</li>
+  
+  <li class="ca_list_items_legend_abstract">Articles et annonces publiés</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-3-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Articles
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/site/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Chercheurd.art</li>
+  
+  <li class="ca_list_items_legend_abstract">L'envers de l'écran. Prendre contact. Proposer des écrits, des informations, collaborer</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-5-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Chercheurd.art
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/tech/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Technologie</li>
+  
+  <li class="ca_list_items_legend_abstract">Perspectives technologiques</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-4-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Technologie
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/artists/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Artistes</li>
+  
+  <li class="ca_list_items_legend_abstract">Répertoire des artistes</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-0-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Artistes
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/works/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Œuvres</li>
+  
+  <li class="ca_list_items_legend_abstract">Réperoire des oeuvres</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-7-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Œuvres
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/collectors/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Collections</li>
+  
+  <li class="ca_list_items_legend_abstract">Réperoire des collections privées et publiques, anciennes ou actuelles</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-6-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Collections
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http:/chercheurd.art/biblio/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Bibliographie</li>
+  
+  <li class="ca_list_items_legend_abstract">Références bibliographiques</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http:/chercheurd.art/static/media/images/home-2-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Bibliographie
+</h1>
+
+                </a>
+              </li>
+            
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+<input id="ca_select_area_text" class="ca_area_switcher" value="ca_select_area_text" name="area" type="radio">
+<div id="ca_area_text" class="ca_area_text ca_area ca_area_active">
+  <label for="ca_select_area_text" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+  
+
+<div id="ca_blocktxt" class="ca_layout_blocktxt">
+  
+  
+
+<ul class="ca_post_header">
+  <li class="ca_post_title">François Boucher</li>
+  <li class="ca_post_signature">23 Janvier 2019</li>
+  <li class="ca_post_subtitle">1703, Paris - 1770, Paris</li>
+  <li class="ca_post_signature">A. Dupin</li>
+ </ul>
+
+  
+  <div class="ca_folder_container"><div class="ca_folder_container_inner">
+<div id="fold-1" class="ca_fold_content">
+    <h3 class="ca_folder"
+    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Le peintre de Louis XV</h3>
+    <div class="ca_fold_content_item">
+    <div class="ca_fold_xcols">
+<p class="ca_txt">Peintre polymorphe, aussi habile dans les grands décors peints et tissés que dans l’ornementation rocaille, François Boucher est l’heureux artiste d’une oeuvre féconde placée sous le signe de la grande peinture de décor italienne, découverte lors de son séjour à Rome, à la fin des années 1620, en tant que pensionnaire de l’Académie royale. </p>
+</div>
+    </div></div>
+<div id="fold-99" class="ca_fold_content">
+    <h3 class="ca_folder"
+    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Dates</h3>
+    <div class="ca_fold_content_item">
+    <div class="ca_fold_xcols">
+<ul class="ca_version_list">
+<li class="ca_version_entry">
+<p><strong>29 Septembre 1703</strong><br>
+Naissance à Paris.</p>
+</li>
+<li class="ca_version_entry">
+<p><strong>1748</strong><br>
+Réalisation d’un cycle de peintures consacré aux Quatre Éléments destiné au Château de La Muette, pavillon de chasse de Luois XV aux portes de Paris, reconstruit par les architectes Gabriel (Jacques V et Jacques-Ange). Boucher ne peint que deux des quatre tableaux envisagés: Arion chevauchant son Dauphin et Vertumne et Pomone. Ces deux toiles sont aujourd’hui conservées dans les collections d’institutions unbiversitaires américaines, à Princeton et Columbus.</p>
+</li>
+<li class="ca_version_entry">
+<p><strong>30 Mai 1770</strong><br>
+Mort à Paris. </p>
+</li>
+</ul>
+</div>
+    </div></div>
+<div id="fold-101" class="ca_fold_content">
+    <h3 class="ca_folder"
+    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">NOTES</h3>
+    <div class="ca_fold_content_item">
+    <div class="ca_fold_xcols">
+<h3 class="ca_version_title">Versions</h3>
+<ol class="ca_version_list">
+<li class="ca_version_entry"><strong>23 Janvier 2019</strong><br>
+Ébauche initiale.</li>
+</ol>
+</div>
+    </div></div>
+</div></div>
+
+  
+  
+</div>
+
+</div>
+
+
+
+
+
+<input id="ca_select_area_gallery" class="ca_area_switcher" value="ca_select_area_gallery" name="area" type="radio">
+<div id="ca_area_gallery" class="ca_area_gallery ca_area">
+  <label for="ca_select_area_gallery" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+  
+
+<div id="ca_blockimg" class="ca_layout_blockimg">
+  
+  
+
+<div class="ca_fold_content">
+  
+  <div class="ca_fold_content_item ca_is_open">
+    <div class="ca_fold_1col">
+      <div class="__ca_container__">
+
+  <div class="ca_list_imgs">
+    
+    
+      
+      
+        <div id="1703_boucher_princeton_university_1748_arion" class="ca_list_imgs_issmall" onclick="this.classList.toggle('ca_list_imgs_islarge')">
+  <div class="ca_painting" style="--FRAMING_WIDTH:28;--FRAMING_SCALE_X:1.03;--FRAMING_SCALE_Y:1.03;">
+    <img class="ca_list_imgs_img ca_frame" src="http:/chercheurd.art/static/media/images/1703_boucher_princeton_university_1748_arion.jpg" 
+         style="--FRAMING_WIDTH:28;--FRAMING_SCALE_X:1.03;--FRAMING_SCALE_Y:1.03;" data-src-width="" data-src-height=""/>
+  </div>
+  <ul class="ca_list_imgs_legend">
+    <li class="ca_list_imgs_legend_title">Arion chevauchant son dauphin</li>
+    <li class="ca_list_imgs_legend_author">François Boucher</li>
+    <li class="ca_list_imgs_legend_collector">Princeton University Art Museum</li>
+    <li class="ca_list_imgs_legend_collector">Princeton</li>
+  </ul>
+</div>
+
+      
+    
+</div>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+  </div>
+  <div class="ca_scroll_nav">
+  <svg class="ca_scroll_wheel" viewBox="0 0 18 14">
+      <defs>
+          <linearGradient id="up_gradient">
+              <stop id="ca_grad_up_empty" offset="100%" stop-color="var(--SCROLL_STOP_EMPTY)"/>
+              <stop id="ca_grad_up_fill"  offset="100%" stop-color="var(--SCROLL_STOP_FILL)"/>
+          </linearGradient>
+          <linearGradient id="down_gradient">
+              <stop id="ca_grad_down_empty" offset="0%" stop-color="var(--SCROLL_STOP_EMPTY)"/>
+              <stop id="ca_grad_down_fill"  offset="0%" stop-color="var(--SCROLL_STOP_FILL)"/>
+          </linearGradient>
+      </defs>
+    <circle class="nav_wheel" cx="9" cy="5" r="4.8"/>
+    <path class="ca_scroll_arrow_down" onclick="scroll_page( -0.25 )" d="M  0,5 L 8.7,2 8.7,8 Z" />
+    <path class="ca_scroll_arrow_up"   onclick="scroll_page( +0.25 )" d="M 18,5 L 9.3,2 9.3,8 Z" />
+  </svg>
+</div>
+
+</div>
+<script src="http:/chercheurd.art/static/scripts/main.js"></script>
+
+
+
+</body>
+</html>

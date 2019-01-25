@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Philosopher|Antic');
+@import url('root.css');
+@import url('screen.css');
+@import url('html.css');
+@import url('gradients.css');
+@import url('palette.css');
+@import url('layout.css');
+@import url('areas.css');
+@import url('home.css');
+@import url('img_bg.css');
+@import url('folder.css');
+@import url('text_list.css');
+@import url('text_item.css');
+@import url('img_list.css');
+@import url('gallery.css');
+@import url('scrollbar.css');
+
+/* Media area specific styles: inline link
+@import url('media.css');
+@import url('media_3.css');
+@import url('media_2.css');
+@import url('media_1.css');
+@import url('media_4.css');
+*/

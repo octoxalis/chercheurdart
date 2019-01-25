@@ -1,0 +1,187 @@
+:root
+{
+  --AREA_TRANSITION: 0.4s;
+}
+
+/* ==== CONTENT ==== */
+.ca_page,
+.ca_content
+{
+  position: relative;
+  width: var(--VIEW_FULL_WIDTH);
+  top:   0;
+  left:  0;
+}
+
+.ca_content
+{
+  background-color: var(--CONTENT_BG_COLOR);
+}
+
+.ca_content_perspective
+{
+  perspective-origin: top right;
+  perspective: calc( var(--VIEW_FULL_WIDTH) * 10 );
+}
+
+/* ==== AREAS ==== */
+/**
+ * NO STYLE: used by areaSelect() only
+ * .ca_area:
+ * .ca_area_active
+ */
+
+.ca_area_switcher
+{
+  position: absolute;
+  left: var(--POS_OUTLEFT);
+}
+
+.ca_area_menu
+{
+  --AREA_INDEX: 0;
+  
+}
+.ca_area_text
+{
+  --AREA_INDEX: 1;
+
+  background-image: var(--GRADIENT_TEXT_LIGHT);
+}
+.ca_area_gallery
+{
+  --AREA_INDEX: 2;
+
+  background-image: var(--GRADIENT_MAXDARK);
+}
+.ca_area_media_1
+{
+  --AREA_INDEX: 3;
+}
+.ca_area_media_2
+{
+  --AREA_INDEX: 4;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width:  var(--AREA_WIDTH);
+  height: calc( var(--AREA_HEIGHT) * 1.2 ); /* space to rotate */
+}
+.ca_area_media_3
+{
+  --AREA_INDEX: 5;
+
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+}
+.ca_area_media_4
+{
+  --AREA_INDEX: 6;
+}
+.ca_area_media_4, /* Color burst */
+.ca_area_media_3, /* Color scan  */
+.ca_area_media_2, /* Composition */
+.ca_area_media_1, /* KB Pan Zoom */
+.ca_area_gallery,
+.ca_area_text,
+.ca_area_menu
+{
+  position: absolute;
+  top: 0;
+  left: var(--POS_OUTRIGHT);
+  min-width:  var(--AREA_WIDTH);
+  min-height: var(--AREA_HEIGHT);
+  opacity: 1; /* if opacity is 0, selector is not visible! */
+}
+.ca_area_media_4,
+.ca_area_media_3,
+.ca_area_media_2,
+.ca_area_media_1
+{
+  background-image: var(--GRADIENT_MAXDARK);
+}
+
+.ca_area_perspective
+{
+  --area_panel_top:       6vh;
+  --area_panel_left:      6vh;  /* IDEM */
+  --area_panel_delta:     0.2;
+  --area_translate_delta: 1.8;
+  --area_scale_delta:    -0.01;
+  --area_scale:              calc( var(--area_panel_delta) * ((var(--AREA_INDEX) * var(--area_scale_delta)) + 1) );
+  --scaled_area_translate_x: calc( var(--area_panel_left)  + ( var(--AREA_INDEX) * var(--area_translate_delta) * (100 / 16) * 1vw ) );
+  --scaled_area_translate_y: calc( var(--area_panel_top)   - ( var(--AREA_INDEX) * var(--area_translate_delta) * (100 / 16) * -1vh ) );
+
+  opacity: 0.6;
+  transform-origin: top left;
+  transform:  var(--AREA_ENTER) translate3d( var(--scaled_area_translate_x), var(--scaled_area_translate_y), 0) rotateY( 60deg ) scale( var(--area_scale) );
+  transition: all var(--AREA_TRANSITION) ease-in-out;
+}
+.ca_area_perspective:hover
+{
+  opacity: 1;
+  transition: opacity var(--AREA_TRANSITION) ease-in-out;
+}
+
+.ca_area_active
+{
+  transform: var(--AREA_ENTER);
+  transition: transform var(--AREA_TRANSITION) ease-in-out;
+}
+.ca_content_perspective > .ca_area_active  /* lower current area to let others being selected */
+{
+  z-index: -1;
+  opacity: 0.05;
+}
+
+/* ==== AREA SELECTOR ==== */
+.ca_area_selector
+{
+  --border_width: var(--AREA_SELECTOR_SIDE_WIDTH);
+
+  position: fixed;
+  z-index: var(--AREA_SELECTOR_Z);
+  top:  calc( var(--border_width) * -0.3 );
+  left: calc( var(--border_width) * -0.3 );
+  width:  var(--border_width);
+  height: var(--border_width);
+  background-color: var(--COLOR_SECOND_DEEP_DARK_TRANSPARENT);
+  border-radius: 50%;
+  opacity: 0.02;
+}
+.ca_area_selector:hover
+{
+  --border_width: calc( var(--AREA_SELECTOR_BORDER_WIDTH) * 0.8 );
+
+  box-shadow: 1vh 1vh 20vh 5vh var(--COLOR_NEUTRAL_MAXLIGHT);
+  cursor: var(--CURSOR_MENU);
+  opacity: 0.8;
+  animation: ca_area_selector_pulsar 3s infinite;
+}
+@keyframes ca_area_selector_pulsar
+{
+  0%   { opacity: 0.5;  transform: scale(0.6); }
+  10%  { opacity: 0.65; transform: scale(0.85); }
+  100% { opacity: 1;    transform: scale(1); }
+}
+
+.ca_area_selector.ca_selector_perspective
+{
+  --border_width: calc( var(--AREA_SELECTOR_BORDER_WIDTH) * 3 );
+
+  box-shadow: 1vh 1vh 20vh 5vh var(--COLOR_NEUTRAL_MAXLIGHT);
+  opacity: 0.8;
+  transition: opacity var(--AREA_TRANSITION) ease-in-out;
+}
+.ca_area_selector.ca_selector_perspective:hover
+{
+  opacity: 1;
+  transition: opacity var(--AREA_TRANSITION) ease-in-out;
+}
+
+.ca_area_list
+{
+  background-image: var(--GRADIENT_MEDIUM_DARK);
+}
