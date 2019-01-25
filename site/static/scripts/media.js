@@ -831,7 +831,7 @@ M3_image_e.onload = () =>
   {
     let width
     ( { width } = DOM_getImgDim( 'ca_media_3_img' ) )
-    DOM_setRootVar( '--MEDIA_PROCESSOR_ATMIN', (window.innerWidth / width) * 0.75 )
+    DOM_setRootVar( '--MEDIA_PROCESSOR_ATMIN', window.innerWidth / width )
 
     const hues_n = 360 //DOM_getRootVar( '--COLOR_SELECTOR_ARCS' )
     const scanSettings_o =

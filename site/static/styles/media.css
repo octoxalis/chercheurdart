@@ -20,6 +20,7 @@
 }
 .ca_media_processor_canvas
 {
+  max-width: 100vw;
   background-color: var(--COLOR_NEUTRAL_MAXDARK);
   border: 1px solid var(--COLOR_NEUTRAL_MEDIUM_LIGHT);
   cursor: zoom-out;
