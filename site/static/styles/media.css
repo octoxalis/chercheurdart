@@ -30,6 +30,6 @@
 {
   cursor: zoom-in;
   transform-origin:  top center;
-  transform: scale( var(--MEDIA_PROCESSOR_ATMIN) * 0. 9 );
+  transform: scale( var(--MEDIA_PROCESSOR_ATMIN) * 0.9 );
   transition: all .9s ease;
 }
