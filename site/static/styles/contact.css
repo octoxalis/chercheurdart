@@ -1,0 +1,6 @@
+.ca_adupin_mail::after
+{
+  content: ' < adupin@linuxmail.org > ';
+  color: var(--COLOR_THIRD_DEEP_DARK);;
+  font-weight: var(--FONT_WEIGHT_HEAVY);
+}

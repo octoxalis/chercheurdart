@@ -30,6 +30,7 @@
 {
   position: relative;
   background-color: transparent;
+  cursor: var(--CURSOR_PLAY);
 }
 #ca_media_1_img
 {

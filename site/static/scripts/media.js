@@ -201,7 +201,7 @@ class ColorScan
         }
         catch
         {
-          console.log`Error: iteration = ${ath} -- hue: ${u32_scan_av[ath] >>> 23}`
+          console.log(`Error: iteration = ${ath} -- hue: ${u32_scan_av[ath] >>> 23}`)
         }
       }
                             //////////////////////
@@ -212,7 +212,7 @@ class ColorScan
   
   handleError( e )
   {
-    console.log`error: ${e.message}`
+    console.log(`error: ${e.message}`)
   }
 
   getHues_a ()
@@ -687,9 +687,9 @@ M1_img_e.onload = () =>
       borderH = imgDelta
       borderV = imgDelta * imgRatio
     }
-    let clipH = Math.floor( ( imgW * 0.5 ) - borderH )
-    let clipV = Math.floor( ( imgH * 0.5 ) - borderV )
-    M1_processor_e.style.setProperty( 'clip-path', `inset(${clipV}px ${clipH}px)` )  ////;LOG`clipV: ${clipV} -- clipH: ${clipH}`
+    let clipH = Math.floor( ( imgW * 0.25 ) - borderH )
+    let clipV = Math.floor( ( imgH * 0.25 ) - borderV )
+    M1_processor_e.style.setProperty( 'clip-path', `inset(${clipV}px ${clipH}px)` )  ;LOG(`clipV: ${clipV} -- clipH: ${clipH}`)
     M1_frames = new AnimationFrames( imgW, imgH, M1_frames_a )
     M1_img_e.animate( M1_frames.getFrames(), M1_anim_o )       ///;LOG`M1_anim_a: ${M1_frames.getFrames()}`
     M1_imgAnim = M1_img_e.getAnimations()[0]                  //// ;LOG`M1_imgAnim: ${M1_imgAnim}`

@@ -227,35 +227,35 @@
   --COLOR_THIRD_DEEP_DARK_SEMI_OPAQUE: hsla(var(--COLOR_THIRD_HUE), var(--COLOR_DEEP_DARK_O), var(--SEMI_OPAQUE));
 
   /* NEUTRAL COLORS */
---COLOR_NEUTRAL_MAXLIGHT:              hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_MAXLIGHT_O),     var(--OPAQUE));
---COLOR_NEUTRAL_LIGHT:                 hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_LIGHT_O),        var(--OPAQUE));
---COLOR_NEUTRAL_MEDIUM_LIGHT:          hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_MEDIUM_LIGHT_O), var(--OPAQUE));
---COLOR_NEUTRAL_MEDIUM:                hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_MEDIUM_O),       var(--OPAQUE));
---COLOR_NEUTRAL_MEDIUM_DARK:           hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_MEDIUM_DARK_O),  var(--OPAQUE));
---COLOR_NEUTRAL_DARK:                  hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_DARK_O),         var(--OPAQUE));
---COLOR_NEUTRAL_DEEP_DARK:             hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_DEEP_DARK_O),    var(--OPAQUE));
---COLOR_NEUTRAL_MAXDARK:               hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_MAXDARK_O),      var(--OPAQUE));
-
---COLOR_NEUTRAL_MAXLIGHT_TRANSPARENT:  hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_MAXLIGHT_O),  var(--TRANSPARENT));
---COLOR_NEUTRAL_LIGHT_TRANSPARENT:     hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_LIGHT_O),     var(--QUASI_TRANSPARENT));
---COLOR_NEUTRAL_MEDIUM_TRANSPARENT:    hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_MEDIUM_O),    var(--QUASI_TRANSPARENT));
---COLOR_NEUTRAL_DEEP_DARK_TRANSPARENT: hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_DEEP_DARK_O), var(--QUASI_TRANSPARENT));
---COLOR_NEUTRAL_DEEP_DARK_SEMI_OPAQUE: hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_DEEP_DARK_O), var(--SEMI_OPAQUE));
-
---COLOR_SECOND_NEUTRAL_MAXLIGHT:              hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_MAXLIGHT_O),     var(--OPAQUE));
---COLOR_SECOND_NEUTRAL_LIGHT:                 hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_LIGHT_O),        var(--OPAQUE));
---COLOR_SECOND_NEUTRAL_MEDIUM_LIGHT:          hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_MEDIUM_LIGHT_O), var(--OPAQUE));
---COLOR_SECOND_NEUTRAL_MEDIUM:                hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_MEDIUM_O),       var(--OPAQUE));
---COLOR_SECOND_NEUTRAL_MEDIUM_DARK:           hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_MEDIUM_DARK_O),  var(--OPAQUE));
---COLOR_SECOND_NEUTRAL_DARK:                  hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_DARK_O),         var(--OPAQUE));
---COLOR_SECOND_NEUTRAL_DEEP_DARK:             hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_DEEP_DARK_O),    var(--OPAQUE));
---COLOR_SECOND_NEUTRAL_MAXDARK:               hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_MAXDARK_O),      var(--OPAQUE));
-
---COLOR_SECOND_NEUTRAL_MAXLIGHT_TRANSPARENT:  hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_MAXLIGHT_O),  var(--TRANSPARENT));
---COLOR_SECOND_NEUTRAL_LIGHT_TRANSPARENT:     hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_LIGHT_O),     var(--QUASI_TRANSPARENT));
---COLOR_SECOND_NEUTRAL_MEDIUM_TRANSPARENT:    hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_MEDIUM_O),    var(--QUASI_TRANSPARENT));
---COLOR_SECOND_NEUTRAL_DEEP_DARK_TRANSPARENT: hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_DEEP_DARK_O), var(--QUASI_TRANSPARENT));
---COLOR_SECOND_NEUTRAL_DEEP_DARK_SEMI_OPAQUE: hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_DEEP_DARK_O), var(--SEMI_OPAQUE));
+  --COLOR_NEUTRAL_MAXLIGHT:              hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_MAXLIGHT_O),     var(--OPAQUE));
+  --COLOR_NEUTRAL_LIGHT:                 hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_LIGHT_O),        var(--OPAQUE));
+  --COLOR_NEUTRAL_MEDIUM_LIGHT:          hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_MEDIUM_LIGHT_O), var(--OPAQUE));
+  --COLOR_NEUTRAL_MEDIUM:                hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_MEDIUM_O),       var(--OPAQUE));
+  --COLOR_NEUTRAL_MEDIUM_DARK:           hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_MEDIUM_DARK_O),  var(--OPAQUE));
+  --COLOR_NEUTRAL_DARK:                  hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_DARK_O),         var(--OPAQUE));
+  --COLOR_NEUTRAL_DEEP_DARK:             hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_DEEP_DARK_O),    var(--OPAQUE));
+  --COLOR_NEUTRAL_MAXDARK:               hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_MAXDARK_O),      var(--OPAQUE));
+  
+  --COLOR_NEUTRAL_MAXLIGHT_TRANSPARENT:  hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_MAXLIGHT_O),  var(--TRANSPARENT));
+  --COLOR_NEUTRAL_LIGHT_TRANSPARENT:     hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_LIGHT_O),     var(--QUASI_TRANSPARENT));
+  --COLOR_NEUTRAL_MEDIUM_TRANSPARENT:    hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_MEDIUM_O),    var(--QUASI_TRANSPARENT));
+  --COLOR_NEUTRAL_DEEP_DARK_TRANSPARENT: hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_DEEP_DARK_O), var(--QUASI_TRANSPARENT));
+  --COLOR_NEUTRAL_DEEP_DARK_SEMI_OPAQUE: hsla(var(--COLOR_HUE), var(--COLOR_NEUTRAL_DEEP_DARK_O), var(--SEMI_OPAQUE));
+  
+  --COLOR_SECOND_NEUTRAL_MAXLIGHT:              hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_MAXLIGHT_O),     var(--OPAQUE));
+  --COLOR_SECOND_NEUTRAL_LIGHT:                 hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_LIGHT_O),        var(--OPAQUE));
+  --COLOR_SECOND_NEUTRAL_MEDIUM_LIGHT:          hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_MEDIUM_LIGHT_O), var(--OPAQUE));
+  --COLOR_SECOND_NEUTRAL_MEDIUM:                hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_MEDIUM_O),       var(--OPAQUE));
+  --COLOR_SECOND_NEUTRAL_MEDIUM_DARK:           hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_MEDIUM_DARK_O),  var(--OPAQUE));
+  --COLOR_SECOND_NEUTRAL_DARK:                  hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_DARK_O),         var(--OPAQUE));
+  --COLOR_SECOND_NEUTRAL_DEEP_DARK:             hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_DEEP_DARK_O),    var(--OPAQUE));
+  --COLOR_SECOND_NEUTRAL_MAXDARK:               hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_MAXDARK_O),      var(--OPAQUE));
+  
+  --COLOR_SECOND_NEUTRAL_MAXLIGHT_TRANSPARENT:  hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_MAXLIGHT_O),  var(--TRANSPARENT));
+  --COLOR_SECOND_NEUTRAL_LIGHT_TRANSPARENT:     hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_LIGHT_O),     var(--QUASI_TRANSPARENT));
+  --COLOR_SECOND_NEUTRAL_MEDIUM_TRANSPARENT:    hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_MEDIUM_O),    var(--QUASI_TRANSPARENT));
+  --COLOR_SECOND_NEUTRAL_DEEP_DARK_TRANSPARENT: hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_DEEP_DARK_O), var(--QUASI_TRANSPARENT));
+  --COLOR_SECOND_NEUTRAL_DEEP_DARK_SEMI_OPAQUE: hsla(var(--COLOR_SECOND_HUE), var(--COLOR_NEUTRAL_DEEP_DARK_O), var(--SEMI_OPAQUE));
 
   /* SPECIAL COLORS */
   --COLOR_GOLD: var(--COLOR_MEDIUM);
@@ -293,7 +293,8 @@
   --FONT_LINE_XHIGH: calc(var(--FONT_LINE_MEDIUM) + (var(--FONT_WEIGHT_FACTOR) * 2));
 
     /* CURSORS */
-  --CURSOR_MENU:  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="60" style="font-size:40px;fill:hsla(34,70%,100%,1);"><text y="30">☰</text></svg>'), auto;
+  --CURSOR_MENU: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="60" style="font-size:40px;fill:hsla(34,70%,100%,1);"><text y="30">☰</text></svg>'), auto;
+  --CURSOR_PLAY: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="60" style="font-size:40px;fill:hsla(34,70%,100%,1);"><text y="30">▷</text></svg>'), auto;
 
   /* ANIMATIONS */
   --TRANSITION_03s: 0.3s ease;

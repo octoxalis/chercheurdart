@@ -13,7 +13,7 @@
 .ca_folder
 {
   position: relative;
-  width: calc( 110% - var(--TEXT_LEFT_PADDING) );
+  width: calc( 100% - var(--TEXT_LEFT_PADDING) );
   transform: translate3d( var(--TEXT_LEFT_PADDING), 0, 0);
   margin-bottom: 2rem;
   padding: 2rem var(--TEXT_LEFT_PADDING) 0.5rem 1rem;
@@ -34,7 +34,7 @@
 }
 .ca_has_open > .ca_folder
 {
-  width: 100%;
+  width: calc( 100% - var(--TEXT_HZ_PADDING) );
   transform: translate3d( 0, 0, 0);
   margin-left: var(--TEXT_HZ_PADDING);
   border-image: linear-gradient(to right, hsla(var(--COLOR_DEEP_DARK_O), 0.7), hsla(var(--COLOR_MAXLIGHT_O), 0.2));

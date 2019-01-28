@@ -105,8 +105,8 @@
 
 .ca_area_perspective
 {
-  --area_panel_top:       6vh;
-  --area_panel_left:      6vh;  /* IDEM */
+  --area_panel_top:       4vh;
+  --area_panel_left:      8vh;  /* IDEM */
   --area_panel_delta:     0.2;
   --area_translate_delta: 1.8;
   --area_scale_delta:    -0.01;

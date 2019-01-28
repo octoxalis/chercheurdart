@@ -60,6 +60,13 @@
   opacity: 0;
 }
 
+.ca_version_title
+{
+  margin: 0;
+  break-inside: avoid;
+  font-weight: var(--FONT_WEIGHT_HEAVY);
+}
+
 .ca_version_list
 {
   margin: 0;

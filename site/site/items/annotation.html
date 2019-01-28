@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annotation</title>
+
+<link rel="stylesheet" href="http://www.chercheurd.art/static/styles/index.css" />
+
+
+<script>
+  var DEBUG_AT = 0
+  const LOG = ( log ) => { console.log`[ ${DEBUG_AT++} ] ${log}` }
+</script>
+
+</head>
+<body>
+<div id="ca_page" class="ca_page">
+  <div id="ca_content" class="ca_content">
+  <input id="ca_select_area_menu" class="ca_area_switcher" value="ca_select_area_menu" name="area" type="radio">
+<div id="ca_area_menu" class="ca_area_menu ca_area ca_area_list">
+  <label for="ca_select_area_menu" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+  <div class="ca_fold_content">
+    <h3 class="ca_folder ca_folder_inverse" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">chercheurd.art</h3>
+    <div class="ca_fold_content_item ca_is_open">
+      <div class="ca_fold_1col">
+        <div class="__ca_container__">
+          <div class="ca_list_items_centered">
+            <ul class="ca_list_items">
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http://www.chercheurd.art/index.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Accueil</li>
+  
+  <li class="ca_list_items_legend_abstract">Découverte...</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http://www.chercheurd.art/static/media/images/home-8-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Accueil
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http://www.chercheurd.art/posts/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Articles</li>
+  
+  <li class="ca_list_items_legend_abstract">Articles et annonces publiés</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http://www.chercheurd.art/static/media/images/home-3-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Articles
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http://www.chercheurd.art/site/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Chercheurd.art</li>
+  
+  <li class="ca_list_items_legend_abstract">L'envers de l'écran. Prendre contact. Proposer des écrits, des informations, collaborer</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http://www.chercheurd.art/static/media/images/home-5-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Chercheurd.art
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http://www.chercheurd.art/tech/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Technologie</li>
+  
+  <li class="ca_list_items_legend_abstract">Perspectives technologiques</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http://www.chercheurd.art/static/media/images/home-4-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Technologie
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http://www.chercheurd.art/artists/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Artistes</li>
+  
+  <li class="ca_list_items_legend_abstract">Répertoire des artistes</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http://www.chercheurd.art/static/media/images/home-0-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Artistes
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http://www.chercheurd.art/works/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Œuvres</li>
+  
+  <li class="ca_list_items_legend_abstract">Réperoire des oeuvres</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http://www.chercheurd.art/static/media/images/home-7-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Œuvres
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http://www.chercheurd.art/collectors/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Collections</li>
+  
+  <li class="ca_list_items_legend_abstract">Réperoire des collections privées et publiques, anciennes ou actuelles</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http://www.chercheurd.art/static/media/images/home-6-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Collections
+</h1>
+
+                </a>
+              </li>
+            
+              <li class="ca_list_items_img_issmall ca_perspective_opener">
+                <a href="http://www.chercheurd.art/biblio/list_0.html" class="ca_nodeco">
+                <ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">Bibliographie</li>
+  
+  <li class="ca_list_items_legend_abstract">Références bibliographiques</li>
+  
+  
+</ul>
+<img class="ca_perspective_opened ca_list_items_img" src="http://www.chercheurd.art/static/media/images/home-2-@400.jpg" />
+<h1 class="ca_perspective_opened ca_list_items_img_title">
+Bibliographie
+</h1>
+
+                </a>
+              </li>
+            
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+<input id="ca_select_area_text" class="ca_area_switcher" value="ca_select_area_text" name="area" type="radio">
+<div id="ca_area_text" class="ca_area_text ca_area ca_area_active">
+  <label for="ca_select_area_text" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+  
+
+<div id="ca_blocktxt" class="ca_layout_blocktxt">
+  
+  
+<ul class="ca_post_header">
+  <li class="ca_post_title">Annotations &amp; commentaires</li>
+  <li class="ca_post_signature">28 janvier 2019</li>
+  <li class="ca_post_subtitle"></li>
+  <li class="ca_post_signature">A. Dupin</li>
+</ul>
+
+  
+  <div class="ca_folder_container"><div class="ca_folder_container_inner">
+<div id="fold-1" class="ca_fold_content">
+    <h3 class="ca_folder"
+    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Hypothesis Project</h3>
+    <div class="ca_fold_content_item">
+    <div class="ca_fold_xcols">
+<p class="ca_txt">Ce projet a été conçu pour répondre aux besoins croissants de la communauté scientifique de commenter les publications en ligne qu’elle suscite. Un groupe de travail placé sous l’égide du <a href="https://www.w3.org/Consortium/" target="_blank">W3C</a> (l’organisation internationale coordonnant le développement de spécifications standard pour le World Wide Web: <strong>WWW</strong>), le <em>Web Annotation Working Group</em>, a publié en 2017 les recommandations à suivre pour fournir la couche logicielle permettant à tout un chacun d’apporter des commentaires sur les pages d’un site du Web.</p>
+<p class="ca_txt">Le Projet Hypothesis implémente cette couche logicielle, intégrée à Chercheurd.art, afin de donner une valeur ajoutée aux données qui sont mis en ligne ici. La marche à suivre pour apporter des annotations à n’importe quelle page est simple et ne nécessite qu’une seule autorisation préalable: l’enregistrement d’un nom d’intervenant ainsi qu’une adresse e-mail valide. Tous les détails du processus peuvent être consultés sur le site <strong><a href="http://Hypothes.is">Hypothes.is</a></strong> (en anglais) et je les résument dans le paragrpahe suivant.</p>
+</div>
+    </div></div>
+<div id="fold-2" class="ca_fold_content">
+    <h3 class="ca_folder"
+    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Annotez...</h3>
+    <div class="ca_fold_content_item">
+    <div class="ca_fold_xcols">
+<p>L’inscription au service Hypothesis ne prend que quelques instants:</p>
+<ul>
+<li>sélectionnez sur une page de Chercheurd.art un mot ou un groupe de mots;</li>
+<li>un petit menu contextuel apparaît immédiatement avec deux options: “<em>Annotate</em>” et “<em>Highlight</em>” (Annoter ou Surligner);</li>
+<li>une barre latérale surgit alors sur la droite de la fenêtre présentant deux options marquées en rouge dans le coin supérieur droit: “<em>Sign up</em>” et “<em>Log in</em>” (S’enregister et Se loger );
+<ul>
+<li>choississez l’option “<em>Sign up</em>” si vous n’êtes pas encore accrédité auprès du service d’annotation Hypothesis;
+<ul>
+<li>dans les champs de dialogue sur la page du site Hypothesis où vous êtes redirigé, entrez votre nom d’utilisateur,</li>
+<li>votre adresse e-mail,</li>
+<li>un mot de passe de votre choix,</li>
+<li>après avoir coché la case d’acceptation des conditions d’inscription,</li>
+<li>cliquez sur le bouton “<em>Sign up</em>” pour finaliser votre enregistrement;</li>
+</ul>
+</li>
+<li>sinon, choisissez l’option “<em>Log in</em>” si vous n’êtes pas encore logé pour votre session de visite du site Chercheurd.art;</li>
+</ul>
+</li>
+<li>vous pouvez dès lors introduire vos commentaires dans l’une des deux parties réservées à cet effet:
+<ul>
+<li>commentaire concernant une partie de la page visitée (“<em>Annotations</em>”);</li>
+<li>commentaire se rapportant à l’ensemble de la page (“Page Notes”).</li>
+</ul>
+</li>
+</ul>
+<p class="ca_txt">Les parties du texte sélectionnées pour l’annotation sont surlignées en jaune et visibles par tous les visiteurs du site, qui peuvent donc consulter les commentaires adjoints sans inscription préalable.</p>
+</div>
+    </div></div>
+<div id="fold-3" class="ca_fold_content">
+    <h3 class="ca_folder"
+    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Confidentialité</h3>
+    <div class="ca_fold_content_item">
+    <div class="ca_fold_xcols">
+<p class="ca_txt">La <strong>politique de confidentialité</strong> du service d’annotation Hypothesis est <a href="https://web.hypothes.is/privacy/">consultable</a> (en anglais) sur le site <a href="http://Hypothes.is">Hypothes.is</a>.
+Quant au site Chercheurd.art, il n’a <strong>aucun accès à l’adresse e-mail communiquée</strong> lors de l’enregistrement sur Hypothesis et ne peut donc l’utiliser à quelque moment que ce soit: <strong>Chercheurd.art ne dispose d’aucune donnée personnelle enregistrable</strong>. Vous pouvez ainsi intervenir en toute liberté d’esprit, avec toutes les règles de courtoisie qui s’imposent, quel que soit l’objet de vos propos.</p>
+<p class="ca_txt"><strong>Toutes les interventions sont “modérées” par le responsable de Chercheurd.art</strong>.</p>
+<p class="ca_txt">Sur Chercheurd.art, ce service d’annotation peut être utiisé aussi bien pour apporter des rectifications ou compléments d’information que des commentaires de tout type. Il permet notamment d’adjoindre aux commentaires des images ou des videos le plus simplement qui soit. N’hésitez donc pas à y avoir recours…</p>
+</div>
+    </div></div>
+</div></div>
+<div id="fold-201" class="ca_fold_content">
+    <h3 class="ca_folder"
+    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">NOTES | VERSIONS</h3>
+    <div class="ca_fold_content_item">
+    <div class="ca_fold_xcols">
+<h3 class="ca_version_title">Versions</h3>
+<ol class="ca_version_list">
+<li class="ca_version_entry"><strong>28 janvier 2019</strong>
+Version initiale.</li>
+</ol>
+</div>
+    </div></div>
+
+  
+  
+</div>
+
+</div>
+
+
+
+
+
+<input id="ca_select_area_gallery" class="ca_area_switcher" value="ca_select_area_gallery" name="area" type="radio">
+<div id="ca_area_gallery" class="ca_area_gallery ca_area">
+  <label for="ca_select_area_gallery" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+  
+
+<div id="ca_blockimg" class="ca_layout_blockimg">
+  
+  
+
+<div class="ca_fold_content">
+  
+  <div class="ca_fold_content_item ca_is_open">
+    <div class="ca_fold_1col">
+      <div class="__ca_container__">
+
+  <ul class="ca_list_imgs">
+  
+</ul>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+  </div>
+  <div class="ca_scroll_nav">
+  <svg class="ca_scroll_wheel" viewBox="0 0 18 14">
+      <defs>
+          <linearGradient id="up_gradient">
+              <stop id="ca_grad_up_empty" offset="100%" stop-color="var(--SCROLL_STOP_EMPTY)"/>
+              <stop id="ca_grad_up_fill"  offset="100%" stop-color="var(--SCROLL_STOP_FILL)"/>
+          </linearGradient>
+          <linearGradient id="down_gradient">
+              <stop id="ca_grad_down_empty" offset="0%" stop-color="var(--SCROLL_STOP_EMPTY)"/>
+              <stop id="ca_grad_down_fill"  offset="0%" stop-color="var(--SCROLL_STOP_FILL)"/>
+          </linearGradient>
+      </defs>
+    <circle class="nav_wheel" cx="9" cy="5" r="4.8"/>
+    <path class="ca_scroll_arrow_down" onclick="scroll_page( -0.25 )" d="M  0,5 L 8.7,2 8.7,8 Z" />
+    <path class="ca_scroll_arrow_up"   onclick="scroll_page( +0.25 )" d="M 18,5 L 9.3,2 9.3,8 Z" />
+  </svg>
+</div>
+
+</div>
+<script src="http://www.chercheurd.art/static/scripts/main.js"></script>
+
+<script type="application/json" class="js-hypothesis-config">
+  {
+    "openSidebar": false,
+    "theme": "clean"
+  }
+</script>
+<script async src="https://hypothes.is/embed.js"></script>
+
+
+
+
+</body>
+</html>
