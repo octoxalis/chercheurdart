@@ -111,9 +111,13 @@ class DragElement
     this.atX = 0
     this.atY = 0
     this.drag_e = drag_e
-    //this.keep_b = keep_b || false
+    this.keep_b = keep_b || false
+    this.start()
+  }
 
-    drag_e.onmousedown = ( mouse_e ) =>
+  start ()
+  {
+    this.drag_e.onmousedown = ( mouse_e ) =>
     {
       this.loose = false
       this.gapX = mouse_e.clientX - this.offsetX
@@ -143,7 +147,7 @@ class DragElement
     }
     if ( mouse_e.type === 'mouseup' )
     {
-      if ( true ) //if ( !this.keep_b )
+      if ( !this.keep_b )
       {
         this.drag_e.removeEventListener('mousemove', this, true)
         this.drag_e.removeEventListener('mouseup',   this, true)

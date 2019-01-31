@@ -1,9 +1,7 @@
 :root
 {
-  --CONTAINER_BG_COLOR: hsl(34,  16%, 72%);
-  --SLIDER_COLOR:       hsl(248,  0%, 100%);
-  --CURSOR_COLOR:       hsl(248, 50%, 70%);
-
+  --MEDIA_1_FADEIN_COUNT:infinite;
+  --MEDIA_1_CURSOR: var(--CURSOR_PLAY);
 }
 
 .ca_media_1_control
@@ -30,10 +28,25 @@
 {
   position: relative;
   background-color: transparent;
-  cursor: var(--CURSOR_PLAY);
+  cursor: var(--MEDIA_1_CURSOR);
 }
 #ca_media_1_img
 {
   position: relative;
   opacity: 0;  /* initial */
+  animation: ca_media_1_fadein 10s ease-in var(--MEDIA_1_FADEIN_COUNT) alternate;
 }
+@keyframes ca_media_1_fadein
+{
+  0%   { opacity: 0.2;  transform: scale(0.25); }
+  10%  { opacity: 0.25; transform: scale(0.25); }
+  90%  { opacity: 0.99; transform: scale(1); }
+  100% { opacity: 1;    transform: scale(1); }
+}
+
+/*
+#ca_media_1_img:hover
+{
+  opacity: 0.2;
+}
+*/

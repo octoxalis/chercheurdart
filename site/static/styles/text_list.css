@@ -35,7 +35,7 @@
   right:   0;
   bottom:  0;
   margin: 0;
-  padding: 60% 4vmin 1vmin 4vmin;
+  padding: 50% 4vmin 1vmin 4vmin;
   color:           var(--COLOR_THIRD_LIGHT);
   font-size:       calc(var(--FONT_SIZE_MEDIUM) * 1.2 );
   font-weight:     var(--FONT_WEIGHT_HEAVY);

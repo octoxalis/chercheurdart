@@ -1,19 +1,28 @@
 :root
 {
-
+  --SLIDER_COLOR:       hsl(248,  0%, 100%);
+  --CURSOR_COLOR:       hsl(248, 50%, 70%);
 }
+
 .ca_color_selector
 {
   position: relative;
-  top:  2vh;
+  z-index: 1;
+  top:  calc( 50vh - (var( --MEDIA_2_CONTROL_DIM ) / 2 ) + var(--AREA_SELECTOR_SIDE_WIDTH) );
   left: 0;
   width: 100%;
   display:flex;
   justify-content: center;
   align-items: flex-start;
   background-color: var(--COLOR_MAXLIGHT_TRANSPARENT);
+  opacity: 0;
+  transition: opacity 2s ease;
 }
-
+.ca_color_selector:hover
+{
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
 /*
 .ca_media_3_selector_slide
 {
@@ -24,3 +33,12 @@
 {
 }
 */
+#ca_media_3_processor
+{
+  position: absolute;
+  top: 0;
+}
+#ca_media_3_processor_canvas
+{
+  margin: 0 auto;
+}

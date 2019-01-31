@@ -140,7 +140,7 @@ class ColorScan
   scan ()
   {
                               //////////////////////
-                              //console.time('scan');
+                              console.time('scan');
                               //////////////////////
     
     if ( !this._use )
@@ -157,7 +157,7 @@ class ColorScan
         this._lum_a[getRGBLuminosity( atr, atg, atb )].push(at)          // idem
       }
                               //////////////////////
-                              //console.timeEnd('scan');
+                              console.timeEnd('scan');
                               //////////////////////
       return this
     }
@@ -663,9 +663,11 @@ class AnimationFrames
 const M1_img_e = document.getElementById( 'ca_media_1_img' )
 M1_img_e.onload = () =>
 {
-  const M1_anim_f = () =>
+  const M1_anim_f = ( key_e ) =>
   {
     if ( !M1_frames_a ) return    //// TEMPORARY: all works should have a M1_frames_a
+    DOM_setRootVar( '--MEDIA_1_CURSOR', 'var(--CURSOR_PLAY)' )
+    DOM_setRootVar( '--MEDIA_1_FADEIN_COUNT', 1 )
     const M1_processor_e = document.getElementById( 'ca_media_1_processor_anim' )
     let width, height
     ( { width, height } = DOM_getImgDim( 'ca_media_1_img' ) )
@@ -691,7 +693,7 @@ M1_img_e.onload = () =>
     let clipV = Math.floor( ( imgH * 0.25 ) - borderV )
     M1_processor_e.style.setProperty( 'clip-path', `inset(${clipV}px ${clipH}px)` )  ;LOG(`clipV: ${clipV} -- clipH: ${clipH}`)
     M1_frames = new AnimationFrames( imgW, imgH, M1_frames_a )
-    M1_img_e.animate( M1_frames.getFrames(), M1_anim_o )       ///;LOG`M1_anim_a: ${M1_frames.getFrames()}`
+    M1_img_e.animate( M1_frames.getFrames(), M1_anim_o )      ///;LOG`M1_anim_a: ${M1_frames.getFrames()}`
     M1_imgAnim = M1_img_e.getAnimations()[0]                  //// ;LOG`M1_imgAnim: ${M1_imgAnim}`
     M1_imgAnim.finished.then(
       ( ) =>
@@ -699,11 +701,13 @@ M1_img_e.onload = () =>
         M1_img_e.style.setProperty( 'opacity', '1' )
         M1_img_e.style.setProperty( 'transform', `scale( 1 )` )
         M1_processor_e.style.setProperty( 'clip-path', `inset(0px 0px)` )
-        new DragElement ( M1_processor_e )
+        M1_imgDrag.start()
+        DOM_setRootVar( '--MEDIA_1_CURSOR', 'move' )
       }
     )
   }
-  M1_img_e.addEventListener( 'click', M1_anim_f, false)
+  const M1_imgDrag = new DragElement( M1_img_e )
+  M1_img_e.addEventListener( 'dblclick', M1_anim_f, false)
 }
 
 //========================================================= media_2.js
@@ -845,7 +849,7 @@ M3_image_e.onload = () =>
       .setDisplay( 'inline' )
       .scan()    // TODO: debug worker scan
 
-    const M1_selectorSettings_o =
+    const M3_selectorSettings_o =
     {
       selectorId:  'ca_media_3_selector_console',
       slidersId:   'ca_media_3_selector_sliders',
@@ -865,7 +869,7 @@ M3_image_e.onload = () =>
       
     }
     //const M1_selector =
-    new ColorConsole( M1_selectorSettings_o )
+    new ColorConsole( M3_selectorSettings_o )
 
     //const canvas_e = document.getElementById( 'ca_media_3_processor_canvas' )
     //new DragElement( canvas_e )

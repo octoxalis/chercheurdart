@@ -8,16 +8,17 @@
 .ca_media_2_control
 {
   position: relative;
-  margin: 1rem 0 0 1rem;
+  z-index: 1;
+  top:  calc( 50vh - (var( --MEDIA_2_CONTROL_DIM ) / 2 ) + var(--AREA_SELECTOR_SIDE_WIDTH) );
+  left: calc( 50vw - (var( --MEDIA_2_CONTROL_DIM ) / 2 ) );
   width:  var( --MEDIA_2_CONTROL_DIM );
-  height: var( --MEDIA_2_CONTROL_DIM );
   border: 0.5rem solid hsla( 34, 10%, 45%, 1);
-  opacity: 0.1;
-  transition: opacity 2s ease;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 .ca_media_2_control:hover
 {
-  background-color: transparent;
+  background-color: var(--COLOR_DEEP_DARK);
   opacity: 1;
   transition: opacity 0.3s ease;
 }
@@ -36,7 +37,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: hsla( 34, 10%, 95%, 0.5);
+  color: hsla( 34, 10%, 95%, 0.6);
   border: var(--MEDIA_2_PAD_GAP) solid hsla( 34, 10%, 30%, 0.2);
 }
 .ca_media_2_control_key:hover
@@ -60,8 +61,7 @@
 
 #ca_media_2_process
 {
-  position: relative;
-  margin: 2rem;
+  /*position: relative;*/
   transition: all .7s ease;
 }
 #ca_media_2_process:hover
@@ -73,7 +73,7 @@
 {
   cursor: zoom-out;
   transform-origin: center;
-  transform: scale( 1.6 );
+  transform: scale( 1.5 );
   transition: all .7s ease;
 }
 
