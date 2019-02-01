@@ -98,10 +98,21 @@
                      var(--COLOR_SECOND_DARK)         43%,
                      var(--COLOR_SECOND_MEDIUM_DARK)   100%);
 
+/* CUSTOM_GRADIENTS */
+   --TITLE_GRADIENT:
+   linear-gradient( var(--GRADIENT_LR),
+                    var(--COLOR_DARK) 0%,
+                    var(--COLOR_LIGHT_TRANSPARENT)     90%,
+                    var(--COLOR_MAXLIGHT_TRANSPARENT)  100%);
 
+   --SUBTITLE_GRADIENT:
+   linear-gradient( var(--GRADIENT_LR),
+                    var(--COLOR_LIGHT) 0%,
+                    var(--COLOR_LIGHT_TRANSPARENT)     80%,
+                    var(--COLOR_MAXLIGHT_TRANSPARENT)  100%);
+
+   --LIST_ITEMS_IMG_GRADIENT:
+   linear-gradient( var(--GRADIENT_LR),
+                    var(--COLOR_SECOND_NEUTRAL_DEEP_DARK_SEMI_OPAQUE),
+                    var(--COLOR_SECOND_NEUTRAL_MEDIUM_SEMI_OPAQUE));
 }
-
-/* HOME_GRADIENT
-  hsla(220, 92%, 30%, 0.8)
-  hsla(240, 52%, 60%, 0.9)
-*/
