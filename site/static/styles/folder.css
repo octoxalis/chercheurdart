@@ -19,7 +19,7 @@
   padding: 2rem var(--TEXT_LEFT_PADDING) 0.5rem 1rem;
   height: auto;
   background-image: var(--GRADIENT_TEXT_LIGHT);
-  border-style: solid none solid none;
+  border-style: solid none;
   border-image-source: var(--TITLE_GRADIENT);
   border-image-slice: 1;
   border-image-width: 0.5px 0 5px 0;
