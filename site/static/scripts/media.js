@@ -937,3 +937,12 @@ M4_hue_e.onload = () =>
   let M4_Control = new ColorBurst( M4_ControlSettings_o )
   M4_Control.draw()
 }
+
+/*
+const media_4svg2img = ( key_e ) =>
+{
+  if ( key_e.key === ' ' ) return
+  //document.getElementById( 'ca_media_4_processor_canvas' )
+}
+window.addEventListener( 'keydown', media_resizeCanvas )
+*/
