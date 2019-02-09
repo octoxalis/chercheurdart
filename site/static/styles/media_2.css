@@ -9,7 +9,7 @@
 {
   position: relative;
   z-index: 1;
-  top:  calc( 50vh - (var( --MEDIA_2_CONTROL_DIM ) / 2 ) + var(--AREA_SELECTOR_SIDE_WIDTH) );
+  top:  calc( 50vh - (var( --MEDIA_2_CONTROL_DIM ) / 2 ) );
   left: calc( 50vw - (var( --MEDIA_2_CONTROL_DIM ) / 2 ) );
   width:  var( --MEDIA_2_CONTROL_DIM );
   border: 0.5rem solid hsla( 34, 10%, 45%, 1);
@@ -37,20 +37,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: hsla( 34, 10%, 95%, 0.6);
-  border: var(--MEDIA_2_PAD_GAP) solid hsla( 34, 10%, 30%, 0.2);
+  color: hsla( 34, 10%, 95%, 0.6 );
+  border: var(--MEDIA_2_PAD_GAP) solid hsla( 34, 10%, 30%, 0.2 );
 }
 .ca_media_2_control_key:hover
 {
-  border: var(--MEDIA_2_PAD_GAP) solid hsla( 34, 10%, 95%, 1);
-  color: hsla( 34, 10%, 95%, 1);
+  color: hsla( 34, 10%, 95%, 1 );
+  border: var(--MEDIA_2_PAD_GAP) solid hsla( 34, 10%, 95%, 1 );
   cursor: pointer;
   opacity: 1;
   transition: opacity 0.3s ease;
 }
 .ca_media_2_control_rotation_key
 {
-  background-color: hsla( 34, 10%, 30%, 1);
+  background-color: hsla( 34, 10%, 30%, 1 );
 }
 
 #ca_media_2_processor_wrap

@@ -5,9 +5,6 @@
   --Uw: 1vw;
   --Uh: 1vh;
   --Um: 1vmin;
-  --Ua: calc(1vmin + ((1vmax - 1vmin) / 2));  /* size average unit */
-  --Uf: 1rem;  /* font size unit */
-  --Ur: 0.85rem;
 
   /* DIMENSIONS */
   --VIEW_LIMIT: 0;
@@ -274,7 +271,7 @@
   --FONT_TITLE: 'Philosopher', sans-serif;
   --FONT_BODY:  'Antic', sans-serif;
     /* SIZES */
-  --FONT_SIZE_MEDIUM: calc(var(--Uf) * 1.2 );
+  --FONT_SIZE_MEDIUM: font-size: calc(1rem + ((1vw - 0.4rem) * 0.625));  /* Where: * 0.7143 = 100 * font_Size_Difference / viewport_Width_Difference */
   --FONT_SIZE_FACTOR: 1.5;
   --FONT_SIZE_XSMALL: calc(var(--FONT_SIZE_SMALL) / var(--FONT_SIZE_FACTOR));
   --FONT_SIZE_SMALL:  calc(var(--FONT_SIZE_MEDIUM) / var(--FONT_SIZE_FACTOR));

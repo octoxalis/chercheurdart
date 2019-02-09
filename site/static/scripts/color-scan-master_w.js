@@ -45,7 +45,7 @@ function setupSlaves()
       index:    at,
       offset:   slice * at,
       bytes:    at < (slaves_n - 1) ? slice : length - ( slice * (slaves_n - 1) ),  // last slave takes the remain
-      hues_n: Settings_o.hues_n,
+      hue_n: Settings_o.hue_n,
       data_sa:  Settings_o.data_sa
     }
     slave.postMessage( slice_o ) // toSlave( slave, slice_o )

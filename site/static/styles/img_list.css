@@ -6,7 +6,7 @@
   --ITEMS_COLS: repeat(auto-fit, minmax( var(--ITEMS_COLS_WIDTH), var(--ITEMS_COLS_FR) ) );
   
   margin: 0;
-  padding: 4vmin;
+  padding: 1vmin;
   display: grid;
   grid-template-columns: var(--ITEMS_COLS);
   grid-gap: var(--ITEMS_ROW_GAP);
@@ -42,12 +42,12 @@
   padding: 0;
   cursor: zoom-in;
   transform-origin: center;
-  transform:  scale(0.7);
+  transform:  scale(0.82);    /* reduce for framing */
   transition: transform 0.3s ease-in;
 }
 .ca_list_imgs_issmall:hover
 {
-  transform:  scale(0.708);
+  transform:  scale(0.828);
   transition: transform 0.3s ease-in;
 }
 
@@ -106,7 +106,7 @@
 .ca_list_imgs_legend_collector
 {
   margin: 0 auto;
-  padding: calc( var(--Uf) * 0.4 ) 0;
+  padding: calc( 1rem * 0.4 ) 0;
   overflow: hidden;
   text-align: center;
 }

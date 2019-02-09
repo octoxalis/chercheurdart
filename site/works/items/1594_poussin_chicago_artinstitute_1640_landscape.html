@@ -208,6 +208,7 @@ Bibliographie
 
 
 
+
 <input id="ca_select_area_text" class="ca_area_switcher" value="ca_select_area_text" name="area" type="radio">
 <div id="ca_area_text" class="ca_area_text ca_area ca_area_active">
   <label for="ca_select_area_text" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
@@ -296,9 +297,11 @@ Version initiale</li>
   
   
   
-    <div id="1594_poussin_chicago_artinstitute_1640_landscape" class="ca_list_imgs_issmall" onclick="this.classList.toggle('ca_list_imgs_islarge')">
+    
+    
+<div id="1594_poussin_chicago_artinstitute_1640_landscape" class="ca_list_imgs_issmall" onclick="this.classList.toggle('ca_list_imgs_islarge')">
   <div class="ca_painting" style="--FRAMING_WIDTH:28;--FRAMING_SCALE_X:1.03;--FRAMING_SCALE_Y:1.03;">
-    <img class="ca_list_imgs_img ca_frame" src="http://www.chercheurd.art/static/media/images/1594_poussin_chicago_artinstitute_1640_landscape.jpg" 
+    <img id="ca_gallery_img" class="ca_list_imgs_img ca_frame" src="http://www.chercheurd.art/static/media/images/1594_poussin_chicago_artinstitute_1640_landscape.jpg" 
          style="--FRAMING_WIDTH:28;--FRAMING_SCALE_X:1.03;--FRAMING_SCALE_Y:1.03;" data-src-width="3000" data-src-height="2220"/>
   </div>
   <ul class="ca_list_imgs_legend">
@@ -345,7 +348,7 @@ Version initiale</li>
 
 <div id="ca_media_1_processor_wrap">
   <div id="ca_media_1_processor_anim">
-    <img  id="ca_media_1_img" src="http://www.chercheurd.art/static/media/images/1594_poussin_chicago_artinstitute_1640_landscape.jpg" class="ca_media_1_processor_img"
+    <img  id="ca_media_1_img" src="http://www.chercheurd.art/static/media/images/1594_poussin_chicago_artinstitute_1640_landscape-@400.jpg" class="ca_media_processor_img"
         data-src-width="3000" data-src-height="2220">
   </div>
 </div>
@@ -367,17 +370,17 @@ Version initiale</li>
   
 <div id="ca_media_2_control" class="ca_media_2_control">
   <div id="ca_media_2_control_pad" class="ca_media_2_control_pad">
-    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_process('ROTATE_CW')">↷</div>
-    <div class="ca_media_2_control_key" onclick="M2_process('lines_v')">⤋</div>
-    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_process('ROTATE_CW_R')">↶</div>
+    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_processInput('ROTATE_CW')">↷</div>
+    <div class="ca_media_2_control_key" onclick="M2_processInput('lines_v')">⤋</div>
+    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_processInput('ROTATE_CW_R')">↶</div>
 
-    <div class="ca_media_2_control_key" onclick="M2_process('lines_lr')">↘</div>
-    <div class="ca_media_2_control_key" onclick="M2_process('UNDO')">&#8709;</div>
-    <div class="ca_media_2_control_key" onclick="M2_process('lines_rl')">↙</div>
+    <div class="ca_media_2_control_key" onclick="M2_processInput('lines_lr')">↘</div>
+    <div class="ca_media_2_control_key" onclick="M2_processInput('UNDO')">&#8709;</div>
+    <div class="ca_media_2_control_key" onclick="M2_processInput('lines_rl')">↙</div>
 
-    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_process('FLIP_CW')">↻</div>
-    <div class="ca_media_2_control_key" onclick="M2_process('lines_hz')">⇛</div>
-    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_process('FLIP_CW_R')">↺</div>
+    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_processInput('FLIP_CW')">↻</div>
+    <div class="ca_media_2_control_key" onclick="M2_processInput('lines_hz')">⇛</div>
+    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_processInput('FLIP_CW_R')">↺</div>
   </div>
 </div>
 
@@ -387,7 +390,7 @@ Version initiale</li>
 
 <div id="ca_media_2_processor_wrap">
   <div id="ca_media_2_process" onclick="this.classList.toggle('ca_media_2_process_atmax')">
-    <img  id="ca_media_2_img" src="http://www.chercheurd.art/static/media/images/1594_poussin_chicago_artinstitute_1640_landscape.jpg" class="ca_media_2_processor_img"
+    <img  id="ca_media_2_img" src="http://www.chercheurd.art/static/media/images/1594_poussin_chicago_artinstitute_1640_landscape-@400.jpg" class="ca_media_processor_img"
           data-src-width="3000" data-src-height="2220">
     <svg id="ca_media_2_processor_lines" viewBox="0 0 0 0"></svg>
   </div>
@@ -410,7 +413,23 @@ Version initiale</li>
 <div id="ca_media_3_control" class="ca_media_control">
   
 
-<div id="ca_media_3_selector_console" class="ca_color_selector"></div>
+<div id="ca_media_3_color_selector" class="ca_color_selector">
+  <div id="ca_media_3_selector_pad"    class="ca_color_selector_pad">
+    <label for="ca_media_3_hue_input"  id="ca_media_3_hue_label"  class="ca_color_pad_label" value="1" onclick="M3_processInput( this.getAttribute( 'for'), this )">Ton</label>
+    <label for="ca_media_3_tone_input" id="ca_media_3_tone_label" class="ca_color_pad_label" value="0" onclick="M3_processInput( this.getAttribute( 'for'), this )">Mono</label>
+    <label for="ca_media_3_gray_input" id="ca_media_3_gray_label" class="ca_color_pad_label" value="0" onclick="M3_processInput( this.getAttribute( 'for'), this )">Gris</label>
+    <label for="ca_media_3_lum_input"  id="ca_media_3_lum_label"  class="ca_color_pad_label" value="0" onclick="M3_processInput( this.getAttribute( 'for'), this )">Lum</label>
+    <label for="ca_media_3_eq_input"   id="ca_media_3_eq_label"   class="ca_color_pad_label" value="0" onclick="M3_processInput( this.getAttribute( 'for'), this )">Égal</label>
+  </div>
+  <div id="ca_media_3_selector_console" class="ca_color_selector_console"></div>
+</div>
+<div id="ca_media_3_selector_pad_input" class="ca_color_selector_pad_input">
+  <input id="ca_media_3_hue_input"      class="ca_color_pad_input"  type="radio"    value="1" name="color_action">
+  <input id="ca_media_3_tone_input"     class="ca_color_pad_input"  type="radio"    value="0" name="color_action">
+  <input id="ca_media_3_gray_input"     class="ca_color_pad_input"  type="radio"    value="0" name="color_action">
+  <input id="ca_media_3_lum_input"      class="ca_color_pad_input"  type="radio"    value="0" name="color_action">
+  <input id="ca_media_3_eq_input"       class="ca_color_pad_input"  type="checkbox" value="0">
+</div>
 
 </div>
 <div id="ca_media_3_processor" class="ca_media_processor">
@@ -418,9 +437,16 @@ Version initiale</li>
 
 <canvas id="ca_media_3_processor_canvas" class="ca_media_processor_canvas  ca_media_canvas_atmin"
         onclick="this.classList.toggle('ca_media_canvas_atmin')">
-  <img id="ca_media_3_img" src="http://www.chercheurd.art/static/media/images/1594_poussin_chicago_artinstitute_1640_landscape.jpg" class="ca_media_processor_img"
+  <img id="ca_media_3_img" src="http://www.chercheurd.art/static/media/images/1594_poussin_chicago_artinstitute_1640_landscape-@400.jpg" class="ca_media_processor_img"
        data-src-width="3000" data-src-height="2220">
 </canvas>
+<svg class="ca_svg_chrome_filter">
+  <filter id="ca_media_3_filter" color-interpolation-filters="sRGB"
+          x="0" y="0" height="100%" width="100%">
+    <feColorMatrix id="ca_media_3_filter_matrix"
+       type="matrix"
+       values="1 0 0 0 0   0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
+</svg>
 
 </div>
 
