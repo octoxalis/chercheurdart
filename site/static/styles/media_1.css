@@ -1,6 +1,6 @@
 :root
 {
-  --MEDIA_1_FADEIN_COUNT:infinite;
+  --MEDIA_1_FADEIN_COUNT: 1;
   --MEDIA_1_CURSOR: var(--CURSOR_PLAY);
 }
 
