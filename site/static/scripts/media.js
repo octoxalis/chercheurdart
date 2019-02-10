@@ -55,7 +55,7 @@ const getRGBSaturation = ( r, g, b ) =>
  * @param   Number  b       The blue color value
  * @return  Array           The HSV representation
  */
-const getRGBLuminosity = ( r, g, b ) =>
+const getRGBLum = ( r, g, b ) =>
 {
   return Math.floor( ( getRGBMinMax( r, g, b )[1] / 2 ) * 100 )
 }
@@ -113,7 +113,7 @@ const getRGBMatrix = ( hue ) =>
   matrix_s = matrix_s
     .replace( 'R', red_s )
     .replace( 'G', green_s )
-    .replace( 'B', blue_s )        // ;LOG( `FILTER: ${matrix_s}` )
+    .replace( 'B', blue_s )
   return matrix_s
 }
 
@@ -135,23 +135,22 @@ class ColorScan
 {
   constructor ( scan_o )
   {
-      this._canvasId = scan_o.canvasId
-      this._imageId  = scan_o.imageId
-      this._hue_n   = scan_o.hue_n || 360
-      this._lum_n    = scan_o.lum_n || 0
-      this._type     = scan_o.type || 'JPEG'
-      this._useworker= scan_o.useworker || false
-      this._canvas = null
-      this._display = null
-      this._image = null
-      this._context = null
+      this._canvasId  = scan_o.canvasId
+      this._imageId   = scan_o.imageId
+      this._hue_n     = scan_o.hue_n // ~ || 360
+      this._lum_n     = scan_o.lum_n // ~ || 100
+      this._type      = scan_o.type || 'JPEG'
+      this._useworker = scan_o.useworker || false
+      this._canvas    = null
+      this._display   = null
+      this._image     = null
+      this._context   = null
       this._imageData = null
-      this._data = null
-      this._hue_a = new Array( this._hue_n )  // : colors dispatched by hue region
-      this._lum_a  = new Array( this._lum_n )   // : luminances dispatched in range 0...255
-
-      this._master_w = null  // : worker
-      this._slaves_n = 2     // : default
+      this._data      = null
+      this._hue_a     = new Array( this._hue_n )   // : colors dispatched by hue region
+      this._lum_a     = new Array( this._lum_n )   // : luminances dispatched in range 0...255
+      this._master_w  = null  // : worker
+      this._slaves_n  = 2     // : default
       this._rawscan_a = []
 
       this.init()
@@ -160,17 +159,18 @@ class ColorScan
   init ()
   {
     try {
-      this._canvas = document.getElementById( this._canvasId )
-      this._image = document.getElementById( this._imageId )
+      this._canvas        = document.getElementById( this._canvasId )
+      this._image         = document.getElementById( this._imageId )
       this._canvas.width  = this._image.width
       this._canvas.height = this._image.height
-      this._display = this._canvas.style.display
-      this._context = this._canvas.getContext( '2d' )
+      this._display       = this._canvas.style.display
+      this._context       = this._canvas.getContext( '2d' )
+
       this._context.drawImage(this._image, 0, 0)
       this._imageData = this._context.getImageData(0, 0, this._image.width, this._image.height)
       this._data = this._imageData.data
-      for ( let ath=0; ath < this._hue_n; ++ath ) this._hue_a[ath] = []   // : Prepare Array of Arrays
-      if ( this._lum_n > 0 ) for ( let atl=0; atl < M3_TONE_RANGE; ++atl ) this._lum_a[atl] = []   // : Prepare Array of Arrays
+      if ( this._hue_n > 0 ) for ( let ath=0; ath < this._hue_n; ++ath ) this._hue_a[ath] = []   // : Prepare Array of Arrays
+      if ( this._lum_n > 0 ) for ( let atl=0; atl < this._lum_n; ++atl ) this._lum_a[atl] = []   // : idem
     }
     catch (error) {
       console.log( `[class ColorScan]init method error: ${error}`)
@@ -195,13 +195,13 @@ class ColorScan
       {
       for ( var at = 0; at < this._hue_n; ++at ) this._hue_a[at] = []  // : Prepare
       const _length = this._data.length
-      if ( this._lum_n > 0 )  // : luminosity mode
-      {
-        for (var at = 0; at < _length; at += 4) this._lum_a[getRGBLuminosity( this._data[at], this._data[at+1], this._data[at+2] )].push(at)  // : imageData pointer
-      }
-      else  // : hue mode
+      if ( this._lum_n > 0 )
       {
         for (var at = 0; at < _length; at += 4) this._hue_a[getRGBHue( this._data[at], this._data[at+1], this._data[at+2], this._hue_n )].push(at)  // : imageData pointer
+      }
+      if ( this._lum_n > 0 )
+      {
+        for (var at = 0; at < _length; at += 4) this._lum_a[getRGBLum( this._data[at], this._data[at+1], this._data[at+2] )].push(at)  // : imageData pointer
       }
                               //////////////////////
                               console.timeEnd('scan');
@@ -281,7 +281,7 @@ class ColorScan
     {
       const pointer = this._hue_a[hue][at]
       satur_a[getRGBSaturation( this._data[pointer], this._data[pointer+1], this._data[pointer+2] )] += 1
-      lumen_a[getRGBLuminosity( this._data[pointer], this._data[pointer+1], this._data[pointer+2] )] += 1
+      lumen_a[getRGBLum( this._data[pointer], this._data[pointer+1], this._data[pointer+2] )] += 1
     }
     return [ satur_a, lumen_a ]
   }
@@ -329,10 +329,19 @@ class ColorScan
    * @param   Integer opacity: to be set
    * @return  class instance
    */
-  setOpacity ( arci, opacity )
+  setOpacity ( mode, arci, opacity )
   {
-    const length = this._hue_a[arci].length
-    for (var ati = 0; ati < length; ++ ati) this._data[this._hue_a[arci][ati]+3] = opacity
+    let length
+    if ( mode === 0 )    // : M3_HUE_MODE
+    {
+      length = this._hue_a[arci].length
+      for (var ati = 0; ati < length; ++ ati) this._data[this._hue_a[arci][ati]+3] = opacity
+    }
+    else    // : M3_LUM_MODE
+    {
+      length = this._lum_a[arci].length
+      for (var ati = 0; ati < length; ++ ati) this._data[this._lum_a[arci][ati]+3] = opacity
+    }
     return this
   }
 
@@ -361,38 +370,40 @@ class ColorScan
  * @ console_o: options
  */
 const SLIDER_TOP       = 0
-const SLIDER_EQ        = 32
-const SLIDER_EQ_COUNT  = 2  // EQ atmax + EQ at min
+const SLIDER_EQ_HEIGHT = 32
+const SLIDER_EQ_N      = 2  // EQ atmax + EQ at min
 
 class ColorConsole
 {
   constructor ( console_o )
   {
-      this._selectorId    = console_o.selectorId
-      this._eqInputId     = console_o.eqInputId
-      this._slidersId     = console_o.slidersId
-      this._slideId       = console_o.slideId
-      this._hue_n         = console_o.hue_n
-      this._lum_n         = console_o.lum_n || 0
-      this._hueWidth      = 360 / this._hue_n
-      this._slideWidth    = Math.floor(( window.innerWidth * 0.95 ) / console_o.hue_n )
-      this._selectorWidth = this._hue_n * this._slideWidth
-      this._gridColor     = console_o.gridColor || DOM_getRootVar( '--M3_CONSOLE_COLOR' )
-      this._onHueChange   = console_o.onHueChange
+      const arcMax = ( console_o.mode === 'hue' ) ? 360 : 100
+      
+      this._selectorId     = console_o.selectorId
+      this._eqInputId      = console_o.eqInputId
+      this._slidersId      = console_o.slidersId
+      this._slideId        = console_o.slideId
+      this._slider_n       = console_o.slider_n
+      this._mode           = console_o.mode
+      this._arcWidth       = arcMax / this._slider_n
+      this._slideWidth     = Math.floor(( window.innerWidth * 0.92 ) / this._slider_n )
+      this._consoleWidth   = this._slider_n * this._slideWidth
+      this._gridColor      = console_o.gridColor || DOM_getRootVar( '--M3_CONSOLE_COLOR' )
+      this._onSelectHandle = console_o.onSelectHandle
       this._loose          = false
-      this._lastHit       = 0  // default
-      this._paint         = null
-      this._sliders_a     = []
-      this._levels_a      = []
+      this._lastHit        = 0    // : default
+      this._paint          = null
+      this._sliders_a      = []
+      this._levels_a       = []
 
-      DOM_setRootVar( '--M3_CONSOLE_WIDTH', this._selectorWidth )
+      DOM_setRootVar( '--M3_CONSOLE_WIDTH', this._consoleWidth )
       this.init()
   }
 
   init ()
   {
     this._paint = SVG( this._selectorId )
-      .size( this._selectorWidth, M3_TONE_RANGE + (SLIDER_EQ * SLIDER_EQ_COUNT ) )
+      .size( this._consoleWidth, M3_SLIDE_RANGE + (SLIDER_EQ_HEIGHT * SLIDER_EQ_N ) )
       .attr('id', this._slidersId )
       .addClass( this._slidersId )
       .group()
@@ -403,7 +414,7 @@ class ColorConsole
     { 
       arc:   0,
       eq:   true,
-      level: 0    //// default: set minimum opacity (i.e. full color)
+      level: 0    // : set minimum opacity (i.e. full color)
     }
     this.setSlider ( update_o )
     this._svg_el = document.getElementById( this._slidersId )
@@ -420,28 +431,28 @@ class ColorConsole
 
   drawColors ()
   {
-    const step = 100 / this._hue_n * 0.01   // step > 0 && step <= 1
-    const hue_n = this._hue_n
-    const hueWidth = this._hueWidth
+    const step = 100 / this._slider_n * 0.01   // step > 0 && step <= 1
+    const hue_n = this._slider_n
+    const arcWidth = this._arcWidth
     let fill
-    if ( this._lum_n > 0 )// : luminosity mode
+    if ( this._mode === 'hue' )
     {
       fill = this._paint.gradient( 'linear',
       function(stop)
       {
-        for (var at=0; at <= hue_n; ++at) stop.at(step * at, `hsla(0, ${hueWidth * at}%, ${hueWidth * at}%, 1.0)`)
+        for (var at=0; at <= hue_n; ++at) stop.at(step * at, `hsla(${arcWidth * at}, 100%, 50%, 1.0)`)
       })
     }
-    else  // : hue mode
+    else  // : luminosity mode
     {
       fill = this._paint.gradient( 'linear',
       function(stop)
       {
-        for (var at=0; at <= hue_n; ++at) stop.at(step * at, `hsla(${hueWidth * at}, 100%, 50%, 1.0)`)
+        for (var at=0; at <= hue_n; ++at) stop.at(step * at, `hsla(0, 0%, ${arcWidth * at}%, 1.0)`)
       })
     }
     this._paint
-      .rect( this._selectorWidth, M3_TONE_RANGE + (SLIDER_EQ * SLIDER_EQ_COUNT ) )  // ALL transparent + ALL opaque + ALL monotone
+      .rect( this._consoleWidth, M3_SLIDE_RANGE + (SLIDER_EQ_HEIGHT * SLIDER_EQ_N ) )
       .fill( fill )
       return this
   }
@@ -456,17 +467,17 @@ drawSliders ( )
   const sColor  = DOM_getRootVar( '--M3_CONSOLE_COLOR' )
   const cColor  = DOM_getRootVar( '--M3_CONSOLE_COLOR' )
   let at, atHue, atX
-  for ( at = atHue = atX = 0; at < this._hue_n; ++at)
+  for ( at = atHue = atX = 0; at < this._slider_n; ++at)
   {
     this._sliders_a[at] = { slider: null, cursor: null }
     this._sliders_a[at].slider = this._paint
-        .rect( this._slideWidth, M3_TONE_RANGE )
+        .rect( this._slideWidth, M3_SLIDE_RANGE )
         .fill( { color: sColor, opacity: 1 } )
         .move( atX, SLIDER_TOP )
     this._sliders_a[at].cursor = this._paint
         .line( at * this._slideWidth, SLIDER_TOP, (at * this._slideWidth) + this._slideWidth - 2, SLIDER_TOP )
         .stroke( { color: cColor, width: 4 } )
-    atHue += this._hueWidth
+    atHue += this._arcWidth
     atX += this._slideWidth
   }
   return this
@@ -476,8 +487,8 @@ drawGaps ()  //// HORIZONTALS
 {
   const color = this._gridColor
   const stroke_o = { color: color, width: 4 }
- let length = this._selectorWidth
- for ( let at=0, atY = M3_TONE_RANGE - 1; at < SLIDER_EQ_COUNT; ++at, atY+=SLIDER_EQ )
+ let length = this._consoleWidth
+ for ( let at=0, atY = M3_SLIDE_RANGE - 1; at < SLIDER_EQ_N; ++at, atY+=SLIDER_EQ_HEIGHT )
   {
     this._paint
     .line( 0, atY, length, atY )
@@ -510,30 +521,31 @@ drawGaps ()  //// HORIZONTALS
     {
       let bounds = this._svg_el.getBoundingClientRect()
       const atX =  mouse_e.clientX - bounds.left
-      const atY =  mouse_e.clientY - bounds.top    // ;LOG(`atY: ${atY}`)
+      const atY =  mouse_e.clientY - bounds.top
       this._lastHit =  Math.floor( atX / this._slideWidth )
       const update_o =
         { 
-          arc:   this._lastHit,
-          eq:    document.getElementById( this._eqInputId ).value === '1',
-          level: 0    //// default: set minimum opacity (no color, i.e. white)
+          arc:      this._lastHit,
+          slider_n: this._slider_n,
+          eq:       document.getElementById( this._eqInputId ).value === '1',
+          level:    0    // : set minimum opacity (no color, i.e. white)
         }
-      if ( atY < M3_TONE_RANGE )  update_o.level = Math.floor( atY ) // slider level
+      if ( atY < M3_SLIDE_RANGE )  update_o.level = Math.floor( atY ) // : slider level
       else
       { 
-        if ( atY > (M3_TONE_RANGE + ( SLIDER_EQ * 2 ) ) )  update_o.level = -1    //  hue color monotone
-        else if ( atY > (M3_TONE_RANGE + SLIDER_EQ ) ) update_o.level = M3_TONE_RANGE   //// maximum opacity 
-          // else update_o.level = Math.floor( 0 ) => default   //// minimum opacity 
+        if ( atY > (M3_SLIDE_RANGE + ( SLIDER_EQ_HEIGHT * 2 ) ) )  update_o.level = -1    // : hue color monotone
+        else if ( atY > (M3_SLIDE_RANGE + SLIDER_EQ_HEIGHT ) ) update_o.level = M3_SLIDE_RANGE   // : maximum opacity 
+          // :else update_o.level = Math.floor( 0 ) => default   // : minimum opacity 
       }
       this.setSlider( update_o )
-      this._onHueChange( update_o )
+      this._onSelectHandle( update_o )
     }
   }
 
   setSlider ( update_o )
   {
     let at = 0
-    let stop = this._hue_n
+    let stop = this._slider_n
     if ( update_o.eq === false )
     {
       at = update_o.arc
@@ -542,12 +554,11 @@ drawGaps ()  //// HORIZONTALS
     for (; at < stop; ++at)
     {
       this._sliders_a[at].slider
-        .opacity( update_o.level / M3_TONE_RANGE )
+        .opacity( update_o.level / M3_SLIDE_RANGE )
       this._sliders_a[at].cursor
         .move( at * this._slideWidth, SLIDER_TOP + update_o.level )
       this._levels_a[at] = update_o.level
     }
-                                                    // ;LOG(`511-_levels_a: ${this._levels_a}`)
   }
 }
 //========================================================= color-burst.js
@@ -726,7 +737,7 @@ M1_process = () =>
     const M1_img_e = document.getElementById( 'ca_media_1_img' )
     const M1_anim_f = ( key_e ) =>
     {
-      if ( !M1_frames_a ) return    //// TEMPORARY: all works should have a M1_frames_a
+      if ( !M1_frames_a ) return    //~ TEMPORARY: all works should have a M1_frames_a
       DOM_setRootVar( '--MEDIA_1_CURSOR', 'var(--CURSOR_PLAY)' )
       DOM_setRootVar( '--MEDIA_1_FADEIN_COUNT', 1 )
       const M1_processor_e = document.getElementById( 'ca_media_1_processor_anim' )
@@ -914,23 +925,42 @@ M3_process = () =>
         if ( type === 'radio' )
         {
           if ( toggle_b === '0' ) return // already active
-          document.querySelector( '.ca_color_pad_input[value="1"]' ).value = '0'
+          document.querySelector( '.ca_color_pad_input_radio[value="1"]' ).value = '0'
           document.querySelector( '.ca_color_pad_label[value="1"]' ).setAttribute( 'value', '0')
         }
         input_e.value = toggle_b
         label_e.setAttribute( 'value', toggle_b )
 
-        if ( label_e.id === 'ca_media_3_eq_label' ) return
-        if ( label_e.id === 'ca_media_3_lum_label' ) return  // TEMPORARY
-        const values_s =
-            ( label_e.id === 'ca_media_3_hue_label' ) ?  DOM_getRootVar( '--M3_FE_MATRIX_RESET' )
-          : ( label_e.id === 'ca_media_3_tone_label' ) ? getRGBMatrix( M3_hueConsole._lastHit )
-          : getRGBMatrix( -1 )
-          document.getElementById( 'ca_media_3_filter_matrix' )
-            .setAttribute( 'values', values_s )
+        let values_s = DOM_getRootVar( '--M3_FE_MATRIX_RESET' )
+        switch ( label_e.id )
+        {
+          case 'ca_media_3_hue_label':
+          case 'ca_media_3_lum_label':
+          {
+            document.getElementById( 'ca_media_3_selector_hue_console' )
+              .classList.toggle('ca_color_selector_console_swap')
+            document.getElementById( 'ca_media_3_selector_lum_console' )
+              .classList.toggle('ca_color_selector_console_swap')
+            return;
+          }
+          case 'ca_media_3_tone_label':
+          {
+            if ( toggle_b === '1' ) values_s = getRGBMatrix( M3_hueConsole._lastHit )
+            break;
+          }
+          case 'ca_media_3_gray_label':
+          {
+            if ( toggle_b === '1' ) values_s = getRGBMatrix( -1 )
+            break;
+          }
+          default: return  // : 
+        }
+        document.getElementById( 'ca_media_3_filter_matrix' )
+          .setAttribute( 'values', values_s )
       }
   
-      const M3_HUE_N = 360  // ; DOM_getRootVar( '--COLOR_CONSOLE_HUE_N' )   ; LOG(`hue_n: ${hue_n}`)
+      const M3_HUE_N = 360  // ; DOM_getRootVar( '--COLOR_CONSOLE_HUE_N' )   ; LOG(`hue_n: ${M3_HUE_N}`)
+      const M3_LUM_N = 100  // ; DOM_getRootVar( '--COLOR_CONSOLE_LUM_N' )   ; LOG(`hue_n: ${M3_LUM_N}`)
       let width
       ( { width } = DOM_getImgDim( 'ca_media_3_img' ) )
       DOM_setRootVar( '--MEDIA_PROCESSOR_ATMIN', window.innerWidth / width )
@@ -938,40 +968,59 @@ M3_process = () =>
       {
         canvasId: 'ca_media_3_processor_canvas',
         imageId:  'ca_media_3_img',
-        hue_n:     M3_HUE_N
+        hue_n:     M3_HUE_N,
+        lum_n:     M3_LUM_N,
       }
       M3_processScan = new ColorScan( M3_scanSettings_o )
       M3_processScan
         .setDisplay( 'inline' )
         .scan()    // TODO: debug worker scan
-  
+
+      const M3_selectHandle = update_o =>    // : event handle
+      {
+        M3_processScan.setDisplay()
+        const M3_HUE_MODE = 0
+        const M3_LUM_MODE = 1
+        const mode = ( document.getElementById( 'ca_media_3_hue_input' ).value === '1' ) ?
+          M3_HUE_MODE : M3_LUM_MODE
+        if ( !update_o.eq )
+        {
+          if ( update_o.level >= 0 ) M3_processScan.setOpacity( mode, update_o.arc, (M3_SLIDE_RANGE - 1) - update_o.level )
+        }
+        else
+        {
+          if ( update_o.level >= 0 )
+          {
+            const length = update_o.slider_n
+            for ( let ath = 0; ath < length; ++ath) M3_processScan.setOpacity( mode, ath, (M3_SLIDE_RANGE - 1) - update_o.level )
+          }
+        }
+        M3_processScan.setDisplay('inline')
+      }
+      
       const M3_hueSettings_o =
       {
-        selectorId: 'ca_media_3_selector_console',
+        selectorId: 'ca_media_3_selector_hue_console',
         eqInputId:  'ca_media_3_eq_input',
         slidersId:  'ca_media_3_selector_sliders',
         slideId:    'ca_media_3_selector_slide',
-        hue_n:       M3_HUE_N,
-
-        onHueChange: update_o =>    // : event handle
-        {
-          M3_processScan.setDisplay()
-          if ( !update_o.eq )
-          {
-            if ( update_o.level >= 0 ) M3_processScan.setOpacity( update_o.arc, (M3_TONE_RANGE - 1) - update_o.level )
-          }
-          else
-          {
-            if ( update_o.level >= 0 )
-            {
-              const length = M3_processScan.getHue_n()
-              for ( let ath = 0; ath < length; ++ath) M3_processScan.setOpacity( ath, (M3_TONE_RANGE - 1) - update_o.level )
-            }
-          }
-          M3_processScan.setDisplay('inline')
-        }
+        onSelectHandle: M3_selectHandle,
+        mode:       'hue',
+        slider_n:   M3_HUE_N,
       }
       const M3_hueConsole = new ColorConsole( M3_hueSettings_o )
+      
+      const M3_lumSettings_o =
+      {
+        selectorId: 'ca_media_3_selector_lum_console',
+        eqInputId:  'ca_media_3_eq_input',
+        slidersId:  'ca_media_3_selector_sliders',
+        slideId:    'ca_media_3_selector_slide',
+        onSelectHandle: M3_selectHandle,
+        mode:       'lum',
+        slider_n:   M3_LUM_N,
+      }
+      const M3_lumConsole = new ColorConsole( M3_lumSettings_o )
     }
     catch ( error )
     {
@@ -988,7 +1037,7 @@ M4_process = () =>
     const M4_hue_e = document.getElementById( 'ca_media_4_huesvg' )
       // Hues
     let M4_hue_a = M3_processScan.getHue_a()
-    let hue_n     = M3_processScan.getHue_n()
+    let hue_n    = M3_processScan.getHue_n()
     let hue_a = []
     let hmaxFreq_n = 0
     let freq_n
@@ -1060,7 +1109,7 @@ const M_process = ( mediaImg_e ) =>
 let M2_processInput        // : media_2
 let M3_processInput        // : media_3
 let M3_processScan         // : media_3 + media_4
-const M3_TONE_RANGE = 256  // ; DOM_getRootVar( '--M3_TONE_RANGE' ) ;LOG(`_COLOR_RANGE: ${_COLOR_RANGE}`)
+const M3_SLIDE_RANGE = 256  // ; DOM_getRootVar( '--M3_SLIDE_RANGE' ) ;LOG(`_COLOR_RANGE: ${_COLOR_RANGE}`)
 
 const Mg_img_e = document.getElementById( 'ca_gallery_img' )
 if ( Mg_img_e.complete === false ) Mg_img_e.onload = () => { M_process( Mg_img_e ) }

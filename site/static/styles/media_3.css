@@ -1,8 +1,9 @@
 :root
 {
-  --M3_TONE_RANGE:    256;
-  --M3_CONSOLE_EQ:     32;
-  --M3_CONSOLE_WIDTH:   0;
+  --M3_SLIDE_RANGE:    256;
+  --M3_CONSOLE_EQ:    32;
+  --M3_CONSOLE_WIDTH: 0;
+  --M3_PAD_WIDTH:     8rem;
   --M3_CONSOLE_COLOR: hsl(var(--COLOR_THIRD_HUE), 50%, 75% );
   --M3_FE_MATRIX:
     0 0 R 0 0
@@ -24,7 +25,7 @@
   top: calc( 50vh - (var( --MEDIA_2_CONTROL_DIM ) / 2 ) );
   display:flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   opacity: 0;
   transition: opacity 2s ease;
@@ -38,8 +39,8 @@
 #ca_media_3_selector_pad
 {
   position: relative;
-  width: 8rem;
-  height: calc( (var(--M3_TONE_RANGE) + ((var(--M3_CONSOLE_EQ)) * 2)) * 1px);
+  width: var(--M3_PAD_WIDTH);
+  height: calc( (var(--M3_SLIDE_RANGE) + ((var(--M3_CONSOLE_EQ)) * 2)) * 1px);
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -79,6 +80,19 @@
 {
   color: hsla( 34, 10%, 95%, 0.8 );
   border: var(--MEDIA_2_PAD_GAP) solid hsla( 34, 10%, 95%, 0.7 );
+}
+
+.ca_color_selector_console
+{
+  position: absolute;
+  top: 0;
+  left: var(--M3_PAD_WIDTH);
+  transform: scaleX(1);
+}
+.ca_color_selector_console_swap
+{
+  transform-origin: left;
+  transform: scaleX(0);
 }
 
 #ca_media_3_selector_pad_input

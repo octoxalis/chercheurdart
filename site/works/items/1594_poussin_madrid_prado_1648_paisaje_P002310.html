@@ -402,19 +402,22 @@ Version initiale</li>
 <div id="ca_media_3_color_selector" class="ca_color_selector">
   <div id="ca_media_3_selector_pad"    class="ca_color_selector_pad">
     <label for="ca_media_3_hue_input"  id="ca_media_3_hue_label"  class="ca_color_pad_label" value="1" onclick="M3_processInput( this.getAttribute( 'for'), this )">Ton</label>
+    <label for="ca_media_3_lum_input"  id="ca_media_3_lum_label"  class="ca_color_pad_label" value="0" onclick="M3_processInput( this.getAttribute( 'for'), this )">Lum</label>
     <label for="ca_media_3_tone_input" id="ca_media_3_tone_label" class="ca_color_pad_label" value="0" onclick="M3_processInput( this.getAttribute( 'for'), this )">Mono</label>
     <label for="ca_media_3_gray_input" id="ca_media_3_gray_label" class="ca_color_pad_label" value="0" onclick="M3_processInput( this.getAttribute( 'for'), this )">Gris</label>
-    <label for="ca_media_3_lum_input"  id="ca_media_3_lum_label"  class="ca_color_pad_label" value="0" onclick="M3_processInput( this.getAttribute( 'for'), this )">Lum</label>
     <label for="ca_media_3_eq_input"   id="ca_media_3_eq_label"   class="ca_color_pad_label" value="0" onclick="M3_processInput( this.getAttribute( 'for'), this )">Égal</label>
   </div>
-  <div id="ca_media_3_selector_console" class="ca_color_selector_console"></div>
+  <div class="ca_media_3_selector_console">
+    <div id="ca_media_3_selector_lum_console" class="ca_color_selector_console ca_color_selector_console_swap"></div>
+    <div id="ca_media_3_selector_hue_console" class="ca_color_selector_console"></div>
+  </div>
 </div>
 <div id="ca_media_3_selector_pad_input" class="ca_color_selector_pad_input">
-  <input id="ca_media_3_hue_input"      class="ca_color_pad_input"  type="radio"    value="1" name="color_action">
-  <input id="ca_media_3_tone_input"     class="ca_color_pad_input"  type="radio"    value="0" name="color_action">
-  <input id="ca_media_3_gray_input"     class="ca_color_pad_input"  type="radio"    value="0" name="color_action">
-  <input id="ca_media_3_lum_input"      class="ca_color_pad_input"  type="radio"    value="0" name="color_action">
-  <input id="ca_media_3_eq_input"       class="ca_color_pad_input"  type="checkbox" value="0">
+  <input id="ca_media_3_hue_input"      class="ca_color_pad_input_radio"  type="radio"    value="1" name="color_input">
+  <input id="ca_media_3_lum_input"      class="ca_color_pad_input_radio"  type="radio"    value="0" name="color_input">
+  <input id="ca_media_3_tone_input"     class="ca_color_pad_input_check"  type="checkbox" value="0">
+  <input id="ca_media_3_gray_input"     class="ca_color_pad_input_check"  type="checkbox" value="0">
+  <input id="ca_media_3_eq_input"       class="ca_color_pad_input_check"  type="checkbox" value="0">
 </div>
 
 </div>

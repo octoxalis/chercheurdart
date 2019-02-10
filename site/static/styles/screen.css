@@ -69,7 +69,7 @@
 {
   :root
   {
-    --FONT_SIZE_MEDIUM: calc( 1rem + ((1vw - 0.4rem) * 0.625) );    /* Where: * 0.7143 = 100 * font_Size_Difference / viewport_Width_Difference */
+    --FONT_SIZE_MEDIUM: calc( 1rem + ((1vw - 0.4rem) * 0.5) );    /* Where: * 0.7143 = 100 * font_Size_Difference / viewport_Width_Difference */
   }
 }
 /* Prevent font scaling beyond this breakpoint */
@@ -77,6 +77,6 @@
 {
   :root
   {
-    --FONT_SIZE_MEDIUM: 1.5rem;
+    --FONT_SIZE_MEDIUM: 1.3rem;
   }
 }
