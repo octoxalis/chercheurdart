@@ -137,8 +137,8 @@ class ColorScan
   {
       this._canvasId  = scan_o.canvasId
       this._imageId   = scan_o.imageId
-      this._hue_n     = scan_o.hue_n // ~ || 360
-      this._lum_n     = scan_o.lum_n // ~ || 100
+      this._hue_n     = scan_o.hue_n
+      this._lum_n     = scan_o.lum_n
       this._type      = scan_o.type || 'JPEG'
       this._useworker = scan_o.useworker || false
       this._canvas    = null
@@ -158,7 +158,8 @@ class ColorScan
 
   init ()
   {
-    try {
+    try
+    {
       this._canvas        = document.getElementById( this._canvasId )
       this._image         = document.getElementById( this._imageId )
       this._canvas.width  = this._image.width
@@ -172,7 +173,8 @@ class ColorScan
       if ( this._hue_n > 0 ) for ( let ath=0; ath < this._hue_n; ++ath ) this._hue_a[ath] = []   // : Prepare Array of Arrays
       if ( this._lum_n > 0 ) for ( let atl=0; atl < this._lum_n; ++atl ) this._lum_a[atl] = []   // : idem
     }
-    catch (error) {
+    catch (error)
+    {
       console.log( `[class ColorScan]init method error: ${error}`)
     }
     return this
@@ -192,18 +194,26 @@ class ColorScan
                               //////////////////////
     
     if ( !this._useworker )
+    {
+      try
       {
-      for ( var at = 0; at < this._hue_n; ++at ) this._hue_a[at] = []  // : Prepare
-      const _length = this._data.length
-      if ( this._lum_n > 0 )
-      {
-        for (var at = 0; at < _length; at += 4) this._hue_a[getRGBHue( this._data[at], this._data[at+1], this._data[at+2], this._hue_n )].push(at)  // : imageData pointer
+        let at = 0
+        for ( at = 0; at < this._hue_n; ++at ) this._hue_a[at] = []  // : Prepare
+        const _length = this._data.length
+        if ( this._lum_n > 0 )
+        {
+          for ( at = 0; at < _length; at += 4) this._hue_a[getRGBHue( this._data[at], this._data[at+1], this._data[at+2], this._hue_n )].push(at)  // : imageData pointer
+        }
+        if ( this._lum_n > 0 )
+        {
+          for ( at = 0; at < _length; at += 4) this._lum_a[getRGBLum( this._data[at], this._data[at+1], this._data[at+2] )].push(at)  // : imageData pointer
+        }
       }
-      if ( this._lum_n > 0 )
+      catch (error)
       {
-        for (var at = 0; at < _length; at += 4) this._lum_a[getRGBLum( this._data[at], this._data[at+1], this._data[at+2] )].push(at)  // : imageData pointer
+        console.log( `[class ColorScan]init method error: ${error} -- at = ${at}`)
       }
-                              //////////////////////
+                                //////////////////////
                               console.timeEnd('scan');
                               //////////////////////
       return this
@@ -303,26 +313,7 @@ class ColorScan
     return this
   }
 
-/** ??????????
-   * Put image data of all pixels pointed in a hue value arc.
-   *
-   * @param   Integer arci: hue arc index
-   * @return  class instance
-   */
-  setImageData ( arci )
-  {
-    const length = this._hue_a[arci].length
-    for (var ati = 0; ati < length; ++ ati)
-    {
-      let dataPointer = this._hue_a[arci][ati]
-      let atX = dataPointer % this._canvas.width
-      let atY = dataPointer / this._canvas.width
-      this._context.putImageData(this._imageData, atX, atY, atX, atY, 1, 1)
-    }
-    return this
-  }
-
-/**
+  /**
    * Set opacity of all pixels pointed in a hue value arc.
    *
    * @param   Integer arci: hue arc index
@@ -345,18 +336,6 @@ class ColorScan
     return this
   }
 
-  /**
-   * 
-   * @param {*} canvasId 
-   */
-  clone ( canvasId )
-  {
-    let clone = document.getElementById( canvasId )
-    clone.width  = this._canvas.width
-    clone.height = this._canvas.height
-    clone.context = clone.getContext( '2d' )
-    return clone
-  }
 }
 
 //========================================================= color-console.js
@@ -462,51 +441,41 @@ class ColorConsole
  * First, the opaque sliders for maximum opacity value in only one pass
  * Then every slider, adding for each an entry in the sliders array to be able to modify its value
  */
-drawSliders ( )
-{
-  const sColor  = DOM_getRootVar( '--M3_CONSOLE_COLOR' )
-  const cColor  = DOM_getRootVar( '--M3_CONSOLE_COLOR' )
-  let at, atHue, atX
-  for ( at = atHue = atX = 0; at < this._slider_n; ++at)
+  drawSliders ( )
   {
-    this._sliders_a[at] = { slider: null, cursor: null }
-    this._sliders_a[at].slider = this._paint
-        .rect( this._slideWidth, M3_SLIDE_RANGE )
-        .fill( { color: sColor, opacity: 1 } )
-        .move( atX, SLIDER_TOP )
-    this._sliders_a[at].cursor = this._paint
-        .line( at * this._slideWidth, SLIDER_TOP, (at * this._slideWidth) + this._slideWidth - 2, SLIDER_TOP )
-        .stroke( { color: cColor, width: 4 } )
-    atHue += this._arcWidth
-    atX += this._slideWidth
+    const sColor  = DOM_getRootVar( '--M3_CONSOLE_COLOR' )
+    const cColor  = DOM_getRootVar( '--M3_CONSOLE_COLOR' )
+    let at, atHue, atX
+    for ( at = atHue = atX = 0; at < this._slider_n; ++at)
+    {
+      this._sliders_a[at] = { slider: null, cursor: null }
+      this._sliders_a[at].slider = this._paint
+          .rect( this._slideWidth, M3_SLIDE_RANGE )
+          .fill( { color: sColor, opacity: 1 } )
+          .move( atX, SLIDER_TOP )
+      this._sliders_a[at].cursor = this._paint
+          .line( at * this._slideWidth, SLIDER_TOP, (at * this._slideWidth) + this._slideWidth - 2, SLIDER_TOP )
+          .stroke( { color: cColor, width: 4 } )
+      atHue += this._arcWidth
+      atX += this._slideWidth
+    }
+    return this
   }
-  return this
-}
 
-drawGaps ()  //// HORIZONTALS
-{
-  const color = this._gridColor
-  const stroke_o = { color: color, width: 4 }
- let length = this._consoleWidth
- for ( let at=0, atY = M3_SLIDE_RANGE - 1; at < SLIDER_EQ_N; ++at, atY+=SLIDER_EQ_HEIGHT )
+  drawGaps ()  //// HORIZONTALS
+  {
+    const color = this._gridColor
+    const stroke_o = { color: color, width: 4 }
+   let length = this._consoleWidth
+   for ( let at=0, atY = M3_SLIDE_RANGE - 1; at < SLIDER_EQ_N; ++at, atY+=SLIDER_EQ_HEIGHT )
   {
     this._paint
     .line( 0, atY, length, atY )
     .stroke( stroke_o )
+    }
+    return this
   }
-  return this
-}
 
-  /**
- * Clicking left: arc set at maximum if above slider range
- *                 arc set at range value if within slider range
- *                 arc set at minimum if bellow slider range
- * Shiftkey :  all arcs set at maximum if above slider range
- *             all arcs set at range value if within slider range
- *             all arcs set at minimum if bellow slider range
- * 
- * @param {*} mouse_e
- */
   handleEvent ( mouse_e )
   {
     if ( this._loose ) return false
@@ -959,8 +928,8 @@ M3_process = () =>
           .setAttribute( 'values', values_s )
       }
   
-      const M3_HUE_N = 360  // ; DOM_getRootVar( '--COLOR_CONSOLE_HUE_N' )   ; LOG(`hue_n: ${M3_HUE_N}`)
-      const M3_LUM_N = 100  // ; DOM_getRootVar( '--COLOR_CONSOLE_LUM_N' )   ; LOG(`hue_n: ${M3_LUM_N}`)
+      const M3_HUE_N = 360    // : range [ 0..359 ]
+      const M3_LUM_N = 101    // : range [ 0..100 ]
       let width
       ( { width } = DOM_getImgDim( 'ca_media_3_img' ) )
       DOM_setRootVar( '--MEDIA_PROCESSOR_ATMIN', window.innerWidth / width )
