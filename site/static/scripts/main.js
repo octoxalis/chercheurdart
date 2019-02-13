@@ -1,10 +1,9 @@
-LOG ( `main.js` )
+// ;LOG ( `main.js` )
 //========================================================= Array.js
-// FAST array "functions" (some to inline)
-
-// a_push : myArray[myArray.length] = _value_
-
-// a_pop  : var last = myArray[myArray.length--]
+// : FAST array "functions" (some to inline)
+// : a_push : myArray[myArray.length] = _value_
+// : a_pop  : var last = myArray[myArray.length--]
+// ?? A_shift : original function is best
 
 const A_unshift = ( _a, item ) =>
 {
@@ -16,8 +15,6 @@ const A_unshift = ( _a, item ) =>
   }
   _a[0] = item
 }
-
-//shift : original function is best
 
 const A_splice = ( _a, index ) =>
 {
@@ -56,8 +53,7 @@ const A_fill = ( capacity_n, any_n ) =>
   return fill_a;
 }
 
-//========================================================= rootvar.js
-// LOG ( `rootvar.js` )
+//========================================================= styles.js
 
 const DOM_getRootVar = ( varName ) =>
 {
@@ -75,40 +71,19 @@ function DOM_resetNode ( nodeId )
   while ( node.firstChild ) node.removeChild( node.firstChild )
 }
 
-//========================================================= styles.js
-
 const DOM_getStyle = ( elementId, property ) =>
 {
   let style_e = document.getElementById( elementId )
   return ( style_e ) ? window.getComputedStyle( style_e ).getPropertyValue( property ) : ''
 }
 
-
-
-//========================================================= areas.js
-// LOG ( `areas.js` )
-
-const areaSelect = ( ID_s ) =>
+const DOM_getImgDim = ( ID ) =>
 {
-  const isPerpective = document.querySelector( `.ca_area_perspective` ) !== null
-  document.getElementById( 'ca_content' ).classList.toggle( 'ca_content_perspective' )
-  const areas = document.getElementsByClassName( 'ca_area' )
-  const selectors = document.getElementsByClassName( 'ca_area_selector' )
-  const length = selectors.length
-  for (let at= 0; at < length; ++at)
-  {
-    areas.item( at ).classList.toggle( `ca_area_perspective` )
-    selectors.item( at ).classList.toggle( 'ca_selector_perspective' )
-  }
-  if ( isPerpective )
-  {
-    document.querySelector( `.ca_area_active` ).classList.toggle( 'ca_area_active' )
-    document.getElementById( ID_s.replace( 'select_', '') ).classList.toggle( 'ca_area_active' )
-  }
+  const img_e = document.getElementById( ID )
+  return { width: img_e.getAttribute( 'data-src-width' ), height: img_e.getAttribute( 'data-src-height' ) }
 }
 
 //========================================================= drag.js
-// LOG ( `drag.js` )
 
 class DragElement
 {
@@ -168,61 +143,17 @@ class DragElement
   }
 }
 
-//========================================================= scrollbar.js
-// LOG ( `scrollbar.js` )
-
-const scroll_updateLevel = ( percent ) =>
-{
-                                        //console.log`percent: ${percent}`
-  document.getElementById( 'ca_grad_down_empty' )
-   .setAttribute('offset', `${percent}%` )
-  document.getElementById( 'ca_grad_down_fill' )
-  .setAttribute('offset', `${percent}%` )
-
-  percent = 100 - percent
-  document.getElementById( 'ca_grad_up_empty' )
-    .setAttribute('offset', `${percent}%` )
-  document.getElementById( 'ca_grad_up_fill' )
-   .setAttribute('offset', `${percent}%` )
-}
-
-const scroll_updatePosition = ( position ) =>
-{
-  //const height = (document.body.clientHeight - window.innerHeight) || 1 // avoid div by 0
-  const height = (document.body.scrollHeight - window.innerHeight) || 1 // avoid div by 0
-                                               //console.log`clientHeight: ${document.body.clientHeight}`
-                                               //console.log`scrollHeight: ${document.body.scrollHeight}`
-                                               //console.log`innerHeight: ${window.innerHeight}`
-                                               //console.log`height: ${height}`
-  //const percent = Math.floor( position / height * 100.0 )
-  //scroll_updateLevel( percent )
-  scroll_updateLevel( Math.floor( position / height * 100.0 ) )
-}
-
-const scroll_page = ( factor ) =>
-{
-  const scroll_o =
-  {
-    left: 0,
-    top:  window.innerHeight * factor,
-    behavior: 'smooth'
-  }
-  window.scrollBy( scroll_o );
-  scroll_updatePosition( window.pageYOffset )
-}
-
-// HTML page init: must be just before </body>
-window.addEventListener('scroll', (e) => { scroll_updatePosition( window.pageYOffset ) })
-
-//========================================================= image.js
-// LOG ( `image.js` )
-const DOM_getImgDim = ( ID ) =>
-{
-  const img_e = document.getElementById( ID )
-  return { width: img_e.getAttribute( 'data-src-width' ), height: img_e.getAttribute( 'data-src-height' ) }
-}
-
 //========================================================= rgb_hsl.js
+const RGB_minMax = ( r, g, b ) =>
+{
+  r /= 255
+  g /= 255
+  b /= 255
+  const min = Math.min( r, g, b )
+  const max = Math.max( r, g, b )
+  return [ max - min, min + max ]
+}
+
 /**
  * Extract the HSL hue of an RGB color value
  * r, g, and b are contained in the set [0, 255] (clampedArray)
@@ -234,7 +165,7 @@ const DOM_getImgDim = ( ID ) =>
  * @param   UInt16 hue_n hue colors number
  * @return  UInt8  s  HSL Saturation
  */
-const getRGBHue = ( r, g, b, hue_n ) =>
+const RGB_toH = ( r, g, b, hue_n ) =>
 {
   r /= 255
   g /= 255
@@ -259,9 +190,9 @@ return Math.floor( h / 6.0 * hue_n )
  * @param   UInt8  b  The blue color value
  * @return  UInt8  s  HSL Saturation
  */
-const getRGBSaturation = ( r, g, b ) =>
+const RGB_toS = ( r, g, b ) =>
 {
-  const [ maxLmin, minPmax] = getRGBMinMax( r, g, b )
+  const [ maxLmin, minPmax] = RGB_minMax( r, g, b )
   if ( maxLmin === 0 ) return 0 // achromatic
   let s = ( ( minPmax / 2 ) > 0.5 ) ?
     maxLmin / ( 2 - maxLmin ) :
@@ -279,22 +210,12 @@ const getRGBSaturation = ( r, g, b ) =>
  * @param   Number  b       The blue color value
  * @return  Array           The HSV representation
  */
-const getRGBLum = ( r, g, b ) =>
+const RGB_toL = ( r, g, b ) =>
 {
-  return Math.floor( ( getRGBMinMax( r, g, b )[1] / 2 ) * 100 )
+  return Math.floor( ( RGB_minMax( r, g, b )[1] / 2 ) * 100 )
 }
 
-const getRGBMinMax = ( r, g, b ) =>
-{
-  r /= 255
-  g /= 255
-  b /= 255
-  const min = Math.min( r, g, b )
-  const max = Math.max( r, g, b )
-  return [ max - min, min + max ]
-}
-
-const getRGB = ( h, s, l ) =>
+const HSL_toRGB = ( h, s, l ) =>
 {
   let r, g, b
 
@@ -321,7 +242,7 @@ const getRGB = ( h, s, l ) =>
   return [ Math.floor(r * 255), Math.floor(g * 255), Math.floor(b * 255) ]
 }
 
-const getRGBMatrix = ( hue ) =>
+const H_toMatrix = ( hue ) =>
 {
   const GRAY_DELTA = 0.5
   let red_s, green_s, blue_s
@@ -329,7 +250,7 @@ const getRGBMatrix = ( hue ) =>
   if ( hue < 0 ) red_s = green_s = blue_s = DOM_getRootVar( '--M3_FE_MATRIX_GRAY_VALUE' )
   else
   {
-    rgb_a   = getRGB( hue, 1, 0.5 )  // normalized HSL
+    rgb_a   = HSL_toRGB( hue, 1, 0.5 )  // normalized HSL
     red_s   = (rgb_a[0] / 255) + GRAY_DELTA
     green_s = (rgb_a[1] / 255) + GRAY_DELTA
     blue_s  = (rgb_a[2] / 255) + GRAY_DELTA
@@ -340,4 +261,98 @@ const getRGBMatrix = ( hue ) =>
     .replace( 'B', blue_s )
   return matrix_s
 }
+
+//========================================================= LogScale.js
+/**
+ * Logarithmic scale
+ * @param {*} scale_o : { minpos: _n, maxpos: _n, minval: _n, maxval: _n }
+ */
+class LogScale
+{
+  constructor ( scale_o )
+  {
+    // ?? this.maxpos = scale_o.maxpos || 100
+    this.minpos = scale_o.minpos || 0
+    this.minlval = Math.log( scale_o.minval || 1 )
+    this.maxlval = Math.log( scale_o.maxval || 100000 )
+    this.scale = ( this.maxlval - this.minlval ) / ( scale_o.maxpos - this.minpos )
+  }
+
+  getPosition ( value_n )
+  {
+    return this.minpos + (( Math.log( value_n ) - this.minlval ) / this.scale )
+  }
+
+  //  ?? NOT USED
+  //  ?? getValue ( position_n )
+  //  ?? {
+  //  ??   return Math.exp( (position - this.minpos) * this.scale + this.minlval )
+  //  ?? }
+  
+}
+
+//========================================================= areas.js
+
+const AreaInput = ( ID_s ) =>
+{
+  const isPerpective = document.querySelector( `.ca_area_perspective` ) !== null
+  document.getElementById( 'ca_content' ).classList.toggle( 'ca_content_perspective' )
+  const areas = document.getElementsByClassName( 'ca_area' )
+  const selectors = document.getElementsByClassName( 'ca_area_selector' )
+  const length = selectors.length
+  for (let at= 0; at < length; ++at)
+  {
+    areas.item( at ).classList.toggle( `ca_area_perspective` )
+    selectors.item( at ).classList.toggle( 'ca_selector_perspective' )
+  }
+  if ( isPerpective )
+  {
+    document.querySelector( `.ca_area_active` ).classList.toggle( 'ca_area_active' )
+    document.getElementById( ID_s.replace( 'select_', '') ).classList.toggle( 'ca_area_active' )
+  }
+}
+
+//========================================================= scrollbar.js
+
+const ScrollLevel = ( percent ) =>
+{
+                                        //console.log`percent: ${percent}`
+  document.getElementById( 'ca_grad_down_empty' )
+   .setAttribute('offset', `${percent}%` )
+  document.getElementById( 'ca_grad_down_fill' )
+  .setAttribute('offset', `${percent}%` )
+
+  percent = 100 - percent
+  document.getElementById( 'ca_grad_up_empty' )
+    .setAttribute('offset', `${percent}%` )
+  document.getElementById( 'ca_grad_up_fill' )
+   .setAttribute('offset', `${percent}%` )
+}
+
+const ScrollPosition = ( position ) =>
+{
+  //const height = (document.body.clientHeight - window.innerHeight) || 1 // avoid div by 0
+  const height = (document.body.scrollHeight - window.innerHeight) || 1 // avoid div by 0
+                                               //console.log`clientHeight: ${document.body.clientHeight}`
+                                               //console.log`scrollHeight: ${document.body.scrollHeight}`
+                                               //console.log`innerHeight: ${window.innerHeight}`
+                                               //console.log`height: ${height}`
+  //const percent = Math.floor( position / height * 100.0 )
+  //ScrollLevel( percent )
+  ScrollLevel( Math.floor( position / height * 100.0 ) )
+}
+
+const ScrollPage = ( factor ) =>
+{
+  const scroll_o =
+  {
+    left: 0,
+    top:  window.innerHeight * factor,
+    behavior: 'smooth'
+  }
+  window.scrollBy( scroll_o );
+  ScrollPosition( window.pageYOffset )
+}
+window.addEventListener('scroll', (e) => { ScrollPosition( window.pageYOffset ) })  // : HTML page init must be just before </body>
+
 

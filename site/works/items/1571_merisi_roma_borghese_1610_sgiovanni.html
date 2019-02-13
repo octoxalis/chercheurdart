@@ -26,13 +26,13 @@
   <div id="ca_content" class="ca_content">
   <input id="ca_select_area_menu" class="ca_area_switcher" value="ca_select_area_menu" name="area" type="radio">
 <div id="ca_area_menu" class="ca_area_menu ca_area ca_area_list">
-  <label for="ca_select_area_menu" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+  <label for="ca_select_area_menu" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )"></label>
   <div class="ca_fold_content">
     <h3 class="ca_folder ca_folder_inverse" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">chercheurd.art</h3>
     <div class="ca_fold_content_item ca_is_open">
       <div class="ca_fold_1col">
         <div class="__ca_container__">
-          <div class="ca_list_items_centered">
+          <div class="_x_ca_list_items_centered_x_">
             <ul class="ca_list_items">
             
               <li class="ca_list_items_img_issmall ca_perspective_opener">
@@ -211,7 +211,7 @@ Bibliographie
 
 <input id="ca_select_area_text" class="ca_area_switcher" value="ca_select_area_text" name="area" type="radio">
 <div id="ca_area_text" class="ca_area_text ca_area ca_area_active">
-  <label for="ca_select_area_text" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+  <label for="ca_select_area_text" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )"></label>
   
 
 <div id="ca_blocktxt" class="ca_layout_blocktxt">
@@ -276,7 +276,7 @@ Mort à Porto Ercole. </li>
 
 <input id="ca_select_area_gallery" class="ca_area_switcher" value="ca_select_area_gallery" name="area" type="radio">
 <div id="ca_area_gallery" class="ca_area_gallery ca_area">
-  <label for="ca_select_area_gallery" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+  <label for="ca_select_area_gallery" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )"></label>
   
 
 <div id="ca_blockimg" class="ca_layout_blockimg">
@@ -336,7 +336,7 @@ Mort à Porto Ercole. </li>
   
     <input id="ca_select_area_media_1" class="ca_area_switcher" value="ca_select_area_media_1" name="area" type="radio">
     <div id="ca_area_media_1" class="ca_area_media_1 ca_area">
-      <label for="ca_select_area_media_1" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+      <label for="ca_select_area_media_1" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )"></label>
       
 
 
@@ -358,7 +358,7 @@ Mort à Porto Ercole. </li>
   
     <input id="ca_select_area_media_2" class="ca_area_switcher" value="ca_select_area_media_2" name="area" type="radio">
     <div id="ca_area_media_2" class="ca_area_media_2 ca_area">
-      <label for="ca_select_area_media_2" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+      <label for="ca_select_area_media_2" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )"></label>
       
 
 
@@ -402,7 +402,7 @@ Mort à Porto Ercole. </li>
   
     <input id="ca_select_area_media_3" class="ca_area_switcher" value="ca_select_area_media_3" name="area" type="radio">
     <div id="ca_area_media_3" class="ca_area_media_3 ca_area">
-      <label for="ca_select_area_media_3" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+      <label for="ca_select_area_media_3" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )"></label>
       
 
 
@@ -460,7 +460,7 @@ Mort à Porto Ercole. </li>
   
     <input id="ca_select_area_media_4" class="ca_area_switcher" value="ca_select_area_media_4" name="area" type="radio">
     <div id="ca_area_media_4" class="ca_area_media_4 ca_area">
-      <label for="ca_select_area_media_4" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
+      <label for="ca_select_area_media_4" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )"></label>
       
 
 
@@ -527,8 +527,8 @@ Mort à Porto Ercole. </li>
           </linearGradient>
       </defs>
     <circle class="nav_wheel" cx="9" cy="5" r="4.8"/>
-    <path class="ca_scroll_arrow_down" onclick="scroll_page( -0.25 )" d="M  0,5 L 8.7,2 8.7,8 Z" />
-    <path class="ca_scroll_arrow_up"   onclick="scroll_page( +0.25 )" d="M 18,5 L 9.3,2 9.3,8 Z" />
+    <path class="ca_scroll_arrow_down" onclick="ScrollPage( -0.25 )" d="M  0,5 L 8.7,2 8.7,8 Z" />
+    <path class="ca_scroll_arrow_up"   onclick="ScrollPage( +0.25 )" d="M 18,5 L 9.3,2 9.3,8 Z" />
   </svg>
 </div>
 

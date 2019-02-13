@@ -83,11 +83,11 @@ class ColorScan
         const _length = this._data.length
         if ( this._lum_n > 0 )
         {
-          for ( at = 0; at < _length; at += 4) this._hue_a[getRGBHue( this._data[at], this._data[at+1], this._data[at+2], this._hue_n )].push(at)  // : imageData pointer
+          for ( at = 0; at < _length; at += 4) this._hue_a[RGB_toH( this._data[at], this._data[at+1], this._data[at+2], this._hue_n )].push(at)  // : imageData pointer
         }
         if ( this._lum_n > 0 )
         {
-          for ( at = 0; at < _length; at += 4) this._lum_a[getRGBLum( this._data[at], this._data[at+1], this._data[at+2] )].push(at)  // : imageData pointer
+          for ( at = 0; at < _length; at += 4) this._lum_a[RGB_toL( this._data[at], this._data[at+1], this._data[at+2] )].push(at)  // : imageData pointer
         }
       }
       catch (error)
@@ -174,7 +174,7 @@ class ColorScan
    * @param {*} atY 
    * @param {*} ratio: (canvas / screen img) width: > 1
    */
-  getRGBA_a ( atX, atY, ratio )
+  HSL_toRGBA_a ( atX, atY, ratio )
   {
     const atdata_p = ( Math.floor( atY * ratio ) * this._canvas.width * 4 ) + ( Math.floor( atX * ratio ) * 4 )
     return { r: this._data[atdata_p], g: this._data[atdata_p + 1], b: this._data[atdata_p + 2], a: this._data[atdata_p + 3] }
@@ -188,8 +188,8 @@ class ColorScan
     for ( let at = 0; at < length; ++at )
     {
       const pointer = this._hue_a[hue][at]
-      satur_a[getRGBSaturation( this._data[pointer], this._data[pointer+1], this._data[pointer+2] )] += 1
-      lumen_a[getRGBLum( this._data[pointer], this._data[pointer+1], this._data[pointer+2] )] += 1
+      satur_a[RGB_toS( this._data[pointer], this._data[pointer+1], this._data[pointer+2] )] += 1
+      lumen_a[RGB_toL( this._data[pointer], this._data[pointer+1], this._data[pointer+2] )] += 1
     }
     return [ satur_a, lumen_a ]
   }
@@ -523,35 +523,6 @@ class ColorBurst
 
 }
 
-//========================================================= LogScale.js
-/**
- * Logarithmic scale
- * @param {*} scale_o : { minpos: _n, maxpos: _n, minval: _n, maxval: _n }
- */
-  class LogScale
-{
-  constructor ( scale_o )
-  {
-    this.minpos = scale_o.minpos || 0
-    //this.maxpos = scale_o.maxpos || 100
-    this.minlval = Math.log( scale_o.minval || 1 )
-    this.maxlval = Math.log( scale_o.maxval || 100000 )
-    this.scale = ( this.maxlval - this.minlval ) / ( scale_o.maxpos - this.minpos )
-  }
-
-  getPosition ( value_n )
-  {
-    return this.minpos + (( Math.log( value_n ) - this.minlval ) / this.scale )
-  }
-
-  /* NOT USED
-  getValue ( position_n )
-  {
-    return Math.exp( (position - this.minpos) * this.scale + this.minlval )
-  }
-  */
-}
-
 //========================================================= animationFrames.js
 /**
  * Build an array of animation frames: {offset: 1, opacity: 1.0, transform: 'scale(1.0) translate(1px, 1px)'}
@@ -641,7 +612,7 @@ M1_process = () =>
       }
       let clipH = Math.floor( ( imgW * 0.25 ) - borderH )
       let clipV = Math.floor( ( imgH * 0.25 ) - borderV )
-      M1_processor_e.style.setProperty( 'clip-path', `inset(${clipV}px ${clipH}px)` )  ; LOG(`clipV: ${clipV} -- clipH: ${clipH}`)
+      M1_processor_e.style.setProperty( 'clip-path', `inset(${clipV}px ${clipH}px)` )  ; // ;LOG(`clipV: ${clipV} -- clipH: ${clipH}`)
       M1_frames = new AnimationFrames( imgW, imgH, M1_frames_a )
       M1_img_e.animate( M1_frames.getFrames(), M1_anim_o )      // ;LOG( `M1_anim_a: ${M1_frames.getFrames()}`)
       M1_imgAnim = M1_img_e.getAnimations()[0]                  // ;LOG( `M1_imgAnim: ${M1_imgAnim}`)
@@ -824,12 +795,12 @@ M3_process = () =>
           }
           case 'ca_media_3_tone_label':
           {
-            if ( toggle_b === '1' ) values_s = getRGBMatrix( M3_hueConsole._lastHit )
+            if ( toggle_b === '1' ) values_s = H_toMatrix( M3_hueConsole._lastHit )
             break;
           }
           case 'ca_media_3_gray_label':
           {
-            if ( toggle_b === '1' ) values_s = getRGBMatrix( -1 )
+            if ( toggle_b === '1' ) values_s = H_toMatrix( -1 )
             break;
           }
           case 'ca_media_3_pick_label':
@@ -843,30 +814,44 @@ M3_process = () =>
           .setAttribute( 'values', values_s )
       }
 
+      const M3_colorPickerInput = ( mouse_e ) =>
+      {
+        const ewidth = DOM_getStyle( 'ca_media_3_processor_canvas', 'width').replace( 'px', '' )          //; LOG( `img element width: ${ewidth}` )
+        const cwidth = M3_processScan.getCanvasWidth_n()                                                  //; LOG( `canvas width: ${cwidth}` )
+        let r, g, b, a
+        ( { r, g, b, a } = M3_processScan.HSL_toRGBA_a ( mouse_e.clientX, mouse_e.clientY, cwidth / ewidth ) )    ; LOG( `{ r, g, b, a }: ${r},${g},${b},${a}` )
+
+        M3_hueConsole.setHit( RGB_toH( r, g, b, M3_processScan.getHue_n() ) )
+
+        M3_toggleColorPicker( false )  // : remove event
+      }
+
       const M3_toggleColorPicker = ( add_b ) =>
       {
-        ; LOG( `M3_toggleColorPicker: ` )
         document.getElementById( 'ca_media_3_color_selector' )
          .classList.toggle('ca_media_3_color_selector_mute')
         const canvas_e = document.getElementById( 'ca_media_3_processor_canvas' )
         canvas_e.classList.toggle('ca_media_3_color_picker')
         if ( add_b ) canvas_e.addEventListener( 'click', M3_colorPickerInput, false )
         else         canvas_e.removeEventListener( 'click', M3_colorPickerInput, false )
-        }
-  
-      const M3_colorPickerInput = ( mouse_e ) =>
-      {
-        ; LOG( `M3_colorPickerInput: ` )
-        const ewidth = DOM_getStyle( 'ca_media_3_processor_canvas', 'width').replace( 'px', '' )          //; LOG( `img element width: ${ewidth}` )
-        const cwidth = M3_processScan.getCanvasWidth_n()                                                  //; LOG( `canvas width: ${cwidth}` )
-        let r, g, b, a
-        ( { r, g, b, a } = M3_processScan.getRGBA_a ( mouse_e.clientX, mouse_e.clientY, cwidth / ewidth ) )    ; LOG( `{ r, g, b, a }: ${r},${g},${b},${a}` )
-
-        M3_hueConsole.setHit( getRGBHue( r, g, b, M3_processScan.getHue_n() ) )
-
-        M3_toggleColorPicker( false )  // : remove event
       }
   
+      M3_processIndex = () =>
+      {
+        const selector_e = document.getElementById( 'ca_media_3_selector_console' )
+        const offsetX = DOM_getStyle( 'ca_media_3_selector_lum_console', 'left').replace( 'px', '' )          // ; LOG( `offsetX: ${offsetX}` )
+        const offsetW = DOM_getStyle( 'ca_media_3_selector_console', 'font-size').replace( 'px', '' ) * 2.5   // ; LOG( `offsetW: ${offsetW}` ) // : ca_color_selector_swap.width: 2.5rem
+        return ( mouse_e ) =>
+        {
+          const atX = mouse_e.clientX - offsetX                     // ; LOG( `atX: ${atX}` )
+          const slideW = DOM_getRootVar( '--M3_SLIDE_WIDTH' )       // ; LOG( `slideW: ${slideW}` )
+          selector_e.setAttribute( 'data-index', `${Math.floor( atX / slideW )}`)
+          DOM_setRootVar( '--M3_POINTER_AT', `${mouse_e.clientX - offsetW}` )
+        }
+      }
+      document.getElementById( 'ca_media_3_selector_console' )
+        .addEventListener( 'mouseover', M3_processIndex(), false)
+      
       const M3_HUE_N = 360    // : range [ 0..359 ]
       const M3_LUM_N = 101    // : range [ 0..100 ]
       let width
@@ -882,7 +867,7 @@ M3_process = () =>
       M3_processScan = new ColorScan( M3_scanSettings_o )
       M3_processScan
         .setDisplay( 'inline' )
-        .scan()    // TODO: debug worker scan
+        .scan()
 
       const M3_selectHandle = update_o =>    // : event handle
       {
@@ -930,22 +915,6 @@ M3_process = () =>
         slider_n:   M3_LUM_N,
       }
       const M3_lumConsole = new ColorConsole( M3_lumSettings_o )
-
-      M3_processTooltip = () =>
-      {
-        const selector_e = document.getElementById( 'ca_media_3_selector_console' )
-        const offsetX = DOM_getStyle( 'ca_media_3_selector_lum_console', 'left').replace( 'px', '' )          // ; LOG( `offsetX: ${offsetX}` )
-        const offsetW = DOM_getStyle( 'ca_media_3_selector_console', 'font-size').replace( 'px', '' ) * 2.5   // ; LOG( `offsetW: ${offsetW}` ) // : ca_color_selector_swap.width: 2.5rem
-        return ( mouse_e ) =>
-        {
-          const atX = mouse_e.clientX - offsetX                     // ; LOG( `atX: ${atX}` )
-          const slideW = DOM_getRootVar( '--M3_SLIDE_WIDTH' )       // ; LOG( `slideW: ${slideW}` )
-          selector_e.setAttribute( 'data-index', `${Math.floor( atX / slideW )}`)
-          DOM_setRootVar( '--M3_POINTER_AT', `${mouse_e.clientX - offsetW}` )
-        }
-      }
-      document.getElementById( 'ca_media_3_selector_console' )
-        .addEventListener( 'mouseover', M3_processTooltip(), false)
     }
     catch ( error )
     {
@@ -1016,6 +985,12 @@ M4_process = () =>
 }
 
 //========================================================= media
+const M3_SLIDE_RANGE = 256    // : --M3_SLIDE_RANGE
+
+let M2_processInput    // : media_2
+let M3_processInput    // : media_3
+let M3_processScan     // : media_3 + media_4
+let M3_processIndex    // : media_3
 const M_process = ( mediaImg_e ) =>
 {
                                                 // ;LOG(`M_process: ${performance.now()}`)
@@ -1027,14 +1002,6 @@ const M_process = ( mediaImg_e ) =>
   M3_process()
   M4_process()
 }
-
-//======================
-let M2_processInput        // : media_2
-let M3_processInput        // : media_3
-let M3_processTooltip      // : media_3
-let M3_processScan         // : media_3 + media_4
-const M3_SLIDE_RANGE = 256  // ; DOM_getRootVar( '--M3_SLIDE_RANGE' ) ;LOG(`_COLOR_RANGE: ${_COLOR_RANGE}`)
-
-const Mg_img_e = document.getElementById( 'ca_gallery_img' )
-if ( Mg_img_e.complete === false ) Mg_img_e.onload = () => { M_process( Mg_img_e ) }
-else M_process( Mg_img_e )
+const M_img_e = document.getElementById( 'ca_gallery_img' )
+if ( M_img_e.complete === false ) M_img_e.onload = () => { M_process( M_img_e ) }
+else M_process( M_img_e )
