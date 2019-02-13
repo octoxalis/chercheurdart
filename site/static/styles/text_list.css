@@ -25,6 +25,7 @@
   border: var(--BORDER_FRAME_GOLD);
 }
 
+.ca_wide_title,
 .ca_list_items_img_title
 {
   position: absolute;
@@ -36,12 +37,18 @@
   padding: 3vmin 4vmin 1vmin 4vmin;
   color:           var(--COLOR_THIRD_LIGHT);
   font-size:       calc(var(--FONT_SIZE_MEDIUM) * 1.2 );
-  font-weight:     var(--FONT_WEIGHT_HEAVY);
+  font-weight:     var(--FONT_WEIGHT_MEDIUM);
   line-height:     var(--FONT_LINE_MEDIUM);
   list-style-type: none;
   text-transform:  uppercase;
   overflow:        hidden;
 }
+.ca_wide_title
+{
+  font-size:   calc(var(--FONT_SIZE_MEDIUM) * 1.4 );
+  font-weight: var(--FONT_WEIGHT_XLIGHT);
+}
+
 .ca_title_subtitle
 {
   font-size:   var(--FONT_SIZE_MEDIUM_L);
@@ -105,7 +112,7 @@
   bottom: 0;
   height: 100%;
 /*  padding: var(--ITEMS_PADDING);*/
-  padding: 2vmin 4vmin 1vmin 4vmin;
+  padding: 1.5vmin 4vmin 1vmin 4vmin;
   display: flex;
   flex-direction: column;
   border-left: var(--BORDER_FRAME_GOLD_TEXT);
