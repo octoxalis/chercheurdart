@@ -1,122 +1,3 @@
-//========================================================= rgb_hsl.js
-/**
- * Extract the HSL hue of an RGB color value
- * r, g, and b are contained in the set [0, 255] (clampedArray)
- * returns hue in range [0, hue_n].
- *
- * @param   UInt8  r  The red color value
- * @param   UInt8  g  The green color value
- * @param   UInt8  b  The blue color value
- * @param   UInt16 hue_n hue colors number
- * @return  UInt8  s  HSL Saturation
- */
-const getRGBHue = ( r, g, b, hue_n ) =>
-{
-  r /= 255
-  g /= 255
-  b /= 255
-  const min = Math.min( r, g, b )
-  const max = Math.max( r, g, b )
-  if ( max === min ) return 0 // achromatic
-  const maxLmin = max - min
-  let h = ( max === r ) ?   (g - b) / maxLmin + ( g < b ? 6.0 : 0 ) :
-          ( max === g ) ? ( (b - r) / maxLmin ) + 2 :
-                          ( (r - g) / maxLmin ) + 4
-return Math.floor( h / 6.0 * hue_n )
-}
-
-/**
- * Extract the HSL saturation of an RGB color value
- * r, g, and b are contained in the set [0, 255] (clampedArray)
- * returns saturation in range [0, 100].
- *
- * @param   UInt8  r  The red color value
- * @param   UInt8  g  The green color value
- * @param   UInt8  b  The blue color value
- * @return  UInt8  s  HSL Saturation
- */
-const getRGBSaturation = ( r, g, b ) =>
-{
-  const [ maxLmin, minPmax] = getRGBMinMax( r, g, b )
-  if ( maxLmin === 0 ) return 0 // achromatic
-  let s = ( ( minPmax / 2 ) > 0.5 ) ?
-    maxLmin / ( 2 - maxLmin ) :
-    maxLmin / minPmax
-  return Math.floor( s * 100 )
-}
-
-/**
- * Extract the HSL luminosity of an RGB color value
- * r, g, and b are contained in the set [0, 255] (clampedArray)
- * returns h, s, and v in the set [0, 1].
- *
- * @param   Number  r       The red color value
- * @param   Number  g       The green color value
- * @param   Number  b       The blue color value
- * @return  Array           The HSV representation
- */
-const getRGBLum = ( r, g, b ) =>
-{
-  return Math.floor( ( getRGBMinMax( r, g, b )[1] / 2 ) * 100 )
-}
-
-const getRGBMinMax = ( r, g, b ) =>
-{
-  r /= 255
-  g /= 255
-  b /= 255
-  const min = Math.min( r, g, b )
-  const max = Math.max( r, g, b )
-  return [ max - min, min + max ]
-}
-
-const getRGB = ( h, s, l ) =>
-{
-  let r, g, b
-
-  if (s === 0) r = g = b = l // achromatic
-  else
-  {
-    const H2R = ( p, q, t ) => // hsl to rgb
-    {
-      if ( t < 0 ) t += 1
-      if ( t > 1 ) t -= 1
-      if ( t < 0.1666667 ) return p + (q - p) * 6 * t  // 1/6
-      if ( t < 0.5 ) return q
-      if ( t < 0.6666667 ) return p + (q - p) * (0.6666667 - t) * 6
-      return p
-    }
-    h /= 360
-    const q = l < 0.5 ? l * (1 + s) : l + s - l * s
-    const p = 2 * l - q
-    r = H2R( p, q, h + 0.3333334 )
-    g = H2R( p, q, h )
-    b = H2R( p, q, h - 0.3333334 )
-  }
-
-  return [ Math.floor(r * 255), Math.floor(g * 255), Math.floor(b * 255) ]
-}
-
-const getRGBMatrix = ( hue ) =>
-{
-  const GRAY_DELTA = 0.5
-  let red_s, green_s, blue_s
-  let matrix_s = DOM_getRootVar( '--M3_FE_MATRIX' )
-  if ( hue < 0 ) red_s = green_s = blue_s = DOM_getRootVar( '--M3_FE_MATRIX_GRAY_VALUE' )
-  else
-  {
-    rgb_a   = getRGB( hue, 1, 0.5 )  // normalized HSL
-    red_s   = (rgb_a[0] / 255) + GRAY_DELTA
-    green_s = (rgb_a[1] / 255) + GRAY_DELTA
-    blue_s  = (rgb_a[2] / 255) + GRAY_DELTA
-  }
-  matrix_s = matrix_s
-    .replace( 'R', red_s )
-    .replace( 'G', green_s )
-    .replace( 'B', blue_s )
-  return matrix_s
-}
-
 //========================================================= color-scan.js
 /**
  * JPEG image data scanner
@@ -238,7 +119,7 @@ class ColorScan
     return this
   }
 
-  // ==============================================
+  // ============================
   // MASTER => MAIN
   fromMaster( master_e )
   {
@@ -280,6 +161,23 @@ class ColorScan
   getHue_n ()
   {
     return this._hue_n
+  }
+
+  getCanvasWidth_n ()
+  {
+    return this._canvas.width
+  }
+
+  /**
+   * Get RGBA value at x/y position
+   * @param {*} atX 
+   * @param {*} atY 
+   * @param {*} ratio: (canvas / screen img) width: > 1
+   */
+  getRGBA_a ( atX, atY, ratio )
+  {
+    const atdata_p = ( Math.floor( atY * ratio ) * this._canvas.width * 4 ) + ( Math.floor( atX * ratio ) * 4 )
+    return { r: this._data[atdata_p], g: this._data[atdata_p + 1], b: this._data[atdata_p + 2], a: this._data[atdata_p + 3] }
   }
 
   getSaturLumen_a ( hue )
@@ -369,6 +267,7 @@ class ColorConsole
       this._consoleWidth   = this._slider_n * this._slideWidth
       this._gridColor      = console_o.gridColor || DOM_getRootVar( '--M3_CONSOLE_COLOR' )
       this._onSelectHandle = console_o.onSelectHandle
+
       this._loose          = false
       this._lastHit        = 0    // : default
       this._paint          = null
@@ -528,6 +427,16 @@ class ColorConsole
         .move( at * this._slideWidth, SLIDER_TOP + update_o.level )
       this._levels_a[at] = update_o.level
     }
+  }
+
+  getSlideWidth ()
+  {
+    return this._slideWidth
+  }
+
+  setHit ( hue )
+  {
+    this._lastHit = hue
   }
 }
 //========================================================= color-burst.js
@@ -708,7 +617,7 @@ M1_process = () =>
     {
       if ( !M1_frames_a ) return    //~ TEMPORARY: all works should have a M1_frames_a
       DOM_setRootVar( '--MEDIA_1_CURSOR', 'var(--CURSOR_PLAY)' )
-      DOM_setRootVar( '--MEDIA_1_FADEIN_COUNT', 1 )
+      // ?? DOM_setRootVar( '--MEDIA_1_FADEIN_COUNT', 2 )
       const M1_processor_e = document.getElementById( 'ca_media_1_processor_anim' )
       let width, height
       ( { width, height } = DOM_getImgDim( 'ca_media_1_img' ) )
@@ -836,8 +745,7 @@ M2_process = () =>
         case 'lines_rl':
         {
           const line_e = document.getElementById( `ca_media_2_${process_s}` )
-          line_e.style.opacity = ( window.getComputedStyle( line_e )
-            .getPropertyValue('opacity') === '1' ) ? 0 : 1
+          line_e.style.opacity = ( DOM_getStyle( line_e, 'opacity') === '1' ) ? 0 : 1
           return
         }
     
@@ -894,8 +802,8 @@ M3_process = () =>
         if ( type === 'radio' )
         {
           if ( toggle_b === '0' ) return // already active
-          document.querySelector( '.ca_color_pad_input_radio[value="1"]' ).value = '0'
-          document.querySelector( '.ca_color_pad_label[value="1"]' ).setAttribute( 'value', '0')
+          document.querySelector( '.ca_media_3_pad_input_radio[value="1"]' ).value = '0'
+          document.querySelector( '.ca_media_3_pad_label[value="1"]' ).setAttribute( 'value', '0')
         }
         input_e.value = toggle_b
         label_e.setAttribute( 'value', toggle_b )
@@ -907,9 +815,11 @@ M3_process = () =>
           case 'ca_media_3_lum_label':
           {
             document.getElementById( 'ca_media_3_selector_hue_console' )
-              .classList.toggle('ca_color_selector_console_swap')
+              .classList.toggle('ca_color_selector_console_active')
             document.getElementById( 'ca_media_3_selector_lum_console' )
-              .classList.toggle('ca_color_selector_console_swap')
+              .classList.toggle('ca_color_selector_console_active')
+            const slideWidth = ( label_e.id === 'ca_media_3_hue_label' ) ? M3_hueConsole.getSlideWidth() : M3_lumConsole.getSlideWidth()  // ; LOG( `slideWidth: ${slideWidth}` )
+            DOM_setRootVar( '--M3_SLIDE_WIDTH', slideWidth )
             return;
           }
           case 'ca_media_3_tone_label':
@@ -922,10 +832,39 @@ M3_process = () =>
             if ( toggle_b === '1' ) values_s = getRGBMatrix( -1 )
             break;
           }
+          case 'ca_media_3_pick_label':
+          {            // : M3_FE_MATRIX_RESET already selected
+            M3_toggleColorPicker( true )  // : add event
+            break;
+          }
           default: return  // : 
         }
         document.getElementById( 'ca_media_3_filter_matrix' )
           .setAttribute( 'values', values_s )
+      }
+
+      const M3_toggleColorPicker = ( add_b ) =>
+      {
+        ; LOG( `M3_toggleColorPicker: ` )
+        document.getElementById( 'ca_media_3_color_selector' )
+         .classList.toggle('ca_media_3_color_selector_mute')
+        const canvas_e = document.getElementById( 'ca_media_3_processor_canvas' )
+        canvas_e.classList.toggle('ca_media_3_color_picker')
+        if ( add_b ) canvas_e.addEventListener( 'click', M3_colorPickerInput, false )
+        else         canvas_e.removeEventListener( 'click', M3_colorPickerInput, false )
+        }
+  
+      const M3_colorPickerInput = ( mouse_e ) =>
+      {
+        ; LOG( `M3_colorPickerInput: ` )
+        const ewidth = DOM_getStyle( 'ca_media_3_processor_canvas', 'width').replace( 'px', '' )          //; LOG( `img element width: ${ewidth}` )
+        const cwidth = M3_processScan.getCanvasWidth_n()                                                  //; LOG( `canvas width: ${cwidth}` )
+        let r, g, b, a
+        ( { r, g, b, a } = M3_processScan.getRGBA_a ( mouse_e.clientX, mouse_e.clientY, cwidth / ewidth ) )    ; LOG( `{ r, g, b, a }: ${r},${g},${b},${a}` )
+
+        M3_hueConsole.setHit( getRGBHue( r, g, b, M3_processScan.getHue_n() ) )
+
+        M3_toggleColorPicker( false )  // : remove event
       }
   
       const M3_HUE_N = 360    // : range [ 0..359 ]
@@ -971,25 +910,42 @@ M3_process = () =>
       {
         selectorId: 'ca_media_3_selector_hue_console',
         eqInputId:  'ca_media_3_eq_input',
-        slidersId:  'ca_media_3_selector_sliders',
+        slidersId:  'ca_media_3_selector_hue_sliders',
         slideId:    'ca_media_3_selector_slide',
         onSelectHandle: M3_selectHandle,
         mode:       'hue',
         slider_n:   M3_HUE_N,
       }
       const M3_hueConsole = new ColorConsole( M3_hueSettings_o )
-      
+      DOM_setRootVar( '--M3_SLIDE_WIDTH', M3_hueConsole.getSlideWidth() )
+
       const M3_lumSettings_o =
       {
         selectorId: 'ca_media_3_selector_lum_console',
         eqInputId:  'ca_media_3_eq_input',
-        slidersId:  'ca_media_3_selector_sliders',
+        slidersId:  'ca_media_3_selector_lum_sliders',
         slideId:    'ca_media_3_selector_slide',
         onSelectHandle: M3_selectHandle,
         mode:       'lum',
         slider_n:   M3_LUM_N,
       }
       const M3_lumConsole = new ColorConsole( M3_lumSettings_o )
+
+      M3_processTooltip = () =>
+      {
+        const selector_e = document.getElementById( 'ca_media_3_selector_console' )
+        const offsetX = DOM_getStyle( 'ca_media_3_selector_lum_console', 'left').replace( 'px', '' )          // ; LOG( `offsetX: ${offsetX}` )
+        const offsetW = DOM_getStyle( 'ca_media_3_selector_console', 'font-size').replace( 'px', '' ) * 2.5   // ; LOG( `offsetW: ${offsetW}` ) // : ca_color_selector_swap.width: 2.5rem
+        return ( mouse_e ) =>
+        {
+          const atX = mouse_e.clientX - offsetX                     // ; LOG( `atX: ${atX}` )
+          const slideW = DOM_getRootVar( '--M3_SLIDE_WIDTH' )       // ; LOG( `slideW: ${slideW}` )
+          selector_e.setAttribute( 'data-index', `${Math.floor( atX / slideW )}`)
+          DOM_setRootVar( '--M3_POINTER_AT', `${mouse_e.clientX - offsetW}` )
+        }
+      }
+      document.getElementById( 'ca_media_3_selector_console' )
+        .addEventListener( 'mouseover', M3_processTooltip(), false)
     }
     catch ( error )
     {
@@ -1042,13 +998,11 @@ M4_process = () =>
           if ( freq_n > lmaxFreq_n ) lmaxFreq_n = freq_n
           luminosities_a[at] = freq_n ? { frequency: freq_n, hsl: `hsl(${hue}, 100%, ${at}%)` } : null
         }
-        // Saturations
-        DOM_resetNode( 'ca_media_4_processor_saturationID' )
-        const saturationBurst = new ColorBurst( { svgId: 'ca_media_4_processor_saturationID', colors: saturations_a, maxfreq: smaxFreq_n } )
+        DOM_resetNode( 'ca_media_4_processor_satID' )        // : Saturations
+        const saturationBurst = new ColorBurst( { svgId: 'ca_media_4_processor_satID', colors: saturations_a, maxfreq: smaxFreq_n } )
         saturationBurst.draw()
-        // Luminosities
-        DOM_resetNode( 'ca_media_4_processor_lumenID' )
-        const lumenBurst = new ColorBurst( { svgId : 'ca_media_4_processor_lumenID', colors : luminosities_a, maxfreq: lmaxFreq_n } )
+        DOM_resetNode( 'ca_media_4_processor_lumID' )        // : Luminosities
+        const lumenBurst = new ColorBurst( { svgId : 'ca_media_4_processor_lumID', colors : luminosities_a, maxfreq: lmaxFreq_n } )
         lumenBurst.draw()
       }
     }
@@ -1077,6 +1031,7 @@ const M_process = ( mediaImg_e ) =>
 //======================
 let M2_processInput        // : media_2
 let M3_processInput        // : media_3
+let M3_processTooltip      // : media_3
 let M3_processScan         // : media_3 + media_4
 const M3_SLIDE_RANGE = 256  // ; DOM_getRootVar( '--M3_SLIDE_RANGE' ) ;LOG(`_COLOR_RANGE: ${_COLOR_RANGE}`)
 

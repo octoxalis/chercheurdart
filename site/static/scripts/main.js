@@ -75,6 +75,16 @@ function DOM_resetNode ( nodeId )
   while ( node.firstChild ) node.removeChild( node.firstChild )
 }
 
+//========================================================= styles.js
+
+const DOM_getStyle = ( elementId, property ) =>
+{
+  let style_e = document.getElementById( elementId )
+  return ( style_e ) ? window.getComputedStyle( style_e ).getPropertyValue( property ) : ''
+}
+
+
+
 //========================================================= areas.js
 // LOG ( `areas.js` )
 
@@ -212,4 +222,122 @@ const DOM_getImgDim = ( ID ) =>
   return { width: img_e.getAttribute( 'data-src-width' ), height: img_e.getAttribute( 'data-src-height' ) }
 }
 
+//========================================================= rgb_hsl.js
+/**
+ * Extract the HSL hue of an RGB color value
+ * r, g, and b are contained in the set [0, 255] (clampedArray)
+ * returns hue in range [0, hue_n].
+ *
+ * @param   UInt8  r  The red color value
+ * @param   UInt8  g  The green color value
+ * @param   UInt8  b  The blue color value
+ * @param   UInt16 hue_n hue colors number
+ * @return  UInt8  s  HSL Saturation
+ */
+const getRGBHue = ( r, g, b, hue_n ) =>
+{
+  r /= 255
+  g /= 255
+  b /= 255
+  const min = Math.min( r, g, b )
+  const max = Math.max( r, g, b )
+  if ( max === min ) return 0 // achromatic
+  const maxLmin = max - min
+  let h = ( max === r ) ?   (g - b) / maxLmin + ( g < b ? 6.0 : 0 ) :
+          ( max === g ) ? ( (b - r) / maxLmin ) + 2 :
+                          ( (r - g) / maxLmin ) + 4
+return Math.floor( h / 6.0 * hue_n )
+}
+
+/**
+ * Extract the HSL saturation of an RGB color value
+ * r, g, and b are contained in the set [0, 255] (clampedArray)
+ * returns saturation in range [0, 100].
+ *
+ * @param   UInt8  r  The red color value
+ * @param   UInt8  g  The green color value
+ * @param   UInt8  b  The blue color value
+ * @return  UInt8  s  HSL Saturation
+ */
+const getRGBSaturation = ( r, g, b ) =>
+{
+  const [ maxLmin, minPmax] = getRGBMinMax( r, g, b )
+  if ( maxLmin === 0 ) return 0 // achromatic
+  let s = ( ( minPmax / 2 ) > 0.5 ) ?
+    maxLmin / ( 2 - maxLmin ) :
+    maxLmin / minPmax
+  return Math.floor( s * 100 )
+}
+
+/**
+ * Extract the HSL luminosity of an RGB color value
+ * r, g, and b are contained in the set [0, 255] (clampedArray)
+ * returns h, s, and v in the set [0, 1].
+ *
+ * @param   Number  r       The red color value
+ * @param   Number  g       The green color value
+ * @param   Number  b       The blue color value
+ * @return  Array           The HSV representation
+ */
+const getRGBLum = ( r, g, b ) =>
+{
+  return Math.floor( ( getRGBMinMax( r, g, b )[1] / 2 ) * 100 )
+}
+
+const getRGBMinMax = ( r, g, b ) =>
+{
+  r /= 255
+  g /= 255
+  b /= 255
+  const min = Math.min( r, g, b )
+  const max = Math.max( r, g, b )
+  return [ max - min, min + max ]
+}
+
+const getRGB = ( h, s, l ) =>
+{
+  let r, g, b
+
+  if (s === 0) r = g = b = l // achromatic
+  else
+  {
+    const H2R = ( p, q, t ) => // hsl to rgb
+    {
+      if ( t < 0 ) t += 1
+      if ( t > 1 ) t -= 1
+      if ( t < 0.1666667 ) return p + (q - p) * 6 * t  // 1/6
+      if ( t < 0.5 ) return q
+      if ( t < 0.6666667 ) return p + (q - p) * (0.6666667 - t) * 6
+      return p
+    }
+    h /= 360
+    const q = l < 0.5 ? l * (1 + s) : l + s - l * s
+    const p = 2 * l - q
+    r = H2R( p, q, h + 0.3333334 )
+    g = H2R( p, q, h )
+    b = H2R( p, q, h - 0.3333334 )
+  }
+
+  return [ Math.floor(r * 255), Math.floor(g * 255), Math.floor(b * 255) ]
+}
+
+const getRGBMatrix = ( hue ) =>
+{
+  const GRAY_DELTA = 0.5
+  let red_s, green_s, blue_s
+  let matrix_s = DOM_getRootVar( '--M3_FE_MATRIX' )
+  if ( hue < 0 ) red_s = green_s = blue_s = DOM_getRootVar( '--M3_FE_MATRIX_GRAY_VALUE' )
+  else
+  {
+    rgb_a   = getRGB( hue, 1, 0.5 )  // normalized HSL
+    red_s   = (rgb_a[0] / 255) + GRAY_DELTA
+    green_s = (rgb_a[1] / 255) + GRAY_DELTA
+    blue_s  = (rgb_a[2] / 255) + GRAY_DELTA
+  }
+  matrix_s = matrix_s
+    .replace( 'R', red_s )
+    .replace( 'G', green_s )
+    .replace( 'B', blue_s )
+  return matrix_s
+}
 

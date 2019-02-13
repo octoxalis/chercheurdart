@@ -331,13 +331,13 @@ Rédaction initiale.</li>
 <input id="ca_select_area_gallery" class="ca_area_switcher" value="ca_select_area_gallery" name="area" type="radio">
 <div id="ca_area_gallery" class="ca_area_gallery ca_area ca_area_active">
   <label for="ca_select_area_gallery" class="ca_area_selector" onclick="areaSelect( this.getAttribute( 'for') )"></label>
-  <div id="ca_home_bg_img"></div>
+  <div id="ca_home_back">
+  <div id="ca_home_back_top"    class="ca_home_back_side"></div>
+  <div id="ca_home_back_bottom" class="ca_home_back_side"></div>
+  <div id="ca_home_back_right"  class="ca_home_back_side"></div>
+</div>
 
-<div id="ca_home_top_margin"    class="ca_home_side_margin"></div>
-<div id="ca_home_bottom_margin" class="ca_home_side_margin"></div>
-<div id="ca_home_right_margin"  class="ca_home_side_margin"></div>
-
-<svg id="ca_home_svg_area" width="80.9%" height="61.8%">
+<svg id="ca_home_prim" width="80.9%" height="61.8%">
   <defs>
     <linearGradient id="ca_home_gradient" gradientTransform="rotate(75)">
       <stop offset="15%" stop-color="hsla(220, 92%, 30%, 0.8)" />
@@ -351,19 +351,46 @@ Rédaction initiale.</li>
       </g>
     </mask>
   </defs>
+  <filter id="ca_home_prim_filter" color-interpolation-filters="sRGB">
+    <feColorMatrix id="ca_home_prim_filter_matrix"
+      type="matrix" values="0 0 0.4 0 0   0 0 1.2 0 0  0 0 1.5 0 0  0 0 0 1 0">
+      <animate id="ca_home_prim_filter_animate_forward" attributeType="XML" attributeName="values"
+          begin="0s;ca_home_prim_filter_animate_backward.end" dur="7s" repeatCount="1"
+          from="0 0 0.4 0 0
+                0 0 2   0 0
+                0 0 3   0 0
+                0 0 0   1 0"
+          to=  "1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 1 0" />
+      <animate id="ca_home_prim_filter_animate_backward" attributeType="XML" attributeName="values"
+          begin="ca_home_prim_filter_animate_forward.end" dur="7s" repeatCount="1"
+          from= "1 0 0 0 0
+                 0 1 0 0 0
+                 0 0 1 0 0
+                 0 0 0 1 0"
+          to=   "0 0 0.4 0 0
+                 0 0 2   0 0
+                 0 0 3   0 0
+                 0 0 0   1 0" />
+    </feColorMatrix>
+  </filter>
   <rect width="100%" height="100%" fill="url(#ca_home_gradient)" fill-opacity="0.65" mask="url(#ca_home_mask)" />
 </svg>
 
-<div id="ca_home_perspective"  onclick="areaSelect( 'ca_select_area_menu' )">
-  <div id="ca_home_layer_0" class="ca_home_perspective_layer"></div>
-  <div id="ca_home_layer_1" class="ca_home_perspective_layer"></div>
-  <div id="ca_home_layer_2" class="ca_home_perspective_layer"></div>
-  <div id="ca_home_layer_3" class="ca_home_perspective_layer"></div>
-  <div id="ca_home_layer_4" class="ca_home_perspective_layer"></div>
-  <div id="ca_home_layer_5" class="ca_home_perspective_layer"></div>
-  <div id="ca_home_layer_6" class="ca_home_perspective_layer"></div>
-  <div id="ca_home_layer_7" class="ca_home_perspective_layer"></div>
+<div id="ca_home_layers"  onclick="areaSelect( 'ca_select_area_menu' )">
+  <div id="ca_home_layer_0" class="ca_home_layer"></div>
+  <div id="ca_home_layer_1" class="ca_home_layer"></div>
+  <div id="ca_home_layer_2" class="ca_home_layer"></div>
+  <div id="ca_home_layer_3" class="ca_home_layer"></div>
+  <div id="ca_home_layer_4" class="ca_home_layer"></div>
+  <div id="ca_home_layer_5" class="ca_home_layer"></div>
+  <div id="ca_home_layer_6" class="ca_home_layer"></div>
+  <div id="ca_home_layer_7" class="ca_home_layer"></div>
 </div>
+
+
 
 </div>
 

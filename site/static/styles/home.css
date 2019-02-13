@@ -32,7 +32,7 @@
   --HOME_BG_IMG_15: url('../media/images/home-0-@400.jpg');
 }
 
-#ca_home_bg_img
+#ca_home_back
 {
   position: absolute;
   top:    0;
@@ -44,27 +44,27 @@
   background-position-x: left;
   background-position-y: top;
   opacity: 0.85;
+  filter: url(#ca_home_prim_filter);
 }
-.ca_home_side_margin
+.ca_home_back_side
 {
   position: absolute;
-  background-color: hsla(10, 15%, 15%, 0.8);
 }
-#ca_home_top_margin,
-#ca_home_bottom_margin
+#ca_home_back_top,
+#ca_home_back_bottom
 {
   width: 100vw;
   height: calc( var(--HOME_AREA_SIDE_HALF) * 1vh );
 }
-#ca_home_top_margin
+#ca_home_back_top
 {
   top: 0;
 }
-#ca_home_bottom_margin
+#ca_home_back_bottom
 {
   bottom: 0;
 }
-#ca_home_right_margin
+#ca_home_back_right
 {
   right: 0;
   top:   calc( var(--HOME_AREA_SIDE_HALF) * 1vh);
@@ -72,7 +72,7 @@
   height: 61.8vh;
 }
 
-#ca_home_svg_area
+#ca_home_prim
 {
   display: block;
   position: absolute;
@@ -81,7 +81,7 @@
   opacity: 1;
   transition: opacity 5s ease-in-out;
 }
-#ca_home_svg_area:hover
+#ca_home_prim:hover
 {
   opacity: 0;
   transition: opacity 3s ease-in-out;
@@ -107,13 +107,13 @@
   transform: translate3d( calc( var(--GOLD_RATIO_COMPLEMENT) * 1vh ), 0, 0 );
 }
 
-#ca_home_perspective
+#ca_home_layers
 {
   perspective-origin: center left;
   perspective: 100vw;
   cursor: var(--CURSOR_MENU);
 }
-.ca_home_perspective_layer
+.ca_home_layer
 {
   position: absolute;
   background-color: hsla(150, 20%, 5%, 0.9);
@@ -123,7 +123,7 @@
   opacity: 0.4;
   transition: all 1.5s ease-in-out;
 }
-.ca_home_perspective_layer:hover
+.ca_home_layer:hover
 {
   transform: rotateY( 0deg ) translate3d( calc( var(--HOME_PANEL_WIDTH)  * var(--home_panel_scale) * ( 1 + (var(--HOME_PANEL_INDEX) * 0.06 )) ), 0, 0 );
   opacity: 1;

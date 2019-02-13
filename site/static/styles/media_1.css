@@ -1,6 +1,6 @@
 :root
 {
-  --MEDIA_1_FADEIN_COUNT: 1;
+  --MEDIA_1_FADEIN_COUNT: 4;
   --MEDIA_1_CURSOR: var(--CURSOR_PLAY);
 }
 
@@ -35,6 +35,11 @@
   position: relative;
   opacity: 0;  /* initial */
   animation: ca_media_1_fadein 10s ease-in var(--MEDIA_1_FADEIN_COUNT) alternate;
+  animation-play-state: paused;
+}
+#ca_media_1_img:hover
+{
+  animation-play-state: running;
 }
 @keyframes ca_media_1_fadein
 {

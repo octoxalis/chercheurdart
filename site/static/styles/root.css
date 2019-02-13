@@ -29,7 +29,7 @@
   --POS_OUTLEFT:  calc( var(--VIEW_FULL_WIDTH) * -1 );
 
   --AREA_ENTER: translate3d( calc( var(--AREA_WIDTH) * -1 ), 0, 0 );
-  /* NOT USED --AREA_EXIT:  translateX( calc( var(--AREA_WIDTH) *  1 ) ); */
+  --AREA_EXIT:  translate3d( calc( var(--AREA_WIDTH) *  1 ), 0, 0 );
 
 
   /* Z-INDEX */
@@ -297,6 +297,7 @@
     /* CURSORS */
   --CURSOR_MENU: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="60" style="font-size:40px;fill:hsla(34,70%,100%,1);"><text y="30">☰</text></svg>'), auto;
   --CURSOR_PLAY: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="60" style="font-size:40px;fill:hsla(34,70%,100%,1);"><text y="30">▷</text></svg>'), auto;
+  --CURSOR_PICK: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="60" style="font-size:20px;fill:hsla(34,70%,100%,1);"><text y="30">◯</text></svg>'), auto;
 
   /* ANIMATIONS */
   --TRANSITION_03s: 0.3s ease;

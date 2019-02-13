@@ -109,7 +109,7 @@
 
   opacity: 0.6;
   transform-origin: top left;
-  transform:  var(--AREA_ENTER) translate3d( var(--scaled_area_translate_x), var(--scaled_area_translate_y), 0) /*rotateY( 30deg )*/ scale( var(--area_scale) );
+  transform:  var(--AREA_ENTER) translate3d( var(--scaled_area_translate_x), var(--scaled_area_translate_y), 0) rotateY( 30deg ) scale( var(--area_scale) );
   transition: all var(--AREA_TRANSITION) ease-in-out;
 }
 .ca_area_perspective:hover
