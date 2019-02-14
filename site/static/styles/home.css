@@ -19,17 +19,18 @@
 
   --HOME_PANEL_ROTATION: 75deg;
 
-  --HOME_BG_IMG:    url('../media/images/home-0.jpg');
-  --HOME_BG_IMG_0:  url('../media/images/home-0-@400.jpg');
-  --HOME_BG_IMG_1:  url('../media/images/home-1-@400.jpg');
-  --HOME_BG_IMG_2:  url('../media/images/home-2-@400.jpg');
-  --HOME_BG_IMG_3:  url('../media/images/home-3-@400.jpg');
-  --HOME_BG_IMG_4:  url('../media/images/home-4-@400.jpg');
-  --HOME_BG_IMG_5:  url('../media/images/home-5-@400.jpg');
-  --HOME_BG_IMG_6:  url('../media/images/home-6-@400.jpg');
-  --HOME_BG_IMG_7:  url('../media/images/home-7-@400.jpg');
-  /* ... */
-  --HOME_BG_IMG_15: url('../media/images/home-0-@400.jpg');
+  --HOME_BG_IMG:    url('../media/images/home_00.jpg');
+  --HOME_BG_IMG_0:  url('../media/images/home_01_@550.jpg');
+  --HOME_BG_IMG_1:  url('../media/images/home_02_@550.jpg');
+  --HOME_BG_IMG_2:  url('../media/images/home_03_@550.jpg');
+  --HOME_BG_IMG_3:  url('../media/images/home_05_@550.jpg');
+  --HOME_BG_IMG_4:  url('../media/images/home_06_@550.jpg');
+  --HOME_BG_IMG_5:  url('../media/images/home_07_@550.jpg');
+  --HOME_BG_IMG_6:  url('../media/images/home_09_@550.jpg');
+  --HOME_BG_IMG_7:  url('../media/images/home_10_@550.jpg');
+  --HOME_BG_IMG_8:  url('../media/images/home_14_@550.jpg');
+  
+  /*--HOME_BG_IMG_15: url('../media/images/home_01_@550.jpg');*/
 }
 
 #ca_home_back
@@ -166,37 +167,37 @@
 #ca_home_layer_1
 {
   --HOME_PANEL_INDEX: 1;
-  background-image:  var(--HOME_BG_IMG_1);
+  background-image:  var(--HOME_BG_IMG_2);
 }
 #ca_home_layer_2
 {
   --HOME_PANEL_INDEX: 2;
-  background-image: var(--HOME_BG_IMG_2);
+  background-image: var(--HOME_BG_IMG_3);
 }
 #ca_home_layer_3
 {
   --HOME_PANEL_INDEX: 3;
-  background-image: var(--HOME_BG_IMG_3);
+  background-image: var(--HOME_BG_IMG_4);
 }
 #ca_home_layer_4
 {
   --HOME_PANEL_INDEX: 4;
-  background-image:  var(--HOME_BG_IMG_4);
+  background-image:  var(--HOME_BG_IMG_5);
 }
 #ca_home_layer_5
 {
   --HOME_PANEL_INDEX: 5;
-  background-image: var(--HOME_BG_IMG_5);
+  background-image: var(--HOME_BG_IMG_6);
 }
 #ca_home_layer_6
 {
   --HOME_PANEL_INDEX: 6;
-  background-image: var(--HOME_BG_IMG_6);
+  background-image: var(--HOME_BG_IMG_7);
 }
 #ca_home_layer_7
 {
   --HOME_PANEL_INDEX: 7;
-  background-image: var(--HOME_BG_IMG_7);
+  background-image: var(--HOME_BG_IMG_8);
 }
 /* --- */
 #ca_home_layer_15

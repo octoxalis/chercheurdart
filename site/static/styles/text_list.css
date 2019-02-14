@@ -111,7 +111,6 @@
   right: 0;
   bottom: 0;
   height: 100%;
-/*  padding: var(--ITEMS_PADDING);*/
   padding: 1.5vmin 4vmin 1vmin 4vmin;
   display: flex;
   flex-direction: column;
