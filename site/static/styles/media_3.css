@@ -1,11 +1,12 @@
 :root
 {
   --M3_POINTER_AT:    0;  /* dynamic setting */
+  --M3_CONSOLE_Z:    5;
   --M3_SLIDE_WIDTH:   0;  /* dynamic setting */
   --M3_CONSOLE_WIDTH: 0;  /* dynamic setting */
   --M3_SLIDE_RANGE:   256;
   --M3_CONSOLE_EQ:    32;
-  --M3_PAD_WIDTH:     8rem;
+  --M3_PAD_WIDTH:     10rem;
   --M3_CONSOLE_COLOR: hsl(var(--COLOR_THIRD_HUE), 50%, 75% );
   --M3_FE_MATRIX:
     0 0 R 0 0
@@ -18,12 +19,15 @@
     0 0 1 0 0
     0 0 0 1 0;
   --M3_FE_MATRIX_GRAY_VALUE: 1.5;
+
+  --M3_OVERLAY_SPLIT_INSET: 0px;
+
 }
 
 .ca_color_selector
 {
   position: relative;
-  z-index: 1;
+  z-index: var(--M3_CONSOLE_Z);
   top: calc( 50vh - (var( --MEDIA_2_CONTROL_DIM ) / 2 ) );
   display:flex;
   flex-direction: row;
@@ -61,10 +65,6 @@
   align-items: center;
   background-color: var(--COLOR_DEEP_DARK);
   border: 0.5rem solid hsla( 34, 10%, 45%, 1);
-  font-family: var(--FONT_TITLE);
-  font-size: var(--FONT_SIZE_MEDIUM);
-  font-weight: var(--FONT_WEIGHT_MEDIUM);
-  line-height: var(--FONT_LINE_MEDIUM);
   opacity: 1;
 }
 
@@ -72,10 +72,14 @@
 {
   position: relative;
   width: 100%;
-  height: calc( (100 / 6) * 1%);
+  height: calc( (100 / 7) * 1%);
   padding: 1rem 0;
-  color: hsla( 34, 10%, 95%, 0.6 );
+  color: hsla( 34, 0%, 95%, 0.8 );
   border: var(--MEDIA_2_PAD_GAP) solid hsla( 34, 10%, 70%, 0.2 );
+  font-family: var(--FONT_TITLE);
+  font-size: var(--FONT_SIZE_SMALL);
+  font-weight: var(--FONT_WEIGHT_HEAVY);
+  line-height: var(--FONT_LINE_MEDIUM);
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
@@ -134,14 +138,28 @@
   opacity: 0;
 }
 
-#ca_media_3_processor
+.ca_overlay_split_front,
+.ca_overlay_split_back
 {
   position: absolute;
   top: 0;
+  left: 0;
 }
+
+.ca_overlay_split_clipping
+{
+  clip-path: inset(0px var(--M3_OVERLAY_SPLIT_INSET) 0px 0px);
+  cursor: col-resize;
+}
+
+#ca_media_3_processor /* take over .ca_media_processor */
+{
+  position: absolute;
+  top: 0;
+  background-color: white;
+}
+
 #ca_media_3_processor_canvas
 {
-  margin: 0 auto;
-  width: 100%;
   filter: url(#ca_media_3_filter);
 }

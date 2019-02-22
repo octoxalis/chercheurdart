@@ -1,6 +1,6 @@
 :root
 {
-  --AREA_TRANSITION: 0.4s;
+  --AREA_TRANSITION: 0.3s;
 }
 
 /* ==== CONTENT ==== */
@@ -28,7 +28,6 @@
 /**
  * NO STYLE: used by AreaInput() only
  * .ca_area:
- * .ca_area_active
  */
 
 .ca_area_switcher
@@ -81,12 +80,24 @@
 .ca_area_text,
 .ca_area_menu
 {
+  --area_panel_top:       4vh;
+  --area_panel_left:      8vh;
+  --area_panel_delta:     0.2;
+  --area_translate_delta: 1.8;
+  --area_scale_delta:    -0.01;
+  --area_scale:              calc( var(--area_panel_delta) * ((var(--AREA_INDEX) * var(--area_scale_delta)) + 1) );
+  --scaled_area_translate_x: calc( var(--area_panel_left)  + ( var(--AREA_INDEX) * var(--area_translate_delta) * (100 / 16) * 1vw ) );
+  --scaled_area_translate_y: calc( var(--area_panel_top)   - ( var(--AREA_INDEX) * var(--area_translate_delta) * (100 / 16) * -1vh ) );
+
   position: absolute;
-  top: 0;
-  left: var(--POS_OUTRIGHT);
+  top:  0;
+  left: 0;
   min-width:  var(--AREA_WIDTH);
   min-height: var(--AREA_HEIGHT);
-  opacity: 1; /* if opacity is 0, selector is not visible! */
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: top left;
+  transform: translate3d( var(--scaled_area_translate_x), var(--scaled_area_translate_y), 0) rotateY( 40deg ) scale( var(--area_scale) );
 }
 .ca_area_media_4,
 .ca_area_media_3,
@@ -98,18 +109,8 @@
 
 .ca_area_perspective
 {
-  --area_panel_top:       4vh;
-  --area_panel_left:      8vh;  /* IDEM */
-  --area_panel_delta:     0.2;
-  --area_translate_delta: 1.8;
-  --area_scale_delta:    -0.01;
-  --area_scale:              calc( var(--area_panel_delta) * ((var(--AREA_INDEX) * var(--area_scale_delta)) + 1) );
-  --scaled_area_translate_x: calc( var(--area_panel_left)  + ( var(--AREA_INDEX) * var(--area_translate_delta) * (100 / 16) * 1vw ) );
-  --scaled_area_translate_y: calc( var(--area_panel_top)   - ( var(--AREA_INDEX) * var(--area_translate_delta) * (100 / 16) * -1vh ) );
-
+  pointer-events: auto;
   opacity: 0.6;
-  transform-origin: top left;
-  transform:  var(--AREA_ENTER) translate3d( var(--scaled_area_translate_x), var(--scaled_area_translate_y), 0) rotateY( 30deg ) scale( var(--area_scale) );
   transition: all var(--AREA_TRANSITION) ease-in-out;
 }
 .ca_area_perspective:hover
@@ -120,72 +121,73 @@
 
 .ca_area_active
 {
-  transform: var(--AREA_ENTER);
-  transition: transform var(--AREA_TRANSITION) ease-in-out;
-}
-.ca_content_perspective > .ca_area_active  /* lower current area to let others being selected */
-{
-  z-index: -1;
-  opacity: 0.05;
+  pointer-events: auto;
+  opacity: 1;
+  transform: scale(1);
+  transition: all var(--AREA_TRANSITION) ease-in-out;
 }
 
 /* ==== AREA SELECTOR ==== */
 .ca_area_selector
 {
-  --border_width: var(--AREA_SELECTOR_SIDE_WIDTH);
-
+  --selector-dim: 4rem;
+  
   position: fixed;
   z-index: var(--AREA_SELECTOR_Z);
-  top:  calc( var(--border_width) * -0.2 );
-  left: calc( var(--border_width) * -0.2 );
-  width:  var(--border_width);
-  height: var(--border_width);
-  background-color: var(--COLOR_SECOND_DEEP_DARK_TRANSPARENT);
-  /*border-radius: 50%;*/
-  opacity: 0.02;
+  top:    0;
+  left:   0;
+  width:  var(--selector-dim);
+  height: var(--selector-dim);
+  background-color: transparent;
+  opacity: 0.05;
 }
 .ca_area_selector:hover
 {
-  --border_width: calc( var(--AREA_SELECTOR_BORDER_WIDTH) * 1 );
-
   box-shadow: 1vh 1vh 20vh 5vh var(--COLOR_NEUTRAL_MAXLIGHT);
-  cursor: var(--CURSOR_MENU);
+  cursor: var(--CURSOR_MENU);  /*cursor: pointer;*/
   opacity: 1;
-  animation: ca_area_selector_pulsar 5s infinite;
+  animation: ca_area_selector_pulsar 2s infinite;
 }
 @keyframes ca_area_selector_pulsar
 {
-  0%   { opacity: 0.5;  transform: scale(0.6);  }
-  10%  { opacity: 0.65; transform: scale(0.85); }
+  0%   { opacity: 0.5;  transform: scale(0.8);  }
+  /*10%  { opacity: 0.65; transform: scale(0.85); }*/
   100% { opacity: 1;    transform: scale(1);    }
 }
+
 .ca_area_selector::after
 {
   content: '☰';
   position: absolute;
-  right:  0.15rem;
-  bottom: 0.25rem;
-  width:  2.5rem;
-  height: 2.5rem;
-  font-size: 2rem;
-  color: transparent;
-}
-.ca_area_selector::after
-{
+  right:     calc( var(--selector-dim) *  0.25 );
+  bottom:    calc( var(--selector-dim) *  0.25 );
+  width:     calc( var(--selector-dim) *  0.5 );
+  height:    calc( var(--selector-dim) *  0.5 );
+  font-size: calc( var(--selector-dim) *  0.5 );
   color: var(--COLOR_NEUTRAL_MAXLIGHT);
 }
 .ca_area_selector.ca_selector_perspective
 {
-  --border_width: calc( var(--AREA_SELECTOR_BORDER_WIDTH) * 3 );
-
-  box-shadow: 1vh 1vh 20vh 5vh var(--COLOR_NEUTRAL_MAXLIGHT);
-  opacity: 0.8;
+  opacity: 0.5;
   transition: opacity var(--AREA_TRANSITION) ease-in-out;
+  
 }
 .ca_area_selector.ca_selector_perspective:hover
 {
   opacity: 1;
   transition: opacity var(--AREA_TRANSITION) ease-in-out;
+}
+.ca_area_selector.ca_selector_perspective::before
+{
+  content: '☰';
+  position: absolute;
+  top:       calc( var(--selector-dim) *  -0.75 );
+  left:      calc( var(--selector-dim) *  -3.5 );
+  width:     calc( var(--selector-dim) *  1 );
+  height:    calc( var(--selector-dim) *  1 );
+  font-size: calc( var(--selector-dim) *  4 );
+  background-color: inherit;
+  color: var(--COLOR_NEUTRAL_MAXLIGHT);
 }
 
 .ca_area_list

@@ -19,7 +19,8 @@
 
   --HOME_PANEL_ROTATION: 75deg;
 
-  --HOME_BG_IMG:    url('../media/images/home_00.jpg');
+  --HOME_BG_IMG_P:  url('../media/images/home_P.jpg');
+  /*--HOME_BG_IMG_S:  url('../media/images/home_S.jpg');*/
   --HOME_BG_IMG_0:  url('../media/images/home_01_@550.jpg');
   --HOME_BG_IMG_1:  url('../media/images/home_02_@550.jpg');
   --HOME_BG_IMG_2:  url('../media/images/home_03_@550.jpg');
@@ -29,9 +30,7 @@
   --HOME_BG_IMG_6:  url('../media/images/home_09_@550.jpg');
   --HOME_BG_IMG_7:  url('../media/images/home_10_@550.jpg');
   --HOME_BG_IMG_8:  url('../media/images/home_14_@550.jpg');
-  
-  /*--HOME_BG_IMG_15: url('../media/images/home_01_@550.jpg');*/
-}
+  }
 
 #ca_home_back
 {
@@ -40,13 +39,25 @@
   left:   0;
   width:  100vw;
   height: 100vh;
-  background-image: var(--HOME_BG_IMG);
+  background-color: transparent;
+  background-image: var(--HOME_BG_IMG_P);
+  /*background-image: var(--HOME_BG_IMG_P), var(--HOME_BG_IMG_S);*/
+  /*background-size: cover, calc( 2000 / 4 * 1px) calc( 1283 / 4 * 1px);*/
   background-size: cover;
-  background-position-x: left;
-  background-position-y: top;
+  background-position-x: 0;
+  background-position-y: 0;
   opacity: 0.85;
   filter: url(#ca_home_prim_filter);
+  animation: ca_home_fadein 60s ease-in 10 alternate;
 }
+@keyframes ca_home_fadein
+{
+  0%   { opacity: 0.01;  transform: scale(1.8); }
+  5%   { opacity: 0.6; }
+  95%  { opacity: 1; transform: scale(0.4) translate3d( -10vw, -10vh, 0); }
+  100% { opacity: 1; transform: scale(0.4) translate3d( -10vw, -10vh, 0); }
+}
+
 .ca_home_back_side
 {
   position: absolute;

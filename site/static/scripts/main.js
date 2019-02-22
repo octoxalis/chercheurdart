@@ -144,78 +144,58 @@ class DragElement
 }
 
 //========================================================= rgb_hsl.js
-const RGB_minMax = ( r, g, b ) =>
-{
-  r /= 255
-  g /= 255
-  b /= 255
-  const min = Math.min( r, g, b )
-  const max = Math.max( r, g, b )
-  return [ max - min, min + max ]
-}
 
 /**
- * Extract the HSL hue of an RGB color value
- * r, g, and b are contained in the set [0, 255] (clampedArray)
- * returns hue in range [0, hue_n].
- *
- * @param   UInt8  r  The red color value
- * @param   UInt8  g  The green color value
- * @param   UInt8  b  The blue color value
- * @param   UInt16 hue_n hue colors number
- * @return  UInt8  s  HSL Saturation
+ * 
+ * @param {UInt8} r : red   color component
+ * @param {UInt8} g : green color component
+ * @param {UInt8} b : blue  color component
+ * 
+ * return hue in range [0..359]
  */
-const RGB_toH = ( r, g, b, hue_n ) =>
+const RGB_H = ( r, g, b ) =>
 {
-  r /= 255
-  g /= 255
-  b /= 255
   const min = Math.min( r, g, b )
   const max = Math.max( r, g, b )
   if ( max === min ) return 0 // achromatic
-  const maxLmin = max - min
-  let h = ( max === r ) ?   (g - b) / maxLmin + ( g < b ? 6.0 : 0 ) :
-          ( max === g ) ? ( (b - r) / maxLmin ) + 2 :
-                          ( (r - g) / maxLmin ) + 4
-return Math.floor( h / 6.0 * hue_n )
+  const max_min = max - min
+  const h = ( max === r ) ? ( (g - b) / max_min ) + ( g < b ? 6 : 0 ) :
+          ( max === g ) ? ( (b - r) / max_min ) + 2 :
+                          ( (r - g) / max_min ) + 4
+return Math.floor( h * 60 )
 }
 
 /**
- * Extract the HSL saturation of an RGB color value
- * r, g, and b are contained in the set [0, 255] (clampedArray)
- * returns saturation in range [0, 100].
- *
- * @param   UInt8  r  The red color value
- * @param   UInt8  g  The green color value
- * @param   UInt8  b  The blue color value
- * @return  UInt8  s  HSL Saturation
+ * return saturation in range [0..1]
  */
-const RGB_toS = ( r, g, b ) =>
+const RGB_S = ( r, g, b ) =>
 {
-  const [ maxLmin, minPmax] = RGB_minMax( r, g, b )
-  if ( maxLmin === 0 ) return 0 // achromatic
-  let s = ( ( minPmax / 2 ) > 0.5 ) ?
-    maxLmin / ( 2 - maxLmin ) :
-    maxLmin / minPmax
-  return Math.floor( s * 100 )
+  const min = Math.min( r, g, b )
+  const max = Math.max( r, g, b )
+  const max_min = max - min
+  if ( !max_min ) return 0 // achromatic
+  const min_max = min + max
+  return ( min_max > 255 ) ? max_min / ( 510 - max - min ) : max_min / min_max
 }
 
 /**
- * Extract the HSL luminosity of an RGB color value
- * r, g, and b are contained in the set [0, 255] (clampedArray)
- * returns h, s, and v in the set [0, 1].
- *
- * @param   Number  r       The red color value
- * @param   Number  g       The green color value
- * @param   Number  b       The blue color value
- * @return  Array           The HSV representation
+ * return luminosity in range [0..1]
  */
-const RGB_toL = ( r, g, b ) =>
+const RGB_L = ( r, g, b ) =>
 {
-  return Math.floor( ( RGB_minMax( r, g, b )[1] / 2 ) * 100 )
+  return ( Math.min( r, g, b ) + Math.max( r, g, b ) )  / 510
 }
 
-const HSL_toRGB = ( h, s, l ) =>
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * 
+ * @param {*} h  range [0..359]
+ * @param {*} s  range [0..1]
+ * @param {*} l  range [0..1]
+ * 
+ * return [r,g,b] range [0..1]
+ */
+const HSL_RGB = ( h, s, l ) =>
 {
   let r, g, b
 
@@ -231,15 +211,14 @@ const HSL_toRGB = ( h, s, l ) =>
       if ( t < 0.6666667 ) return p + (q - p) * (0.6666667 - t) * 6
       return p
     }
-    h /= 360
     const q = l < 0.5 ? l * (1 + s) : l + s - l * s
     const p = 2 * l - q
+    h /= 360
     r = H2R( p, q, h + 0.3333334 )
     g = H2R( p, q, h )
     b = H2R( p, q, h - 0.3333334 )
   }
-
-  return [ Math.floor(r * 255), Math.floor(g * 255), Math.floor(b * 255) ]
+  return [ r, g, b ]
 }
 
 const H_toMatrix = ( hue ) =>
@@ -250,10 +229,11 @@ const H_toMatrix = ( hue ) =>
   if ( hue < 0 ) red_s = green_s = blue_s = DOM_getRootVar( '--M3_FE_MATRIX_GRAY_VALUE' )
   else
   {
-    rgb_a   = HSL_toRGB( hue, 1, 0.5 )  // normalized HSL
-    red_s   = (rgb_a[0] / 255) + GRAY_DELTA
-    green_s = (rgb_a[1] / 255) + GRAY_DELTA
-    blue_s  = (rgb_a[2] / 255) + GRAY_DELTA
+    rgb_a   = HSL_RGB( hue, 1, 0.5 )  // normalized HSL
+    // ~ rgb_a   = HSL_RGB( hue, 100, 50 )  // normalized HSL
+    red_s   = rgb_a[0] + GRAY_DELTA
+    green_s = rgb_a[1] + GRAY_DELTA
+    blue_s  = rgb_a[2] + GRAY_DELTA
   }
   matrix_s = matrix_s
     .replace( 'R', red_s )
@@ -261,6 +241,7 @@ const H_toMatrix = ( hue ) =>
     .replace( 'B', blue_s )
   return matrix_s
 }
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 //========================================================= LogScale.js
 /**
@@ -305,11 +286,8 @@ const AreaInput = ( ID_s ) =>
     areas.item( at ).classList.toggle( `ca_area_perspective` )
     selectors.item( at ).classList.toggle( 'ca_selector_perspective' )
   }
-  if ( isPerpective )
-  {
-    document.querySelector( `.ca_area_active` ).classList.toggle( 'ca_area_active' )
-    document.getElementById( ID_s.replace( 'select_', '') ).classList.toggle( 'ca_area_active' )
-  }
+  if ( isPerpective ) document.getElementById( ID_s.replace( 'select_', '') ).classList.toggle( 'ca_area_active' )
+  else document.querySelector( `.ca_area_active` ).classList.toggle( 'ca_area_active' )
 }
 
 //========================================================= scrollbar.js

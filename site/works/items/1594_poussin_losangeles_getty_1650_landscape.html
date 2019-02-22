@@ -428,12 +428,13 @@ Version initiale</li>
 
 <div id="ca_media_3_color_selector" class="ca_color_selector">
   <div id="ca_media_3_selector_pad"    class="ca_color_selector_pad">
-    <label for="ca_media_3_hue_input"  id="ca_media_3_hue_label"  class="ca_media_3_pad_label" value="1" onclick="M3_processInput( this.getAttribute( 'for'), this )">Ton</label>
-    <label for="ca_media_3_lum_input"  id="ca_media_3_lum_label"  class="ca_media_3_pad_label" value="0" onclick="M3_processInput( this.getAttribute( 'for'), this )">Lum</label>
-    <label for="ca_media_3_tone_input" id="ca_media_3_tone_label" class="ca_media_3_pad_label" value="0" onclick="M3_processInput( this.getAttribute( 'for'), this )">Mono</label>
-    <label for="ca_media_3_gray_input" id="ca_media_3_gray_label" class="ca_media_3_pad_label" value="0" onclick="M3_processInput( this.getAttribute( 'for'), this )">Gris</label>
-    <label for="ca_media_3_pick_input" id="ca_media_3_pick_label" class="ca_media_3_pad_label" value="0" onclick="M3_processInput( this.getAttribute( 'for'), this )">Pick</label>
-    <label for="ca_media_3_eq_input"   id="ca_media_3_eq_label"   class="ca_media_3_pad_label" value="0" onclick="M3_processInput( this.getAttribute( 'for'), this )">Égal</label>
+    <label for="ca_media_3_hue_input"   id="ca_media_3_hue_label"   class="ca_media_3_pad_label" value="1" onclick="M3_processorInput( this.getAttribute( 'for'), this )">Polychrome</label>
+    <label for="ca_media_3_tone_input"  id="ca_media_3_tone_label"  class="ca_media_3_pad_label" value="0" onclick="M3_processorInput( this.getAttribute( 'for'), this )">Monochrome</label>
+    <label for="ca_media_3_gray_input"  id="ca_media_3_gray_label"  class="ca_media_3_pad_label" value="0" onclick="M3_processorInput( this.getAttribute( 'for'), this )">Gris</label>
+    <label for="ca_media_3_lum_input"   id="ca_media_3_lum_label"   class="ca_media_3_pad_label" value="0" onclick="M3_processorInput( this.getAttribute( 'for'), this )">Luminosité</label>
+    <label for="ca_media_3_pick_input"  id="ca_media_3_pick_label"  class="ca_media_3_pad_label" value="0" onclick="M3_processorInput( this.getAttribute( 'for'), this )">Échantillon</label>
+    <label for="ca_media_3_split_input" id="ca_media_3_split_label" class="ca_media_3_pad_label" value="0" onclick="M3_processorInput( this.getAttribute( 'for'), this )">Comparateur</label>
+    <label for="ca_media_3_eq_input"    id="ca_media_3_eq_label"    class="ca_media_3_pad_label" value="0" onclick="M3_processorInput( this.getAttribute( 'for'), this )">Égaliseur</label>
   </div>
   <div id="ca_media_3_selector_console" class="ca_color_selector_swap" data-index="100">
     <div id="ca_media_3_selector_lum_console" class="ca_color_selector_console"></div>
@@ -441,31 +442,32 @@ Version initiale</li>
   </div>
 </div>
 <div id="ca_media_3_selector_pad_input" class="ca_media_3_pad_input">
-  <input id="ca_media_3_hue_input"      class="ca_media_3_pad_input_radio"  type="radio"    value="1" name="color_input">
-  <input id="ca_media_3_lum_input"      class="ca_media_3_pad_input_radio"  type="radio"    value="0" name="color_input">
-  <input id="ca_media_3_tone_input"     class="ca_media_3_pad_input_check"  type="checkbox" value="0">
-  <input id="ca_media_3_gray_input"     class="ca_media_3_pad_input_check"  type="checkbox" value="0">
-  <input id="ca_media_3_pick_input"     class="ca_media_3_pad_input_check"  type="checkbox" value="0">
-  <input id="ca_media_3_eq_input"       class="ca_media_3_pad_input_check"  type="checkbox" value="0">
+  <input id="ca_media_3_hue_input"   class="ca_media_3_pad_input_radio"  type="radio"    value="1" name="color_input">
+  <input id="ca_media_3_tone_input"  class="ca_media_3_pad_input_check"  type="checkbox" value="0">
+  <input id="ca_media_3_gray_input"  class="ca_media_3_pad_input_check"  type="checkbox" value="0">
+  <input id="ca_media_3_lum_input"   class="ca_media_3_pad_input_radio"  type="radio"    value="0" name="color_input">
+  <input id="ca_media_3_pick_input"  class="ca_media_3_pad_input_check"  type="checkbox" value="0">
+  <input id="ca_media_3_split_input" class="ca_media_3_pad_input_check"  type="checkbox" value="0">
+  <input id="ca_media_3_eq_input"    class="ca_media_3_pad_input_check"  type="checkbox" value="0">
 </div>
-
 </div>
 <div id="ca_media_3_processor" class="ca_media_processor">
   
 
-<canvas id="ca_media_3_processor_canvas" class="ca_media_processor_canvas  ca_media_canvas_atmin"
-        onclick="this.classList.toggle('ca_media_canvas_atmin')">
-  <img id="ca_media_3_img" src="http://www.chercheurd.art/static/media/images/1594_poussin_losangeles_getty_1650_landscape-@400.jpg" class="ca_media_processor_img"
+<div id="ca_media_3_overlay_splitter">
+  <img id="ca_media_3_img_back" src="http://www.chercheurd.art/static/media/images/1594_poussin_losangeles_getty_1650_landscape-@400.jpg" class="ca_media_processor_img ca_overlay_split_back"
        data-src-width="4326" data-src-height="3215">
-</canvas>
-<svg class="ca_svg_chrome_filter">
-  <filter id="ca_media_3_filter" color-interpolation-filters="sRGB"
-          x="0" y="0" height="100%" width="100%">
-    <feColorMatrix id="ca_media_3_filter_matrix"
-       type="matrix"
-       values="1 0 0 0 0   0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
-  </filter>
-</svg>
+  <canvas id="ca_media_3_processor_canvas" class="ca_media_processor_canvas ca_overlay_split_front">
+    <img id="ca_media_3_img" src="http://www.chercheurd.art/static/media/images/1594_poussin_losangeles_getty_1650_landscape-@400.jpg" class="ca_media_processor_img"
+         data-src-width="4326" data-src-height="3215">
+  </canvas>
+  <svg>
+   <filter id="ca_media_3_filter" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+      <feColorMatrix id="ca_media_3_filter_matrix" type="matrix" values="1 0 0 0 0   0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
+    </filter>
+  </svg>
+</div>
+
 
 </div>
 
@@ -552,6 +554,16 @@ Version initiale</li>
 </div>
 <script src="http://www.chercheurd.art/static/scripts/main.js"></script>
 
+<script type="application/json" class="js-hypothesis-config">
+  {
+    "openSidebar": false,
+    "showHighlights": "whenSidebarOpen",
+    "enableExperimentalNewNoteButton": true,
+    "theme": "clean"
+  }
+</script>
+<script async src="https://hypothes.is/embed.js"></script>
+
 
 
 
@@ -569,6 +581,7 @@ M1_anim_o.direction = 'normal'
 M1_anim_o.fill      = 'forwards'
 </script>
 
+<script src="http://www.chercheurd.art/static/scripts/img_process.js"></script>
 <script src="http://www.chercheurd.art/static/scripts/media.js"></script>
 
 
