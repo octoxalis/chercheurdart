@@ -1,39 +1,34 @@
 //========================================================= color-scan.js
 /**
  * JPEG image data scanner
- * @ scan_o : { canvasId: 'ID', imageId: 'ID', hue_n: 360, type: 'JPEG' }
- * @ canvasId: parent HTML canvas ID attribute
- * @ imageId:  HTML image tag ID attribute
- * @ type:     Image type (default = JPEG)
- * @ hue_n:   Number of color spectrum regions to dispatch hues
- * @ useworker: Scan using workers
- */
-/**
- * @Class constructor
- * @ scan_o: options
  */
 class ColorScan
 {
+/**
+ * @ scan_o : { canvasId: 'ID', imageId: 'ID', hue_n: 360, lum_n: 101, type: 'JPEG' }
+ * = canvasId: parent HTML canvas ID attribute
+ * = imageId:  HTML image tag ID attribute
+ * = type:     Image type (default = JPEG)
+ * = hue_n:    Number of color regions  [0...359]
+ * = lum_n:    Number of luminosity regions  [0...100]
+ */
   constructor ( scan_o )
   {
-      this._canvasId  = scan_o.canvasId
-      this._imageId   = scan_o.imageId
-      this._hue_n     = scan_o.hue_n
-      this._lum_n     = scan_o.lum_n
-      this._type      = scan_o.type || 'JPEG'
-      this._canvas    = null
-      this._display   = null
-      this._image     = null
-      this._context   = null
-      this._imageData = null
-      this._data      = null
-      this._hue_a     = new Array( this._hue_n )   // : colors dispatched by hue region
-      this._lum_a     = new Array( this._lum_n )   // : luminances dispatched in range 0...100
-      this._master_w  = null  // : worker
-      this._slaves_n  = scan_o.slaves_n || 0
-      this._rawscan_a = []
+    this._imageId   = scan_o.imageId
+    this._canvasId  = scan_o.canvasId
+    this._hue_n     = scan_o.hue_n
+    this._lum_n     = scan_o.lum_n
+    this._type      = scan_o.type || 'JPEG'
+    this._canvas    = null
+    this._image     = null
+    this._context   = null
+    this._imageData = null
+    this._data      = null
+    this._display   = null
+    this._hue_a     = null
+    this._lum_a     = null
 
-      this.init()
+    this.init()
   }
 
   init ()
@@ -46,12 +41,13 @@ class ColorScan
       this._canvas.height = this._image.height
       this._display       = this._canvas.style.display
       this._context       = this._canvas.getContext( '2d' )
-
       this._context.drawImage(this._image, 0, 0)
-      this._imageData = this._context.getImageData(0, 0, this._image.width, this._image.height)
-      this._data = this._imageData.data
-      if ( this._hue_n > 0 ) for ( let ath=0; ath < this._hue_n; ++ath ) this._hue_a[ath] = []   // : Prepare Array of Arrays
-      if ( this._lum_n > 0 ) for ( let atl=0; atl < this._lum_n; ++atl ) this._lum_a[atl] = []   // : idem
+      this._imageData     = this._context.getImageData(0, 0, this._image.width, this._image.height)
+      this._data          = this._imageData.data
+      this._hue_a         = new Array( this._hue_n )
+      for ( let ath=0; ath < this._hue_n; ++ath ) this._hue_a[ath] = []   // : Prepare Array of Arrays
+      this._lum_a         = new Array( this._lum_n )
+      for ( let atl=0; atl < this._lum_n; ++atl ) this._lum_a[atl] = []   // : idem
     }
     catch (error)
     {
@@ -69,103 +65,30 @@ class ColorScan
    */
   scan ()
   {
-                              //////////////////////
-                              ;console.time('scan');
-                              //////////////////////
-    
-    if ( this._slaves_n === 0 )
+    try
     {
-      try
+                                      //////////////////////
+                                      ;console.time('scanM');
+                                      //////////////////////
+      const length = this._data.length
+      let r, g, b
+      for ( let at = 0; at < length; at += 4)
       {
-        for ( let at = 0; at < this._hue_n; ++at ) this._hue_a[at] = []  // : Prepare
-        const _length = this._data.length
-        if ( this._hue_n > 0 )
-        {
-          for ( let at = 0; at < _length; at += 4)
-          {
-            // ; if ( at < 16*4 )  console.log( `hue[${RGB_H( this._data[at], this._data[at+1], this._data[at+2])}]` )
-            this._hue_a[RGB_H( this._data[at], this._data[at+1], this._data[at+2])].push(at)  // : imageData pointer
-          }
-          ;for ( let at=0; at < 32; ++at ) LOG(`@${at}: ${this._hue_a[at].length}`)
-        }
-        if ( this._lum_n > 0 )
-        {
-          for ( let at = 0; at < _length; at += 4) this._lum_a[Math.floor(RGB_L( this._data[at], this._data[at+1], this._data[at+2] ) * 100 )].push(at)  // : imageData pointer
-        }
+        r = this._data[at]
+        g = this._data[at+1]
+        b = this._data[at+2]
+        this._hue_a[RGB_H( r, g, b )].push(at)                     // : imageData pointer
+        this._lum_a[Math.floor(RGB_L( r, g, b ) * 100 )].push(at)  // : idem
       }
-      catch (error)
-      {
-        console.log( `[class ColorScan]init method error: ${error} -- at = ${at}`)
-      }
-      // ;for ( let at=0; at < this._hue_a.length/90; ++at ) LOG(`@${at}: ${this._hue_a[at].length}`)
-                              //////////////////////
-                              ;console.timeEnd('scan');
-                              //////////////////////
+                                      //////////////////////
+                                      ;console.timeEnd('scanM');
+                                      //////////////////////
       return this
     }
-    // ======== WORKERS VERSION
-    const workerSet_o =
+    catch (error)
     {
-      slaves_n:   this._slaves_n,
-      slavesURL:  '../../static/scripts/color-scan-slave_w.js',
-      masterMsg:  'SETUP',
-      data_sa:    this._data,
-      dataLength: this._data.length,
-      // xx hue_n:      this._hue_n
+      console.log( `[class ColorScan]init method error: ${error} -- at = ${at}`)
     }
-    if ( this._master_w === null )
-    {
-      this._master_w = new Worker( '../../static/scripts/color-scan-master_w.js' )
-      this._master_w.addEventListener("message", this.fromMaster.bind(this), true)
-      this._master_w.addEventListener("error",   this.handleError.bind(this), true)
-      this._master_w.postMessage( workerSet_o )
-    }
-    return this
-  }
-
-  // ============================
-  // MASTER => MAIN
-  fromMaster( master_e )
-  {
-    this._rawscan_a.push( master_e.data )    // ;console.log( `_rawscan_a.length: ${this._rawscan_a.length}` )
-    if ( this._rawscan_a.length === this._slaves_n )   // all slaves have completed their work
-    {
-      let length
-      let u32_scan_av
-      let at = 0
-      for ( ; at < this._rawscan_a.length; ++at)
-      {
-        u32_scan_av = new Uint32Array( this._rawscan_a[at] )    // TypedArray View
-        length = u32_scan_av.length                                 // ;console.log( `length: ${length}` )
-        let ath = 0
-        try
-        {
-          for( ; ath < length; ++ath)
-          {
-            // ..................................
-            // ; if ( ath < 16 )  console.log( `hue[${u32_scan_av[ath] >>> 23}] = ${u32_scan_av[ath] & 0x3FFFFF}` )
-            this._hue_a[u32_scan_av[ath] >>> 23].push( u32_scan_av[ath] & 0x3FFFFF )  // bits 31-23 (9): hue/index + bits 22-0 (23): pointer
-            // ..................................
-          }
-          // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-          //for ( let b=0; b<360; b+= 12 )  ;console.log( `hue_a @${b}: ${this._hue_a[b].length}` )
-          // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        }
-        catch
-        {
-          console.log(`Error: iteration = ${ath} -- hue: ${u32_scan_av[ath] >>> 23}`)
-        }
-      }
-      // ;for ( let at=0; at < 32; ++at ) LOG(`@${at}: ${this._hue_a[at].length}`)
-                            //////////////////////
-                            ;console.timeEnd('scan');
-                            //////////////////////
-    }
-  }
-  
-  handleError( e )
-  {
-    console.log(`error: ${e.message}`)
   }
 
   getHue_a ()
@@ -197,14 +120,17 @@ class ColorScan
 
   getSaturLumen_a ( hue )
   {
-    const satur_a = new Int32Array( 100 )
-    const lumen_a = new Int32Array( 100 )
+    const satur_a = new Int32Array( 101 )
+    const lumen_a = new Int32Array( 101 )
     let length = this._hue_a[hue].length
     for ( let at = 0; at < length; ++at )
     {
       const pointer = this._hue_a[hue][at]
-      satur_a[Math.floor(RGB_S( this._data[pointer], this._data[pointer+1], this._data[pointer+2] ) * 100)] += 1
-      lumen_a[Math.floor(RGB_L( this._data[pointer], this._data[pointer+1], this._data[pointer+2] ) * 100)] += 1
+      const r = this._data[pointer]
+      const g = this._data[pointer+1]
+      const b = this._data[pointer+2]
+      satur_a[Math.floor(RGB_S( r, g, b ) * 100)] += 1
+      lumen_a[Math.floor(RGB_L( r, g, b ) * 100)] += 1
     }
     return [ satur_a, lumen_a ]
   }
@@ -239,12 +165,12 @@ class ColorScan
     if ( mode === 0 )    // : M3_HUE_MODE
     {
       length = this._hue_a[arci].length
-      for (var ati = 0; ati < length; ++ ati) this._data[this._hue_a[arci][ati]+3] = opacity
+      for ( let at = 0; at < length; ++at ) this._data[this._hue_a[arci][at]+3] = opacity
     }
     else    // : M3_LUM_MODE
     {
       length = this._lum_a[arci].length
-      for (var ati = 0; ati < length; ++ ati) this._data[this._lum_a[arci][ati]+3] = opacity
+      for ( let at = 0; at < length; ++at ) this._data[this._lum_a[arci][at]+3] = opacity
     }
     return this
   }
@@ -281,7 +207,7 @@ class ColorConsole
       this._slideWidth     = Math.floor(( window.innerWidth * 0.92 ) / this._slider_n )
       this._consoleWidth   = this._slider_n * this._slideWidth
       this._gridColor      = console_o.gridColor || DOM_getRootVar( '--M3_CONSOLE_COLOR' )
-      this._onSelectHandle = console_o.onSelectHandle
+      this._handle = console_o.handle
 
       this._loose          = false
       this._lastHit        = 0    // : default
@@ -421,7 +347,7 @@ class ColorConsole
           // :else update_o.level = Math.floor( 0 ) => default   // : minimum opacity 
       }
       this.setSlider( update_o )
-      this._onSelectHandle( update_o )
+      this._handle( update_o )
     }
   }
 
@@ -647,47 +573,3 @@ class OverlaySplitter
     if ( ( mouse_e.type === 'mousemove' ) && this._isOn ) this.clip( mouse_e.clientX )
   }
 }
-
-//========================================================= color-burst.js
-/**
- * Compare original vs filtered images
- */
-class ImageSplitter
-{
-  constructor ( splitter_o )
-  {
-    this._splitter_e = document.getElementById( splitter_o.viewID )
-    this._front_e    = document.getElementById( splitter_o.frontID )
-    this._isOn = false
-  }
-
-  handleEvent ( mouse_e )
-  {
-    const offset = parseInt( window.getComputedStyle( this._front_e).width.replace( 'px', '') ) * 0.66    // : optimum sweep in screen center half
-    const delta  = ( mouse_e.clientX - ( offset * 0.5 ) ) * 0.5                                           // : delta between mouse position and center point.
-    this._front_e.style.width = `${mouse_e.clientX + offset + delta}px`                                   // : adjust front split width.
-  }
-
-  start ()
-  {
-    if ( !this._isOn )
-    {
-      this._splitter_e.addEventListener( 'mousemove', this, false )
-      this._isOn = true
-    }
-  }
-  stop ()
-  {
-    if ( this._isOn )
-    {
-      this._splitter_e.removeEventListener( 'mousemove', this, false )
-      this._isOn = false
-    }
-  }
-
-  isOn ()
-  {
-    return this._isOn
-  }
-}
-

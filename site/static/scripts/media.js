@@ -121,7 +121,7 @@ M2_process = () =>
   
     let M2_rotationAt = 0
     let M2_flipAt     = 0
-    M2_processInput = ( process_s ) =>
+    M2_consoleInput = ( process_s ) =>
     {
       let transform
       switch ( process_s )
@@ -185,9 +185,44 @@ M3_process = () =>
   {
     try
     {
-                                                                // ;LOG(`M3_img_e has loaded: ${performance.now()}`)
+      // ;LOG(`M3_img_e has loaded: ${performance.now()}`)
       
-      M3_processorInput = ( input_s, label_e ) =>
+      const M3_toggleSplitter = ( setOn ) =>
+      {
+        if ( setOn )
+        {
+          M3_splitter.start()
+          return
+        }
+        M3_splitter.stop()
+      }
+
+      const M3_toggleConsole = () =>
+      {
+        document.getElementById( 'ca_media_3_color_selector' )
+         .classList.toggle('ca_media_3_color_selector_mute')
+      }
+
+      const M3_toggleColorPicker = ( add_b ) =>
+      {
+        M3_toggleConsole()
+        const canvas_e = document.getElementById( 'ca_media_3_processor_canvas' )
+        canvas_e.classList.toggle('ca_media_3_color_picker')
+        if ( add_b ) canvas_e.addEventListener( 'click', M3_colorPickerInput, false )
+        else         canvas_e.removeEventListener( 'click', M3_colorPickerInput, false )
+      }
+
+      const M3_colorPickerInput = ( mouse_e ) =>
+      {
+        const ewidth = DOM_getStyle( 'ca_media_3_processor_canvas', 'width').replace( 'px', '' )          //; LOG( `img element width: ${ewidth}` )
+        const cwidth = M3_scan.getCanvasWidth()                                                  //; LOG( `canvas width: ${cwidth}` )
+        let r, g, b, a
+        ( { r, g, b, a } = M3_scan.HSL_RGBA_a ( mouse_e.clientX, mouse_e.clientY, cwidth / ewidth ) )    // ; LOG( `{ r, g, b, a }: ${r},${g},${b},${a}` )
+        M3_hueConsole.setHit( RGB_H( r, g, b ) )
+        M3_toggleColorPicker( false )  // : remove event
+      }
+
+      M3_consolePadInput = ( input_s, label_e ) =>
       {
         const input_e = document.getElementById( input_s )
         const type = input_e.getAttribute( 'type' )
@@ -241,42 +276,30 @@ M3_process = () =>
           .setAttribute( 'values', values_s )
       }
 
-      const M3_colorPickerInput = ( mouse_e ) =>
+      const M3_consoleSlideInput = update_o =>    // : event handle
       {
-        const ewidth = DOM_getStyle( 'ca_media_3_processor_canvas', 'width').replace( 'px', '' )          //; LOG( `img element width: ${ewidth}` )
-        const cwidth = M3_processScan.getCanvasWidth()                                                  //; LOG( `canvas width: ${cwidth}` )
-        let r, g, b, a
-        ( { r, g, b, a } = M3_processScan.HSL_RGBA_a ( mouse_e.clientX, mouse_e.clientY, cwidth / ewidth ) )    // ; LOG( `{ r, g, b, a }: ${r},${g},${b},${a}` )
-        M3_hueConsole.setHit( RGB_H( r, g, b ) )
-        M3_toggleColorPicker( false )  // : remove event
-      }
-
-      const M3_toggleColorPicker = ( add_b ) =>
-      {
-        M3_muteSelector()
-        const canvas_e = document.getElementById( 'ca_media_3_processor_canvas' )
-        canvas_e.classList.toggle('ca_media_3_color_picker')
-        if ( add_b ) canvas_e.addEventListener( 'click', M3_colorPickerInput, false )
-        else         canvas_e.removeEventListener( 'click', M3_colorPickerInput, false )
-      }
-
-      const M3_muteSelector = () =>
-      {
-        document.getElementById( 'ca_media_3_color_selector' )
-         .classList.toggle('ca_media_3_color_selector_mute')
-      }
-  
-      const M3_toggleSplitter = ( setOn ) =>
-      {
-        if ( setOn )
+        M3_scan.setDisplay()
+        const M3_HUE_MODE = 0
+        const M3_LUM_MODE = 1
+        const mode = ( document.getElementById( 'ca_media_3_hue_input' ).value === '1' ) ? M3_HUE_MODE : M3_LUM_MODE   // ; LOG( `mode: ${mode}` )
+        // .................................................
+        if ( !update_o.eq )
         {
-          M3_splitter.start()
-          return
+          if ( update_o.level >= 0 ) M3_scan.setOpacity( mode, update_o.arc, (M3_SLIDE_RANGE - 1) - update_o.level )
         }
-        M3_splitter.stop()
+        else
+        {
+          if ( update_o.level >= 0 )
+          {
+            const length = update_o.slider_n
+            for ( let at = 0; at < length; ++at) M3_scan.setOpacity( mode, at, (M3_SLIDE_RANGE - 1) - update_o.level )
+          }
         }
-  
-      M3_hueInput = () =>
+        // .................................................
+        M3_scan.setDisplay('inline')
+      }
+      
+      const M3_processorHueInput = () =>
       {
         const selector_e = document.getElementById( 'ca_media_3_selector_console' )
         const offsetX = DOM_getStyle( 'ca_media_3_selector_lum_console', 'left').replace( 'px', '' )          // ; LOG( `offsetX: ${offsetX}` )
@@ -289,11 +312,8 @@ M3_process = () =>
           DOM_setRootVar( '--M3_POINTER_AT', `${mouse_e.clientX - offsetW}` )
         }
       }
-      document.getElementById( 'ca_media_3_selector_console' )
-        .addEventListener( 'mouseover', M3_hueInput(), false)
-      
-      const M3_HUE_N = 360    // : range [ 0..359 ]
-      const M3_LUM_N = 101    // : range [ 0..100 ]
+
+
       let width
       ( { width } = DOM_getImgDim( 'ca_media_3_img' ) )
       DOM_setRootVar( '--MEDIA_PROCESSOR_ATMIN', window.innerWidth / width )
@@ -303,63 +323,36 @@ M3_process = () =>
         imageId:  'ca_media_3_img',
         hue_n:     M3_HUE_N,
         lum_n:     M3_LUM_N,
-        //slaves_n:  4,
       }
-      M3_processScan =
-        new ColorScan( M3_scanSettings_o )
-      M3_processScan
+      M3_scan = new ColorScan( M3_scanSettings_o )
+      M3_scan
         .setDisplay( 'inline' )
         .scan()
 
-      const M3_selectHandle = update_o =>    // : event handle
-      {
-        M3_processScan.setDisplay()
-        const M3_HUE_MODE = 0
-        const M3_LUM_MODE = 1
-        const mode = ( document.getElementById( 'ca_media_3_hue_input' ).value === '1' ) ? M3_HUE_MODE : M3_LUM_MODE
-        // .................................................
-        if ( !update_o.eq )
-        {
-          if ( update_o.level >= 0 ) M3_processScan.setOpacity( mode, update_o.arc, (M3_SLIDE_RANGE - 1) - update_o.level )
-        }
-        else
-        {
-          if ( update_o.level >= 0 )
-          {
-            const length = update_o.slider_n
-            for ( let ath = 0; ath < length; ++ath) M3_processScan.setOpacity( mode, ath, (M3_SLIDE_RANGE - 1) - update_o.level )
-          }
-        }
-        // .................................................
-        M3_processScan.setDisplay('inline')
-      }
-      
       const M3_hueSettings_o =
       {
+        mode:       'hue',
         selectorId: 'ca_media_3_selector_hue_console',
         eqInputId:  'ca_media_3_eq_input',
         slidersId:  'ca_media_3_selector_hue_sliders',
         slideId:    'ca_media_3_selector_slide',
-        onSelectHandle: M3_selectHandle,
-        mode:       'hue',
+        handle: M3_consoleSlideInput,
         slider_n:   M3_HUE_N,
       }
-      const M3_hueConsole =
-        new ColorConsole( M3_hueSettings_o )
+      const M3_hueConsole = new ColorConsole( M3_hueSettings_o )
       DOM_setRootVar( '--M3_SLIDE_WIDTH', M3_hueConsole.getSlideWidth() )
 
       const M3_lumSettings_o =
       {
+        mode:       'lum',
         selectorId: 'ca_media_3_selector_lum_console',
         eqInputId:  'ca_media_3_eq_input',
         slidersId:  'ca_media_3_selector_lum_sliders',
         slideId:    'ca_media_3_selector_slide',
-        onSelectHandle: M3_selectHandle,
-        mode:       'lum',
+        handle: M3_consoleSlideInput,
         slider_n:   M3_LUM_N,
       }
-      const M3_lumConsole =
-        new ColorConsole( M3_lumSettings_o )
+      const M3_lumConsole = new ColorConsole( M3_lumSettings_o )
 
       const M3_splitter_o =
       {
@@ -369,6 +362,11 @@ M3_process = () =>
         clipVar:     '--M3_OVERLAY_SPLIT_INSET',
       }
       const M3_splitter = new OverlaySplitter( M3_splitter_o )
+
+      document.getElementById( 'ca_media_3_selector_console' )
+        .addEventListener( 'mouseover', M3_processorHueInput(), false)    // : higher order function
+      
+      M4_process()    // : chaining: M4_process uses M3_scan
     }
     catch ( error )
     {
@@ -383,9 +381,8 @@ M4_process = () =>
   {
                                                                               // ;LOG(`M4_hue_e has loaded: ${performance.now()}`)
     const M4_hue_e = document.getElementById( 'ca_media_4_huesvg' )
-      // Hues
-    let M4_hue_a = M3_processScan.getHue_a()
-    let hue_n    = M3_processScan.getHue_n()
+    let M4_hue_a = M3_scan.getHue_a()
+    let hue_n    = M3_HUE_N
     let hue_a = []
     let hmaxFreq_n = 0
     let freq_n
@@ -405,7 +402,7 @@ M4_process = () =>
       onHueChange: hue =>    // : event handle
       {
         if ( !M4_hue_a[hue] ||  M4_hue_a[hue].length === 0 ) return
-        const [ satur_a, lumen_a ] = M3_processScan.getSaturLumen_a( hue )
+        const [ satur_a, lumen_a ] = M3_scan.getSaturLumen_a( hue )
         const length = satur_a.length
         const saturations_a = []
         const luminosities_a = []
@@ -438,24 +435,27 @@ M4_process = () =>
   }
 }
 
-//========================================================= media
-const M3_SLIDE_RANGE = 256    // : --M3_SLIDE_RANGE
-
-let M2_processInput    // : media_2
-let M3_processorInput    // : media_3
-let M3_processScan     // : media_3 + media_4
-let M3_hueInput    // : media_3
-const M_process = ( mediaImg_e ) =>
+//========================================================= media_1234
+const M_init = () =>
 {
-                                                // ;LOG(`M_process: ${performance.now()}`)
-  const Mg_imgSrc = mediaImg_e.getAttribute( 'src' )
-  const Media_img_a = document.querySelectorAll( '.ca_media_processor_img' )
-  for ( let at=0; at < Media_img_a.length; ++at ) Media_img_a[at].setAttribute( 'src', Mg_imgSrc )
+  const src = M_img_e.getAttribute( 'src' )
+  const img_a = document.querySelectorAll( '.ca_media_processor_img' )
+  for ( let at=0; at < img_a.length; ++at ) img_a[at].setAttribute( 'src', src )
+
   M1_process()
   M2_process()
-  M3_process()
-  M4_process()
+  M3_process()    // : => M4_process()
 }
+
+//========================================================= main
+const M3_HUE_N       = 360    // : range [ 0..359 ]
+const M3_LUM_N       = 101    // : range [ 0..100 ]
+const M3_SLIDE_RANGE = 256    // : --M3_SLIDE_RANGE
+
+let M2_consoleInput           // : media_2
+let M3_consolePadInput         // : media_3
+let M3_scan                   // : media_3 + media_4
+
 const M_img_e = document.getElementById( 'ca_gallery_img' )
-if ( M_img_e.complete === false ) M_img_e.onload = () => { M_process( M_img_e ) }
-else M_process( M_img_e )
+if ( M_img_e.complete === false ) M_img_e.onload = () => { M_init() }
+else M_init()

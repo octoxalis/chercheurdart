@@ -386,17 +386,17 @@ Mort à Porto Ercole. </li>
   
 <div id="ca_media_2_control" class="ca_media_2_control">
   <div id="ca_media_2_control_pad" class="ca_media_2_control_pad">
-    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_processInput('ROTATE_CW')">↷</div>
-    <div class="ca_media_2_control_key" onclick="M2_processInput('lines_v')">⤋</div>
-    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_processInput('ROTATE_CW_R')">↶</div>
+    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_consoleInput('ROTATE_CW')">↷</div>
+    <div class="ca_media_2_control_key" onclick="M2_consoleInput('lines_v')">⤋</div>
+    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_consoleInput('ROTATE_CW_R')">↶</div>
 
-    <div class="ca_media_2_control_key" onclick="M2_processInput('lines_lr')">↘</div>
-    <div class="ca_media_2_control_key" onclick="M2_processInput('UNDO')">&#8709;</div>
-    <div class="ca_media_2_control_key" onclick="M2_processInput('lines_rl')">↙</div>
+    <div class="ca_media_2_control_key" onclick="M2_consoleInput('lines_lr')">↘</div>
+    <div class="ca_media_2_control_key" onclick="M2_consoleInput('UNDO')">&#8709;</div>
+    <div class="ca_media_2_control_key" onclick="M2_consoleInput('lines_rl')">↙</div>
 
-    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_processInput('FLIP_CW')">↻</div>
-    <div class="ca_media_2_control_key" onclick="M2_processInput('lines_hz')">⇛</div>
-    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_processInput('FLIP_CW_R')">↺</div>
+    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_consoleInput('FLIP_CW')">↻</div>
+    <div class="ca_media_2_control_key" onclick="M2_consoleInput('lines_hz')">⇛</div>
+    <div class="ca_media_2_control_key ca_media_2_control_rotation_key" onclick="M2_consoleInput('FLIP_CW_R')">↺</div>
   </div>
 </div>
 
@@ -431,13 +431,13 @@ Mort à Porto Ercole. </li>
 
 <div id="ca_media_3_color_selector" class="ca_color_selector">
   <div id="ca_media_3_selector_pad"    class="ca_color_selector_pad">
-    <label for="ca_media_3_hue_input"   id="ca_media_3_hue_label"   class="ca_media_3_pad_label" value="1" onclick="M3_processorInput( this.getAttribute( 'for'), this )">Polychrome</label>
-    <label for="ca_media_3_tone_input"  id="ca_media_3_tone_label"  class="ca_media_3_pad_label" value="0" onclick="M3_processorInput( this.getAttribute( 'for'), this )">Monochrome</label>
-    <label for="ca_media_3_gray_input"  id="ca_media_3_gray_label"  class="ca_media_3_pad_label" value="0" onclick="M3_processorInput( this.getAttribute( 'for'), this )">Gris</label>
-    <label for="ca_media_3_lum_input"   id="ca_media_3_lum_label"   class="ca_media_3_pad_label" value="0" onclick="M3_processorInput( this.getAttribute( 'for'), this )">Luminosité</label>
-    <label for="ca_media_3_pick_input"  id="ca_media_3_pick_label"  class="ca_media_3_pad_label" value="0" onclick="M3_processorInput( this.getAttribute( 'for'), this )">Échantillon</label>
-    <label for="ca_media_3_split_input" id="ca_media_3_split_label" class="ca_media_3_pad_label" value="0" onclick="M3_processorInput( this.getAttribute( 'for'), this )">Comparateur</label>
-    <label for="ca_media_3_eq_input"    id="ca_media_3_eq_label"    class="ca_media_3_pad_label" value="0" onclick="M3_processorInput( this.getAttribute( 'for'), this )">Égaliseur</label>
+    <label for="ca_media_3_hue_input"   id="ca_media_3_hue_label"   class="ca_media_3_pad_label" value="1" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Polychrome</label>
+    <label for="ca_media_3_tone_input"  id="ca_media_3_tone_label"  class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Monochrome</label>
+    <label for="ca_media_3_gray_input"  id="ca_media_3_gray_label"  class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Gris</label>
+    <label for="ca_media_3_lum_input"   id="ca_media_3_lum_label"   class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Luminosité</label>
+    <label for="ca_media_3_pick_input"  id="ca_media_3_pick_label"  class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Échantillon</label>
+    <label for="ca_media_3_split_input" id="ca_media_3_split_label" class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Comparateur</label>
+    <label for="ca_media_3_eq_input"    id="ca_media_3_eq_label"    class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Égaliseur</label>
   </div>
   <div id="ca_media_3_selector_console" class="ca_color_selector_swap" data-index="100">
     <div id="ca_media_3_selector_lum_console" class="ca_color_selector_console"></div>
