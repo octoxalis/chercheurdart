@@ -208,16 +208,46 @@ M3_process = () =>
         M3_toggleConsole()
         const canvas_e = document.getElementById( 'ca_media_3_processor_canvas' )
         canvas_e.classList.toggle('ca_media_3_color_picker')
-        if ( add_b ) canvas_e.addEventListener( 'click', M3_colorPickerInput, false )
-        else         canvas_e.removeEventListener( 'click', M3_colorPickerInput, false )
+        document.getElementById( 'ca_color_processor_trace' )
+         .classList.toggle('ca_color_trace_show')
+        if ( add_b )
+        {
+          canvas_e.addEventListener( 'click', M3_colorPickerInput, false )
+          canvas_e.addEventListener( 'mousemove', M3_processorTrace, false)    // : higher order function
+        }
+        else
+        {
+          canvas_e.removeEventListener( 'click', M3_colorPickerInput, false )
+          canvas_e.removeEventListener( 'mousemove', M3_processorTrace, false)    // : higher order function
+        }
+      }
+
+      const M3_colorPickerGetRGBA = ( mouse_e ) =>
+      {
+        const ewidth = DOM_getStyle( 'ca_media_3_processor_canvas', 'width').replace( 'px', '' )
+        const cwidth = M3_scan.getCanvasWidth()
+        return M3_scan.HSL_RGBA_a( mouse_e.clientX, mouse_e.clientY, cwidth / ewidth )
+      }
+
+      const M3_colorPickerGetHSLA = ( mouse_e ) =>
+      {
+        const ewidth = DOM_getStyle( 'ca_media_3_processor_canvas', 'width').replace( 'px', '' )
+        const cwidth = M3_scan.getCanvasWidth()
+        return M3_scan.HSL_HSLA_a ( mouse_e.clientX, mouse_e.clientY, cwidth / ewidth )
+      }
+
+      const M3_processorTrace = ( mouse_e ) =>
+      {
+          let h, s, l, a
+          ( { h, s, l, a } = M3_colorPickerGetHSLA( mouse_e) )
+          document.getElementById( 'ca_color_processor_trace' )
+            .innerHTML = `H:${h} S:${Math.floor(s * 100)} L:${Math.floor(l * 100)} A:${Math.floor(a / 255 * 100)}`
       }
 
       const M3_colorPickerInput = ( mouse_e ) =>
       {
-        const ewidth = DOM_getStyle( 'ca_media_3_processor_canvas', 'width').replace( 'px', '' )          //; LOG( `img element width: ${ewidth}` )
-        const cwidth = M3_scan.getCanvasWidth()                                                  //; LOG( `canvas width: ${cwidth}` )
         let r, g, b, a
-        ( { r, g, b, a } = M3_scan.HSL_RGBA_a ( mouse_e.clientX, mouse_e.clientY, cwidth / ewidth ) )    // ; LOG( `{ r, g, b, a }: ${r},${g},${b},${a}` )
+        ( { r, g, b, a } = M3_colorPickerGetRGBA( mouse_e) )
         M3_hueConsole.setHit( RGB_H( r, g, b ) )
         M3_toggleColorPicker( false )  // : remove event
       }
@@ -299,24 +329,15 @@ M3_process = () =>
         M3_scan.setDisplay('inline')
       }
       
-      const M3_processorHueInput = () =>
+      const M3_consoleTrace = ( mouse_e ) =>
       {
-        const selector_e = document.getElementById( 'ca_media_3_selector_console' )
-        const offsetX = DOM_getStyle( 'ca_media_3_selector_lum_console', 'left').replace( 'px', '' )          // ; LOG( `offsetX: ${offsetX}` )
-        const offsetW = DOM_getStyle( 'ca_media_3_selector_console', 'font-size').replace( 'px', '' ) * 2.5   // ; LOG( `offsetW: ${offsetW}` ) // : ca_color_selector_swap.width: 2.5rem
-        return ( mouse_e ) =>
-        {
-          const atX = mouse_e.clientX - offsetX                     // ; LOG( `atX: ${atX}` )
-          const slideW = DOM_getRootVar( '--M3_SLIDE_WIDTH' )       // ; LOG( `slideW: ${slideW}` )
-          selector_e.setAttribute( 'data-index', `${Math.floor( atX / slideW )}`)
-          DOM_setRootVar( '--M3_POINTER_AT', `${mouse_e.clientX - offsetW}` )
-        }
+        const offsetX = DOM_getStyle( 'ca_media_3_selector_hue_console', 'left').replace( 'px', '' )
+        const atX = mouse_e.clientX - offsetX
+        const slideW = DOM_getRootVar( '--M3_SLIDE_WIDTH' )
+        document.getElementById( 'ca_color_selector_trace' ).innerHTML = `${Math.floor( atX / slideW )}`
       }
 
 
-      let width
-      ( { width } = DOM_getImgDim( 'ca_media_3_img' ) )
-      DOM_setRootVar( '--MEDIA_PROCESSOR_ATMIN', window.innerWidth / width )
       const M3_scanSettings_o =
       {
         canvasId: 'ca_media_3_processor_canvas',
@@ -364,7 +385,7 @@ M3_process = () =>
       const M3_splitter = new OverlaySplitter( M3_splitter_o )
 
       document.getElementById( 'ca_media_3_selector_console' )
-        .addEventListener( 'mouseover', M3_processorHueInput(), false)    // : higher order function
+        .addEventListener( 'mousemove', M3_consoleTrace, false)    // : higher order function
       
       M4_process()    // : chaining: M4_process uses M3_scan
     }

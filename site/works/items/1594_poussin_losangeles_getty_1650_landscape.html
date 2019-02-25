@@ -428,26 +428,27 @@ Version initiale</li>
 
 <div id="ca_media_3_color_selector" class="ca_color_selector">
   <div id="ca_media_3_selector_pad"    class="ca_color_selector_pad">
-    <label for="ca_media_3_hue_input"   id="ca_media_3_hue_label"   class="ca_media_3_pad_label" value="1" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Polychrome</label>
-    <label for="ca_media_3_tone_input"  id="ca_media_3_tone_label"  class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Monochrome</label>
-    <label for="ca_media_3_gray_input"  id="ca_media_3_gray_label"  class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Gris</label>
-    <label for="ca_media_3_lum_input"   id="ca_media_3_lum_label"   class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Luminosité</label>
+    <div                                 id="ca_color_selector_trace" class="ca_media_3_pad_label ca_color_selector_trace"></div>
+    <label for="ca_media_3_split_input" id="ca_media_3_split_label" class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Comparaison</label>
     <label for="ca_media_3_pick_input"  id="ca_media_3_pick_label"  class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Échantillon</label>
-    <label for="ca_media_3_split_input" id="ca_media_3_split_label" class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Comparateur</label>
-    <label for="ca_media_3_eq_input"    id="ca_media_3_eq_label"    class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Égaliseur</label>
+    <label for="ca_media_3_hue_input"   id="ca_media_3_hue_label"   class="ca_media_3_pad_label" value="1" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Couleur</label>
+    <label for="ca_media_3_lum_input"   id="ca_media_3_lum_label"   class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Lumière</label>
+    <label for="ca_media_3_tone_input"  id="ca_media_3_tone_label"  class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Filtre-C</label>
+    <label for="ca_media_3_gray_input"  id="ca_media_3_gray_label"  class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Filtre-G</label>
+    <label for="ca_media_3_eq_input"    id="ca_media_3_eq_label"    class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Égalisation</label>
   </div>
-  <div id="ca_media_3_selector_console" class="ca_color_selector_swap" data-index="100">
+  <div id="ca_media_3_selector_console" class="ca_color_console_trace" data-trace="100">
     <div id="ca_media_3_selector_lum_console" class="ca_color_selector_console"></div>
     <div id="ca_media_3_selector_hue_console" class="ca_color_selector_console ca_color_selector_console_active"></div>
   </div>
 </div>
 <div id="ca_media_3_selector_pad_input" class="ca_media_3_pad_input">
+  <input id="ca_media_3_split_input" class="ca_media_3_pad_input_check"  type="checkbox" value="0">
+  <input id="ca_media_3_pick_input"  class="ca_media_3_pad_input_check"  type="checkbox" value="0">
   <input id="ca_media_3_hue_input"   class="ca_media_3_pad_input_radio"  type="radio"    value="1" name="color_input">
+  <input id="ca_media_3_lum_input"   class="ca_media_3_pad_input_radio"  type="radio"    value="0" name="color_input">
   <input id="ca_media_3_tone_input"  class="ca_media_3_pad_input_check"  type="checkbox" value="0">
   <input id="ca_media_3_gray_input"  class="ca_media_3_pad_input_check"  type="checkbox" value="0">
-  <input id="ca_media_3_lum_input"   class="ca_media_3_pad_input_radio"  type="radio"    value="0" name="color_input">
-  <input id="ca_media_3_pick_input"  class="ca_media_3_pad_input_check"  type="checkbox" value="0">
-  <input id="ca_media_3_split_input" class="ca_media_3_pad_input_check"  type="checkbox" value="0">
   <input id="ca_media_3_eq_input"    class="ca_media_3_pad_input_check"  type="checkbox" value="0">
 </div>
 </div>
@@ -466,6 +467,7 @@ Version initiale</li>
       <feColorMatrix id="ca_media_3_filter_matrix" type="matrix" values="1 0 0 0 0   0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
     </filter>
   </svg>
+  <div id="ca_color_processor_trace" class="ca_color_processor_trace"></div>
 </div>
 
 

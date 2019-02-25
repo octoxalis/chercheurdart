@@ -118,6 +118,19 @@ class ColorScan
     return { r: this._data[atdata_p], g: this._data[atdata_p + 1], b: this._data[atdata_p + 2], a: this._data[atdata_p + 3] }
   }
 
+  /**
+   * Get HSLA value at x/y position
+   * @param {*} atX 
+   * @param {*} atY 
+   * @param {*} ratio: (canvas / screen img) width: > 1
+   */
+  HSL_HSLA_a ( atX, atY, ratio )
+  {
+    let r, g, b, a
+    ( { r, g, b, a } = this.HSL_RGBA_a( atX, atY, ratio ) )
+    return { h: RGB_H( r, g, b ), s: RGB_S( r, g, b ), l: RGB_L( r, g, b ), a: a }
+  }
+
   getSaturLumen_a ( hue )
   {
     const satur_a = new Int32Array( 101 )
