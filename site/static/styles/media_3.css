@@ -50,8 +50,8 @@
 
 .ca_media_3_color_picker
 {
-  /*cursor: var(--CURSOR_PICK);*/
-  cursor: crosshair;
+  /*cursor: crosshair;*/
+  cursor: var(--CURSOR_PICK);
 }
 
 #ca_media_3_selector_pad
