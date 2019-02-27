@@ -131,6 +131,7 @@
 {
   margin: 0;
   overflow: hidden;
+  transition: all 0.6s ease-in-out;
 }
 .ca_list_items_legend_title,
 .ca_list_items_legend_abstract
@@ -141,10 +142,33 @@
 {
   padding: 2rem 0.5rem 0.5rem 0.5rem;
 }
-
 .ca_list_items_legend_title
 {
   text-transform: uppercase;
+}
+
+.ca_list_items_legend_title
+{
+  transform: translateX( -30vw );
+}
+.ca_list_items_legend_abstract
+{
+  transform: translateX( 30vw );
+  transition-delay: 0.2s;
+}
+.ca_list_items_legend_author
+{
+  transform: translateY( 20vh );
+}
+
+.ca_list_items_legend:hover .ca_list_items_legend_title,
+.ca_list_items_legend:hover .ca_list_items_legend_abstract
+{
+  transform: translateX( 0 );
+}
+.ca_list_items_legend:hover .ca_list_items_legend_author
+{
+  transform: translateY( 0 );
 }
 
 .ca_list_items_legend_abstract
