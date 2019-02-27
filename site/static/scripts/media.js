@@ -138,7 +138,7 @@ M2_process = () =>
         case 'lines_rl':
         {
           const line_e = document.getElementById( `ca_media_2_${process_s}` )
-          line_e.style.opacity = ( DOM_getStyle( line_e, 'opacity') === '1' ) ? 0 : 1
+          line_e.style.opacity = ( line_e.style.opacity === '0' ) ? '1' : '0'
           return
         }
     
@@ -474,7 +474,7 @@ const M3_LUM_N       = 101    // : range [ 0..100 ]
 const M3_SLIDE_RANGE = 256    // : --M3_SLIDE_RANGE
 
 let M2_consoleInput           // : media_2
-let M3_consolePadInput         // : media_3
+let M3_consolePadInput        // : media_3
 let M3_scan                   // : media_3 + media_4
 
 const M_img_e = document.getElementById( 'ca_gallery_img' )

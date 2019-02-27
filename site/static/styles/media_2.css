@@ -8,10 +8,10 @@
 .ca_media_2_control
 {
   position: relative;
-  z-index: 1;
+  z-index: calc( var(--AREA_ACTIVE_Z) + 1 );
   top:  calc( 50vh - (var( --MEDIA_2_CONTROL_DIM ) / 2 ) );
   left: calc( 50vw - (var( --MEDIA_2_CONTROL_DIM ) / 2 ) );
-  width:  var( --MEDIA_2_CONTROL_DIM );
+  width: var( --MEDIA_2_CONTROL_DIM );
   border: 0.5rem solid hsla( 34, 10%, 45%, 1);
   opacity: 0;
   transition: opacity 1s ease;
@@ -52,6 +52,14 @@
 {
   background-color: hsla( 34, 10%, 30%, 1 );
 }
+.ca_media_2_control_key_icon
+{
+  fill: none;
+  stroke: hsla( 34, 10%, 95%, 1 );
+  stroke-width: 1;
+  stroke-linecap: square;
+  stroke-linejoin: arcs;
+}
 
 #ca_media_2_processor_wrap
 {
@@ -62,7 +70,7 @@
 #ca_media_2_process
 {
   /*position: relative;*/
-  transition: all .7s ease;
+  /*transition: all .7s ease;*/
 }
 #ca_media_2_process:hover
 {
@@ -97,6 +105,5 @@
 {
   stroke: hsla( 34, 10%, 95%, 0.5);
   stroke-width: 1rem;
-  opacity: 1;
   transition: opacity .7s ease;
 }

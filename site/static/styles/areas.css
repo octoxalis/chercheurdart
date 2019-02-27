@@ -90,6 +90,7 @@
   --scaled_area_translate_y: calc( var(--area_panel_top)   - ( var(--AREA_INDEX) * var(--area_translate_delta) * (100 / 16) * -1vh ) );
 
   position: absolute;
+  z-index: var(--AREA_Z);
   top:  0;
   left: 0;
   min-width:  var(--AREA_WIDTH);
@@ -121,6 +122,7 @@
 
 .ca_area_active
 {
+  z-index: var(--AREA_ACTIVE_Z);
   pointer-events: auto;
   opacity: 1;
   transform: scale(1);
@@ -144,7 +146,7 @@
 .ca_area_selector:hover
 {
   box-shadow: 1vh 1vh 20vh 5vh var(--COLOR_NEUTRAL_MAXLIGHT);
-  cursor: var(--CURSOR_MENU);  /*cursor: pointer;*/
+  cursor: pointer;  /* cursor: var(--CURSOR_MENU); */
   opacity: 1;
   animation: ca_area_selector_pulsar 2s infinite;
 }
@@ -155,17 +157,16 @@
   100% { opacity: 1;    transform: scale(1);    }
 }
 
-.ca_area_selector::after
+.ca_svg_menu,
+.ca_area_icon
 {
-  content: '☰';
-  position: absolute;
-  right:     calc( var(--selector-dim) *  0.25 );
-  bottom:    calc( var(--selector-dim) *  0.25 );
-  width:     calc( var(--selector-dim) *  0.5 );
-  height:    calc( var(--selector-dim) *  0.5 );
-  font-size: calc( var(--selector-dim) *  0.5 );
-  color: var(--COLOR_NEUTRAL_MAXLIGHT);
+  fill: none;
+  stroke: var(--COLOR_NEUTRAL_MAXLIGHT);
+  stroke-width: 1;
+  stroke-linecap: square;
+  stroke-linejoin: arcs;
 }
+
 .ca_area_selector.ca_selector_perspective
 {
   opacity: 0.5;
@@ -177,17 +178,11 @@
   opacity: 1;
   transition: opacity var(--AREA_TRANSITION) ease-in-out;
 }
-.ca_area_selector.ca_selector_perspective::before
+
+.ca_area_selector.ca_selector_perspective > .ca_svg_menu
 {
-  content: '☰';
-  position: absolute;
-  top:       calc( var(--selector-dim) *  -0.75 );
-  left:      calc( var(--selector-dim) *  -3.5 );
-  width:     calc( var(--selector-dim) *  1 );
-  height:    calc( var(--selector-dim) *  1 );
-  font-size: calc( var(--selector-dim) *  4 );
-  background-color: inherit;
-  color: var(--COLOR_NEUTRAL_MAXLIGHT);
+  transform-origin: bottom right;
+  transform: translate3d( -2rem, -8rem, 0 ) scale(8) rotate(-90deg);
 }
 
 .ca_area_list

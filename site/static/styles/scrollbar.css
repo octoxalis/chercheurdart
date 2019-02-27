@@ -17,6 +17,7 @@
 {
   --combo-width: var(--SCROLL_NAV_WIDTH);
   --combo-height: calc( var(--combo-width) * var(--SCROLL_NAV_RATIO) );
+  
   position: fixed;
   z-index: var(--SCROLL_Z);
   top:   calc( (100vh / 2) - (var(--combo-height) / 2) ) ;

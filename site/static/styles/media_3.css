@@ -1,6 +1,5 @@
 :root
 {
-  --M3_CONSOLE_Z:     5;
   --M3_SLIDE_WIDTH:   0;  /* dynamic setting */
   --M3_CONSOLE_WIDTH: 0;  /* dynamic setting */
   --M3_SLIDE_RANGE:   256;
@@ -26,8 +25,8 @@
 .ca_color_selector
 {
   position: relative;
-  z-index: var(--M3_CONSOLE_Z);
-  top: calc( 50vh - (var( --MEDIA_2_CONTROL_DIM ) / 2 ) );
+  z-index: calc( var(--AREA_ACTIVE_Z) + 1 );
+  top: 30vh; /*calc( 50vh - (var( --MEDIA_2_CONTROL_DIM ) / 2 ) );*/
   display:flex;
   flex-direction: row;
   justify-content: flex-start;

@@ -31,8 +31,10 @@
 
 
   /* Z-INDEX */
-  --AREA_SELECTOR_Z: 10;
-  --SCROLL_Z:        10;
+  --AREA_Z:          auto;
+  --AREA_ACTIVE_Z:   10;
+  --AREA_SELECTOR_Z: 20;
+  --SCROLL_Z:        20;
 
   --CONTENT_MIN_WIDTH:   40%;
   --CONTENT_BORDER_BREAK: 60rem;

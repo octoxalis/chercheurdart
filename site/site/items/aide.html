@@ -22,7 +22,13 @@
   <div id="ca_content" class="ca_content">
   <input id="ca_select_area_menu" class="ca_area_switcher" value="ca_select_area_menu" name="area" type="radio">
 <div id="ca_area_menu" class="ca_area_menu ca_area ca_area_list">
-  <label for="ca_select_area_menu" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )"></label>
+  <label for="ca_select_area_menu" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
+    <svg xmlns="http://www.w3.org/2000/svg" class="ca_svg_menu" width="48" height="48" viewBox="0 0 24 24" class="ca_area_icon">
+  <line x1="3" y1="6"  x2="21" y2="6"></line>
+  <line x1="5" y1="12" x2="19" y2="12"></line>
+  <line x1="7" y1="18" x2="17" y2="18"></line>
+</svg>
+  </label>
   <div class="ca_fold_content">
     <h3 class="ca_folder ca_folder_inverse" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">chercheurd.art</h3>
     <div class="ca_fold_content_item ca_is_open">
@@ -224,7 +230,13 @@ Technologie
 
 <input id="ca_select_area_text" class="ca_area_switcher" value="ca_select_area_text" name="area" type="radio">
 <div id="ca_area_text" class="ca_area_text ca_area ca_area_active">
-  <label for="ca_select_area_text" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )"></label>
+  <label for="ca_select_area_text" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
+    <svg xmlns="http://www.w3.org/2000/svg" class="ca_svg_menu" width="48" height="48" viewBox="0 0 24 24" class="ca_area_icon">
+  <line x1="3" y1="6"  x2="21" y2="6"></line>
+  <line x1="5" y1="12" x2="19" y2="12"></line>
+  <line x1="7" y1="18" x2="17" y2="18"></line>
+</svg>
+  </label>
   
 
 <div id="ca_blocktxt" class="ca_layout_blocktxt">
@@ -274,7 +286,13 @@ Technologie
 
 <input id="ca_select_area_gallery" class="ca_area_switcher" value="ca_select_area_gallery" name="area" type="radio">
 <div id="ca_area_gallery" class="ca_area_gallery ca_area">
-  <label for="ca_select_area_gallery" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )"></label>
+  <label for="ca_select_area_gallery" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
+    <svg xmlns="http://www.w3.org/2000/svg" class="ca_svg_menu" width="48" height="48" viewBox="0 0 24 24" class="ca_area_icon">
+  <line x1="3" y1="6"  x2="21" y2="6"></line>
+  <line x1="5" y1="12" x2="19" y2="12"></line>
+  <line x1="7" y1="18" x2="17" y2="18"></line>
+</svg>
+  </label>
   
 
 <div id="ca_blockimg" class="ca_layout_blockimg">
@@ -333,6 +351,8 @@ Technologie
 </div>
 <script src="http://www.chercheurd.art/static/scripts/main.js"></script>
 
+
+
 <script type="application/json" class="js-hypothesis-config">
   {
     "openSidebar": false,
@@ -342,8 +362,6 @@ Technologie
   }
 </script>
 <script async src="https://hypothes.is/embed.js"></script>
-
-
 
 
 </body>
