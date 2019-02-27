@@ -384,6 +384,8 @@ M3_process = () =>
       }
       const M3_splitter = new OverlaySplitter( M3_splitter_o )
 
+      // ?? DOM_setRootVar( '--CURSOR_PICK', `url( ${DOM_getRootVar( '--SITE_URL' )}static/styles/loader.svg ), auto;` )
+
       document.getElementById( 'ca_media_3_selector_console' )
         .addEventListener( 'mousemove', M3_consoleTrace, false)    // : higher order function
       

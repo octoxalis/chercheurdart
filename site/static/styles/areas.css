@@ -157,16 +157,6 @@
   100% { opacity: 1;    transform: scale(1);    }
 }
 
-.ca_svg_menu,
-.ca_area_icon
-{
-  fill: none;
-  stroke: var(--COLOR_NEUTRAL_MAXLIGHT);
-  stroke-width: 1;
-  stroke-linecap: square;
-  stroke-linejoin: arcs;
-}
-
 .ca_area_selector.ca_selector_perspective
 {
   opacity: 0.5;
@@ -179,7 +169,7 @@
   transition: opacity var(--AREA_TRANSITION) ease-in-out;
 }
 
-.ca_area_selector.ca_selector_perspective > .ca_svg_menu
+.ca_area_selector.ca_selector_perspective > .ca_svg_icon
 {
   transform-origin: bottom right;
   transform: translate3d( -2rem, -8rem, 0 ) scale(8) rotate(-90deg);

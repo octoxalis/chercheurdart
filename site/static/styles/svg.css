@@ -1,0 +1,8 @@
+.ca_svg_icon
+{
+  fill: none;
+  stroke: var(--COLOR_NEUTRAL_MAXLIGHT);
+  stroke-width: 1;
+  stroke-linecap: square;
+  stroke-linejoin: arcs;
+}
