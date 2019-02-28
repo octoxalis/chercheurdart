@@ -69,9 +69,9 @@
   --BORDER_FRAME_DARK:      var(--BORDER_FRAME) solid var(--COLOR_DARK);
   --BORDER_FRAME_GOLD:      var(--BORDER_FRAME) solid var(--COLOR_GOLD);
   --BORDER_FRAME_GOLD_TEXT: var(--BORDER_FRAME) solid var(--COLOR_GOLD);
-  /*--BORDER_FRAME_GOLD_THIN: var(--BORDER_XTHIN) solid var(--COLOR_GOLD);*/
 
   --BORDER_LINK_THIN_TRANSPARENT:  0.1em solid var(--COLOR_MAXLIGHT_TRANSPARENT);
+  --BORDER_LINK_THIN_LIGHT:        0.1em solid var(--COLOR_LIGHT);
   --BORDER_LINK_THIN_MEDIUM_LIGHT: 0.1em solid var(--COLOR_MEDIUM_LIGHT);
   --BORDER_LINK_THIN_DEEP_DARK:    0.1em solid var(--COLOR_DEEP_DARK);
 
@@ -93,7 +93,7 @@
   --FOLDER_ROW_HEIGHT: calc(var(--Uh) * 6);
 
   /* TEXT COLUMNS */
-  --TXT_COLS_WIDTH: calc((var(--CONTENT_WIDTH) / var(--TXT_COLS_CAPACITY)) - (var(--Uw) * 5) );
+  --TXT_COLS_WIDTH: calc( (var(--CONTENT_WIDTH) / var(--TXT_COLS_CAPACITY)) );
   --TXT_COLS: auto var(--TXT_COLS_WIDTH);
   --TXT_COLS_GAP: calc(var(--Uw) * 2);
   --TXT_COLS_RULE: 1px solid var(--COLOR_MEDIUM);
@@ -273,6 +273,7 @@
   --FONT_TITLE:   'Philosopher', sans-serif;
   --FONT_BODY:    'Antic', sans-serif;
   --FONT_NUMBERS: 'Titillium Web', sans-serif;
+
     /* SIZES */
   --FONT_SIZE_MEDIUM: font-size: calc(1rem + ((1vw - 0.4rem) * 0.625));  /* Where: * 0.7143 = 100 * font_Size_Difference / viewport_Width_Difference */
   --FONT_SIZE_FACTOR: 1.5;
@@ -291,7 +292,7 @@
   --FONT_WEIGHT_XHEAVY: calc(var(--FONT_WEIGHT_MEDIUM) * var(--FONT_WEIGHT_FACTOR) * 8);
     /* LINE HEIGHT */
   --FONT_LINE_FACTOR: 0.2;
-  --FONT_LINE_MEDIUM: 1.25;
+  --FONT_LINE_MEDIUM: 1.05;
   --FONT_LINE_XLOW:  calc(var(--FONT_LINE_MEDIUM) - (var(--FONT_WEIGHT_FACTOR) * 2));
   --FONT_LINE_LOW:   calc(var(--FONT_LINE_MEDIUM) - (var(--FONT_WEIGHT_FACTOR) * 1));
   --FONT_LINE_HIGH:  calc(var(--FONT_LINE_MEDIUM) + (var(--FONT_WEIGHT_FACTOR) * 1));

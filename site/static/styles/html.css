@@ -79,7 +79,7 @@ footer ol li
   break-inside: avoid;
 }
 
-footer :target
+footer:target
 {
   border-left:   var(--BORDER_LINK_THIN_TRANSPARENT);
   border-right:  var(--BORDER_LINK_THIN_TRANSPARENT);
@@ -101,9 +101,9 @@ a:not(.ca_nodeco):visited,
 
 a:not(.ca_nodeco)
 {
-  padding: 0 0.6em;
-  border-left:  var(--BORDER_LINK_THIN_DEEP_DARK);
-  border-right: var(--BORDER_LINK_THIN_DEEP_DARK);
+  padding: 0 0.3em;
+  border-left:   var(--BORDER_LINK_THIN_LIGHT);
+  border-right:  var(--BORDER_LINK_THIN_LIGHT);
   border-top:    var(--BORDER_LINK_THIN_TRANSPARENT);
   border-bottom: var(--BORDER_LINK_THIN_TRANSPARENT);
 }
