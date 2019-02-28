@@ -149,11 +149,11 @@
 
 .ca_list_items_legend_title
 {
-  transform: translateX( -30vw );
+  transform: translateX( 30vw );
 }
 .ca_list_items_legend_abstract
 {
-  transform: translateX( 30vw );
+  transform: translateX( -30vw );
   transition-delay: 0.2s;
 }
 .ca_list_items_legend_author
