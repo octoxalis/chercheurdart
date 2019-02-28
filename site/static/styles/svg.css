@@ -6,3 +6,65 @@
   stroke-linecap: square;
   stroke-linejoin: arcs;
 }
+
+.ca_svg_menu_icon_1,
+.ca_svg_menu_icon_2,
+.ca_svg_menu_icon_3,
+.ca_svg_menu_icon_4,
+.ca_svg_menu_icon_5
+{
+  animation: ca_svg_menu 4s 32;
+}
+.ca_svg_menu_icon_1
+{
+  animation-delay: 0.2s;
+}
+.ca_svg_menu_icon_2
+{
+  animation-delay: 0.3s;
+}
+.ca_svg_menu_icon_3
+{
+  animation-delay: 0.4s;
+}
+.ca_svg_menu_icon_4
+{
+  animation-delay: 0.5s;
+}
+.ca_svg_menu_icon_5
+{
+  animation-delay: 0.6s;
+}
+@keyframes ca_svg_menu
+{
+  0%   { opacity: 0.05; }
+  10%  { opacity: 0.9; }
+  100% { opacity: 1;   }
+}
+
+.ca_svg_elipsis_icon,
+.ca_svg_elipsis_icon_1,
+.ca_svg_elipsis_icon_2,
+.ca_svg_elipsis_icon_3
+{
+  animation: ca_svg_elipsis 4s 8;
+}
+.ca_svg_elipsis_icon_1
+{
+  animation-delay: 0.2s;
+}
+.ca_svg_elipsis_icon_2
+{
+  animation-delay: 0.4s;
+}
+.ca_svg_elipsis_icon_3
+{
+  animation-delay: 0.6s;
+}
+@keyframes ca_svg_elipsis
+{
+  0%   { opacity: 0.05; }
+  10%  { opacity: 0.9; }
+  100% { opacity: 1;   }
+}
+

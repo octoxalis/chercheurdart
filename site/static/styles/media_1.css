@@ -36,6 +36,7 @@
   opacity: 0;  /* initial */
   animation: ca_media_1_fadein 10s ease-in var(--MEDIA_1_FADEIN_COUNT) alternate;
   animation-play-state: paused;
+  cursor: var(--CURSOR_PAUSE);
 }
 #ca_media_1_img:hover
 {

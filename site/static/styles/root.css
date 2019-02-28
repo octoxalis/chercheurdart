@@ -298,13 +298,13 @@
   --FONT_LINE_XHIGH: calc(var(--FONT_LINE_MEDIUM) + (var(--FONT_WEIGHT_FACTOR) * 2));
 
     /* CURSORS */
-  --CURSOR_MENU: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="60" style="font-size:40px;fill:hsla(34,70%,100%,1);"><text y="30">☰</text></svg>'), auto;
-  --CURSOR_PLAY: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="60" style="font-size:40px;fill:hsla(34,70%,100%,1);"><text y="30">▷</text></svg>'), auto;
-  /*--CURSOR_PICK: crosshair;*/
-  --CURSOR_PICK: url( http://www.chercheurd.art/static/styles/loader.svg ) 24 24, auto;
-  /*--CURSOR_PICK: url( http://localhost:5500/static/styles/loader.svg ) 24 24, auto;*/
-  --CURSOR_EXT_LINK: url( http:///www.chercheurd.art/static/styles/external-link.svg ) 24 24, auto;
-  /*--CURSOR_EXT_LINK: url( http://localhost:5500/static/styles/external-link.svg ) 24 24, auto;*/
+  --CURSOR_MENU:      url( https://chercheurd.art/static/icons/menu.svg )          24 24, auto;
+  --CURSOR_PLAY:      url( https://chercheurd.art/static/icons/play.svg )          24 24, auto;
+  --CURSOR_PAUSE:     url( https://chercheurd.art/static/icons/pause.svg )         24 24, auto;
+  --CURSOR_PICK:      url( https://chercheurd.art/static/icons/loader.svg )        24 24, auto;
+  --CURSOR_EXT_LINK:  url( https://chercheurd.art/static/icons/external-link.svg ) 24 24, auto;
+  --CURSOR_ELIPSIS_H: url( https://chercheurd.art/static/icons/elipsis-h.svg )     24 24, auto;
+  --CURSOR_ELIPSIS_V: url( https://chercheurd.art/static/icons/elipsis-v.svg )     24 24, auto;
 
 
   /* ANIMATIONS */
