@@ -7,17 +7,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chercheur d&#39;Art: Collections</title>
 
-<link rel="stylesheet" href="https://www.chercheurd.art/static/styles/index.min.css" />
+<link rel="stylesheet" href="http://localhost:5500/static/styles/index.min.css" />
 
 
 <style type="text/css">
 :root
 {
-  --SITE_URL: https://www.chercheurd.art/;
+  --SITE_URL: http://localhost:5500/;
 }
 </style>
 
-
+<script>
+  var DEBUG_AT = 0
+  const LOG = ( log ) => { console.log`[ ${DEBUG_AT++} ] ${log}` }
+</script>
 
 
 </head>
@@ -47,7 +50,7 @@
             
             
               <li class="ca_list_items_img_issmall ca_perspective_opener">
-                <a href="https://www.chercheurd.art/index.html" class="ca_nodeco">
+                <a href="http://localhost:5500/index.html" class="ca_nodeco">
                 <ul class="ca_list_items_legend">
   <li class="ca_list_items_legend_title">Accueil</li>
   
@@ -56,7 +59,7 @@
   
 </ul>
 <div class="ca_perspective_opened"
-     style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_14_@550.jpg)">
+     style="--list_items_bg:url(http://localhost:5500/static/media/images/home_14_@550.jpg)">
 </div>
 <h1 class="ca_perspective_opened ca_list_items_img_title ca_wide_title">
 Accueil
@@ -66,7 +69,7 @@ Accueil
               </li>
             
               <li class="ca_list_items_img_issmall ca_perspective_opener">
-                <a href="https://www.chercheurd.art/posts/list_0.html" class="ca_nodeco">
+                <a href="http://localhost:5500/posts/list_0.html" class="ca_nodeco">
                 <ul class="ca_list_items_legend">
   <li class="ca_list_items_legend_title">Articles</li>
   
@@ -75,7 +78,7 @@ Accueil
   
 </ul>
 <div class="ca_perspective_opened"
-     style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_10_@550.jpg)">
+     style="--list_items_bg:url(http://localhost:5500/static/media/images/home_10_@550.jpg)">
 </div>
 <h1 class="ca_perspective_opened ca_list_items_img_title ca_wide_title">
 Articles
@@ -85,7 +88,7 @@ Articles
               </li>
             
               <li class="ca_list_items_img_issmall ca_perspective_opener">
-                <a href="https://www.chercheurd.art/artists/list_0.html" class="ca_nodeco">
+                <a href="http://localhost:5500/artists/list_0.html" class="ca_nodeco">
                 <ul class="ca_list_items_legend">
   <li class="ca_list_items_legend_title">Artistes</li>
   
@@ -94,7 +97,7 @@ Articles
   
 </ul>
 <div class="ca_perspective_opened"
-     style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_09_@550.jpg)">
+     style="--list_items_bg:url(http://localhost:5500/static/media/images/home_09_@550.jpg)">
 </div>
 <h1 class="ca_perspective_opened ca_list_items_img_title ca_wide_title">
 Artistes
@@ -104,7 +107,7 @@ Artistes
               </li>
             
               <li class="ca_list_items_img_issmall ca_perspective_opener">
-                <a href="https://www.chercheurd.art/works/list_0.html" class="ca_nodeco">
+                <a href="http://localhost:5500/works/list_0.html" class="ca_nodeco">
                 <ul class="ca_list_items_legend">
   <li class="ca_list_items_legend_title">Œuvres</li>
   
@@ -113,7 +116,7 @@ Artistes
   
 </ul>
 <div class="ca_perspective_opened"
-     style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_02_@550.jpg)">
+     style="--list_items_bg:url(http://localhost:5500/static/media/images/home_02_@550.jpg)">
 </div>
 <h1 class="ca_perspective_opened ca_list_items_img_title ca_wide_title">
 Œuvres
@@ -123,7 +126,7 @@ Artistes
               </li>
             
               <li class="ca_list_items_img_issmall ca_perspective_opener">
-                <a href="https://www.chercheurd.art/collectors/list_0.html" class="ca_nodeco">
+                <a href="http://localhost:5500/collectors/list_0.html" class="ca_nodeco">
                 <ul class="ca_list_items_legend">
   <li class="ca_list_items_legend_title">Collections</li>
   
@@ -132,7 +135,7 @@ Artistes
   
 </ul>
 <div class="ca_perspective_opened"
-     style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_03_@550.jpg)">
+     style="--list_items_bg:url(http://localhost:5500/static/media/images/home_03_@550.jpg)">
 </div>
 <h1 class="ca_perspective_opened ca_list_items_img_title ca_wide_title">
 Collections
@@ -142,7 +145,7 @@ Collections
               </li>
             
               <li class="ca_list_items_img_issmall ca_perspective_opener">
-                <a href="https://www.chercheurd.art/biblio/list_0.html" class="ca_nodeco">
+                <a href="http://localhost:5500/biblio/list_0.html" class="ca_nodeco">
                 <ul class="ca_list_items_legend">
   <li class="ca_list_items_legend_title">Bibliographie</li>
   
@@ -151,7 +154,7 @@ Collections
   
 </ul>
 <div class="ca_perspective_opened"
-     style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_05_@550.jpg)">
+     style="--list_items_bg:url(http://localhost:5500/static/media/images/home_05_@550.jpg)">
 </div>
 <h1 class="ca_perspective_opened ca_list_items_img_title ca_wide_title">
 Bibliographie
@@ -161,7 +164,7 @@ Bibliographie
               </li>
             
               <li class="ca_list_items_img_issmall ca_perspective_opener">
-                <a href="https://www.chercheurd.art/tech/list_0.html" class="ca_nodeco">
+                <a href="http://localhost:5500/tech/list_0.html" class="ca_nodeco">
                 <ul class="ca_list_items_legend">
   <li class="ca_list_items_legend_title">Technologie</li>
   
@@ -170,7 +173,7 @@ Bibliographie
   
 </ul>
 <div class="ca_perspective_opened"
-     style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_06_@550.jpg)">
+     style="--list_items_bg:url(http://localhost:5500/static/media/images/home_06_@550.jpg)">
 </div>
 <h1 class="ca_perspective_opened ca_list_items_img_title ca_wide_title">
 Technologie
@@ -180,7 +183,7 @@ Technologie
               </li>
             
               <li class="ca_list_items_img_issmall ca_perspective_opener">
-                <a href="https://www.chercheurd.art/site/list_0.html" class="ca_nodeco">
+                <a href="http://localhost:5500/site/list_0.html" class="ca_nodeco">
                 <ul class="ca_list_items_legend">
   <li class="ca_list_items_legend_title">À propos</li>
   
@@ -189,7 +192,7 @@ Technologie
   
 </ul>
 <div class="ca_perspective_opened"
-     style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_07_@550.jpg)">
+     style="--list_items_bg:url(http://localhost:5500/static/media/images/home_07_@550.jpg)">
 </div>
 <h1 class="ca_perspective_opened ca_list_items_img_title ca_wide_title">
 À propos
@@ -199,7 +202,7 @@ Technologie
               </li>
             
               <li class="ca_list_items_img_issmall ca_perspective_opener">
-                <a href="https://www.chercheurd.art/index.html" class="ca_nodeco">
+                <a href="http://localhost:5500/index.html" class="ca_nodeco">
                 <ul class="ca_list_items_legend">
   <li class="ca_list_items_legend_title">©rédits</li>
   
@@ -208,7 +211,7 @@ Technologie
   
 </ul>
 <div class="ca_perspective_opened"
-     style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_01_@550.jpg)">
+     style="--list_items_bg:url(http://localhost:5500/static/media/images/home_01_@550.jpg)">
 </div>
 <h1 class="ca_perspective_opened ca_list_items_img_title ca_wide_title">
 ©rédits
@@ -263,7 +266,7 @@ Technologie
     
       <li class="ca_list_items_img_issmall ca_perspective_opener">
         
-        <a href="https://www.chercheurd.art/collectors/items/newyork_metropolitan.html" class="ca_nodeco">
+        <a href="http://localhost:5500/collectors/items/newyork_metropolitan.html" class="ca_nodeco">
         
         <ul class="ca_list_items_legend">
   <li class="ca_list_items_legend_title">Metropolitan Museum - New York</li>
@@ -275,7 +278,7 @@ Technologie
   
 </ul>
 <div class="ca_perspective_opened"
-     style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/1697_canal_newyork_metropolitan_1740_salute_5938-@400.jpg)">
+     style="--list_items_bg:url(http://localhost:5500/static/media/images/1697_canal_newyork_metropolitan_1740_salute_5938-@400.jpg)">
 </div>
 <h1 class="ca_perspective_opened ca_list_items_img_title">
 Metropolitan Museum - New York
@@ -286,7 +289,7 @@ Metropolitan Museum - New York
     
       <li class="ca_list_items_img_issmall ca_perspective_opener">
         
-        <a href="https://www.chercheurd.art/collectors/items/paris_louvre.html" class="ca_nodeco">
+        <a href="http://localhost:5500/collectors/items/paris_louvre.html" class="ca_nodeco">
         
         <ul class="ca_list_items_legend">
   <li class="ca_list_items_legend_title">Louvre - Paris</li>
@@ -298,7 +301,7 @@ Metropolitan Museum - New York
   
 </ul>
 <div class="ca_perspective_opened"
-     style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/1488_vecelli_paris_louvre_1515_femme_miroir.jpg)">
+     style="--list_items_bg:url(http://localhost:5500/static/media/images/1488_vecelli_paris_louvre_1515_femme_miroir.jpg)">
 </div>
 <h1 class="ca_perspective_opened ca_list_items_img_title">
 Louvre - Paris
@@ -309,7 +312,7 @@ Louvre - Paris
     
       <li class="ca_list_items_img_issmall ca_perspective_opener">
         
-        <a href="https://www.chercheurd.art/collectors/items/madrid_prado.html" class="ca_nodeco">
+        <a href="http://localhost:5500/collectors/items/madrid_prado.html" class="ca_nodeco">
         
         <ul class="ca_list_items_legend">
   <li class="ca_list_items_legend_title">Prado - Madrid</li>
@@ -321,7 +324,7 @@ Louvre - Paris
   
 </ul>
 <div class="ca_perspective_opened"
-     style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/1594_poussin_madrid_prado_1642_paisaje_P002308-@400.jpg)">
+     style="--list_items_bg:url(http://localhost:5500/static/media/images/1594_poussin_madrid_prado_1642_paisaje_P002308-@400.jpg)">
 </div>
 <h1 class="ca_perspective_opened ca_list_items_img_title">
 Prado - Madrid
@@ -332,7 +335,7 @@ Prado - Madrid
     
       <li class="ca_list_items_img_issmall ca_perspective_opener">
         
-        <a href="https://www.chercheurd.art/collectors/items/chicago_artinstitute.html" class="ca_nodeco">
+        <a href="http://localhost:5500/collectors/items/chicago_artinstitute.html" class="ca_nodeco">
         
         <ul class="ca_list_items_legend">
   <li class="ca_list_items_legend_title">Art Institute Museum - Chicago</li>
@@ -344,7 +347,7 @@ Prado - Madrid
   
 </ul>
 <div class="ca_perspective_opened"
-     style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/1594_poussin_chicago_artinstitute_1640_landscape-@400.jpg)">
+     style="--list_items_bg:url(http://localhost:5500/static/media/images/1594_poussin_chicago_artinstitute_1640_landscape-@400.jpg)">
 </div>
 <h1 class="ca_perspective_opened ca_list_items_img_title">
 Art Institute Museum - Chicago
@@ -355,7 +358,7 @@ Art Institute Museum - Chicago
     
       <li class="ca_list_items_img_issmall ca_perspective_opener">
         
-        <a href="https://www.chercheurd.art/collectors/items/roma_borghese.html" class="ca_nodeco">
+        <a href="http://localhost:5500/collectors/items/roma_borghese.html" class="ca_nodeco">
         
         <ul class="ca_list_items_legend">
   <li class="ca_list_items_legend_title">Galleria Borghese - Roma</li>
@@ -367,7 +370,7 @@ Art Institute Museum - Chicago
   
 </ul>
 <div class="ca_perspective_opened"
-     style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/1571_merisi_roma_borghese_1610_sgiovanni-@400.jpg)">
+     style="--list_items_bg:url(http://localhost:5500/static/media/images/1571_merisi_roma_borghese_1610_sgiovanni-@400.jpg)">
 </div>
 <h1 class="ca_perspective_opened ca_list_items_img_title">
 Galleria Borghese - Roma
@@ -408,7 +411,7 @@ Galleria Borghese - Roma
 </div>
 
 </div>
-<script src="https://www.chercheurd.art/static/scripts/main.min.js"></script>
+<script src="http://localhost:5500/static/scripts/main.min.js"></script>
 
 
 </body>
