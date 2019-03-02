@@ -1,0 +1,15 @@
+<ul class="ca_list_items_legend">
+  <li class="ca_list_items_legend_title">{{ item.data.subtitle }}</li>
+  {% if item.data.abstract %}
+  <li class="ca_list_items_legend_abstract">{{ item.data.abstract | safe }}</li>
+  {% endif %}
+  {% if item.data.author %}
+  <li class="ca_list_items_legend_author"><a href="#">{{ item.data.author }}</a> - {{ item.data.hdates[0] }}</li>
+  {% endif %}
+</ul>
+<div class="ca_perspective_opened"
+     style="--list_items_bg:url({{ settings.siteUrl }}{{ settings.distDirs.images }}{{ item.data.image }})">
+</div>
+<h1 class="ca_perspective_opened ca_list_items_img_title{{ @widetitle }}">
+{{ item.data.subtitle }}{% if item.data.subtitle1 %}<br/><span class="ca_title_subtitle">{{ item.data.subtitle1 }}</span>{% endif %}
+</h1>

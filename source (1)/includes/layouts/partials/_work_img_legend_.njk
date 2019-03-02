@@ -1,0 +1,13 @@
+{# src #}
+<div id="{{ work.id }}" class="ca_list_imgs_issmall" onclick="this.classList.toggle('ca_list_imgs_islarge')">
+  <div class="ca_painting" style="{{ UI.framings[work.framing] }}">
+    <img id="ca_gallery_img" class="ca_list_imgs_img ca_frame" src="{{ settings.siteUrl }}{{ settings.distDirs.images }}{{ src }}{{ @srcType }}" 
+         style="{{ UI.framings[work.framing] }}" data-src-width="{{ @srcWidth }}" data-src-height="{{ @srcHeight }}"/>
+  </div>
+  <ul class="ca_list_imgs_legend">
+    <li class="ca_list_imgs_legend_title">{{ work.subject }}</li>
+    <li class="ca_list_imgs_legend_author">{{ artist.forename}} {{ artist.name }}</li>
+    <li class="ca_list_imgs_legend_collector">{{ collectors[ work.collector ].location }}</li>
+    <li class="ca_list_imgs_legend_collector">{{ collectors[ work.collector ].place }}</li>
+  </ul>
+</div>

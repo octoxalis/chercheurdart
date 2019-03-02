@@ -1,0 +1,12 @@
+<script src="{{ settings.siteUrl }}static/scripts/svg.min.js"></script>
+{% if works[ id ].frames_a %}
+<script>
+const M1_frames_a =
+{{ works[ id ].frames_a }}
+const M1_anim_o =
+{{ works[ id ].frames_o }}
+M1_anim_o.direction = '{{ works[ id ].frames_o_direction }}'
+M1_anim_o.fill      = '{{ works[ id ].frames_o_fill }}'
+</script>
+{% endif %}
+<script src="{{ settings.siteUrl }}static/scripts/media.min.js"></script>

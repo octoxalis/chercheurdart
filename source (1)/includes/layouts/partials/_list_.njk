@@ -1,0 +1,11 @@
+{# @items, @foldTitle #}
+{% if ( active === 'text' ) %}{% set @active = ' ca_area_active' %}{% endif %}
+<input id="ca_select_area_text" class="ca_area_switcher" value="ca_select_area_text" name="area" type="radio">
+<div id="ca_area_text" class="ca_area_text ca_area{{@active}} ca_area_list">
+  <label for="ca_select_area_text" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
+    {% include "partials/_svg_menu_.njk" %}
+  </label>
+  {% set @listfolder = ' ca_folder_inverse' %}
+  {% set @is_open = 'ca_is_open' %}
+  {% include "partials/_fold_items_list_.njk" %}
+</div>

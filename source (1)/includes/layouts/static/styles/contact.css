@@ -1,0 +1,12 @@
+:root
+{
+  /*--ADUPIN_MAIL: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="20" style="font-size:1rem;fill:hsla(34,70%,100%,1);"><text y="0">adupin at linuxmail.org</text></svg>');*/
+  --A_DUPIN_MAIL: 'adupin (at) linuxmail.org';
+}
+
+.ca_adupin_mail::after
+{
+  content: var(--A_DUPIN_MAIL);
+  color: var(--COLOR_THIRD_DEEP_DARK);;
+  font-weight: var(--FONT_WEIGHT_HEAVY);
+}

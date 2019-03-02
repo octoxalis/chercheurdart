@@ -1,0 +1,23 @@
+.ca_bg_img
+{
+  position: fixed;
+  top: var(--VIEW_LIMIT);
+  left: var(--VIEW_LIMIT);
+  bottom: var(--VIEW_LIMIT);
+  right: var(--VIEW_LIMIT);
+  background-image: var(--BG_IMAGE);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: top;
+  /* animate */
+  opacity: var(--QUASI_TRANSPARENT);
+  filter: grayscale(var(--OPAQUE));
+  transition: all 3s ease;
+}
+.ca_bg_img:hover
+{
+  /* animate */
+  opacity: var(--OPAQUE);
+  filter: grayscale(var(--TRANSPARENT));
+  transition: all 2.0s ease;
+}

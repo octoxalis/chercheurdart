@@ -1,0 +1,16 @@
+{# @items #}
+<div class="_x_ca_list_items_centered_x_">
+  <ul class="ca_list_items">
+    {% for item in @items %}
+      <li class="ca_list_items_img_issmall ca_perspective_opener">
+        {% if item.data.linkto %}{# === TEST LINKTO FIRST ==== #}
+        <a href="{{ item.data.linkto }}" target="_blank" class="ca_nodeco">
+        {% elseif item.data.permalink %}
+        <a href="{{ settings.siteUrl + item.data.permalink }}" class="ca_nodeco">
+        {% endif %}
+        {% include "partials/_in_legend_.njk" %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
