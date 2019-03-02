@@ -1,7 +1,5 @@
 
 
-
-
 <!doctype html>
 <html lang="fr">
 <head>
@@ -13,7 +11,9 @@
 
 <link rel="stylesheet" href="https://www.chercheurd.art/static/styles/media.min.css" />
 
+
 <script src="https://www.chercheurd.art/static/scripts/script_load.min.js"></script>
+
 
 
 </head>
@@ -660,6 +660,8 @@ M1_anim_o.fill      = 'forwards'
 
 
 
+<script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn"></script>
+
 <script type="application/json" class="js-hypothesis-config">
   {
     "openSidebar": false,
@@ -668,11 +670,15 @@ M1_anim_o.fill      = 'forwards'
     "theme": "clean"
   }
 </script>
-<script>loadJS( "https://hypothes.is/embed.js" )</script>
 
+<script>
+window.onload = () =>
+{
+  loadJS( "https://plausible.io/js/plausible.js" )
+  loadJS( "https://hypothes.is/embed.js" )
+}
+</script>
 
-
-<script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn"></script>
 
 
 </body>
