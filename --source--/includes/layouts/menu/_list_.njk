@@ -1,0 +1,25 @@
+<input id="ca_select_area_menu" class="ca_area_switcher" value="ca_select_area_menu" name="area" type="radio">
+<div id="ca_area_menu" class="ca_area_menu ca_area ca_area_list">
+  <label for="ca_select_area_menu" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
+    {% include "partials/_svg_menu_.njk" %}
+  </label>
+  <div class="ca_fold_content">
+    <h3 class="ca_folder ca_folder_inverse" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">chercheurd.art</h3>
+    <div class="ca_fold_content_item ca_is_open">
+      <div class="ca_fold_1col">
+        <div class="_none_">
+          <ul class="ca_list_items">
+          {% set @widetitle = ' ca_wide_title' %}
+          {% for item in collections.menu %}
+            <li class="ca_list_items_img_issmall ca_perspective_opener">
+              <a href="{{@SITE_URL + item.data.linkto}}" class="ca_nodeco">
+              {% include "partials/_in_legend_.njk" %}
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+{% extends "post/item.njk" %}
+
+{% set @inimgDir = 'home' %}
+{% include "partials/blocks/_gallery_.njk" %}
+
+{% block scripts_specifics %}
+  {% include "home/_home_scripts_.njk" %}
+{% endblock %}

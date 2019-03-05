@@ -1,0 +1,129 @@
+:root
+{
+  --GRADIENT_TB:   0deg;
+  --GRADIENT_BT: 180deg;
+  --GRADIENT_LR:  90deg;
+  --GRADIENT_RL: -90deg;
+  --GRADIENT_Q1:  45deg;
+  --GRADIENT_Q2: 135deg;
+  --GRADIENT_Q3: 225deg;
+  --GRADIENT_Q4: 315deg;
+
+  --GRADIENT_LIGHT:
+    linear-gradient( var(--GRADIENT_Q1),
+                     var(--COLOR_MAXLIGHT)       0%,
+                     var(--COLOR_LIGHT)         53%,
+                     var(--COLOR_MEDIUM_LIGHT) 100%);
+
+  --GRADIENT_MEDIUM:
+    linear-gradient( var(--GRADIENT_Q1),
+                     var(--COLOR_LIGHT)         0%,
+                     var(--COLOR_MEDIUM_LIGHT) 53%,
+                     var(--COLOR_MEDIUM)      100%);
+
+  --GRADIENT_MEDIUM_DARK:
+    linear-gradient( var(--GRADIENT_Q1),
+                     var(--COLOR_MEDIUM_LIGHT)  0%,
+                     var(--COLOR_MEDIUM)       53%,
+                     var(--COLOR_MEDIUM_DARK) 100%);
+
+  --GRADIENT_DARK:
+    linear-gradient( var(--GRADIENT_Q1),
+                     var(--COLOR_MEDIUM)       0%,
+                     var(--COLOR_MEDIUM_DARK) 53%,
+                     var(--COLOR_DARK)       100%);
+
+  --GRADIENT_DEEP_DARK:
+    linear-gradient( var(--GRADIENT_Q1),
+                     var(--COLOR_MEDIUM_DARK)  0%,
+                     var(--COLOR_DARK)        53%,
+                     var(--COLOR_DEEP_DARK)  100%);
+
+  --GRADIENT_MAXDARK:
+    linear-gradient( var(--GRADIENT_Q1),
+                    var(--COLOR_DARK)       0%,
+                    var(--COLOR_DEEP_DARK) 53%,
+                    var(--COLOR_MAXDARK)  100%);
+
+  --GRADIENT_TTTLE_LIGHT:
+    linear-gradient( var(--GRADIENT_TB),
+                     var(--COLOR_MEDIUM)     0%,
+                     var(--COLOR_MAXLIGHT) 100%);
+
+  --GRADIENT_TTTLE_LIGHT_INVERSE:
+    linear-gradient( var(--GRADIENT_LR),
+                     var(--COLOR_MAXLIGHT)  0%,
+                     var(--COLOR_MEDIUM)  100%);
+
+  --GRADIENT_TTTLE_MEDIUM:
+    linear-gradient( var(--GRADIENT_TB),
+                     var(--COLOR_MEDIUM_DARK)    0%,
+                     var(--COLOR_MEDIUM_LIGHT) 100%);
+
+  --GRADIENT_TTTLE_MEDIUM_INVERSE:
+    linear-gradient( var(--GRADIENT_BT),
+                     var(--COLOR_MEDIUM_DARK)    0%,
+                     var(--COLOR_MEDIUM_LIGHT) 100%);
+
+  --GRADIENT_TEXT_MEDIUM:
+    linear-gradient( var(--GRADIENT_RL),
+                     var(--COLOR_MEDIUM_LIGHT)   0%,
+                     var(--COLOR_LIGHT)         15%,
+                     var(--COLOR_MAXLIGHT)      50%,
+                     var(--COLOR_LIGHT)         85%,
+                     var(--COLOR_MEDIUM_LIGHT) 100%);
+
+  --GRADIENT_TEXT_LIGHT:
+    linear-gradient( var(--GRADIENT_RL),
+                     var(--COLOR_LIGHT)     0%,
+                     var(--COLOR_MAXLIGHT) 50%,
+                     var(--COLOR_LIGHT)   100%);
+
+  --GRADIENT_TEXT_LIGHT_INVERSE:
+    linear-gradient( var(--GRADIENT_RL),
+                     var(--COLOR_DEEP_DARK)   0%,
+                     var(--COLOR_MAXLIGHT)   50%,
+                     var(--COLOR_DEEP_DARK) 100%);
+
+  --GRADIENT_NOTE_MEDIUM:
+    linear-gradient( var(--GRADIENT_RL),
+                     var(--COLOR_MEDIUM)       0%,
+                     var(--COLOR_MEDIUM_LIGHT) 10%,
+                     var(--COLOR_MEDIUM_LIGHT) 90%,
+                     var(--COLOR_MEDIUM)       100%);
+
+  --GRADIENT_SECOND_MEDIUM_INVERSE:
+    linear-gradient( var(--GRADIENT_Q1),
+                     var(--COLOR_SECOND_LIGHT)   0%,
+                     var(--COLOR_SECOND_DARK)        43%,
+                     var(--COLOR_SECOND_DEEP_DARK) 100%);
+
+  --GRADIENT_SECOND_DARK:
+    linear-gradient( var(--GRADIENT_Q1),
+                     var(--COLOR_SECOND_DEEP_DARK)   0%,
+                     var(--COLOR_SECOND_DARK)        43%,
+                     var(--COLOR_SECOND_MEDIUM_DARK) 100%);
+  --GRADIENT_SECOND_DARK_INVERSE:
+    linear-gradient( var(--GRADIENT_Q1),
+                     var(--COLOR_SECOND_MEDIUM_DARK)   0%,
+                     var(--COLOR_SECOND_DARK)        43%,
+                     var(--COLOR_SECOND_DEEP_DARK) 100%);
+
+/* CUSTOM_GRADIENTS */
+   --TITLE_GRADIENT:
+   linear-gradient( var(--GRADIENT_LR),
+                    var(--COLOR_DARK)                 0%,
+                    var(--COLOR_LIGHT_TRANSPARENT)    90%,
+                    var(--COLOR_MAXLIGHT_TRANSPARENT) 100%);
+
+   --SUBTITLE_GRADIENT:
+   linear-gradient( var(--GRADIENT_LR),
+                    var(--COLOR_LIGHT) 0%,
+                    var(--COLOR_LIGHT_TRANSPARENT)     80%,
+                    var(--COLOR_MAXLIGHT_TRANSPARENT)  100%);
+
+   --LIST_ITEMS_IMG_GRADIENT:
+   linear-gradient( var(--GRADIENT_LR),
+                    var(--COLOR_SECOND_NEUTRAL_DEEP_DARK_SEMI_OPAQUE),
+                    var(--COLOR_SECOND_NEUTRAL_MEDIUM_SEMI_OPAQUE));
+}

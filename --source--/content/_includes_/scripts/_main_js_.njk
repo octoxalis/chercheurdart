@@ -1,0 +1,7 @@
+---js
+{
+  permalink: `static/scripts/main.min.js`,
+}
+---
+{% set js %}{% include "static/scripts/main.js" %}{% endset %}
+{{ js | jsmin | safe }}

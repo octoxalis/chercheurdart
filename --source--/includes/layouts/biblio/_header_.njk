@@ -1,0 +1,8 @@
+{# @id, @author, @date #}
+{% set biblio = biblio[ id ] %}
+<ul class="ca_post_header">
+  <li class="ca_post_title">{{ biblio.title }}</li>
+  <li class="ca_post_signature">{{ @date }}</li>
+  <li class="ca_post_subtitle">{{ biblio.author }} ({{ biblio.place }}, {{ biblio.year }})</li>
+  <li class="ca_post_signature">{{ @author }}</li>
+ </ul>

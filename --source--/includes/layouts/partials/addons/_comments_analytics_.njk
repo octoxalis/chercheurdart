@@ -1,0 +1,17 @@
+{% if comments %}
+<script type="application/json" class="js-hypothesis-config">
+  {
+    "openSidebar": false,
+    "showHighlights": "whenSidebarOpen",
+    "enableExperimentalNewNoteButton": true,
+    "theme": "clean"
+  }
+</script>
+{% endif %}
+<script>
+window.onload = () =>
+{
+  loadJS( "https://plausible.io/js/plausible.js" )
+{% if comments %}  loadJS( "https://hypothes.is/embed.js" ){% endif %}
+}
+</script>

@@ -1,0 +1,27 @@
+---js
+{
+  permalink: `static/styles/index.min.css`,
+}
+---
+{% set css %}
+{#% include "static/styles/import.css" %#}
+{% include "static/styles/root.css" %}
+{% include "static/styles/screen.css" %}
+{% include "static/styles/colors.css" %}
+{% include "static/styles/html.css" %}
+{% include "static/styles/svg.css" %}
+{% include "static/styles/contact.css" %}
+{% include "static/styles/gradients.css" %}
+{% include "static/styles/palette.css" %}
+{% include "static/styles/layout.css" %}
+{% include "static/styles/areas.css" %}
+{% include "static/styles/home.css" %}
+{% include "static/styles/img_bg.css" %}
+{% include "static/styles/folder.css" %}
+{% include "static/styles/text_list.css" %}
+{% include "static/styles/text_item.css" %}
+{% include "static/styles/img_list.css" %}
+{% include "static/styles/gallery.css" %}
+{% include "static/styles/scrollbar.css" %}
+{% endset %}
+{{ css | cssmin | safe }}

@@ -1,0 +1,34 @@
+{% set @SITE_URL = settings.siteUrl %}
+{% if settings.@ON_DEV === 'true' %}
+{% set @SITE_URL = settings.devUrl %}
+{% endif %}
+<!doctype html>
+<html lang="fr">
+<head>{# ======== HEAD ======== #}
+{% block head %}{% include "partials/blocks/_head_.njk" %}{% endblock %}
+{% block fonts %}
+{% include "partials/blocks/_fonts_.njk" %}{#% include "partials/addons/_fonts_.njk" %#}
+{% endblock %}
+{% block styles %}{% include "partials/blocks/_styles_.njk" %}{% endblock %}
+{% block styles_specifics %}{% endblock %}
+{% if settings.@ON_DEV === 'false' %}{% include "partials/addons/_script_load_.njk" %}{% endif %}
+{% if settings.@ON_DEV === 'true' %}{% include "partials/_LOG_.njk" %}{% endif %}
+</head>
+<body>{# ======== BODY ======== #}
+<div id="ca_page" class="ca_page">
+  <div id="ca_content" class="ca_content">
+  {% block menu %}{% include "menu/_list_.njk" %}{% endblock %}
+  {% block content %}{{ layoutContent | safe }}{% endblock %}
+  </div>
+  {% block scroll %}{% include "partials/blocks/_scrollbar_.njk" %}{% endblock %}
+</div>
+{% block scripts %}{% include "partials/blocks/_scripts_.njk" %}{% endblock %}
+{% block scripts_specifics %}{% endblock %}
+{% block addons %}
+{% if settings.@ON_DEV === 'false' %}
+{% include "partials/addons/_instant_page_.njk" %}
+{% include "partials/addons/_comments_analytics_.njk" %}
+{% endif %}
+{% endblock %}
+</body>
+</html>

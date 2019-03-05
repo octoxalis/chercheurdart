@@ -1,0 +1,230 @@
+:root
+{
+  --M3_SLIDE_WIDTH:   0;  /* dynamic setting */
+  --M3_CONSOLE_WIDTH: 0;  /* dynamic setting */
+  --M3_SLIDE_RANGE:   256;
+  --M3_CONSOLE_EQ:    32;
+  --M3_PAD_WIDTH:     10rem;
+  --M3_CONSOLE_COLOR: hsl(var(--COLOR_THIRD_HUE), 50%, 75% );
+  --M3_FE_MATRIX:
+    0 0 R 0 0
+    0 0 G 0 0
+    0 0 B 0 0
+    0 0 0 1 0;
+  --M3_FE_MATRIX_RESET:
+    1 0 0 0 0
+    0 1 0 0 0
+    0 0 1 0 0
+    0 0 0 1 0;
+  --M3_FE_MATRIX_GRAY_VALUE: 1.5;
+
+  --M3_OVERLAY_SPLIT_INSET: 0px;
+
+}
+
+.ca_color_selector
+{
+  position: relative;
+  z-index: calc( var(--AREA_ACTIVE_Z) + 1 );
+  top: 30vh; /*calc( 50vh - (var( --MEDIA_2_CONTROL_DIM ) / 2 ) );*/
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+.ca_color_selector:hover
+{
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.ca_media_3_color_selector_mute
+{
+  transform-origin: left center;
+  transform: scaleX(0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.ca_media_3_color_picker
+{
+  /*cursor: crosshair;*/
+  cursor: var(--CURSOR_PICK);
+}
+
+#ca_media_3_selector_pad
+{
+  position: relative;
+  width: var(--M3_PAD_WIDTH);
+  height: calc( (var(--M3_SLIDE_RANGE) + ((var(--M3_CONSOLE_EQ)) * 2)) * 1px);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--COLOR_DEEP_DARK);
+  border: 0.5rem solid hsla( 34, 10%, 45%, 1);
+  opacity: 1;
+}
+
+.ca_media_3_pad_label
+{
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+  color: hsla( 34, 0%, 95%, 0.8 );
+  border: var(--MEDIA_2_PAD_GAP) solid hsla( 34, 10%, 70%, 0.2 );
+  font-family: var(--FONT_BUTTON);
+  font-size: var(--FONT_SIZE_SMALL);
+  font-weight: var(--FONT_WEIGHT_HEAVY);
+  line-height: var(--FONT_LINE_MEDIUM);
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.ca_media_3_pad_label:hover
+{
+  color: hsla(34, 10%, 95%, 1 );
+  border: var(--MEDIA_2_PAD_GAP) solid hsla( 34, 10%, 95%, 1 );
+  transition: all 0.3s ease;
+}
+#ca_color_selector_trace:hover
+{
+  border: var(--MEDIA_2_PAD_GAP) solid hsla( 34, 10%, 70%, 0.2 );
+}
+.ca_media_3_pad_label[value="1"]
+{
+  color: hsla( 34, 10%, 95%, 0.8 );
+  border: var(--MEDIA_2_PAD_GAP) solid hsla( 34, 10%, 95%, 0.7 );
+}
+
+#ca_color_selector_trace,
+#ca_media_3_split_label,
+#ca_media_3_pick_label,
+#ca_media_3_hue_label,
+#ca_media_3_lum_label,
+#ca_media_3_tone_label,
+#ca_media_3_gray_label
+{
+  height: calc( var(--M3_SLIDE_RANGE) / 7 * 1px);
+}
+
+#ca_media_3_split_label
+{
+  background-color: var(--COLOR_DEEP_DARK);
+}
+#ca_media_3_pick_label
+{
+  background-color: var(--COLOR_DEEP_DARK);
+}
+
+#ca_media_3_hue_label
+{
+  background-image: url('../media/images/rainbow-gradient.jpg');
+  background-size: cover;
+  color: var(--COLOR_NEUTRAL_MAXDARK);
+}
+
+#ca_media_3_lum_label
+{
+  background-image: url('../media/images/gray-gradient.jpg');
+  background-size: cover;
+  color: var(--COLOR_NEUTRAL_MAXDARK);
+}
+
+#ca_media_3_tone_label
+{
+  background-color: var(--LIGHT_BLUE_BG_COLOR);
+  color: var(--COLOR_NEUTRAL_MAXDARK);
+}
+
+#ca_media_3_gray_label
+{
+  background-color: var(--MIDDLE_GRAY_BG_COLOR);
+  color: var(--COLOR_NEUTRAL_MAXDARK);
+}
+
+#ca_media_3_eq_label
+{
+  height: calc( var(--M3_CONSOLE_EQ) * 2 * 1px);
+  background-color: var(--COLOR_DEEP_DARK);
+}
+
+
+.ca_color_selector_console
+{
+  position: absolute;
+  top: 0;
+  left: var(--M3_PAD_WIDTH);
+  opacity: 0;
+  pointer-events: none;
+}
+.ca_color_selector_console_active
+{
+  cursor: crosshair;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#ca_media_3_selector_pad_input
+{
+  position: absolute;
+  left: var(--POS_OUTLEFT);
+  opacity: 0;
+}
+
+.ca_overlay_split_front,
+.ca_overlay_split_back
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ca_overlay_split_clipping
+{
+  clip-path: inset(0px var(--M3_OVERLAY_SPLIT_INSET) 0px 0px);
+  cursor: col-resize;
+}
+
+#ca_media_3_processor /* take over .ca_media_processor */
+{
+  position: absolute;
+  top: 0;
+  background-color: white;
+}
+
+#ca_media_3_processor_canvas
+{
+  filter: url(#ca_media_3_filter);
+}
+
+.ca_color_processor_trace
+{
+	position: fixed;
+	left: calc( 50vw - 15rem );
+  top:  calc( 50vh - 1.5rem );
+  width:  24rem;
+  height: 2.5rem;
+  background-color: transparent;
+  color: hsla(34, 10%, 95%, 1 );
+  border: 1px solid hsla( 34, 10%, 95%, 1 );
+  font-family: var(--FONT_NUMBER);
+  font-size: var(--FONT_SIZE_MEDIUM);
+  font-weight: var(--FONT_WEIGHT_HEAVY);
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.ca_color_trace_show.ca_color_processor_trace
+{
+  opacity: 0.7;
+}
+
+.ca_color_selector_trace
+{
+  font-family: var(--FONT_NUMBER);
+}
+

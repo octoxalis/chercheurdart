@@ -1,0 +1,11 @@
+---js
+{
+pagination: {
+    data: 'collections.tech',
+    size: 8,
+    alias: 'posts',
+  },
+permalink: 'tech/list_{{ pagination.pageNumber }}.html'
+}
+---
+{% include "post/_post_list_.njk" %}

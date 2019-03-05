@@ -1,0 +1,28 @@
+{
+  "@ON_DEV":  "true",
+  "siteUrl":  "https://www.chercheurd.art/",
+  "devUrl":   "http://localhost:5500/",
+
+  "distDirs": {
+    "input":    ".",
+    "output":   "../site",
+    "includes": "includes/",
+    "data":     "data/",
+    "scripts":  "static/scripts/",
+    "styles":   "static/styles/",
+    "images":   "static/media/images/"
+    },
+
+  "tagDirs": {
+    "artists":    "artists/",
+    "works":      "works/",
+    "collectors": "collectors/",
+    "biblio":     "biblio/",
+    "posts":      "posts/",
+    "site":       "site/",
+    "tech":       "tech/"
+  },
+
+  "bgImg":      "backg.jpg",
+  "media@min":  "-@400"
+}

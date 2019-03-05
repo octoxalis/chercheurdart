@@ -1,0 +1,10 @@
+{# @foldTitle, @id, @author, @date, @is_open, @ dir #}
+
+<div id="ca_blocktxt" class="ca_layout_blocktxt">
+  {#% include "partials/_fold_txt_open_.njk" %#}
+  {% include @dir + "/_header_.njk" %}
+  {# ==============Markdown========= #}
+  {{ layoutContent | safe }}
+  {# =============================== #}
+  {#% include "partials/_fold_txt_close_.njk" %#}
+</div>

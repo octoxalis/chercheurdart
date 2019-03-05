@@ -1,0 +1,9 @@
+{# @foldTitle, @is_open #}
+
+<div class="ca_fold_content">
+  {% if @foldTitle %}
+  <h3 class="ca_folder{{@listfolder}}" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">{{ @foldTitle }}</h3>
+  {% endif %}
+  <div class="ca_fold_content_item {{ @is_open }}">
+    <div class="ca_fold_1col">
+      <div class="_none_">
