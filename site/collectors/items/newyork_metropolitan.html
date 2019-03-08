@@ -347,7 +347,10 @@ Version initiale</li>
     </div></div>
 
   
-  
+  <div class="ca_fold_content">
+  <h3 id="ca_enable_annotations_label" class="ca_folder_issmall" onclick="Annotations.setup()">ANNOTATIONS</h3>
+</div>
+
 </div>
 
 </div>
@@ -448,7 +451,28 @@ Version initiale</li>
 <script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn"></script>
 
 
+<script type="application/json" class="js-hypothesis-config">
+  {
+    "openSidebar": false,
+    "showHighlights": "whenSidebarOpen",
+    "enableExperimentalNewNoteButton": true,
+    "theme": "clean"
+  }
+</script>
+
 <script>
+
+const Annotations =
+{
+  isOn:     false,
+  setup: ( ) =>
+  {
+    if ( this.isOn ) return
+    document.getElementById( 'ca_enable_annotations_label' ).classList.toggle( 'ca_inputAnnotation' )
+    loadJS( "https://hypothes.is/embed.js" )
+    this.isOn = true
+  }
+}
 
 
 window.onload = () => { loadJS( "https://plausible.io/js/plausible.js" ) }
