@@ -381,7 +381,7 @@
     onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Mais encore?</h3>
     <div class="ca_fold_content_item">
     <div class="ca_fold_xcols">
-<p>Si vous souhaitez en savoir encore un peu plus sur les entrailles de Chercheurd.art, je suis tout à fait disposé à vous en dire plus: il vous suffit, pour cela, de me <a href="#" onclick="EMAtoClip()">contacter</a> directement en précisant les points sur lesquels vous souhaitez obtenir de plus amples détails.</p>
+<p>Si vous souhaitez en savoir encore un peu plus sur les entrailles de Chercheurd.art, je suis tout à fait disposé à vous en dire plus: il vous suffit, pour cela, de me <a href="#" onclick="EMAddressToClip()">contacter</a> directement en précisant les points sur lesquels vous souhaitez obtenir de plus amples détails.</p>
 </div>
     </div></div>
 </div></div>
@@ -456,6 +456,23 @@ Version initiale.</li>
 
 
   </div>
+  <dialog id="ca_modal_dialog" class="_none_">
+  <dl>
+    <dt id="ca_modal_dialog_header" class="ca_modal_dialog_header">dialog</dt>
+    <dd class="ca_modal_dialog_content">
+      <p id="ca_modal_dialog_text" class="ca_modal_dialog_text">content</p>
+    </dd>
+  </dl>
+  <div id="ca_modal_dialog_close" class="ca_modal_dialog_option">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="ca_modal_dialog_close_icon"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </div>
+  <ul id="ca_modal_dialog_options">
+    <li class="ca_modal_dialog_option">option_0</li>
+    <li class="ca_modal_dialog_option">option_1</li>
+    <li class="ca_modal_dialog_option">option_2</li>
+  </ul>
+</dialog>
+
   <div class="ca_scroll_nav">
   <svg class="ca_scroll_wheel" viewBox="0 0 18 14">
       <defs>

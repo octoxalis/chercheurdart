@@ -331,7 +331,7 @@
     <div class="ca_fold_content_item">
     <div class="ca_fold_xcols">
 <p class="ca_txt">Lorsqu’une l’adresse d’une page demandée par le navigateur que vous utilisez n’existe pas sur le site Chercheurd.art, le serveur renvoie une erreur portant le numéro <strong>404</strong>. C’est ce qui vient de se produire, soit parce qu’un lien figurant sur la page précédente était erroné, soit parce que l’adresse qui a été  saisie manuellement comporte une faute de frappe.</p>
-<p class="ca_txt">Dans le premier cas, n’hésitez pas à me <a href="#" onclick="EMAtoClip()">contacter</a> pour me signaler ce défaut. Dans le second cas, il vous suffit de vérifiez l’adresse que vous souhaitez atteindre.</p>
+<p class="ca_txt">Dans le premier cas, n’hésitez pas à me <a href="#" onclick="EMAddressToClip()">contacter</a> pour me signaler ce défaut. Dans le second cas, il vous suffit de vérifiez l’adresse que vous souhaitez atteindre.</p>
 </div>
     </div></div>
 </div></div>
@@ -412,6 +412,23 @@
 
 
   </div>
+  <dialog id="ca_modal_dialog" class="_none_">
+  <dl>
+    <dt id="ca_modal_dialog_header" class="ca_modal_dialog_header">dialog</dt>
+    <dd class="ca_modal_dialog_content">
+      <p id="ca_modal_dialog_text" class="ca_modal_dialog_text">content</p>
+    </dd>
+  </dl>
+  <div id="ca_modal_dialog_close" class="ca_modal_dialog_option">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="ca_modal_dialog_close_icon"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </div>
+  <ul id="ca_modal_dialog_options">
+    <li class="ca_modal_dialog_option">option_0</li>
+    <li class="ca_modal_dialog_option">option_1</li>
+    <li class="ca_modal_dialog_option">option_2</li>
+  </ul>
+</dialog>
+
   <div class="ca_scroll_nav">
   <svg class="ca_scroll_wheel" viewBox="0 0 18 14">
       <defs>
