@@ -580,15 +580,127 @@ Mort à Porto Ercole. </li>
   
 
 <div id="ca_media_3_color_selector" class="ca_color_selector">
-  <div id="ca_media_3_selector_pad"    class="ca_color_selector_pad">
-    <div                                 id="ca_media_3_trace_label" class="ca_media_3_pad_label ca_color_selector_trace"></div>
-    <label for="ca_media_3_split_input" id="ca_media_3_split_label" class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Comparaison</label>
-    <label for="ca_media_3_pick_input"  id="ca_media_3_pick_label"  class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Échantillon</label>
-    <label for="ca_media_3_hue_input"   id="ca_media_3_hue_label"   class="ca_media_3_pad_label" value="1" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Couleur</label>
-    <label for="ca_media_3_lum_input"   id="ca_media_3_lum_label"   class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Lumière</label>
-    <label for="ca_media_3_tone_input"  id="ca_media_3_tone_label"  class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Filtre-C</label>
-    <label for="ca_media_3_gray_input"  id="ca_media_3_gray_label"  class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Filtre-G</label>
-    <label for="ca_media_3_eq_input"    id="ca_media_3_eq_label"    class="ca_media_3_pad_label" value="0" onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">Égalisation</label>
+  <div id="ca_media_3_selector_pad" class="ca_color_selector_pad">
+    <div id="ca_media_3_trace_label" class="ca_media_3_pad_label ca_color_selector_trace"></div>
+    <label for="ca_media_3_split_input" id="ca_media_3_split_label" class="ca_media_3_pad_label" value="0"
+      title="comparaison"
+      onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">
+    <svg  xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 64 64"
+  class="svg_icon">
+  <rect width="50%" height="100%" x="0" y="0" fill="#6ff" />
+  <g stroke="#00f" stroke-width="2" >
+    <line x1="31" y1="10" x2="31" y2="54" />
+    <line x1="16" y1="32" x2="48" y2="32" />
+    <line x1="16" y1="32" x2="24" y2="24" />
+    <line x1="16" y1="32" x2="24" y2="40" />
+  </g>
+  <rect width="50%" height="100%" x="32" y="0" fill="#00f" />
+  <g stroke="#6ff" stroke-width="2">
+    <line x1="33" y1="10" x2="33" y2="54" />
+    <line x1="32" y1="32" x2="48" y2="32" />
+    <line x1="48" y1="32" x2="40" y2="24" />
+    <line x1="48" y1="32" x2="40" y2="40" />
+  </g>
+</svg>
+
+    </label>
+    <label for="ca_media_3_pick_input"  id="ca_media_3_pick_label"  class="ca_media_3_pad_label" value="0"
+      title="échantillon"
+      onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">
+    <svg  xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 64 64"
+  fill="none"
+  stroke="hsla(34, 17%, 80%, 1)" stroke-width="4" stroke-linecap="square" stroke-linejoin="arcs"
+  class="svg_icon">
+  <polygon points="32,32 32,0  64,0"  fill="hsla( 0,   100%, 50%, 1)" />
+  <polygon points="32,32 64,0  64,32" fill="hsla( 45,  100%, 50%, 1)" />
+  <polygon points="32,32 64,32 64,64" fill="hsla( 90,  100%, 50%, 1)" />
+  <polygon points="32,32 64,64 32,64" fill="hsla( 135, 100%, 50%, 1)" />
+  <polygon points="32,32 32,64 0,64"  fill="hsla( 180, 100%, 50%, 1)" />
+  <polygon points="32,32 0,64  0,32"  fill="hsla( 225, 100%, 50%, 1)" />
+  <polygon points="32,32 0,32  0,0"   fill="hsla( 270, 100%, 50%, 1)" />
+  <polygon points="32,32 0,0   32,0"  fill="hsla( 315, 100%, 50%, 1)" />
+  <g>
+    <line x1="12" y1="32" x2="28" y2="32" /><line x1="36" y1="32" x2="52" y2="32" />
+    <line y1="12" x1="32" y2="28" x2="32" /><line y1="36" x1="32" y2="52" x2="32" />
+  </g>
+  <g transform="rotate( 45, 32, 32)">
+    <line x1="12" y1="32" x2="24" y2="32" /><line x1="40" y1="32" x2="52" y2="32" />
+    <line y1="12" x1="32" y2="24" x2="32" /><line y1="40" x1="32" y2="52" x2="32" />
+  </g>
+</svg>
+
+    </label>
+    <label for="ca_media_3_hue_input"   id="ca_media_3_hue_label"   class="ca_media_3_pad_label" value="1"
+      title="couleurs"
+      onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">
+    <svg  xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 64 64"
+  class="svg_icon">
+  <polygon points="32,32 32,0 64,0"   fill="hsl( 0, 100%, 50%)" />
+  <polygon points="32,32 64,0 64,32"  fill="hsl( 45, 100%, 50%)" />
+  <polygon points="32,32 64,32 64,64" fill="hsl( 90, 100%, 50%)" />
+  <polygon points="32,32 64,64 32,64" fill="hsl( 135, 100%, 50%)" />
+  <polygon points="32,32 32,64 0,64"  fill="hsl( 180, 100%, 50%)" />
+  <polygon points="32,32 0,64  0,32"  fill="hsl( 225, 100%, 50%)" />
+  <polygon points="32,32 0,32 0,0"    fill="hsl( 270, 100%, 50%)" />
+  <polygon points="32,32 0,0 32,0"    fill="hsl( 315, 100%, 50%)" />
+</svg>
+    </label>
+    <label for="ca_media_3_lum_input"   id="ca_media_3_lum_label"   class="ca_media_3_pad_label" value="0"
+      title="luminosités"
+      onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">
+    <svg  xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 64 64"
+  class="svg_icon">
+  <polygon points="32,32 32,0 64,0"   fill="hsl( 0, 0%, 0%)" />
+  <polygon points="32,32 64,0 64,32"  fill="hsl( 0, 0%, 15%)" />
+  <polygon points="32,32 64,32 64,64" fill="hsl( 0, 0%, 30%)" />
+  <polygon points="32,32 64,64 32,64" fill="hsl( 0, 0%, 45%)" />
+  <polygon points="32,32 32,64 0,64"  fill="hsl( 0, 0%, 60%)" />
+  <polygon points="32,32 0,64  0,32"  fill="hsl( 0, 0%, 75%)" />
+  <polygon points="32,32 0,32 0,0"    fill="hsl( 0, 0%, 90%)" />
+  <polygon points="32,32 0,0 32,0"    fill="hsl( 0, 0%, 100%)" />
+</svg>
+    </label>
+    <label for="ca_media_3_tone_input"  id="ca_media_3_tone_label"  class="ca_media_3_pad_label" value="0"
+      title="filtre couleur"
+      onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">
+    <svg  xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 64 64"
+  class="svg_icon">
+  <polygon points="32,32 32,0 64,0"   fill="hsla( 0,   100%, 50%, 0.5" />
+  <polygon points="32,32 64,0 64,32"  fill="hsla( 45,  100%, 50%, 1)" />
+  <polygon points="32,32 64,32 64,64" fill="hsla( 90,  100%, 50%, 1)" />
+  <polygon points="32,32 64,64 32,64" fill="hsla( 135, 100%, 50%, 1)" />
+  <polygon points="32,32 32,64 0,64"  fill="hsla( 180, 100%, 50%, 1)" />
+  <polygon points="32,32 0,64  0,32"  fill="hsla( 0,   100%, 50%, 0.5)" />
+  <polygon points="32,32 0,32 0,0"    fill="hsla( 0,   100%, 50%, 0.5)" />
+  <polygon points="32,32 0,0 32,0"    fill="hsla( 0,   100%, 50%, 0.5)" />
+</svg>
+    </label>
+    <label for="ca_media_3_gray_input"  id="ca_media_3_gray_label"  class="ca_media_3_pad_label" value="0"
+      title="filtre gris"
+      onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">
+    <svg  xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 64 64"
+  class="svg_icon">
+  <polygon points="32,32 32,0 64,0"   fill="hsla( 0,   0%, 20%, 0.5" />
+  <polygon points="32,32 64,0 64,32"  fill="hsla( 45,  100%, 50%, 1)" />
+  <polygon points="32,32 64,32 64,64" fill="hsla( 90,  100%, 50%, 1)" />
+  <polygon points="32,32 64,64 32,64" fill="hsla( 135, 100%, 50%, 1)" />
+  <polygon points="32,32 32,64 0,64"  fill="hsla( 180, 100%, 50%, 1)" />
+  <polygon points="32,32 0,64  0,32"  fill="hsla( 225, 0%, 20%, 0.5)" />
+  <polygon points="32,32 0,32 0,0"    fill="hsla( 270, 0%, 20%, 0.5)" />
+  <polygon points="32,32 0,0 32,0"    fill="hsla( 315, 0%, 20%, 0.5)" />
+</svg>
+    </label>
+    <label for="ca_media_3_uni_input"    id="ca_media_3_uni_label"    class="ca_media_3_pad_label" value="0"
+      title="uniformisation"
+      onclick="M3_consolePadInput( this.getAttribute( 'for'), this )">
+    <svg  xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 64 64"
+  class="svg_icon">
+  <rect width="100%" height="50%" x="0" y="0" fill="#6ff" />
+  <line y1="20" x1="4"  y2="20" x2="60" stroke="#00f" stroke-width="2px" />
+  <rect width="100%" height="50%" x="0" y="50%" fill="#00f" />
+  <line y1="44" x1="30" y2="44" x2="34" stroke="#6ff" stroke-width="2px" />
+</svg>
+    </label>
   </div>
   <div id="ca_media_3_selector_console" class="ca_color_console_trace" data-trace="100">
     <div id="ca_media_3_selector_lum_console" class="ca_color_selector_console"></div>
@@ -602,7 +714,7 @@ Mort à Porto Ercole. </li>
   <input id="ca_media_3_lum_input"   class="ca_media_3_pad_input_radio"  type="radio"    value="0" name="color_input">
   <input id="ca_media_3_tone_input"  class="ca_media_3_pad_input_check"  type="checkbox" value="0">
   <input id="ca_media_3_gray_input"  class="ca_media_3_pad_input_check"  type="checkbox" value="0">
-  <input id="ca_media_3_eq_input"    class="ca_media_3_pad_input_check"  type="checkbox" value="0">
+  <input id="ca_media_3_uni_input"    class="ca_media_3_pad_input_check"  type="checkbox" value="0">
 </div>
 </div>
 <div id="ca_media_3_processor" class="ca_media_processor">
