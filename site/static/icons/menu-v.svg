@@ -1,9 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-  width="48" height="48" viewBox="0 0 24 24"
-  fill="none" stroke="hsla(34, 17%, 80%, 1)" stroke-width="0.8" stroke-linecap="square" stroke-linejoin="arcs">
-  <line x1="3"  y1="5"  x2="21" y2="5"></line>
-  <line x1="5"  y1="9"  x2="19" y2="9"></line>
-  <line x1="7"  y1="13" x2="17" y2="13"></line>
-  <line x1="9"  y1="17" x2="15" y2="17"></line>
-  <line x1="11" y1="21" x2="13" y2="21"></line>
+<svg  xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
+  fill="none"
+  stroke="hsla(34, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
+  class="svg_icon" title="menu_vertical">
+  <line x1="4"  y1="8"  x2="60" y2="8"  />
+  <line x1="10" y1="20" x2="54" y2="20" />
+  <line x1="16" y1="32" x2="48" y2="32" />
+  <line x1="22" y1="44" x2="42" y2="44" />
+  <line x1="28" y1="56" x2="36" y2="56" />
 </svg>

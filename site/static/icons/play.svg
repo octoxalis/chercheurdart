@@ -1,5 +1,13 @@
+<!--
 <svg xmlns="http://www.w3.org/2000/svg"
   width="32" height="32" viewBox="0 0 24 24"
   fill="none" stroke="hsla(34, 17%, 80%, 1)" stroke-width="0.8" stroke-linecap="square" stroke-linejoin="arcs">
   <polygon points="5 3 19 12 5 21 5 3"></polygon>
+</svg>
+-->
+<svg  xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 64 64"
+  fill="none"
+  stroke="hsla(34, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
+  class="svg_icon" title="play">
+  <polygon points="14,8 50,32 14,56"/>
 </svg>
