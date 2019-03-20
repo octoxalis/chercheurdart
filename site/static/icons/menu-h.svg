@@ -2,9 +2,9 @@
   fill="none"
   stroke="hsla(34, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
   class="svg_icon" title="menu_horizontal">
-  <line y1="4"  x1="8"  y2="60" x2="8"  />
-  <line y1="10" x1="20" y2="54" x2="20" />
-  <line y1="16" x1="32" y2="48" x2="32" />
-  <line y1="22" x1="44" y2="42" x2="44" />
-  <line y1="28" x1="56" y2="36" x2="56" />
+  <line y1="6"  x1="8"  y2="58" x2="8"  />
+  <line y1="12" x1="20" y2="52" x2="20" />
+  <line y1="18" x1="32" y2="46" x2="32" />
+  <line y1="24" x1="44" y2="40" x2="44" />
+  <line y1="30" x1="56" y2="34" x2="56" />
 </svg>
