@@ -342,7 +342,7 @@
     onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Traitement d'image</h3>
     <div class="ca_fold_content_item">
     <div class="ca_fold_xcols">
-<p class="ca_txt">À l’heure où les grands musées, le MET de New York, le Prado de Madrid, la National Gallery de Londres, la Pinacoteca Brera de Milan, le Rijks Museum d’Amsterdam<a id="ca_from_note_4" href="#ca_to_note_4" aria-describedby="ca_note_label">etc.</a> diffusent les images haute-définition de leurs <a id="ca_from_note_undefined" href="#ca_to_note_undefined" aria-describedby="ca_note_label">collections</a>, il devient incompréhensible que les techniques d’imagerie scientifique ne soient pas appliquées à la recherche en histoire de l’art. Car, si l’on considère la sensibilité des <a href="https://fr.wikipedia.org/wiki/Capteur_photographique"><mark class="ca_search_term" data-key="any">capteurs lumineux
+<p class="ca_txt">À l’heure où les grands musées, le MET de New York, le Prado de Madrid, la National Gallery de Londres, la Pinacoteca Brera de Milan, le Rijks Museum d’Amsterdam<a id="ca_from_note_4" href="#ca_to_note_4" aria-describedby="ca_note_label">etc.</a> diffusent les images haute-définition de leurs <a id="ca_from_note_undefined" href="#ca_to_note_undefined" aria-describedby="ca_note_label">collections</a>, il devient incompréhensible que les techniques d’imagerie scientifique ne soient pas appliquées à la recherche en histoire de l’art. Car, si l’on considère la sensibilité des <a href="https://fr.wikipedia.org/wiki/Capteur_photographique" target="_blank" rel="noreferrer"><mark class="ca_search_term" data-key="any">capteurs lumineux
 </mark></a> dont disposent aujourd’hui les appareils de photographie numérique, il est légitime de penser que, même avec une marge d’incertitude quant à la fidélité des données recueillies par rapport aux qualités physiques lumineuses de l’original, la peinture, l’analyse que l’on peut en obtenir reste dans une marge d’erreur très faible et peut donc servir de point de départ à une étude statistique scientifiquement valide.</p>
 <p class="ca_txt">Or, ces techniques sont aujourd’hui parfaitement adaptables à l’environnement du Web, grâce à l’évolution de la capacité de traitement de navigateurs Internet tels que <em>Chrome</em> et <em>Firefox</em>. L’analyse du contenu colorimétrique, pixel par pixel, d’une image de 2000 x 2000 pixels de résolution (ce qui est plus grand que la majorité des écrans en usage actuellement), est effectuée en moins <a id="ca_from_note_5" href="#ca_to_note_5" aria-describedby="ca_note_label">d’une seconde</a>, en utilisant l’algorithme de <em>scanning</em> que j’ai développé pour ce site, qui, de plus, grçace à une procédure de découpage et de <a id="ca_from_note_6" href="#ca_to_note_6" aria-describedby="ca_note_label">traitement en parallèle</a>, le temps de calcul peut être sensiblement réduit, sans bloquer l’interactivité du navigateur.</p>
 <p class="ca_txt">En dressant la table des caractéristiques de chaque pixel, il devient possible, en modulant la transparence de chacun d’eux, de faire apparaître ou disparaître, totalement ou partiellement, n’importe quel point de l’image et de façon sélective quant à la composante choisie: teinte (la “couleur” dans le spectre chromatique allant du rouge au violet), saturation (l’intensité de la teinte) et luminosité (la luminance ou “brillance” de la teinte, c’est-à-dire le pourcentage de blanc qu’elle contient).</p>
@@ -468,8 +468,11 @@ Mesuré sur le système suivant:
     <div class="ca_fold_1col">
       <div class="_none_">
 
-  <ul class="ca_list_imgs">
   
+
+<ul class="ca_list_imgs">
+  
+    
     <li class="ca_list_imgs_issmall" onclick="this.classList.toggle('ca_list_imgs_islarge')">
       <img class="ca_list_imgs_img" src="https://www.chercheurd.art/static/media/images/2019_ca_site_tech_0201_burst-@400.jpg"/>
       <ul class="ca_list_imgs_legend">
@@ -477,6 +480,7 @@ Mesuré sur le système suivant:
         <li class="ca_list_items_legend_abstract">Histogramme couleurs explosif</li>
       </ul>
     </li>
+    
   
 </ul>
 
