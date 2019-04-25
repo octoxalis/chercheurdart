@@ -97,15 +97,19 @@ const sendResult = ( provider_o ) => provider_p.postMessage( provider_o )
 
 const fromClient = ( client_o ) =>
 {
-  if ( ( client_o.task_s === 'INIT' ) && ( TagStack_m === null ) )
+  if ( client_o.task_s === 'INIT' )
   {
-    getMap( client_o.url_s )
+    if ( TagStack_m === null ) getMap( client_o.url_s )
+    //xx client_o.task_s = 'RETRIEVE'    //: NEXT GO TO RETRIEVE
     return
   }
-  if ( ( client_o.task_s === 'RETRIEVE' ) && Found_o.found_a.length )
+  if ( client_o.task_s === 'RETRIEVE'  )
   {
-    const result_ = ( Found_o.reset === false ) ? Found_o.found_a[Found_o.found_a.length - 1] : null
-    sendResult( { task_s: 'RETRIEVE', result: result_ } )    //: request the last search
+    if ( Found_o.found_a.length )
+    {
+      const result_ = ( Found_o.reset === false ) ? Found_o.found_a[Found_o.found_a.length - 1] : null
+      sendResult( { task_s: 'RETRIEVE', result: result_ } )    //: request the last search
+    }
     return
   }
   if ( client_o.task_s === 'SEARCH' )
