@@ -371,8 +371,9 @@
 <li><strong>Œuvre d’art</strong>, titre ou partie de titre;</li>
 <li><strong>Collection</strong>, publique ou privée;</li>
 <li><strong>Bibliographie</strong>, titre (ou partie) de la référence;</li>
-<li><strong>Technologie du Web</strong>, sites, programmes, systèmes, ou technologies de l’image numérique;</li>
-<li><strong>Sans filtre</strong>, afin de spécifier les termes plus <a id="ca_from_note_1" href="#ca_to_note_1" aria-describedby="ca_note_label">généraux</a>.</li>
+<li><strong>Technologie &amp; Web</strong>, sites, programmes, systèmes, ou technologies de l’image numérique;</li>
+<li><strong>Localisation</strong>, ville, pays, etc;</li>
+<li><strong>Sans filtre</strong>, afin de spécifier les termes plus <a id="ca_from_note_1" href="#ca_to_note_1" aria-describedby="ca_note_label">généraux</a>;</li>
 </ul>
 <p class="ca_txt">Si le besoin s’en fait sentir ultérieurement, le nombre de catégories pourra être enrichi.</p>
 <p>Afin d’indiquer les deux composantes de la recherche et de présenter le résultat obtenu, un section spécifique est accessible sur chaque page du site: le formulaire <q>Recherche</q>.</p>
@@ -628,6 +629,11 @@ Version beta de la recherche sémantique.</p>
   <input type="radio" name="radioinput" id="ca_radiobox_input_6" class="ca_inputbox_input" value="6" >
   <label for="ca_radiobox_input_6" id="ca_radiobox_label_6" class="ca_inputbox_label" onclick="searchSetTag( 6 )">TECHNOLOGIE</label>
 
+  
+  
+  <input type="radio" name="radioinput" id="ca_radiobox_input_7" class="ca_inputbox_input" value="7" >
+  <label for="ca_radiobox_input_7" id="ca_radiobox_label_7" class="ca_inputbox_label" onclick="searchSetTag( 7 )">LOCALISATION</label>
+
 </form>
 
     </dd>
@@ -673,7 +679,7 @@ Version beta de la recherche sémantique.</p>
 <template id="ca_search_result_entry">
 <div class="ca_urlentry">
   <dl>
-    <dt><a href="https://www.chercheurd.art/_ENTRY_URL_" target="_blank"><!--_ENTRYLINK_--></a></dt>
+    <dt><a href="https://www.chercheurd.art/_ENTRY_URL_"><!--_ENTRYLINK_--></a></dt>
     <dd><!--_ENTRYDATE_--> <em><!--_ENTRYAUTHOR_--></em></dd>
     <dd><!--_ENTRYABSTRACT_--></dd>
   </dl>
