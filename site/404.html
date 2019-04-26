@@ -52,7 +52,7 @@
 
     </label>
     <div class="ca_fold_content">
-      <h3 class="ca_folder ca_folder_inverse" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">chercheurd.art</h3>
+      <h3 class="ca_folder ca_folder_inverse" onclick="DOM_openFolder( this );">chercheurd.art</h3>
       <div class="ca_fold_content_item ca_is_open">
         <div class="ca_fold_1col">
   
@@ -336,17 +336,31 @@
 </ul>
 
   
-  <div class="ca_folder_container"><div class="ca_folder_container_inner">
+  <div class="ca_folder_container">
+<div id="ca_folder_container_inner">
+<div id="ca_folder_opener">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 64 64"
+  fill="none"
+  stroke="hsla(200, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
+  class="ca_svg_icon_dark" title="Déplier-Replier"
+  onclick="DOM_openFolderAll()">
+  <line x1="6" y1="8"  x2="48" y2="8"  />
+  <line x1="6" y1="20" x2="58" y2="20" />
+  <line x1="6" y1="32" x2="30" y2="32" />
+  <line x1="6" y1="44" x2="40" y2="44" />
+  <line x1="6" y1="56" x2="58" y2="56" />
+</svg>
+</div>
 <div id="ca_fold_1" class="ca_fold_content">
-    <h3 class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Que s'est-il passé?</h3>
-    <div class="ca_fold_content_item">
-    <div class="ca_fold_xcols">
+<h3 class="ca_folder" onclick="DOM_openFolder( this );">Que s'est-il passé?</h3>
+<div class="ca_fold_content_item">
+<div class="ca_fold_xcols">
 <p class="ca_txt">Lorsque l’adresse d’une page demandée par le navigateur que vous utilisez n’existe pas sur le site Chercheurd.art, le serveur renvoie une erreur portant le numéro <strong>404</strong>. C’est ce qui vient de se produire, soit parce qu’un lien figurant sur la page précédente était erroné, soit parce que l’adresse que vous avez saisie manuellement comporte une faute de frappe.</p>
 <p class="ca_txt">Dans le premier cas, n’hésitez pas à me <a href="#" onclick="EMAddressToClip()">contacter</a> pour me signaler cette  erreur. Dans le second cas, il vous suffit de vérifiez l’adresse de la page que vous souhaitez atteindre.</p>
 </div>
-    </div></div>
 </div></div>
+</div>
+</div>
 
   
 </div>
@@ -469,7 +483,7 @@
     </ul>
   
     <div class="ca_fold_content">
-      <h3 class="ca_folder ca_folder" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">Résultat</h3>
+      <h3 class="ca_folder" onclick="DOM_openFolder( this );">Résultat</h3>
       <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
         <div class="ca_fold_xcols_norule">
           <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
@@ -614,7 +628,7 @@
 <template id="ca_search_result">
 <div id="ca_fold-search_resul" class="ca_fold_content">
   <h3 id="ca_search_result_title" class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
+    onclick="DOM_openFolder( this );"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
   <div class="ca_fold_content_item">
     <div class="ca_fold_xcols_norule">
       <div class="ca_url_entries_list"><!-- SEARCH_ENTRIES --></div>
@@ -633,7 +647,7 @@
 </div>
 </template>
 
-<template id="ca_search_no_result_entry">
+<template id="ca_search_result_entry_void">
 <div class="ca_urlentry">
   <dl>
     <dt></dt>

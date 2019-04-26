@@ -1,6 +1,6 @@
 <svg  xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewbox="0 0 64 64"
   fill="none"
-  stroke="hsla( 34, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
+  stroke="hsla( 200, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
   class="svg_icon" title="play">
   <polygon points="14,8 50,32 14,56"/>
 </svg>

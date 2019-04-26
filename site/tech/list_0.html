@@ -52,7 +52,7 @@
 
     </label>
     <div class="ca_fold_content">
-      <h3 class="ca_folder ca_folder_inverse" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">chercheurd.art</h3>
+      <h3 class="ca_folder ca_folder_inverse" onclick="DOM_openFolder( this );">chercheurd.art</h3>
       <div class="ca_fold_content_item ca_is_open">
         <div class="ca_fold_1col">
   
@@ -326,7 +326,7 @@
 
 <div class="ca_fold_content">
   
-  <h3 class="ca_folder ca_folder_inverse" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">Répertoire des articles</h3>
+  <h3 class="ca_folder ca_folder_inverse" onclick="DOM_openFolder( this );">Répertoire des articles</h3>
   
   <div class="ca_fold_content_item ca_is_open">
     <div class="ca_fold_1col">
@@ -425,7 +425,7 @@
     </ul>
   
     <div class="ca_fold_content">
-      <h3 class="ca_folder ca_folder" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">Résultat</h3>
+      <h3 class="ca_folder" onclick="DOM_openFolder( this );">Résultat</h3>
       <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
         <div class="ca_fold_xcols_norule">
           <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
@@ -562,7 +562,7 @@
 <template id="ca_search_result">
 <div id="ca_fold-search_resul" class="ca_fold_content">
   <h3 id="ca_search_result_title" class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
+    onclick="DOM_openFolder( this );"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
   <div class="ca_fold_content_item">
     <div class="ca_fold_xcols_norule">
       <div class="ca_url_entries_list"><!-- SEARCH_ENTRIES --></div>
@@ -581,7 +581,7 @@
 </div>
 </template>
 
-<template id="ca_search_no_result_entry">
+<template id="ca_search_result_entry_void">
 <div class="ca_urlentry">
   <dl>
     <dt></dt>

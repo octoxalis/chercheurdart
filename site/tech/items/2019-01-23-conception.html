@@ -52,7 +52,7 @@
 
     </label>
     <div class="ca_fold_content">
-      <h3 class="ca_folder ca_folder_inverse" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">chercheurd.art</h3>
+      <h3 class="ca_folder ca_folder_inverse" onclick="DOM_openFolder( this );">chercheurd.art</h3>
       <div class="ca_fold_content_item ca_is_open">
         <div class="ca_fold_1col">
   
@@ -336,51 +336,60 @@
 </ul>
 
   
-  <div class="ca_folder_container"><div class="ca_folder_container_inner">
+  <div class="ca_folder_container">
+<div id="ca_folder_container_inner">
+<div id="ca_folder_opener">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 64 64"
+  fill="none"
+  stroke="hsla(200, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
+  class="ca_svg_icon_dark" title="Déplier-Replier"
+  onclick="DOM_openFolderAll()">
+  <line x1="6" y1="8"  x2="48" y2="8"  />
+  <line x1="6" y1="20" x2="58" y2="20" />
+  <line x1="6" y1="32" x2="30" y2="32" />
+  <line x1="6" y1="44" x2="40" y2="44" />
+  <line x1="6" y1="56" x2="58" y2="56" />
+</svg>
+</div>
 <div id="ca_fold_1" class="ca_fold_content">
-    <h3 class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Concevoir</h3>
-    <div class="ca_fold_content_item">
-    <div class="ca_fold_xcols">
+<h3 class="ca_folder" onclick="DOM_openFolder( this );">Concevoir</h3>
+<div class="ca_fold_content_item">
+<div class="ca_fold_xcols">
 <p class="ca_txt">L’élaboration du site Chercheurd.art s’est étendu sur près d’une année, en partant de quelques idées qui me semblaient intéressantes à développer, à savoir: comment tirer parti de toutes les technologies foisonnant sur le Web pour mettre à la disposition de tous les collectionneurs et ammateurs de peinture le moyen de regarder d’une manière inédite les œuvres qu’ils apprécient ou qu’ils possèdent? Et par voie de conséquence, comment proposer de nouvelles voies d’exploration à une discipline, l’histoire de l’art, assez peu disposée, il faut bien l’avouer, à la réévaluation de ses méthodologies et de ses outils de recherche?</p>
 <p class="ca_txt">Je ne suis nullement un professionnel du développement Web, même si le premier site que j’ai mis en ligne, totalement programmé <q>à la main</q> comme de règle à l’époque, remonte à déjà vingt ans. Je ne suis pas plus un professionnel de l’histoire de l’art, même si une partie de mes études s’est déroulée à la Sorbonne, lorsque André Chastel y enseignait encore. Toutefois, la fréquentation régulière des salles de ventes, afin de débusquer les perles rares que tout collectionneur ne peut s’empêcher de poursuivre inlassablement, m’a conduit à l’étude permanente de certains domaines de l’histoire de l’art, non seulement afin d’alimenter la recherche d’authenticité ou d’attribution que chaque acquisition ne manque pas de susciter, mais aussi d’élargir sans relâche le champ de connaissances que tout collectionneur se doit de posséder. En effet, quel meilleur terrain de mise en pratique du savoir et de la <a id="ca_from_note_0" href="#ca_to_note_0" aria-describedby="ca_note_label">perspicacité</a> que celui de la vente aux enchères?</p>
 <p class="ca_txt">C’est la visite quotidienne du Web qui m’a progressivement amené à mettre en place des procédures de recherche, de comparaison et d’analyse des reproductions d’œuvres que je voulais étudier, comme un expert doit le faire pour s’assurer de la valeur d’une peinture. Et c’est en poursuivant cette méthodologie que les outils d’investigation dont dispose le site ont été mis au point. Leur nombre peut sembler encore restreint, mais d’autres sont en cours de développement, tant sur le plan du traitement des informations que de celui des images. Qu’il me suffise de dire que le principal objectif est de mettre au point un traitement statistique des données recueillies afin de dégager des tendances, voire des invariants, dans les données colorimétriques que l’on peut accumuler à partir des images des peintures.</p>
 <p class="ca_txt">Pour ne prendre qu’un exemple, celui de l’analyse scientifique des peintures à l’aide des techniques, aujourd’hui devenues <q>classiques</q>, que sont la radiographie, la fluorescence, la réflectographie, la spectrométrie par fluorescence X, l’analyse stratigraphique de la couche picturale, l’analyse chimique des pigments, etc., appliquée aux œuvres de Caravaggio telle qu’elle a été <a id="ca_from_note_1" href="#ca_to_note_1" aria-describedby="ca_note_label">conduite</a> depuis près d’une dizaine d’années pour déboucher sur l’exposition <a id="ca_from_note_2" href="#ca_to_note_2" aria-describedby="ca_note_label"><em>Dentro Caravaggio</em></a> du Palazzo Ducale de Milan en 2017-2018: a-t-on seulement envisagé, avant de procéder à des analyses fort dispendieuses, l’utilisation d’outils logiciels de traitement numérique des images en haute définition?  Ce n’est pas le cas. Et je comprends fort bien la perplexité d’un Gianni Papi lorsqu’il soulève des <a id="ca_from_note_3" href="#ca_to_note_3" aria-describedby="ca_note_label">réserves</a> sur les résultats d’analyses aussi sophistiquées alors qu’aucune synthèse sur l’ensemble de la pratique picturale du milieu romain, et caravagesque en tout premier lieu, n’a été jusqu’alors entreprise.</p>
 </div>
-    </div></div>
+</div></div>
 <div id="ca_fold_2" class="ca_fold_content">
-    <h3 class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Traitement d'image</h3>
-    <div class="ca_fold_content_item">
-    <div class="ca_fold_xcols">
+<h3 class="ca_folder" onclick="DOM_openFolder( this );">Traitement d'image</h3>
+<div class="ca_fold_content_item">
+<div class="ca_fold_xcols">
 <p class="ca_txt">À l’heure où les grands musées, le MET de New York, le Prado de Madrid, la National Gallery de Londres, la Pinacoteca Brera de Milan, le Rijks Museum d’Amsterdam<a id="ca_from_note_4" href="#ca_to_note_4" aria-describedby="ca_note_label">etc.</a> diffusent les images haute-définition de leurs <a id="ca_from_note_4b" href="#ca_to_note_4b" aria-describedby="ca_note_label">collections</a>, il devient incompréhensible que les techniques d’imagerie scientifique ne soient pas appliquées à la recherche en histoire de l’art. Car, si l’on considère la sensibilité des <a href="https://fr.wikipedia.org/wiki/Capteur_photographique" target="_blank" rel="noreferrer">capteurs lumineux</a> dont disposent aujourd’hui les appareils de photographie numérique, il est légitime de penser que, même avec une marge d’incertitude quant à la fidélité des données recueillies par rapport aux qualités physiques lumineuses de l’original, la peinture, l’analyse que l’on peut en obtenir reste dans une marge d’erreur très faible et peut donc servir de point de départ à une étude statistique scientifiquement valide.</p>
 <p class="ca_txt">Or, ces techniques sont aujourd’hui parfaitement adaptables à l’environnement du Web, grâce à l’évolution de la capacité de traitement de navigateurs Internet tels que <em>Chrome</em> et <em>Firefox</em>. L’analyse du contenu colorimétrique, pixel par pixel, d’une image de 2000 x 2000 pixels de résolution (ce qui est plus grand que la majorité des écrans en usage actuellement), est effectuée en moins <a id="ca_from_note_5" href="#ca_to_note_5" aria-describedby="ca_note_label">d’une seconde</a>, en utilisant l’algorithme de <em>scanning</em> que j’ai développé pour ce site, qui, de plus, grçace à une procédure de découpage et de <a id="ca_from_note_6" href="#ca_to_note_6" aria-describedby="ca_note_label">traitement en parallèle</a>, le temps de calcul peut être sensiblement réduit, sans bloquer l’interactivité du navigateur.</p>
 <p class="ca_txt">En dressant la table des caractéristiques de chaque pixel, il devient possible, en modulant la transparence de chacun d’eux, de faire apparaître ou disparaître, totalement ou partiellement, n’importe quel point de l’image et de façon sélective quant à la composante choisie: teinte (la “couleur” dans le spectre chromatique allant du rouge au violet), saturation (l’intensité de la teinte) et luminosité (la luminance ou “brillance” de la teinte, c’est-à-dire le pourcentage de blanc qu’elle contient).</p>
 <p class="ca_txt">L’étude de la <a href="https://fr.wikipedia.org/wiki/Vision_humaine" target="_blank" rel="noreferrer">physiologie de la vision</a> a déterminé que l’appareil sensitif de l’œil, si cher aux <q>connaisseurs</q> du monde de l’art, est beaucoup plus performant pour distinguer les gradations de luminosité que de teinte ou de saturation. Ce qui explique que nombre de spécialistes de l’étude comparative des reproductions de peinture, tels le ô combien sagace Federico Zeri, privilégient les photographies monochromatiques (e.g. en niveaux de gris: gradations entre le noir et le blanc) aux reproductions en couleurs, afin de mieux en distinguer les différences. J’aime à penser que le délicieux historien collectionneur aurait apprécié les outils d’analyse de ce site puisqu’il donne la possibilité d’avoir recours à tous les types de sélection chromatique désirés: monochromatisme noir et blanc, monochromatisme couleur et toutes les <a id="ca_from_note_7" href="#ca_to_note_7" aria-describedby="ca_note_label">combinaisons</a> possibles, avec, de surplus, la comparaison interactive avec l’original de la reproduction.</p>
 <p class="ca_txt">Plusieurs modèles de représentation des couleurs ont cours dans le traitement informatique de l’image numérique, le plus usuel étant la représentation <q>additive</q> de trois composantes: Rouge, Vert, Bleu. Ce modèle ne singularise donc pas les composantes de luminosité et de saturation, ce qui le rend plus <q>artificiel</q> que le modèle, mis au point à partir des travaux du peintre américain <a href="https://en.wikipedia.org/wiki/Albert_Henry_Munsell" target="_blank" rel="noreferrer">Albert Henry Munsell</a> à la fin du XIXème siècle, modèle séparant les composantes teinte, saturation et luminosité (<a id="ca_from_note_8" href="#ca_to_note_8" aria-describedby="ca_note_label">HSL</a>). Il est possible de représenter ce modèle sous forme graphique à l’aide d’un cylindre dont la section circulaire forme un cercle chromatique des différentes teintes, partant du rouge et finissant, après une révolution de 360°, à nouveau au rouge, en passant par le vert et le bleu.</p>
 </div>
-    </div></div>
+</div></div>
 <div id="ca_fold_3" class="ca_fold_content">
-    <h3 class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Construction explosive</h3>
-    <div class="ca_fold_content_item">
-    <div class="ca_fold_xcols">
+<h3 class="ca_folder" onclick="DOM_openFolder( this );">Construction explosive</h3>
+<div class="ca_fold_content_item">
+<div class="ca_fold_xcols">
 <p class="ca_txt">C’est ce type de “projection” qui est utilisée pour les histogrammes rayonnants de répartition des teintes. Les histogrammes présentés dans chaque page du répertoire des peintures constituent un des outils d’investigation originaux proposés par Chercheurd.art. Ces modèles “explosifs” quantifient le nombre de pixels de chaque couleur du spectre présents dans l’image d’un tableau en utilisant une <a id="ca_from_note_10" href="#ca_to_note_10" aria-describedby="ca_note_label">échelle logarithmique</a>: chacune des 360 valeurs chromatiques est représentée par sa couleur spécifique (totalement saturée) et, pour chaque teinte, la répartition du nombre d’occurrences des différentes valeurs de luminance et de saturation, allant <a id="ca_from_note_11" href="#ca_to_note_11" aria-describedby="ca_note_label">de 0 à 100</a>, est projetée (en cliquant sur son rayon correspondant) de part et d’autre du cercle central.</p>
 <p class="ca_txt">Ces histogrammes sont précieux, car l’ampleur de la palette utilisée par le peintre ainsi que la prépondérance ou l’absence de certaines tonalités sont discernables au premier regard, ce qui réserve souvent des surprises. Pour des raisons de commodité, le sélecteur de teintes pilotant la représentation “chromatographique” des images analysées, utilise une bande spectrale plane parcourant les 360 gradations chromatiques du cercle de Munsell et le degré d’opacité de tous les pixels correspondants à la teinte peut être varié dans une amplitude allant du totalement transparent au totalement opaque.</p>
 </div>
-    </div></div>
+</div></div>
 <div id="ca_fold_4" class="ca_fold_content">
-    <h3 class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">À suivre...</h3>
-    <div class="ca_fold_content_item">
-    <div class="ca_fold_xcols">
+<h3 class="ca_folder" onclick="DOM_openFolder( this );">À suivre...</h3>
+<div class="ca_fold_content_item">
+<div class="ca_fold_xcols">
 </div>
-    </div></div>
+</div></div>
 <div id="ca_fold_201" class="ca_fold_content">
-    <h3 class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">NOTES | VERSIONS</h3>
-    <div class="ca_fold_content_item">
-    <div class="ca_fold_xcols">
+<h3 class="ca_folder" onclick="DOM_openFolder( this );">NOTES | VERSIONS</h3>
+<div class="ca_fold_content_item">
+<div class="ca_fold_xcols">
 <footer><h2 class="visually-hidden" id="ca_footnote_label">notes</h2><ol>
 <li id="ca_to_note_0"><p class="ca_footnote">
 <blockquote>
@@ -438,8 +447,9 @@ La valeur 0 est le noir et la valeur 100 est le blanc pour la composante de lumi
 Ébauche initiale.</li>
 </ol>
 </div>
-    </div></div>
 </div></div>
+</div>
+</div>
 
   
 </div>
@@ -551,7 +561,7 @@ La valeur 0 est le noir et la valeur 100 est le blanc pour la composante de lumi
     </ul>
   
     <div class="ca_fold_content">
-      <h3 class="ca_folder ca_folder" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">Résultat</h3>
+      <h3 class="ca_folder" onclick="DOM_openFolder( this );">Résultat</h3>
       <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
         <div class="ca_fold_xcols_norule">
           <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
@@ -696,7 +706,7 @@ La valeur 0 est le noir et la valeur 100 est le blanc pour la composante de lumi
 <template id="ca_search_result">
 <div id="ca_fold-search_resul" class="ca_fold_content">
   <h3 id="ca_search_result_title" class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
+    onclick="DOM_openFolder( this );"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
   <div class="ca_fold_content_item">
     <div class="ca_fold_xcols_norule">
       <div class="ca_url_entries_list"><!-- SEARCH_ENTRIES --></div>
@@ -715,7 +725,7 @@ La valeur 0 est le noir et la valeur 100 est le blanc pour la composante de lumi
 </div>
 </template>
 
-<template id="ca_search_no_result_entry">
+<template id="ca_search_result_entry_void">
 <div class="ca_urlentry">
   <dl>
     <dt></dt>

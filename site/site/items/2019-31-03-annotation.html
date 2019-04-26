@@ -52,7 +52,7 @@
 
     </label>
     <div class="ca_fold_content">
-      <h3 class="ca_folder ca_folder_inverse" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">chercheurd.art</h3>
+      <h3 class="ca_folder ca_folder_inverse" onclick="DOM_openFolder( this );">chercheurd.art</h3>
       <div class="ca_fold_content_item ca_is_open">
         <div class="ca_fold_1col">
   
@@ -336,21 +336,33 @@
 </ul>
 
   
-  <div class="ca_folder_container"><div class="ca_folder_container_inner">
+  <div class="ca_folder_container">
+<div id="ca_folder_container_inner">
+<div id="ca_folder_opener">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 64 64"
+  fill="none"
+  stroke="hsla(200, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
+  class="ca_svg_icon_dark" title="Déplier-Replier"
+  onclick="DOM_openFolderAll()">
+  <line x1="6" y1="8"  x2="48" y2="8"  />
+  <line x1="6" y1="20" x2="58" y2="20" />
+  <line x1="6" y1="32" x2="30" y2="32" />
+  <line x1="6" y1="44" x2="40" y2="44" />
+  <line x1="6" y1="56" x2="58" y2="56" />
+</svg>
+</div>
 <div id="ca_fold_1" class="ca_fold_content">
-    <h3 class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Hypothesis Project</h3>
-    <div class="ca_fold_content_item">
-    <div class="ca_fold_xcols">
+<h3 class="ca_folder" onclick="DOM_openFolder( this );">Hypothesis Project</h3>
+<div class="ca_fold_content_item">
+<div class="ca_fold_xcols">
 <p class="ca_txt">Le projet Hypothesis a été conçu pour répondre aux besoins de commenter les publications en ligne que la communauté scientifique suscite. Le <em>Web Annotation Working Group</em>, placé sous l’égide du <a href="https://www.w3.org/Consortium/" target="_blank" rel="noreferrer">W3C</a> (l’organisation internationale coordonnant le développement des spécifications standard pour le World Wide Web: <strong>WWW</strong>), a publié en 2017 les recommandations à suivre pour fournir la couche logicielle donnant à tout un chacun la possibilité d’ajouter des commentaires aux pages d’un site du Web.</p>
 <p class="ca_txt">Le Projet Hypothesis implémente cette couche logicielle ajoutée aux pages de Chercheurd.art. La marche à suivre pour rédiger des annotations est fort simple et ne nécessite qu’une seule autorisation préalable: l’enregistrement d’un nom d’intervenant ainsi qu’une adresse e-mail valide. Tous les détails du processus peuvent être consultés sur le site <strong><a href="http://Hypothes.is">Hypothes.is</a></strong> (en anglais) et je les résume dans le paragrpahe suivant.</p>
 </div>
-    </div></div>
+</div></div>
 <div id="ca_fold_2" class="ca_fold_content">
-    <h3 class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Inscrivez-vous...</h3>
-    <div class="ca_fold_content_item">
-    <div class="ca_fold_xcols">
+<h3 class="ca_folder" onclick="DOM_openFolder( this );">Inscrivez-vous...</h3>
+<div class="ca_fold_content_item">
+<div class="ca_fold_xcols">
 <p>L’inscription au service Hypothesis ne prend que quelques instants:</p>
 <ul>
 <li>activez, sur une page de ce site, le système d’annotation en cliquant sur la rubrique <em>ANNOTATIONS</em> figurant en bas du texte;</li>
@@ -379,12 +391,11 @@
 </ul>
 <p class="ca_txt">Les parties du texte sélectionnées pour l’annotation sont surlignées en jaune et ne sont visibles que par vous, en revanche, les commentaires adjoints sont consultables par tous sans inscription préalable.</p>
 </div>
-    </div></div>
+</div></div>
 <div id="ca_fold_3" class="ca_fold_content">
-    <h3 class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Annotez</h3>
-    <div class="ca_fold_content_item">
-    <div class="ca_fold_xcols">
+<h3 class="ca_folder" onclick="DOM_openFolder( this );">Annotez</h3>
+<div class="ca_fold_content_item">
+<div class="ca_fold_xcols">
 <p>Le service d’annotation permet quatre types d’annotation:</p>
 <ul>
 <li><strong>surlignage</strong> (une partie du texte):<br>
@@ -397,24 +408,23 @@ un commentaire (sans surlignage) concerne la totalité de la page visitée; comm
 un commentaire est destiné à répondre à un commentaire dejà publié; il est également visible publiquement.</li>
 </ul>
 </div>
-    </div></div>
+</div></div>
 <div id="ca_fold_4" class="ca_fold_content">
-    <h3 class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">Confidentialité</h3>
-    <div class="ca_fold_content_item">
-    <div class="ca_fold_xcols">
+<h3 class="ca_folder" onclick="DOM_openFolder( this );">Confidentialité</h3>
+<div class="ca_fold_content_item">
+<div class="ca_fold_xcols">
 <p class="ca_txt">La <strong>politique de confidentialité</strong> du service d’annotation Hypothesis est <a href="https://web.hypothes.is/privacy/">consultable</a> (en anglais) sur le site <a href="http://Hypothes.is">Hypothes.is</a>.
 Quant au site Chercheurd.art, il n’a <strong>aucun accès à l’adresse e-mail communiquée</strong> lors de l’enregistrement sur Hypothesis et ne peut donc l’utiliser à quelque moment que ce soit: <strong>Chercheurd.art ne dispose d’aucune donnée personnelle enregistrable</strong>. Vous pouvez ainsi intervenir en toute liberté d’esprit, avec toutes les règles de courtoisie qui s’imposent, quel que soit l’objet de vos propos.</p>
 <p class="ca_txt"><strong>Toutes les interventions sont “modérées” par le responsable de Chercheurd.art</strong>.</p>
 <p class="ca_txt">Le service d’annotation intégré à Chercheurd.art peut être utiisé aussi bien pour apporter des rectifications ou compléments d’information que des commentaires de tout type. Il permet notamment d’adjoindre des images ou des vidéos. N’hésitez donc pas à y avoir recours…</p>
 </div>
-    </div></div>
 </div></div>
+</div>
+</div>
 <div id="ca_fold_201" class="ca_fold_content">
-    <h3 class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');">NOTES | VERSIONS</h3>
-    <div class="ca_fold_content_item">
-    <div class="ca_fold_xcols">
+<h3 class="ca_folder" onclick="DOM_openFolder( this );">NOTES | VERSIONS</h3>
+<div class="ca_fold_content_item">
+<div class="ca_fold_xcols">
 <footer><h2 class="visually-hidden" id="ca_footnote_label">notes</h2><ol>
 <li id="ca_to_note_1"><p class="ca_footnote">
 Par défaut, le surlignage n'est pas activé lorsque la page est à nouveau consultée. Il est activé en faisant apparaître la barre d'annotation, donc en sélectionnant n'importe quelle partie de la page.
@@ -429,7 +439,7 @@ Il est possible de définir des groupes de visiteurs et de poster des commentair
 Version initiale.</li>
 </ol>
 </div>
-    </div></div>
+</div></div>
 
   
 </div>
@@ -531,7 +541,7 @@ Version initiale.</li>
     </ul>
   
     <div class="ca_fold_content">
-      <h3 class="ca_folder ca_folder" onclick="this.nextElementSibling.classList.toggle('ca_is_open');">Résultat</h3>
+      <h3 class="ca_folder" onclick="DOM_openFolder( this );">Résultat</h3>
       <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
         <div class="ca_fold_xcols_norule">
           <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
@@ -676,7 +686,7 @@ Version initiale.</li>
 <template id="ca_search_result">
 <div id="ca_fold-search_resul" class="ca_fold_content">
   <h3 id="ca_search_result_title" class="ca_folder"
-    onclick="this.nextElementSibling.classList.toggle('ca_is_open');this.parentElement.classList.toggle('ca_has_open');"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
+    onclick="DOM_openFolder( this );"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
   <div class="ca_fold_content_item">
     <div class="ca_fold_xcols_norule">
       <div class="ca_url_entries_list"><!-- SEARCH_ENTRIES --></div>
@@ -695,7 +705,7 @@ Version initiale.</li>
 </div>
 </template>
 
-<template id="ca_search_no_result_entry">
+<template id="ca_search_result_entry_void">
 <div class="ca_urlentry">
   <dl>
     <dt></dt>
