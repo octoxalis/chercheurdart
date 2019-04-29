@@ -1,0 +1,735 @@
+
+
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Louvre</title>
+
+
+
+
+<meta name="description" content="Louvre - Paris,Un blog s&#39;adressant aux collectionneurs en utilisant les technologies de traitement de l&#39;image,Recherche en histoire de l&#39;Art,collections,peintures anciennes,XVIème,XVIIème,XVIIIème,XIXème,siècle">
+
+
+<style id="ca_fonts_latin">
+
+@font-face{font-display:swap;font-family:Antic;font-style:normal;font-weight:400;src:local('Antic Regular'),local('Antic-Regular'),url(https://www.chercheurd.art/static/fonts/antic-v10-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:Philosopher;font-style:normal;font-weight:400;src:local('Philosopher Regular'),local('Philosopher-Regular'),url(https://www.chercheurd.art/static/fonts/Philosopher-Regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:'Titillium Web';font-style:normal;font-weight:400;src:local('Titillium Web Regular'),local('TitilliumWeb-Regular'),url(https://www.chercheurd.art/static/fonts/titillium-web-v7-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('RenoMono-Regular'),local('RenoMono-Regular'),url(https://www.chercheurd.art/static/fonts/RenoMono.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('Josefin Slab Regular'),local('JosefinSlab-Regular'),url(https://www.chercheurd.art/static/fonts/josefin-slab-v9-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
+
+<link rel="stylesheet" href="https://www.chercheurd.art/static/styles/index.min.css" />
+
+
+<script>const SITE_ROOT_URL='https://www.chercheurd.art/'</script>
+
+<script src="https://www.chercheurd.art/static/scripts/script_load.min.js"></script>
+
+
+</head>
+<body>
+<div class="ca_menu_line"></div>
+
+<!--
+<svg xmlns="http://www.w3.org/2000/svg" class="ca_menu_logo" width="200" height="50" fill="#fff">
+  <text class="ca_menu_logo_text" fill="#000">chercheurd.art</text>
+</svg>
+-->
+<div id="ca_page" class="ca_page">
+  <main id="ca_content" class="ca_content">
+  <section id="ca_area_section_menu" class="ca_area_region">
+  <input id="ca_select_area_menu" class="ca_area_switcher" value="ca_select_area_menu" name="area" type="radio">
+  <nav id="ca_area_menu" class="ca_area_menu ca_area ca_area_list">
+    <label for="ca_select_area_menu" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
+  class="ca_svg_icon ca_svg_menu_icon">
+  <line id="ca_svg_icon_menu_1" x1="6"  y1="8"  x2="58" y2="8"  />
+  <line id="ca_svg_icon_menu_2" x1="12" y1="20" x2="52" y2="20" />
+  <line id="ca_svg_icon_menu_3" x1="18" y1="32" x2="46" y2="32" />
+  <line id="ca_svg_icon_menu_4" x1="24" y1="44" x2="40" y2="44" />
+  <line id="ca_svg_icon_menu_5" x1="30" y1="56" x2="34" y2="56" />
+</svg>
+
+    </label>
+    <div class="ca_fold_content">
+      <h3 class="ca_folder ca_folder_inverse" onclick="DOM_openFolder( this );">chercheurd.art</h3>
+      <div class="ca_fold_content_item ca_is_open">
+        <div class="ca_fold_1col">
+  
+          <div class="_none_">
+            <ul class="ca_list_items">
+            
+            
+              <li class="ca_flipcard_container">
+                <div class="ca_flipcard">
+                  <a href="https://www.chercheurd.art/index.html" class="ca_nodeco">
+                  <div class="ca_flipcard_front">
+  <div class="ca_flipcard_container_reverse"
+       style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_14_@550.jpg)">
+  </div>
+  <h1 class="ca_list_items_img_title ca_wide_title">
+  Accueil
+  </h1>
+</div>
+<div class="ca_flipcard_back">
+  <ul class="ca_list_items_legend">
+    <li class="ca_list_items_legend_title">Accueil</li>
+    
+    <li class="ca_list_items_legend_abstract">Découverte...</li>
+    
+    
+  </ul>
+</div>
+
+                  </a>
+                </div>
+              </li>
+            
+              <li class="ca_flipcard_container">
+                <div class="ca_flipcard">
+                  <a href="https://www.chercheurd.art/posts/list_0.html" class="ca_nodeco">
+                  <div class="ca_flipcard_front">
+  <div class="ca_flipcard_container_reverse"
+       style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_10_@550.jpg)">
+  </div>
+  <h1 class="ca_list_items_img_title ca_wide_title">
+  Articles
+  </h1>
+</div>
+<div class="ca_flipcard_back">
+  <ul class="ca_list_items_legend">
+    <li class="ca_list_items_legend_title">Articles</li>
+    
+    <li class="ca_list_items_legend_abstract">Articles et annonces publiés</li>
+    
+    
+  </ul>
+</div>
+
+                  </a>
+                </div>
+              </li>
+            
+              <li class="ca_flipcard_container">
+                <div class="ca_flipcard">
+                  <a href="https://www.chercheurd.art/artists/list_0.html" class="ca_nodeco">
+                  <div class="ca_flipcard_front">
+  <div class="ca_flipcard_container_reverse"
+       style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_09_@550.jpg)">
+  </div>
+  <h1 class="ca_list_items_img_title ca_wide_title">
+  Artistes
+  </h1>
+</div>
+<div class="ca_flipcard_back">
+  <ul class="ca_list_items_legend">
+    <li class="ca_list_items_legend_title">Artistes</li>
+    
+    <li class="ca_list_items_legend_abstract">Répertoire des artistes</li>
+    
+    
+  </ul>
+</div>
+
+                  </a>
+                </div>
+              </li>
+            
+              <li class="ca_flipcard_container">
+                <div class="ca_flipcard">
+                  <a href="https://www.chercheurd.art/works/list_0.html" class="ca_nodeco">
+                  <div class="ca_flipcard_front">
+  <div class="ca_flipcard_container_reverse"
+       style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_02_@550.jpg)">
+  </div>
+  <h1 class="ca_list_items_img_title ca_wide_title">
+  Œuvres
+  </h1>
+</div>
+<div class="ca_flipcard_back">
+  <ul class="ca_list_items_legend">
+    <li class="ca_list_items_legend_title">Œuvres</li>
+    
+    <li class="ca_list_items_legend_abstract">Répertoire des œuvres</li>
+    
+    
+  </ul>
+</div>
+
+                  </a>
+                </div>
+              </li>
+            
+              <li class="ca_flipcard_container">
+                <div class="ca_flipcard">
+                  <a href="https://www.chercheurd.art/collectors/list_0.html" class="ca_nodeco">
+                  <div class="ca_flipcard_front">
+  <div class="ca_flipcard_container_reverse"
+       style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_03_@550.jpg)">
+  </div>
+  <h1 class="ca_list_items_img_title ca_wide_title">
+  Collections
+  </h1>
+</div>
+<div class="ca_flipcard_back">
+  <ul class="ca_list_items_legend">
+    <li class="ca_list_items_legend_title">Collections</li>
+    
+    <li class="ca_list_items_legend_abstract">Répertoire des collections privées et publiques, anciennes ou actuelles</li>
+    
+    
+  </ul>
+</div>
+
+                  </a>
+                </div>
+              </li>
+            
+              <li class="ca_flipcard_container">
+                <div class="ca_flipcard">
+                  <a href="https://www.chercheurd.art/biblio/list_0.html" class="ca_nodeco">
+                  <div class="ca_flipcard_front">
+  <div class="ca_flipcard_container_reverse"
+       style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_05_@550.jpg)">
+  </div>
+  <h1 class="ca_list_items_img_title ca_wide_title">
+  Bibliographie
+  </h1>
+</div>
+<div class="ca_flipcard_back">
+  <ul class="ca_list_items_legend">
+    <li class="ca_list_items_legend_title">Bibliographie</li>
+    
+    <li class="ca_list_items_legend_abstract">Références bibliographiques</li>
+    
+    
+  </ul>
+</div>
+
+                  </a>
+                </div>
+              </li>
+            
+              <li class="ca_flipcard_container">
+                <div class="ca_flipcard">
+                  <a href="https://www.chercheurd.art/tech/list_0.html" class="ca_nodeco">
+                  <div class="ca_flipcard_front">
+  <div class="ca_flipcard_container_reverse"
+       style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_06_@550.jpg)">
+  </div>
+  <h1 class="ca_list_items_img_title ca_wide_title">
+  Technologie
+  </h1>
+</div>
+<div class="ca_flipcard_back">
+  <ul class="ca_list_items_legend">
+    <li class="ca_list_items_legend_title">Technologie</li>
+    
+    <li class="ca_list_items_legend_abstract">Perspectives technologiques</li>
+    
+    
+  </ul>
+</div>
+
+                  </a>
+                </div>
+              </li>
+            
+              <li class="ca_flipcard_container">
+                <div class="ca_flipcard">
+                  <a href="https://www.chercheurd.art/site/list_0.html" class="ca_nodeco">
+                  <div class="ca_flipcard_front">
+  <div class="ca_flipcard_container_reverse"
+       style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_07_@550.jpg)">
+  </div>
+  <h1 class="ca_list_items_img_title ca_wide_title">
+  À propos
+  </h1>
+</div>
+<div class="ca_flipcard_back">
+  <ul class="ca_list_items_legend">
+    <li class="ca_list_items_legend_title">À propos</li>
+    
+    <li class="ca_list_items_legend_abstract">L'envers de l'écran.<br>Prendre contact, proposer, collaborer</li>
+    
+    
+  </ul>
+</div>
+
+                  </a>
+                </div>
+              </li>
+            
+              <li class="ca_flipcard_container">
+                <div class="ca_flipcard">
+                  <a href="https://www.chercheurd.art/site/items/2019-31-03-credits.html" class="ca_nodeco">
+                  <div class="ca_flipcard_front">
+  <div class="ca_flipcard_container_reverse"
+       style="--list_items_bg:url(https://www.chercheurd.art/static/media/images/home_01_@550.jpg)">
+  </div>
+  <h1 class="ca_list_items_img_title ca_wide_title">
+  ©rédits
+  </h1>
+</div>
+<div class="ca_flipcard_back">
+  <ul class="ca_list_items_legend">
+    <li class="ca_list_items_legend_title">©rédits</li>
+    
+    <li class="ca_list_items_legend_abstract">Construit avec Eleventy<br>Entreposé par Github<br>Déployé par Netlify<br>Analysé par Plausible</li>
+    
+    
+  </ul>
+</div>
+
+                  </a>
+                </div>
+              </li>
+            
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</section>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="ca_area_section_text" class="ca_area_region">
+  <input id="ca_select_area_text" class="ca_area_switcher" value="ca_select_area_text" name="area" type="radio">
+  <div id="ca_area_text" class="ca_area_text ca_area ca_area_active">
+    <label for="ca_select_area_text" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
+  class="ca_svg_icon ca_svg_menu_icon">
+  <line id="ca_svg_icon_menu_1" x1="6"  y1="8"  x2="58" y2="8"  />
+  <line id="ca_svg_icon_menu_2" x1="12" y1="20" x2="52" y2="20" />
+  <line id="ca_svg_icon_menu_3" x1="18" y1="32" x2="46" y2="32" />
+  <line id="ca_svg_icon_menu_4" x1="24" y1="44" x2="40" y2="44" />
+  <line id="ca_svg_icon_menu_5" x1="30" y1="56" x2="34" y2="56" />
+</svg>
+
+    </label>
+    
+
+<div id="ca_blocktxt" class="ca_layout_blocktxt">
+  
+
+
+<ul class="ca_post_header">
+  <li class="ca_post_title">Louvre</li>
+  <li class="ca_post_signature">30 janvier 2019</li>
+  <li class="ca_post_subtitle">Paris, France</li>
+  <li class="ca_post_signature"><address onclick="EMAddressToClip()">A. Dupin</address></li>
+ </ul>
+
+  
+  <div class="ca_folder_container">
+<div id="ca_folder_container_inner">
+<div id="ca_folder_opener">
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
+  fill="none"
+  stroke="hsla(200, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
+  class="ca_svg_icon_dark" title="Déplier-Replier"
+  onclick="DOM_openFolderAll()">
+  <line x1="6" y1="8"  x2="48" y2="8"  />
+  <line x1="6" y1="20" x2="58" y2="20" />
+  <line x1="6" y1="32" x2="30" y2="32" />
+  <line x1="6" y1="44" x2="40" y2="44" />
+  <line x1="6" y1="56" x2="58" y2="56" />
+</svg>
+</div>
+<div id="ca_fold_1" class="ca_fold_content">
+<h3 class="ca_folder" onclick="DOM_openFolder( this );">Des collections royales au musée le plus fréquenté du monde</h3>
+<div class="ca_fold_content_item">
+<div class="ca_fold_xcols">
+<p class="ca_txt">Le <em>museum</em> imaginé par Dominique-Vivant Denon à l’aube du XIXème siècle est aujourd’hui le point de passge de plus de huit millions de visiteurs par an (2017).</p>
+</div>
+</div></div>
+<div id="ca_fold_10" class="ca_fold_content">
+<h3 class="ca_folder" onclick="DOM_openFolder( this );">Site Web</h3>
+<div class="ca_fold_content_item">
+<div class="ca_fold_xcols">
+<p class="ca_txt"></p>
+<p><a href="https://www.louvre.fr/" target="_blank" rel="noreferrer">Louvre</a></p>
+<p class="ca_txt">Comment le musée le plus fréquenté du monde peut-il se satisfaire d’un site Web totalement obsolète? <strong>Pas d’image en haute-définition</strong>: uniquement de minuscules vignettes (moins de 200px de large); dimensions immuables des pages (940px de large), totalement inadaptées aux écrans de dimensions courantes; utilisation de technologies abandonnées par une grande majorité de sites depuis plusieurs années (Flash) ou sur le déclin (Drupal). Il serait temps de faire peau neuve!</p>
+</div>
+</div></div>
+<div id="ca_fold_201" class="ca_fold_content">
+<h3 class="ca_folder" onclick="DOM_openFolder( this );">NOTES | VERSIONS</h3>
+<div class="ca_fold_content_item">
+<div class="ca_fold_xcols">
+<footer><h2 class="visually-hidden" id="ca_footnote_label">notes</h2><ol>
+</ol></footer>
+<h3 class="ca_version_title">Versions</h3>
+<ol class="ca_version_list">
+<li class="ca_version_entry"><strong>1er février 2019</strong><br>
+Ébauche initiale</li>
+</ol>
+</div>
+</div></div>
+</div>
+</div>
+
+  
+</div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<section id="ca_area_section_gallery" class="ca_area_region">
+  <input id="ca_select_area_gallery" class="ca_area_switcher" value="ca_select_area_gallery" name="area" type="radio">
+  <div id="ca_area_gallery" class="ca_area_gallery ca_area">
+    <label for="ca_select_area_gallery" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
+  class="ca_svg_icon ca_svg_menu_icon">
+  <line id="ca_svg_icon_menu_1" x1="6"  y1="8"  x2="58" y2="8"  />
+  <line id="ca_svg_icon_menu_2" x1="12" y1="20" x2="52" y2="20" />
+  <line id="ca_svg_icon_menu_3" x1="18" y1="32" x2="46" y2="32" />
+  <line id="ca_svg_icon_menu_4" x1="24" y1="44" x2="40" y2="44" />
+  <line id="ca_svg_icon_menu_5" x1="30" y1="56" x2="34" y2="56" />
+</svg>
+
+    </label>
+    
+
+<div id="ca_blockimg" class="ca_layout_blockimg">
+  
+  
+
+<div class="ca_fold_content">
+  
+  <div class="ca_fold_content_item ca_is_open">
+    <div class="ca_fold_1col">
+      <div class="_none_">
+
+  <div class="ca_list_imgs">
+    
+    
+      
+      
+      
+        
+        
+<div id="1488_vecelli_paris_louvre_1515_femme_miroir" class="ca_list_imgs_issmall" onclick="this.classList.toggle('ca_list_imgs_islarge')">
+  <div class="ca_painting" style="--FRAMING_WIDTH:14;--FRAMING_SCALE_X:1.16;--FRAMING_SCALE_Y:1.16;">
+    <img id="ca_gallery_img" class="ca_list_imgs_img ca_frame" src="https://www.chercheurd.art/static/media/images/1488_vecelli_paris_louvre_1515_femme_miroir.jpg"
+         style="--FRAMING_WIDTH:14;--FRAMING_SCALE_X:1.16;--FRAMING_SCALE_Y:1.16;" data-src-width="" data-src-height=""/>
+  </div>
+  <ul class="ca_list_imgs_legend">
+    <li class="ca_list_imgs_legend_title">
+      <a href="https://www.chercheurd.art/works/items/1488_vecelli_paris_louvre_1515_femme_miroir.html" class="ca_nodeco">La femme au miroir -1515-</a>
+    </li>
+    <li class="ca_list_imgs_legend_author">
+      <a href="https://www.chercheurd.art/artists/items/1488_vecelli.html" class="ca_nodeco">Tiziano Vecelli</a>
+    </li>
+    <li class="ca_list_imgs_legend_collector">
+      <a href="https://www.chercheurd.art/collectors/items/paris_louvre.html" class="ca_nodeco">Louvre</a>
+    </li>
+    <li class="ca_list_imgs_legend_collector">Paris</li>
+  </ul>
+</div>
+
+      
+    
+</ul>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </div>
+</section>
+
+
+
+
+
+
+  
+
+<section id="ca_area_section_search" class="ca_area_region">
+  <input id="ca_select_area_search" class="ca_area_switcher" value="ca_select_area_search" name="area" type="radio">
+  <div id="ca_area_search" class="ca_area_search ca_area">
+    <label for="ca_area_search" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
+  class="ca_svg_icon ca_svg_menu_icon">
+  <line id="ca_svg_icon_menu_1" x1="6"  y1="8"  x2="58" y2="8"  />
+  <line id="ca_svg_icon_menu_2" x1="12" y1="20" x2="52" y2="20" />
+  <line id="ca_svg_icon_menu_3" x1="18" y1="32" x2="46" y2="32" />
+  <line id="ca_svg_icon_menu_4" x1="24" y1="44" x2="40" y2="44" />
+  <line id="ca_svg_icon_menu_5" x1="30" y1="56" x2="34" y2="56" />
+</svg>
+
+    </label>
+  
+    <ul class="ca_post_header">
+      <li class="ca_post_title">Recherche</li>
+      <li></li>
+      <li class="ca_post_subtitle">
+      <form id="ca_search_terms" class="ca_inputbox_form">
+ <input id="ca_search_terms_submit" class="ca_inputbox_input" onclick="searchSubmit()">
+ <label for="ca_search_terms_submit" class="ca_inputbox_text_label">RECHERCHER</label>
+ <input id="ca_search_text" class="ca_search_textbox" type="text" placeholder=" Mots recherchés...">
+</form>
+
+<form id="ca_search_tags" class="ca_inputbox_form">
+ <input id="ca_search_tags_submit" class="ca_inputbox_input" onclick="searchTagsDialog()">
+ <label for="ca_search_tags_submit" class="ca_inputbox_text_label">FILTRAGE</label>
+ <label for="ca_search_tags_submit" id="ca_inputbox_label_tag" class="ca_inputbox_label_dry">SANS FILTRE</label>
+</form>
+
+<form id="ca_search_reset" class="ca_inputbox_form">
+ <input  id="ca_search_reset_submit" class="ca_inputbox_input" onclick="searchReset()">
+ <label for="ca_search_reset_submit" class="ca_inputbox_text_label">EFFACER</label>
+ <input  id="ca_search_previous_submit" class="ca_inputbox_input" onclick="searchPrevious()">
+ <label for="ca_search_previous_submit" class="ca_inputbox_text_label">PRÉCÉDENTE</label>
+ <input  id="ca_search_next_submit" class="ca_inputbox_input" onclick="searchNext()">
+ <label for="ca_search_next_submit" class="ca_inputbox_text_label">SUIVANTE</label>
+</form>
+
+      </li>
+    </ul>
+  
+    <div class="ca_fold_content">
+      <h3 class="ca_folder" onclick="DOM_openFolder( this );">Résultat</h3>
+      <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
+        <div class="ca_fold_xcols_norule">
+          <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</section>
+
+  </main>
+  <aside>
+  <dialog id="ca_note_dialog" class="ca_dialog">
+  <div id="ca_note_dialog_close" class="ca_dialog_close">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_dialog_close_icon">
+  <line x1="18" y1="6" x2="6" y2="18"></line>
+  <line x1="6" y1="6" x2="18" y2="18"></line>
+</svg>
+
+  </div>
+  <dl id="ca_note_dialog_area" class="ca_dialog_area">
+    <dt id="ca_note_dialog_header" class="ca_note_dialog_header">dialog</dt>
+    <dd>
+      <p id="ca_note_dialog_text" class="ca_note_dialog_text">content</p>
+    </dd>
+  </dl>
+  <ul id="ca_note_dialog_options">
+    <li class="ca_note_dialog_option">option_0</li>
+    <li class="ca_note_dialog_option">option_1</li>
+    <li class="ca_note_dialog_option">option_2</li>
+  </ul>
+</dialog>
+
+<dialog id="ca_status_dialog" class="ca_dialog">
+  <div id="ca_status_dialog_close" class="ca_dialog_close">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_dialog_close_icon">
+  <line x1="18" y1="6" x2="6" y2="18"></line>
+  <line x1="6" y1="6" x2="18" y2="18"></line>
+</svg>
+
+  </div>
+  <dl id="ca_status_dialog_area" class="ca_dialog_area">
+    <dt id="ca_status_dialog_header" class="ca_note_dialog_header">status</dt>
+    <dd id="ca_status_dialog_content">
+      <div class="ca_fold_content">
+  <h3 id="ca_enable_annotations_label" class="ca_folder_issmall">ANNOTATIONS</h3><!--<p class="ca_dialog_txt">Pour activer le système d'annotation Hypothesis, cochez...</p>-->
+  <form id="ca_dialog_annotations_form" class="ca_inputbox_form">
+      <input  id="ca_dialog_annotations_input" class="ca_inputbox_input" value="0" name="ckeckbox" type="checkbox"
+              onclick="if (this.value === '0' ) Annotations.setup();this.value='1' ">
+      <label for="ca_dialog_annotations_input" class="ca_inputbox_label"title="Activer le système d'annotation">ACTIVER</label>
+  </form>
+</div>
+
+
+    </dd>
+  </dl>
+</dialog>
+
+<dialog id="ca_search_dialog" class="ca_dialog">
+  <div id="ca_search_dialog_close" class="ca_dialog_close">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_dialog_close_icon">
+  <line x1="18" y1="6" x2="6" y2="18"></line>
+  <line x1="6" y1="6" x2="18" y2="18"></line>
+</svg>
+
+  </div>
+  <dl id="ca_search_dialog_area" class="ca_dialog_area">
+    <dt id="ca_search_dialog_header" class="ca_note_dialog_header">Filtres de recherche</dt>
+    <dd id="ca_search_dialog_content">
+      <form id="ca_dialog_search_form_tags" class="ca_optbox_form">
+
+  
+  
+  
+  
+  <input type="radio" name="radioinput" id="ca_radiobox_input_0" class="ca_inputbox_input" value="0" checked>
+  <label for="ca_radiobox_input_0" id="ca_radiobox_label_0" class="ca_inputbox_label" onclick="searchSetTag( 0 )">SANS FILTRE</label>
+
+  
+  
+  <input type="radio" name="radioinput" id="ca_radiobox_input_1" class="ca_inputbox_input" value="1" >
+  <label for="ca_radiobox_input_1" id="ca_radiobox_label_1" class="ca_inputbox_label" onclick="searchSetTag( 1 )">NOM DE PERSONNE</label>
+
+  
+  
+  <input type="radio" name="radioinput" id="ca_radiobox_input_2" class="ca_inputbox_input" value="2" >
+  <label for="ca_radiobox_input_2" id="ca_radiobox_label_2" class="ca_inputbox_label" onclick="searchSetTag( 2 )">NOM D&#39;ARTISTE</label>
+
+  
+  
+  <input type="radio" name="radioinput" id="ca_radiobox_input_3" class="ca_inputbox_input" value="3" >
+  <label for="ca_radiobox_input_3" id="ca_radiobox_label_3" class="ca_inputbox_label" onclick="searchSetTag( 3 )">OEUVRE D&#39;ART</label>
+
+  
+  
+  <input type="radio" name="radioinput" id="ca_radiobox_input_4" class="ca_inputbox_input" value="4" >
+  <label for="ca_radiobox_input_4" id="ca_radiobox_label_4" class="ca_inputbox_label" onclick="searchSetTag( 4 )">COLLECTION</label>
+
+  
+  
+  <input type="radio" name="radioinput" id="ca_radiobox_input_5" class="ca_inputbox_input" value="5" >
+  <label for="ca_radiobox_input_5" id="ca_radiobox_label_5" class="ca_inputbox_label" onclick="searchSetTag( 5 )">BIBLIOGRAPHIE</label>
+
+  
+  
+  <input type="radio" name="radioinput" id="ca_radiobox_input_6" class="ca_inputbox_input" value="6" >
+  <label for="ca_radiobox_input_6" id="ca_radiobox_label_6" class="ca_inputbox_label" onclick="searchSetTag( 6 )">TECHNOLOGIE</label>
+
+  
+  
+  <input type="radio" name="radioinput" id="ca_radiobox_input_7" class="ca_inputbox_input" value="7" >
+  <label for="ca_radiobox_input_7" id="ca_radiobox_label_7" class="ca_inputbox_label" onclick="searchSetTag( 7 )">LOCALISATION</label>
+
+</form>
+
+    </dd>
+  </dl>
+</dialog>
+
+
+
+  <div class="ca_scroll_nav">
+  <svg class="ca_scroll_wheel" viewBox="0 0 18 14">
+    <defs>
+        <linearGradient id="up_gradient">
+            <stop id="ca_grad_up_empty" offset="100%" stop-color="var(--SCROLL_STOP_EMPTY)"/>
+            <stop id="ca_grad_up_fill"  offset="100%" stop-color="var(--SCROLL_STOP_FILL)"/>
+        </linearGradient>
+        <linearGradient id="down_gradient">
+            <stop id="ca_grad_down_empty" offset="0%" stop-color="var(--SCROLL_STOP_EMPTY)"/>
+            <stop id="ca_grad_down_fill"  offset="0%" stop-color="var(--SCROLL_STOP_FILL)"/>
+        </linearGradient>
+    </defs>
+  <circle class="nav_wheel" cx="9" cy="5" r="4.8"/>
+  <path class="ca_scroll_arrow_down" onclick="ScrollPage( -0.25 )" d="M  0,5 L 8.7,2 8.7,8 Z" />
+  <path class="ca_scroll_arrow_up"   onclick="ScrollPage( +0.25 )" d="M 18,5 L 9.3,2 9.3,8 Z" />
+</svg>
+
+</div>
+
+  </aside>
+</div>
+
+<template id="ca_search_result">
+<div id="ca_fold-search_resul" class="ca_fold_content">
+  <h3 id="ca_search_result_title" class="ca_folder"
+    onclick="DOM_openFolder( this );"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
+  <div class="ca_fold_content_item">
+    <div class="ca_fold_xcols_norule">
+      <div class="ca_url_entries_list"><!-- SEARCH_ENTRIES --></div>
+    </div>
+  </div>
+</div>
+</template>
+
+<template id="ca_search_result_entry">
+<div class="ca_urlentry">
+  <dl>
+    <dt><a href="https://www.chercheurd.art/_ENTRY_URL_"><!--_ENTRYLINK_--></a></dt>
+    <dd><!--_ENTRYDATE_--> <em><!--_ENTRYAUTHOR_--></em></dd>
+    <dd><!--_ENTRYABSTRACT_--></dd>
+  </dl>
+</div>
+</template>
+
+<template id="ca_search_result_entry_void">
+<div class="ca_urlentry">
+  <dl>
+    <dt></dt>
+  </dl>
+</div>
+</template>
+
+
+
+
+
+<div class="_scripts_">
+<script src="https://www.chercheurd.art/static/scripts/main.min.js"></script>
+
+
+
+<script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn"></script>
+
+<script type="application/json" class="js-hypothesis-config">
+  {
+    "openSidebar": false,
+    "showHighlights": "whenSidebarOpen",
+    "enableExperimentalNewNoteButton": true,
+    "theme": "clean"
+  }
+</script>
+
+<script>
+
+const Annotations =
+{
+  isOn:     false,
+  setup: ( ) =>
+  {
+    if ( this.isOn ) return
+    //xx document.getElementById( 'ca_enable_annotations_label' ).classList.toggle( 'ca_inputAnnotation' )
+    loadJS( "https://hypothes.is/embed.js" )
+    this.isOn = true
+  }
+}
+
+
+window.onload = () => { loadJS( "https://plausible.io/js/plausible.js" ) }
+
+</script>
+
+</div>
+
+</body>
+</html>
