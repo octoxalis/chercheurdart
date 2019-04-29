@@ -1,8 +1,29 @@
+<<<<<<< Updated upstream
 node_modules
 package.json
 package-lock.json
 prototypes
 source
 .vscode
+<<<<<<< HEAD
 @img
 chercheurd.art.code-workspace
+=======
+chercheurd.art.code-workspace
+markdown.code-snippets
+_workspace_
+@img
+map
+
+=======
+_workspace_
+@img
+node_modules
+prototypes
+source
+chercheurd.art.code-workspace
+package-lock.json
+package.json
+.gitignore
+>>>>>>> Stashed changes
+>>>>>>> b13ec692c0d0f99de954dc44d8498711163995bc
