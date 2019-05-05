@@ -55,7 +55,6 @@
       <h3 class="ca_folder ca_folder_inverse" onclick="DOM_openFolder( this );">chercheurd.art</h3>
       <div class="ca_fold_content_item ca_is_open">
         <div class="ca_fold_1col">
-  
           <div class="_none_">
             <ul class="ca_list_items">
             
@@ -287,7 +286,6 @@
             
             </ul>
           </div>
-          
         </div>
       </div>
     </div>
@@ -338,17 +336,16 @@
   
   <div class="ca_folder_container">
 <div id="ca_folder_container_inner">
-<div id="ca_folder_opener">
-<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
-  fill="none"
-  stroke="hsla(200, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
-  class="ca_svg_icon_dark" title="Déplier-Replier"
-  onclick="DOM_openFolderAll()">
-  <line x1="6" y1="8"  x2="48" y2="8"  />
-  <line x1="6" y1="20" x2="58" y2="20" />
-  <line x1="6" y1="32" x2="30" y2="32" />
-  <line x1="6" y1="44" x2="40" y2="44" />
-  <line x1="6" y1="56" x2="58" y2="56" />
+<div id="ca_folder_opener"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
+fill="none"
+stroke="hsla(200, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
+class="ca_svg_icon_ctrl_text" title="Déplier-Replier"
+onclick="DOM_openFolderAll()">
+<line x1="6" y1="8"  x2="48" y2="8"  />
+<line x1="6" y1="20" x2="58" y2="20" />
+<line x1="6" y1="32" x2="30" y2="32" />
+<line x1="6" y1="44" x2="40" y2="44" />
+<line x1="6" y1="56" x2="58" y2="56" />
 </svg>
 </div>
 <div id="ca_fold_1" class="ca_fold_content">
@@ -373,6 +370,7 @@
 <li><strong>Bibliographie</strong>, titre (ou partie) de la référence;</li>
 <li><strong>Technologie &amp; Web</strong>, sites, programmes, systèmes, ou technologies de l’image numérique;</li>
 <li><strong>Localisation</strong>, ville, pays, etc;</li>
+<li><strong>Date</strong>, année, siècle, période, etc;</li>
 <li><strong>Sans filtre</strong>, afin de spécifier les termes plus <a id="ca_from_note_1" href="#ca_to_note_1" aria-describedby="ca_note_label">généraux</a>;</li>
 </ul>
 <p class="ca_txt">Si le besoin s’en fait sentir ultérieurement, le nombre de catégories pourra être enrichi.</p>
@@ -425,47 +423,6 @@ Version beta de la recherche sémantique.</p>
 
 
 
-
-
-<section id="ca_area_section_gallery" class="ca_area_region">
-  <input id="ca_select_area_gallery" class="ca_area_switcher" value="ca_select_area_gallery" name="area" type="radio">
-  <div id="ca_area_gallery" class="ca_area_gallery ca_area">
-    <label for="ca_select_area_gallery" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
-      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
-  class="ca_svg_icon ca_svg_menu_icon">
-  <line id="ca_svg_icon_menu_1" x1="6"  y1="8"  x2="58" y2="8"  />
-  <line id="ca_svg_icon_menu_2" x1="12" y1="20" x2="52" y2="20" />
-  <line id="ca_svg_icon_menu_3" x1="18" y1="32" x2="46" y2="32" />
-  <line id="ca_svg_icon_menu_4" x1="24" y1="44" x2="40" y2="44" />
-  <line id="ca_svg_icon_menu_5" x1="30" y1="56" x2="34" y2="56" />
-</svg>
-
-    </label>
-    
-
-<div id="ca_blockimg" class="ca_layout_blockimg">
-  
-  
-
-<div class="ca_fold_content">
-  
-  <div class="ca_fold_content_item ca_is_open">
-    <div class="ca_fold_1col">
-      <div class="_none_">
-
-  {<ul class="ca_list_imgs">
-  
-</ul>
-
-        </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </div>
-</section>
 
 
 
@@ -633,6 +590,11 @@ Version beta de la recherche sémantique.</p>
   
   <input type="radio" name="radioinput" id="ca_radiobox_input_7" class="ca_inputbox_input" value="7" >
   <label for="ca_radiobox_input_7" id="ca_radiobox_label_7" class="ca_inputbox_label" onclick="searchSetTag( 7 )">LOCALISATION</label>
+
+  
+  
+  <input type="radio" name="radioinput" id="ca_radiobox_input_8" class="ca_inputbox_input" value="8" >
+  <label for="ca_radiobox_input_8" id="ca_radiobox_label_8" class="ca_inputbox_label" onclick="searchSetTag( 8 )">DATE</label>
 
 </form>
 

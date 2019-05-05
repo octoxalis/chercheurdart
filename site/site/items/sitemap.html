@@ -55,7 +55,6 @@
       <h3 class="ca_folder ca_folder_inverse" onclick="DOM_openFolder( this );">chercheurd.art</h3>
       <div class="ca_fold_content_item ca_is_open">
         <div class="ca_fold_1col">
-  
           <div class="_none_">
             <ul class="ca_list_items">
             
@@ -287,7 +286,6 @@
             
             </ul>
           </div>
-          
         </div>
       </div>
     </div>
@@ -330,20 +328,30 @@
   
 <ul class="ca_post_header">
   <li class="ca_post_title">Plan de navigation</li>
-<<<<<<< HEAD
-  <li class="ca_post_signature">29 avril 2019</li>
-=======
-  <li class="ca_post_signature">26 avril 2019</li>
->>>>>>> b13ec692c0d0f99de954dc44d8498711163995bc
+  <li class="ca_post_signature">5 mai 2019</li>
   <li class="ca_post_subtitle"></li>
   <li class="ca_post_signature"><address onclick="EMAddressToClip()">A. Dupin</address></li>
 </ul>
 
   
-  <div id="ca_fold_1" class="ca_fold_content">
+  <div class="ca_folder_container">
+<div id="ca_folder_container_inner">
+<div id="ca_folder_opener"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
+fill="none"
+stroke="hsla(200, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
+class="ca_svg_icon_ctrl_text" title="Déplier-Replier"
+onclick="DOM_openFolderAll()">
+<line x1="6" y1="8"  x2="48" y2="8"  />
+<line x1="6" y1="20" x2="58" y2="20" />
+<line x1="6" y1="32" x2="30" y2="32" />
+<line x1="6" y1="44" x2="40" y2="44" />
+<line x1="6" y1="56" x2="58" y2="56" />
+</svg>
+</div>
+<div id="ca_fold_1" class="ca_fold_content">
 <h3 class="ca_folder" onclick="DOM_openFolder( this );">artistes</h3>
 <div class="ca_fold_content_item">
-<div class="ca_fold_xcols">
+<div class="ca_fold_xcols_norule">
 <div class="ca_url_entries_list">
 <div class="ca_urlentry">
 <dl>
@@ -386,7 +394,7 @@
 <div id="ca_fold_2" class="ca_fold_content">
 <h3 class="ca_folder" onclick="DOM_openFolder( this );">bibliographie</h3>
 <div class="ca_fold_content_item">
-<div class="ca_fold_xcols">
+<div class="ca_fold_xcols_norule">
 <div class="ca_url_entries_list">
 <div class="ca_urlentry">
 <dl>
@@ -415,7 +423,7 @@
 <div id="ca_fold_3" class="ca_fold_content">
 <h3 class="ca_folder" onclick="DOM_openFolder( this );">collections</h3>
 <div class="ca_fold_content_item">
-<div class="ca_fold_xcols">
+<div class="ca_fold_xcols_norule">
 <div class="ca_url_entries_list">
 <div class="ca_urlentry">
 <dl>
@@ -465,7 +473,7 @@
 <div id="ca_fold_4" class="ca_fold_content">
 <h3 class="ca_folder" onclick="DOM_openFolder( this );">articles</h3>
 <div class="ca_fold_content_item">
-<div class="ca_fold_xcols">
+<div class="ca_fold_xcols_norule">
 <div class="ca_url_entries_list">
 <div class="ca_urlentry">
 <dl>
@@ -494,7 +502,7 @@
 <div id="ca_fold_5" class="ca_fold_content">
 <h3 class="ca_folder" onclick="DOM_openFolder( this );">site</h3>
 <div class="ca_fold_content_item">
-<div class="ca_fold_xcols">
+<div class="ca_fold_xcols_norule">
 <div class="ca_url_entries_list">
 <div class="ca_urlentry">
 <dl>
@@ -534,7 +542,7 @@
 <div class="ca_urlentry">
 <dl>
 <dt><a href="https://www.chercheurd.art/site/items/sitemap.html">Plan de navigation</a></dt>
-<dd>26-04-2019 <em>A. Dupin</em></dd>
+<dd>05-05-2019 <em>A. Dupin</em></dd>
 <dd>Toutes les pages du site Chercheurd.art</dd>
 </dl>
 </div>
@@ -544,7 +552,7 @@
 <div id="ca_fold_6" class="ca_fold_content">
 <h3 class="ca_folder" onclick="DOM_openFolder( this );">technologie</h3>
 <div class="ca_fold_content_item">
-<div class="ca_fold_xcols">
+<div class="ca_fold_xcols_norule">
 <div class="ca_url_entries_list">
 <div class="ca_urlentry">
 <dl>
@@ -559,7 +567,7 @@
 <div id="ca_fold_7" class="ca_fold_content">
 <h3 class="ca_folder" onclick="DOM_openFolder( this );">œuvres</h3>
 <div class="ca_fold_content_item">
-<div class="ca_fold_xcols">
+<div class="ca_fold_xcols_norule">
 <div class="ca_url_entries_list">
 <div class="ca_urlentry">
 <dl>
@@ -626,6 +634,8 @@
 </div>
 </div>
 </div></div>
+</div>
+</div>
 
   
 </div>
@@ -635,47 +645,6 @@
 
 
 
-
-
-<section id="ca_area_section_gallery" class="ca_area_region">
-  <input id="ca_select_area_gallery" class="ca_area_switcher" value="ca_select_area_gallery" name="area" type="radio">
-  <div id="ca_area_gallery" class="ca_area_gallery ca_area">
-    <label for="ca_select_area_gallery" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
-      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
-  class="ca_svg_icon ca_svg_menu_icon">
-  <line id="ca_svg_icon_menu_1" x1="6"  y1="8"  x2="58" y2="8"  />
-  <line id="ca_svg_icon_menu_2" x1="12" y1="20" x2="52" y2="20" />
-  <line id="ca_svg_icon_menu_3" x1="18" y1="32" x2="46" y2="32" />
-  <line id="ca_svg_icon_menu_4" x1="24" y1="44" x2="40" y2="44" />
-  <line id="ca_svg_icon_menu_5" x1="30" y1="56" x2="34" y2="56" />
-</svg>
-
-    </label>
-    
-
-<div id="ca_blockimg" class="ca_layout_blockimg">
-  
-  
-
-<div class="ca_fold_content">
-  
-  <div class="ca_fold_content_item ca_is_open">
-    <div class="ca_fold_1col">
-      <div class="_none_">
-
-  {<ul class="ca_list_imgs">
-  
-</ul>
-
-        </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </div>
-</section>
 
 
 
@@ -843,6 +812,11 @@
   
   <input type="radio" name="radioinput" id="ca_radiobox_input_7" class="ca_inputbox_input" value="7" >
   <label for="ca_radiobox_input_7" id="ca_radiobox_label_7" class="ca_inputbox_label" onclick="searchSetTag( 7 )">LOCALISATION</label>
+
+  
+  
+  <input type="radio" name="radioinput" id="ca_radiobox_input_8" class="ca_inputbox_input" value="8" >
+  <label for="ca_radiobox_input_8" id="ca_radiobox_label_8" class="ca_inputbox_label" onclick="searchSetTag( 8 )">DATE</label>
 
 </form>
 

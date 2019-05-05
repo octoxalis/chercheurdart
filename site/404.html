@@ -55,7 +55,6 @@
       <h3 class="ca_folder ca_folder_inverse" onclick="DOM_openFolder( this );">chercheurd.art</h3>
       <div class="ca_fold_content_item ca_is_open">
         <div class="ca_fold_1col">
-  
           <div class="_none_">
             <ul class="ca_list_items">
             
@@ -287,7 +286,6 @@
             
             </ul>
           </div>
-          
         </div>
       </div>
     </div>
@@ -338,17 +336,16 @@
   
   <div class="ca_folder_container">
 <div id="ca_folder_container_inner">
-<div id="ca_folder_opener">
-<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
-  fill="none"
-  stroke="hsla(200, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
-  class="ca_svg_icon_dark" title="Déplier-Replier"
-  onclick="DOM_openFolderAll()">
-  <line x1="6" y1="8"  x2="48" y2="8"  />
-  <line x1="6" y1="20" x2="58" y2="20" />
-  <line x1="6" y1="32" x2="30" y2="32" />
-  <line x1="6" y1="44" x2="40" y2="44" />
-  <line x1="6" y1="56" x2="58" y2="56" />
+<div id="ca_folder_opener"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
+fill="none"
+stroke="hsla(200, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
+class="ca_svg_icon_ctrl_text" title="Déplier-Replier"
+onclick="DOM_openFolderAll()">
+<line x1="6" y1="8"  x2="48" y2="8"  />
+<line x1="6" y1="20" x2="58" y2="20" />
+<line x1="6" y1="32" x2="30" y2="32" />
+<line x1="6" y1="44" x2="40" y2="44" />
+<line x1="6" y1="56" x2="58" y2="56" />
 </svg>
 </div>
 <div id="ca_fold_1" class="ca_fold_content">
@@ -370,68 +367,6 @@
 
 
 
-
-
-<section id="ca_area_section_gallery" class="ca_area_region">
-  <input id="ca_select_area_gallery" class="ca_area_switcher" value="ca_select_area_gallery" name="area" type="radio">
-  <div id="ca_area_gallery" class="ca_area_gallery ca_area ca_area_active">
-    <label for="ca_select_area_gallery" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
-      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
-  class="ca_svg_icon ca_svg_menu_icon">
-  <line id="ca_svg_icon_menu_1" x1="6"  y1="8"  x2="58" y2="8"  />
-  <line id="ca_svg_icon_menu_2" x1="12" y1="20" x2="52" y2="20" />
-  <line id="ca_svg_icon_menu_3" x1="18" y1="32" x2="46" y2="32" />
-  <line id="ca_svg_icon_menu_4" x1="24" y1="44" x2="40" y2="44" />
-  <line id="ca_svg_icon_menu_5" x1="30" y1="56" x2="34" y2="56" />
-</svg>
-
-    </label>
-    <div id="ca_home_back">
-  <div id="ca_home_back_top"    class="ca_home_back_side"></div>
-  <div id="ca_home_back_bottom" class="ca_home_back_side"></div>
-  <div id="ca_home_back_right"  class="ca_home_back_side"></div>
-</div>
-
-<svg id="ca_home_prim" width="80.9%" height="61.8%">
-  <defs>
-    <linearGradient id="ca_home_gradient" gradientTransform="rotate(75)">
-      <stop offset="15%" stop-color="hsla(220, 92%, 30%, 0.8)" />
-      <stop offset="80%" stop-color="hsla(240, 52%, 60%, 0.9)" />
-    </linearGradient>
-    <mask id="ca_home_mask">
-      <rect width="100%" height="100%" fill="#fff" />
-      <g class="ca_home_logo_text">
-        <text class="ca_home_logo_text_light">chercheur d</text>
-        <text class="ca_home_logo_text_heavy">.art</text>
-      </g>
-    </mask>
-  </defs>
-  <filter id="ca_home_prim_filter" color-interpolation-filters="sRGB">
-    <feColorMatrix id="ca_home_prim_filter_matrix"
-      type="matrix" values="0 0 0.4 0 0   0 0 1.2 0 0  0 0 1.5 0 0  0 0 0 1 0">
-    </feColorMatrix>
-  </filter>
-  <rect width="100%" height="100%" fill="url(#ca_home_gradient)" fill-opacity="0.65" mask="url(#ca_home_mask)" />
-</svg>
-
-<div id="ca_home_layers">
-    <a href="https://www.chercheurd.art/index.html" class="nodeco">
-  <div id="ca_404_layer" class="ca_404_layer">
-      <dl class="ca_404_card">
-        <dt class="ca_404_title">Quelle erreur!!!</dt>
-        <dd class="ca_404_abstract">Une erreur d'adressage (code 404) s'est produite.<br/>
-        Le lien que vous avez suivi ou l'adresse que vous cherchez n'aboutit nulle part.<br>
-        Il est sans doute préférable de retourner à la page d'Accueil ou au Menu du site.
-        </dd>
-      </dl>
-  </div>
-    </a>
-</div>
-
-
-
-  </div>
-</section>
 
 
 
@@ -599,6 +534,11 @@
   
   <input type="radio" name="radioinput" id="ca_radiobox_input_7" class="ca_inputbox_input" value="7" >
   <label for="ca_radiobox_input_7" id="ca_radiobox_label_7" class="ca_inputbox_label" onclick="searchSetTag( 7 )">LOCALISATION</label>
+
+  
+  
+  <input type="radio" name="radioinput" id="ca_radiobox_input_8" class="ca_inputbox_input" value="8" >
+  <label for="ca_radiobox_input_8" id="ca_radiobox_label_8" class="ca_inputbox_label" onclick="searchSetTag( 8 )">DATE</label>
 
 </form>
 

@@ -55,7 +55,6 @@
       <h3 class="ca_folder ca_folder_inverse" onclick="DOM_openFolder( this );">chercheurd.art</h3>
       <div class="ca_fold_content_item ca_is_open">
         <div class="ca_fold_1col">
-  
           <div class="_none_">
             <ul class="ca_list_items">
             
@@ -287,7 +286,6 @@
             
             </ul>
           </div>
-          
         </div>
       </div>
     </div>
@@ -338,24 +336,23 @@
   
   <div class="ca_folder_container">
 <div id="ca_folder_container_inner">
-<div id="ca_folder_opener">
-<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
-  fill="none"
-  stroke="hsla(200, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
-  class="ca_svg_icon_dark" title="Déplier-Replier"
-  onclick="DOM_openFolderAll()">
-  <line x1="6" y1="8"  x2="48" y2="8"  />
-  <line x1="6" y1="20" x2="58" y2="20" />
-  <line x1="6" y1="32" x2="30" y2="32" />
-  <line x1="6" y1="44" x2="40" y2="44" />
-  <line x1="6" y1="56" x2="58" y2="56" />
+<div id="ca_folder_opener"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
+fill="none"
+stroke="hsla(200, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
+class="ca_svg_icon_ctrl_text" title="Déplier-Replier"
+onclick="DOM_openFolderAll()">
+<line x1="6" y1="8"  x2="48" y2="8"  />
+<line x1="6" y1="20" x2="58" y2="20" />
+<line x1="6" y1="32" x2="30" y2="32" />
+<line x1="6" y1="44" x2="40" y2="44" />
+<line x1="6" y1="56" x2="58" y2="56" />
 </svg>
 </div>
 <div id="ca_fold_1" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Peintre français ou romain?</h3>
+<h3 class="ca_folder" onclick="DOM_openFolder( this );"><mark data-tag="ORD">Peintre français ou romain</mark>?</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<p class="ca_txt">Normand de naissance et passé par Paris pendant ses années de formation, Poussin déroule toute sa carrière en parfait romain, à partir du milieu des années 1620. Fortement débiteur de la peinture de paysage vénitienne de la première partie du XVIème siècle et, plus encore, du style bolonais de l’école des Carache, au détour du Seicento, l’art de Poussin imprimera sa marque indélébile sur tous les peintres français qui lui succéderont, à commencer par le chef de file de ceux qui magnifieront le règne de Louis XIV: Charles Lebrun.</p>
+<p class="ca_txt"><mark data-tag="ORD">Normand</mark> de naissance et passé par <mark data-tag="LOC">Paris</mark> pendant ses années de <mark data-tag="ORD">formation</mark>, <mark data-tag="ART">Poussin</mark> déroule toute sa <mark data-tag="ORD">carrière</mark> en parfait <mark data-tag="ORD">romain</mark>, à partir du milieu des <mark data-tag="DATE">années 1620</mark>. Fortement débiteur de la <mark data-tag="ORD">peinture de paysage</mark> <mark data-tag="ORD">vénitienne</mark> de la première partie du <mark data-tag="DATE">XVIème siècle</mark> et, plus encore, du <mark data-tag="ORD">style bolonais</mark> de l’<mark data-tag="ORD">école</mark> des <mark data-tag="ART">Carache</mark>, au détour du <mark data-tag="DATE">Seicento</mark>, l’art de <mark data-tag="ART">Poussin</mark> imprimera sa marque indélébile sur tous les <mark data-tag="ORD">peintres français</mark> qui lui succéderont, à commencer par le chef de file de ceux qui magnifieront le règne de <mark data-tag="PER">Louis XIV</mark>: <mark data-tag="ART">Charles Lebrun</mark>.</p>
 </div>
 </div></div>
 <div id="ca_fold_201" class="ca_fold_content">
@@ -695,6 +692,11 @@ Première ébauche</li>
   
   <input type="radio" name="radioinput" id="ca_radiobox_input_7" class="ca_inputbox_input" value="7" >
   <label for="ca_radiobox_input_7" id="ca_radiobox_label_7" class="ca_inputbox_label" onclick="searchSetTag( 7 )">LOCALISATION</label>
+
+  
+  
+  <input type="radio" name="radioinput" id="ca_radiobox_input_8" class="ca_inputbox_input" value="8" >
+  <label for="ca_radiobox_input_8" id="ca_radiobox_label_8" class="ca_inputbox_label" onclick="searchSetTag( 8 )">DATE</label>
 
 </form>
 
