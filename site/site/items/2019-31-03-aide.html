@@ -42,7 +42,7 @@
   <nav id="ca_area_menu" class="ca_area_menu ca_area ca_area_list">
     <label for="ca_select_area_menu" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
-  class="ca_svg_icon ca_svg_menu_icon">
+  class="ca_svg_icon">
   <line id="ca_svg_icon_menu_1" x1="6"  y1="8"  x2="58" y2="8"  />
   <line id="ca_svg_icon_menu_2" x1="12" y1="20" x2="52" y2="20" />
   <line id="ca_svg_icon_menu_3" x1="18" y1="32" x2="46" y2="32" />
@@ -313,7 +313,7 @@
   <div id="ca_area_text" class="ca_area_text ca_area ca_area_active">
     <label for="ca_select_area_text" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
-  class="ca_svg_icon ca_svg_menu_icon">
+  class="ca_svg_icon">
   <line id="ca_svg_icon_menu_1" x1="6"  y1="8"  x2="58" y2="8"  />
   <line id="ca_svg_icon_menu_2" x1="12" y1="20" x2="52" y2="20" />
   <line id="ca_svg_icon_menu_3" x1="18" y1="32" x2="46" y2="32" />
@@ -322,6 +322,16 @@
 </svg>
 
     </label>
+    <!--
+    <label id="ca_select_tools" onclick="ToolsInput()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+  id="ca_svg_icon_tools" class="ca_svg_icon">
+  <circle cx="12" cy="12" r="3"></circle>
+  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+</svg>
+    </label>
+    -->
+
     
 
 <div id="ca_blocktxt" class="ca_layout_blocktxt">
@@ -337,9 +347,7 @@
   <div class="ca_folder_container">
 <div id="ca_folder_container_inner">
 <div id="ca_folder_opener"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
-fill="none"
-stroke="hsla(200, 17%, 80%, 1)" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"
-class="ca_svg_icon_ctrl_text" title="Déplier-Replier"
+id="ca_svg_icon_ctrl_text" class="ca_svg_icon" title="Déplier-Replier"
 onclick="DOM_openFolderAll()">
 <line x1="6" y1="8"  x2="48" y2="8"  />
 <line x1="6" y1="20" x2="58" y2="20" />
@@ -388,7 +396,7 @@ onclick="DOM_openFolderAll()">
   <div id="ca_area_gallery" class="ca_area_gallery ca_area">
     <label for="ca_select_area_gallery" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
-  class="ca_svg_icon ca_svg_menu_icon">
+  class="ca_svg_icon">
   <line id="ca_svg_icon_menu_1" x1="6"  y1="8"  x2="58" y2="8"  />
   <line id="ca_svg_icon_menu_2" x1="12" y1="20" x2="52" y2="20" />
   <line id="ca_svg_icon_menu_3" x1="18" y1="32" x2="46" y2="32" />
@@ -446,7 +454,7 @@ onclick="DOM_openFolderAll()">
   <div id="ca_area_search" class="ca_area_search ca_area">
     <label for="ca_area_search" class="ca_area_selector" onclick="AreaInput( this.getAttribute( 'for') )">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
-  class="ca_svg_icon ca_svg_menu_icon">
+  class="ca_svg_icon">
   <line id="ca_svg_icon_menu_1" x1="6"  y1="8"  x2="58" y2="8"  />
   <line id="ca_svg_icon_menu_2" x1="12" y1="20" x2="52" y2="20" />
   <line id="ca_svg_icon_menu_3" x1="18" y1="32" x2="46" y2="32" />
