@@ -93,7 +93,7 @@ const exec = ( need_s, tag_s ) =>    //: EXEC
 }
 
 //: SHARED WORKER fromClient --> provider ===================
-const sendResult = ( provider_o ) => provider_p.postMessage( provider_o )
+const sendResult = ( provider_o ) => Provider_p.postMessage( provider_o )
 
 const fromClient = ( client_o ) =>
 {
@@ -165,14 +165,14 @@ const fromClient = ( client_o ) =>
 
 //: fromProvider --> client ===================
 //: const provider_o = { task_s: 'DONE', result: found_a }
-//: provider_p.postMessage( provider_o )
+//: Provider_p.postMessage( provider_o )
 
 // ================== INIT WORKER ======================
-let provider_p = null
+let Provider_p = null
 onconnect = connect_e =>
 {
-  provider_p = connect_e.ports[0]
-  provider_p.onmessageerror = err => console.log( `PROVIDER ERROR: ${err.message}` )
-  provider_p.onmessage = client_e => { fromClient( client_e.data ) }
-  provider_p.start()
+  Provider_p = connect_e.ports[0]
+  Provider_p.onmessageerror = err => console.log( `PROVIDER ERROR: ${err.message}` )
+  Provider_p.onmessage = client_e => { fromClient( client_e.data ) }
+  Provider_p.start()
 }

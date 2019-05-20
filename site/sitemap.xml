@@ -124,6 +124,30 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.chercheurd.art/user/items/2019-05-08-collection_item.html</loc>
+    <lastmod>2019-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.chercheurd.art/user/items/2019-05-09-collection_list.html</loc>
+    <lastmod>2019-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.chercheurd.art/user/items/2019-05-09-galleries_list.html</loc>
+    <lastmod>2019-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.chercheurd.art/user/items/2019-05-10-collection_visiteur.html</loc>
+    <lastmod>2019-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.chercheurd.art/posts/items/2019-12-31-news.html</loc>
     <lastmod>2019-12-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -149,7 +173,7 @@
   </url>
   <url>
     <loc>https://www.chercheurd.art/site/items/2019-31-03-credits.html</loc>
-    <lastmod>2019-03-08</lastmod>
+    <lastmod>2048-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -209,7 +233,7 @@
   </url>
   <url>
     <loc>https://www.chercheurd.art/site/items/sitemap.html</loc>
-    <lastmod>2019-05-07</lastmod>
+    <lastmod>2019-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
