@@ -130,12 +130,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.chercheurd.art/user/items/2019-05-09-collection_list.html</loc>
-    <lastmod>2019-05-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.chercheurd.art/user/items/2019-05-09-galleries_list.html</loc>
     <lastmod>2019-05-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -233,7 +227,7 @@
   </url>
   <url>
     <loc>https://www.chercheurd.art/site/items/sitemap.html</loc>
-    <lastmod>2019-05-23</lastmod>
+    <lastmod>2019-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
