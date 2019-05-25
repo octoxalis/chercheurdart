@@ -51,7 +51,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
 
     </label>
     <div class="ca_fold_content">
-      <h3 class="ca_folder ca_folder_inverse" onclick="DOM_openFolder( this )">chercheurd.art</h3>
+      <h3 class="ca_folder ca_folder_inverse" onclick="DOMOpenFolder( this )">chercheurd.art</h3>
       <div class="ca_fold_content_item ca_is_open">
         <div class="ca_fold_1col">
           <div class="_none_">
@@ -341,7 +341,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
   
   <li class="ca_post_signature">28 janvier 2019</li>
   <li class="ca_post_subtitle"></li>
-  <li class="ca_post_signature"><address onclick="mailToClipDialog()">A. Dupin</address></li>
+  <li class="ca_post_signature"><address onclick="mailToClipDialog__s()">A. Dupin</address></li>
   
 </ul>
 
@@ -350,7 +350,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
 <div id="ca_folder_container_inner">
 <div id="ca_folder_opener"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
 id="ca_svg_icon_ctrl_text" class="ca_svg_icon" title="Déplier-Replier"
-onclick="DOM_openFolderAll()">
+onclick="DOMOpenFolderAll()">
 <line x1="6" y1="8"  x2="48" y2="8"  />
 <line x1="6" y1="20" x2="58" y2="20" />
 <line x1="6" y1="32" x2="30" y2="32" />
@@ -359,7 +359,7 @@ onclick="DOM_openFolderAll()">
 </svg>
 </div>
 <div id="ca_fold_1" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Hypothesis Project</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Hypothesis Project</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">Le projet Hypothesis a été conçu pour répondre aux besoins de commenter les publications en ligne que la communauté scientifique suscite. Le <em>Web Annotation Working Group</em>, placé sous l’égide du <a href="https://www.w3.org/Consortium/" target="_blank" rel="noreferrer">W3C</a> (l’organisation internationale coordonnant le développement des spécifications standard pour le World Wide Web: <strong>WWW</strong>), a publié en 2017 les recommandations à suivre pour fournir la couche logicielle donnant à tout un chacun la possibilité d’ajouter des commentaires aux pages d’un site du Web.</p>
@@ -367,7 +367,7 @@ onclick="DOM_openFolderAll()">
 </div>
 </div></div>
 <div id="ca_fold_2" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Inscrivez-vous...</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Inscrivez-vous...</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p>L’inscription au service Hypothesis ne prend que quelques instants:</p>
@@ -400,7 +400,7 @@ onclick="DOM_openFolderAll()">
 </div>
 </div></div>
 <div id="ca_fold_3" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Annotez</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Annotez</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p>Le service d’annotation permet quatre types d’annotation:</p>
@@ -417,7 +417,7 @@ un commentaire est destiné à répondre à un commentaire dejà publié; il est
 </div>
 </div></div>
 <div id="ca_fold_4" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Confidentialité</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Confidentialité</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">La <strong>politique de confidentialité</strong> du service d’annotation Hypothesis est <a href="https://web.hypothes.is/privacy/">consultable</a> (en anglais) sur le site <a href="http://Hypothes.is">Hypothes.is</a>.
@@ -427,15 +427,15 @@ Quant au site Chercheurd.art, il n’a <strong>aucun accès à l’adresse e-mai
 </div>
 </div></div>
 <div id="ca_fold_201" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">NOTES | VERSIONS</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">NOTES | VERSIONS</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <footer><h2 class="visually-hidden" id="ca_footnote_label">notes</h2><ol>
 <li id="ca_to_note_1"><p class="ca_footnote">
-Par défaut, le surlignage n'est pas activé lorsque la page est à nouveau consultée. Il est activé en faisant apparaître la barre d'annotation, donc en sélectionnant n'importe quelle partie de la page.
+<p>Par défaut, le surlignage n’est pas activé lorsque la page est à nouveau consultée. Il est activé en faisant apparaître la barre d’annotation, donc en sélectionnant n’importe quelle partie de la page.</p>
 </p><a href="#ca_from_note_1" aria-label="ca_back_to_text"></a></li>
 <li id="ca_to_note_2"><p class="ca_footnote">
-Il est possible de définir des groupes de visiteurs et de poster des commentaires uniquement visibles par les membres dudit groupe (voir sur le site hypothes.is les [modalités](https://web.hypothes.is/blog/introducing-groups/) d'utilisation).
+<p>Il est possible de définir des groupes de visiteurs et de poster des commentaires uniquement visibles par les membres dudit groupe (voir sur le site <a href="http://hypothes.is">hypothes.is</a> les <a href="https://web.hypothes.is/blog/introducing-groups/">modalités</a> d’utilisation).</p>
 </p><a href="#ca_from_note_2" aria-label="ca_back_to_text"></a></li>
 </ol></footer>
 <h3 class="ca_version_title">Versions</h3>
@@ -512,7 +512,7 @@ Version initiale.</li>
     </ul>
   
     <div class="ca_fold_content">
-      <h3 class="ca_folder" onclick="DOM_openFolder( this );">Résultat</h3>
+      <h3 class="ca_folder" onclick="DOMOpenFolder( this );">Résultat</h3>
       <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
         <div class="ca_fold_xcols_norule">
           <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
@@ -848,7 +848,7 @@ Version initiale.</li>
 <template id="ca_search_result">
 <div id="ca_fold-search_resul" class="ca_fold_content">
   <h3 id="ca_search_result_title" class="ca_folder"
-    onclick="DOM_openFolder( this );"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
+    onclick="DOMOpenFolder( this );"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
   <div class="ca_fold_content_item">
     <div class="ca_fold_xcols_norule">
       <div class="ca_url_entries_list"><!-- SEARCH_ENTRIES --></div>

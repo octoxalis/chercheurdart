@@ -51,7 +51,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
 
     </label>
     <div class="ca_fold_content">
-      <h3 class="ca_folder ca_folder_inverse" onclick="DOM_openFolder( this )">chercheurd.art</h3>
+      <h3 class="ca_folder ca_folder_inverse" onclick="DOMOpenFolder( this )">chercheurd.art</h3>
       <div class="ca_fold_content_item ca_is_open">
         <div class="ca_fold_1col">
           <div class="_none_">
@@ -341,7 +341,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
   
   <li class="ca_post_signature">23 janvier 2019</li>
   <li class="ca_post_subtitle"></li>
-  <li class="ca_post_signature"><address onclick="mailToClipDialog()">A. Dupin</address></li>
+  <li class="ca_post_signature"><address onclick="mailToClipDialog__s()">A. Dupin</address></li>
   
 </ul>
 
@@ -350,7 +350,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
 <div id="ca_folder_container_inner">
 <div id="ca_folder_opener"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
 id="ca_svg_icon_ctrl_text" class="ca_svg_icon" title="Déplier-Replier"
-onclick="DOM_openFolderAll()">
+onclick="DOMOpenFolderAll()">
 <line x1="6" y1="8"  x2="48" y2="8"  />
 <line x1="6" y1="20" x2="58" y2="20" />
 <line x1="6" y1="32" x2="30" y2="32" />
@@ -359,11 +359,11 @@ onclick="DOM_openFolderAll()">
 </svg>
 </div>
 <div id="ca_fold_1" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Que s'est-il passé?</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Que s'est-il passé?</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">Lorsque l’adresse d’une page demandée par le navigateur que vous utilisez n’existe pas sur le site Chercheurd.art, le serveur renvoie une erreur portant le numéro <strong>404</strong>. C’est ce qui vient de se produire, soit parce qu’un lien figurant sur la page précédente était erroné, soit parce que l’adresse que vous avez saisie manuellement comporte une faute de frappe.</p>
-<p class="ca_txt">Dans le premier cas, n’hésitez pas à me <a href="#" onclick="mailToClipDialog()">contacter</a> pour me signaler cette  erreur. Dans le second cas, il vous suffit de vérifiez l’adresse de la page que vous souhaitez atteindre.</p>
+<p class="ca_txt">Dans le premier cas, n’hésitez pas à me <a href="#" onclick="mailToClipDialog__s()">contacter</a> pour me signaler cette  erreur. Dans le second cas, il vous suffit de vérifiez l’adresse de la page que vous souhaitez atteindre.</p>
 </div>
 </div></div>
 </div>
@@ -433,7 +433,7 @@ onclick="DOM_openFolderAll()">
     </ul>
   
     <div class="ca_fold_content">
-      <h3 class="ca_folder" onclick="DOM_openFolder( this );">Résultat</h3>
+      <h3 class="ca_folder" onclick="DOMOpenFolder( this );">Résultat</h3>
       <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
         <div class="ca_fold_xcols_norule">
           <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
@@ -769,7 +769,7 @@ onclick="DOM_openFolderAll()">
 <template id="ca_search_result">
 <div id="ca_fold-search_resul" class="ca_fold_content">
   <h3 id="ca_search_result_title" class="ca_folder"
-    onclick="DOM_openFolder( this );"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
+    onclick="DOMOpenFolder( this );"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
   <div class="ca_fold_content_item">
     <div class="ca_fold_xcols_norule">
       <div class="ca_url_entries_list"><!-- SEARCH_ENTRIES --></div>

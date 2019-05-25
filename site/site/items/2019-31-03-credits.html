@@ -51,7 +51,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
 
     </label>
     <div class="ca_fold_content">
-      <h3 class="ca_folder ca_folder_inverse" onclick="DOM_openFolder( this )">chercheurd.art</h3>
+      <h3 class="ca_folder ca_folder_inverse" onclick="DOMOpenFolder( this )">chercheurd.art</h3>
       <div class="ca_fold_content_item ca_is_open">
         <div class="ca_fold_1col">
           <div class="_none_">
@@ -341,7 +341,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
   
   <li class="ca_post_signature">8 mai 2019</li>
   <li class="ca_post_subtitle"></li>
-  <li class="ca_post_signature"><address onclick="mailToClipDialog()">A. Dupin</address></li>
+  <li class="ca_post_signature"><address onclick="mailToClipDialog__s()">A. Dupin</address></li>
   
 </ul>
 
@@ -350,7 +350,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
 <div id="ca_folder_container_inner">
 <div id="ca_folder_opener"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
 id="ca_svg_icon_ctrl_text" class="ca_svg_icon" title="Déplier-Replier"
-onclick="DOM_openFolderAll()">
+onclick="DOMOpenFolderAll()">
 <line x1="6" y1="8"  x2="48" y2="8"  />
 <line x1="6" y1="20" x2="58" y2="20" />
 <line x1="6" y1="32" x2="30" y2="32" />
@@ -359,7 +359,7 @@ onclick="DOM_openFolderAll()">
 </svg>
 </div>
 <div id="ca_fold_1" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Des outils très appréciables</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Des outils très appréciables</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">Sans l’aide de plusieurs <mark data-tag="ORD">outils logiciels</mark> performants et innovants, ce site ne serait guère envisageable, de par sa complexité, d’une part, et parce que, aujourd’hui, un site requiert tant de compétences diverses qu’il est difficile, voire impossible d’y faire face seul, comme cela était encore le cas il y a une vingtaine d’années, lorsque je me suis aventuré sur l’immense toile du Web.</p>
@@ -367,14 +367,14 @@ onclick="DOM_openFolderAll()">
 </div>
 </div></div>
 <div id="ca_fold_2" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">11ty</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">11ty</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">Le principal outil que j’utilise est le <mark data-tag="ORD">générateur de site statique</mark> <a href="https://www.11ty.io/" target="_blank" rel="noreferrer"><mark data-tag="WEB">Eleventy</mark></a>, dont la conception et la programmation sont dues à <a href="https://twitter.com/zachleat/" target="_blank" rel="noreferrer"><mark data-tag="PER">Zach Leatherman</mark></a>. Bien que ce générateur n’ait fêté que récemment son premier anniversaire, il m’a paru immédiatement très prometteur et une excellente alternative aux poids lourds du secteur que sont <a id="ca_from_note_1" href="#ca_to_note_1" aria-describedby="ca_note_label">Jekyll, Gatsby ou Hugo</a>. Moins <em>établi</em> que ceux-ci, Eleventy est cependant tout aussi puissant et performant et offre un environnement de développement pléthorique, grâce à son apartenance à l’écosystème logiciel <a href="https://nodejs.org/fr/"><mark data-tag="WEB">Node</mark></a> reposant sur le langage de programmation Javascript, le langage du Web.</p>
 </div>
 </div></div>
 <div id="ca_fold_3" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Github</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Github</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">Pour héberger les nombreux fichiers correspondants aux pages du site Chercheurd.art ainsi que les <mark data-tag="WEB">images haute-définition</mark> qu’il présente, <a href="https://github.com/" target="_blank" rel="noreferrer">Github</a> est le choix tout naturel vers lequel je me suis tourné, rejoignant ainsi la vaste communauté des programmeurs utilisant ses inépuisables fonctions de publication, et le fait que MicroWEB ait récemment acquis ce gigantesque dépôt de programmes en tous genres, libéralement offerts à l’usage de tous les programmeurs, ne perturbe en rien les nombreux avantages qu’il procure.</p>
@@ -382,7 +382,7 @@ onclick="DOM_openFolderAll()">
 </div>
 </div></div>
 <div id="ca_fold_4" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Netlify</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Netlify</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">Pour faciliter le déploiement du site, de manière à accélérer son accès, quel que soit l’endroit où l’on se trouve pour le consulter, je fais appel à un site de distribution bien connu des développeurs:
@@ -390,33 +390,33 @@ onclick="DOM_openFolderAll()">
 </div>
 </div></div>
 <div id="ca_fold_5" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Plausible</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Plausible</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">Enfin, pour mieux cerner les attentes et évaluer l’intérêt de telle ou telle page figurant sur le site, j’ai recours, non pas au cyclope du Web, Google et à son programme de traçage des consultations de site Web, <mark data-tag="WEB">Google Analytics</mark>, car il y aurait beaucoup à dire sur les méthodes parfois fort intrusives de ce système, mais à un tout nouveau progamme, dont la simplicité, l’inventivité et, surtout, le respect des <mark data-tag="ORD">règles de confidentialité</mark> que je tiens à préserver, m’ont séduit. Bien que tout nouveau de conception, <a href="https://plausible.io/" target="_blank" rel="noreferrer"><mark data-tag="WEB">Plausible</mark></a> offre en effet toute les garanties que je recherche et une interface de consultation simplifiée qui correspondent beaucoup mieux à l’esprit de Chercheurd.art que le mastodonte de Google.</p>
 </div>
 </div></div>
 <div id="ca_fold_6" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Réseaux sociaux?</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Réseaux sociaux?</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">Non, pas de réseaux sociaux pour Chercheurd.art, car trop de problèmes de confidentialité en découlent et je ne vois guère, du moins pour le moment, l’utilité du type de communication qu’ils invoquent. De toutes façons, si le besoin se faisait sentir, ce n’est ni vers Facebook, ni Tweeter que je me tournerais, mais vers des alternatives beaucoup moins <em>exposées</em>, et sans doute plus fiables quant à leur intégrité, du genre <a href="https://joinmastodon.org/" target="_blank" rel="noreferrer"><mark data-tag="WEB">Mastodon</mark></a> ou <a href="https://about.riot.im/" target="_blank" rel="noreferrer">Riot</a>.</p>
 </div>
 </div></div>
 <div id="ca_fold_8" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Mais encore?</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Mais encore?</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<p>Si vous souhaitez en savoir encore un peu plus sur les entrailles de Chercheurd.art, je suis tout à fait disposé à vous en dire plus: il vous suffit, pour cela, de me <a href="#" onclick="mailToClipDialog()">contacter</a> directement en précisant les points sur lesquels vous souhaitez obtenir de plus amples détails.</p>
+<p>Si vous souhaitez en savoir encore un peu plus sur les entrailles de Chercheurd.art, je suis tout à fait disposé à vous en dire plus: il vous suffit, pour cela, de me <a href="#" onclick="mailToClipDialog__s()">contacter</a> directement en précisant les points sur lesquels vous souhaitez obtenir de plus amples détails.</p>
 </div>
 </div></div>
 <div id="ca_fold_201" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">NOTES | VERSIONS</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">NOTES | VERSIONS</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <footer><h2 class="visually-hidden" id="ca_footnote_label">notes</h2><ol>
 <li id="ca_to_note_1"><p class="ca_footnote">
-Et oui, les concepteurs de générateurs de site statique adorent la littérature!
+<p>Et oui, les concepteurs de générateurs de site statique adorent la littérature!</p>
 </p><a href="#ca_from_note_1" aria-label="ca_back_to_text"></a></li>
 </ol></footer>
 <h3 class="ca_version_title">Versions</h3>
@@ -493,7 +493,7 @@ Version initiale.</li>
     </ul>
   
     <div class="ca_fold_content">
-      <h3 class="ca_folder" onclick="DOM_openFolder( this );">Résultat</h3>
+      <h3 class="ca_folder" onclick="DOMOpenFolder( this );">Résultat</h3>
       <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
         <div class="ca_fold_xcols_norule">
           <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
@@ -829,7 +829,7 @@ Version initiale.</li>
 <template id="ca_search_result">
 <div id="ca_fold-search_resul" class="ca_fold_content">
   <h3 id="ca_search_result_title" class="ca_folder"
-    onclick="DOM_openFolder( this );"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
+    onclick="DOMOpenFolder( this );"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
   <div class="ca_fold_content_item">
     <div class="ca_fold_xcols_norule">
       <div class="ca_url_entries_list"><!-- SEARCH_ENTRIES --></div>

@@ -51,7 +51,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
 
     </label>
     <div class="ca_fold_content">
-      <h3 class="ca_folder ca_folder_inverse" onclick="DOM_openFolder( this )">chercheurd.art</h3>
+      <h3 class="ca_folder ca_folder_inverse" onclick="DOMOpenFolder( this )">chercheurd.art</h3>
       <div class="ca_fold_content_item ca_is_open">
         <div class="ca_fold_1col">
           <div class="_none_">
@@ -341,7 +341,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
   
   <li class="ca_post_signature">23 janvier 2019</li>
   <li class="ca_post_subtitle"></li>
-  <li class="ca_post_signature"><address onclick="mailToClipDialog()">A. Dupin</address></li>
+  <li class="ca_post_signature"><address onclick="mailToClipDialog__s()">A. Dupin</address></li>
   
 </ul>
 
@@ -350,7 +350,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
 <div id="ca_folder_container_inner">
 <div id="ca_folder_opener"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
 id="ca_svg_icon_ctrl_text" class="ca_svg_icon" title="Déplier-Replier"
-onclick="DOM_openFolderAll()">
+onclick="DOMOpenFolderAll()">
 <line x1="6" y1="8"  x2="48" y2="8"  />
 <line x1="6" y1="20" x2="58" y2="20" />
 <line x1="6" y1="32" x2="30" y2="32" />
@@ -359,7 +359,7 @@ onclick="DOM_openFolderAll()">
 </svg>
 </div>
 <div id="ca_fold_1" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Recherche sémantique</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Recherche sémantique</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">Chercheurd.art dispose d’une <mark data-tag="WEB">fonction de recherche</mark> d’un genre particulier qui s’apparente à la <mark data-tag="WEB">recherche sémantique</mark>, sans toutefois avoir recours à un moteur de recherche tel que <mark data-tag="WEB">Bing</mark>, <mark data-tag="WEB">DuckDuckGo</mark>, <mark data-tag="WEB">Yahoo</mark> ou <mark data-tag="WEB">Google</mark>. Il s’agit donc d’un outil totalement dédié, présentant le double avantage de ne laisser aucune trace dans des <mark data-tag="WEB">moteurs de recherche</mark> pouvant se révéler trop intrusif dans le domaine de la <mark data-tag="WEB">confidentialité</mark>, mais aussi et surtout d’être en parfaite adéquation avec l’esprit et le contenu du site.</p>
@@ -367,7 +367,7 @@ onclick="DOM_openFolderAll()">
 </div>
 </div></div>
 <div id="ca_fold_2" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Une question de champ</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Une question de champ</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">La procédure de requête nécessite donc de définir deux composantes: le ou les termes recherchés, aussi bien nom communs que noms propres, puis de sélectionner le <mark data-tag="WEB">champ sémantique</mark> qui délimitera la recherche.</p>
@@ -388,7 +388,7 @@ onclick="DOM_openFolderAll()">
 </div>
 </div></div>
 <div id="ca_fold_3" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">Requête et résultat</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Requête et résultat</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">Les éléments de la recherche unene fois déterminés, le processus est initié en clicquant sur le bouton <q>Rechecher</q> du formulaire de requête et le résultat s’affiche sous la forme d’une liste de pages contenant les termes recherchés.</p>
@@ -398,15 +398,15 @@ onclick="DOM_openFolderAll()">
 </div>
 </div></div>
 <div id="ca_fold_201" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOM_openFolder( this );">NOTES | VERSIONS</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );">NOTES | VERSIONS</h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <footer><h2 class="visually-hidden" id="ca_footnote_label">notes</h2><ol>
 <li id="ca_to_note_1"><p class="ca_footnote">
-Afin de ne pas multiplier le nombre d'entités sémantiques, au-delà de ce qui est nécessaire (pour reprendre l'excellente formule de <mark data-tag="PER">Guillaume d'Ockam</mark>).
+<p>Afin de ne pas multiplier le nombre d’entités sémantiques, au-delà de ce qui est nécessaire (pour reprendre l’excellente formule de <mark data-tag="PER">Guillaume d’Ockam</mark>).</p>
 </p><a href="#ca_from_note_1" aria-label="ca_back_to_text"></a></li>
 <li id="ca_to_note_2"><p class="ca_footnote">
-Je consacrerai un article complet sur les aspects techniques du système de recherche développé pour ce site.
+<p>Je consacrerai un article complet sur les aspects techniques du système de recherche développé pour ce site.</p>
 </p><a href="#ca_from_note_2" aria-label="ca_back_to_text"></a></li>
 </ol></footer>
 <h3 class="ca_version_title">Versions</h3>
@@ -489,7 +489,7 @@ Version beta de la recherche sémantique.</p>
     </ul>
   
     <div class="ca_fold_content">
-      <h3 class="ca_folder" onclick="DOM_openFolder( this );">Résultat</h3>
+      <h3 class="ca_folder" onclick="DOMOpenFolder( this );">Résultat</h3>
       <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
         <div class="ca_fold_xcols_norule">
           <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
@@ -825,7 +825,7 @@ Version beta de la recherche sémantique.</p>
 <template id="ca_search_result">
 <div id="ca_fold-search_resul" class="ca_fold_content">
   <h3 id="ca_search_result_title" class="ca_folder"
-    onclick="DOM_openFolder( this );"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
+    onclick="DOMOpenFolder( this );"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
   <div class="ca_fold_content_item">
     <div class="ca_fold_xcols_norule">
       <div class="ca_url_entries_list"><!-- SEARCH_ENTRIES --></div>
