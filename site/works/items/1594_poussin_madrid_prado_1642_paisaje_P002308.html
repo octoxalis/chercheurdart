@@ -360,7 +360,10 @@ var CA_media_userImgUrl_s = 'USER_URL'
   <li class="ca_post_title">Nicolas Poussin</li>
   <li class="ca_post_signature">27 janvier 2019</li>
   <li class="ca_post_subtitle">Paisaje con ruinas -1642-</li>
-  <li class="ca_post_signature"><address onclick="mailToClipDialog__s()">A. Dupin</address></li>
+  
+
+<li class="ca_post_signature"><address onclick="mailToClipDialog__s( '{ @author }}' )">A. Dupin</address></li>
+
   <li class="ca_post_subtitle">Museo del Prado - Madrid, España</li>
 
 </ul>
@@ -532,8 +535,7 @@ onclick="DOMOpenFolderAll()">
 
 <div id="ca_media_1_control_selector" class="ca_media_1_control">
   <div id="ca_media_1_control_pad" class="ca_media_1_control_pad">
-    <div id="ca_media_1_control_play_pause"
-      class="ca_media_control_key" onclick="CA_media_o.M1_input_f('PLAY_PAUSE')">
+    <div id="ca_media_1_control_play_pause" class="ca_media_control_key">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_media_control_key_icon_fill">
   <polygon class="ca_layout_switch ca_layout_switch_active"
@@ -545,8 +547,7 @@ onclick="DOMOpenFolderAll()">
 </svg>
 
     </div>
-    <div id="ca_media_1_control_drag_stop"
-      class="ca_media_control_key" onclick="CA_media_o.M1_input_f('DRAG_STOP')">
+    <div id="ca_media_1_control_drag_stop" class="ca_media_control_key">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_media_control_key_icon_fill">
   <path class="ca_layout_switch ca_layout_switch_active"
@@ -556,7 +557,7 @@ onclick="DOMOpenFolderAll()">
 </svg>
 
     </div>
-    <div class="ca_media_control_key" onclick="CA_media_o.M1_input_f('FAST_REWIND')">
+    <div id="ca_media_1_control_forward" class="ca_media_control_key">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_media_control_key_icon_fill">
   <polygon points="11 19 2 12 11 5 11 19"></polygon>
@@ -564,7 +565,7 @@ onclick="DOMOpenFolderAll()">
 </svg>
 
     </div>
-    <div class="ca_media_control_key" onclick="CA_media_o.M1_input_f('FAST_FORWARD')">
+    <div id="ca_media_1_control_backward" class="ca_media_control_key">
        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
    class="ca_media_control_key_icon_fill">
    <polygon points="13 19 22 12 13 5 13 19"></polygon>
@@ -581,7 +582,7 @@ onclick="DOMOpenFolderAll()">
 
   <div id="ca_media_1_processor_anim" class="ca_media_processor_overlay">
     <img  id="ca_media_1_img" src="https://www.chercheurd.art/static/media/images/1594_poussin_madrid_prado_1642_paisaje_P002308-@400.jpg" class="ca_media_processor_img"
-        data-src-width="1920" data-src-height="1423 loading="auto">
+        data-src-width="1920" data-src-height="1423" loading="auto">
   </div>
 
 </div>
@@ -612,21 +613,24 @@ onclick="DOMOpenFolderAll()">
 
 <div id="ca_media_2_control_selector" class="ca_media_2_control">
   <div id="ca_media_2_control_pad" class="ca_media_2_control_pad">
-    <div class="ca_media_control_key ca_media_control_lite_key" onclick="CA_media_o.M2_input_f('ROTATE_CW')">
+    <div id="ca_media_2_control_rotate_cw"
+      class="ca_media_control_key ca_media_control_lite_key">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_media_control_key_icon">
   <path d="M14 16l6-6-6-6"/><path d="M4 21v-7a4 4 0 0 1 4-4h11"/>
 </svg>
 
     </div>
-    <div class="ca_media_control_key" onclick="CA_media_o.M2_input_f('lines_v')">
+    <div id="ca_media_2_control_lines_v"
+      class="ca_media_control_key">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_media_control_key_icon">
   <path d="M12 5v13M5 12l7 7 7-7"/>
 </svg>
 
     </div>
-    <div class="ca_media_control_key ca_media_control_lite_key" onclick="CA_media_o.M2_input_f('ROTATE_CW_R')">
+    <div id="ca_media_2_control_rotate_cw_r"
+      class="ca_media_control_key ca_media_control_lite_key">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_media_control_key_icon">
   <path d="M10 16l-6-6 6-6"/>
@@ -635,14 +639,16 @@ onclick="DOMOpenFolderAll()">
 
     </div>
 
-    <div class="ca_media_control_key" onclick="CA_media_o.M2_input_f('lines_lr')">
+    <div id="ca_media_2_control_lines_lr"
+      class="ca_media_control_key">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_media_control_key_icon">
   <path d="M7 7l9.2 9.2M17 7v10H7"/>
 </svg>
 
     </div>
-    <div class="ca_media_control_key" onclick="CA_media_o.M2_input_f('UNDO')">
+    <div id="ca_media_2_control_undo"
+      class="ca_media_control_key">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_media_control_key_icon">
   <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -650,7 +656,8 @@ onclick="DOMOpenFolderAll()">
 </svg>
 
     </div>
-    <div class="ca_media_control_key" onclick="CA_media_o.M2_input_f('lines_rl')">
+    <div id="ca_media_2_control_lines_rl"
+      class="ca_media_control_key">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_media_control_key_icon">
   <path d="M17 7l-9.2 9.2M7 7v10h10"/>
@@ -658,21 +665,24 @@ onclick="DOMOpenFolderAll()">
 
     </div>
 
-    <div class="ca_media_control_key ca_media_control_lite_key" onclick="CA_media_o.M2_input_f('FLIP_CW')">
+    <div id="ca_media_2_control_flip_cw"
+      class="ca_media_control_key ca_media_control_lite_key">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_media_control_key_icon">
   <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38"/>
 </svg>
 
     </div>
-    <div class="ca_media_control_key" onclick="CA_media_o.M2_input_f('lines_hz')">
+    <div id="ca_media_2_control_lines_hz"
+      class="ca_media_control_key">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_media_control_key_icon">
   <path d="M5 12h13M12 5l7 7-7 7"/>
 </svg>
 
     </div>
-    <div class="ca_media_control_key ca_media_control_lite_key" onclick="CA_media_o.M2_input_f('FLIP_CW_R')">
+    <div id="ca_media_2_control_flip_cw_r"
+      class="ca_media_control_key ca_media_control_lite_key">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_media_control_key_icon">
   <path d="M2.5 2v6h6M2.66 15.57a10 10 0 1 0 .57-8.38"/>
@@ -724,8 +734,7 @@ onclick="DOMOpenFolderAll()">
   <div id="ca_media_3_selector_pad" class="ca_color_selector_pad">
     <div id="ca_media_3_trace_label" class="ca_media_3_pad_label ca_color_selector_trace"></div>
     <label for="ca_media_3_split_input" id="ca_media_3_split_label" class="ca_media_3_pad_label" value="0"
-      title="comparaison"
-      onclick="CA_media_o.M3_input_f( this.getAttribute( 'for'), this )">
+      title="comparaison">
     <svg  xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 64 64"
   class="svg_icon">
   <rect width="50%" height="100%" x="0" y="0" fill="#6ff" />
@@ -745,9 +754,8 @@ onclick="DOMOpenFolderAll()">
 </svg>
 
     </label>
-    <label for="ca_media_3_pick_input"  id="ca_media_3_pick_label"  class="ca_media_3_pad_label" value="0"
-      title="échantillon"
-      onclick="CA_media_o.M3_input_f( this.getAttribute( 'for'), this )">
+    <label for="ca_media_3_pick_input" id="ca_media_3_pick_label" class="ca_media_3_pad_label" value="0"
+      title="échantillon">
     <svg  xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 64 64"
   class="svg_icon">
   <polygon points="32,32 32,0 47,0" fill="hsl( 0, 100%, 50%)" />
@@ -779,9 +787,8 @@ onclick="DOMOpenFolderAll()">
 </svg>
 
     </label>
-    <label for="ca_media_3_hue_input"   id="ca_media_3_hue_label"   class="ca_media_3_pad_label" value="1"
-      title="couleurs"
-      onclick="CA_media_o.M3_input_f( this.getAttribute( 'for'), this )">
+    <label for="ca_media_3_hue_input" id="ca_media_3_hue_label" class="ca_media_3_pad_label" value="1"
+      title="couleurs">
     <svg  xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 64 64"
   class="svg_icon">
   <polygon points="32,32 32,0 47,0" fill="hsl( 0, 100%, 50%)" />
@@ -804,9 +811,8 @@ onclick="DOMOpenFolderAll()">
 </svg>
 
     </label>
-    <label for="ca_media_3_lum_input"   id="ca_media_3_lum_label"   class="ca_media_3_pad_label" value="0"
-      title="luminosités"
-      onclick="CA_media_o.M3_input_f( this.getAttribute( 'for'), this )">
+    <label for="ca_media_3_lum_input" id="ca_media_3_lum_label" class="ca_media_3_pad_label" value="0"
+      title="luminosités">
     <svg  xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 64 64"
   class="svg_icon">
   <polygon points="32,32 32,0 47,0"   fill="hsl( 0, 0%, 0%)" />
@@ -827,9 +833,8 @@ onclick="DOMOpenFolderAll()">
   <polygon points="32,32 17,0 32,0"   fill="hsl( 0, 0%, 100%)" />
 </svg>
     </label>
-    <label for="ca_media_3_tone_input"  id="ca_media_3_tone_label"  class="ca_media_3_pad_label" value="0"
-      title="filtre couleur"
-      onclick="CA_media_o.M3_input_f( this.getAttribute( 'for'), this )">
+    <label for="ca_media_3_tone_input" id="ca_media_3_tone_label" class="ca_media_3_pad_label" value="0"
+      title="filtre couleur">
     <svg  xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 64 64"
   class="svg_icon">
   <polygon points="0,0 64,0 0,64"  fill="hsl( 0, 100%, 70%)" />
@@ -843,9 +848,8 @@ onclick="DOMOpenFolderAll()">
   <polygon points="32,32 17,64 0,64"  fill="hsl( 202, 100%, 50%)" />
 </svg>
     </label>
-    <label for="ca_media_3_gray_input"  id="ca_media_3_gray_label"  class="ca_media_3_pad_label" value="0"
-      title="filtre gris"
-      onclick="CA_media_o.M3_input_f( this.getAttribute( 'for'), this )">
+    <label for="ca_media_3_gray_input" id="ca_media_3_gray_label" class="ca_media_3_pad_label" value="0"
+      title="filtre gris">
     <svg  xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 64 64"
   class="svg_icon">
   <polygon points="0,0 64,0 0,64"  fill="hsl( 0, 0%, 60%)" />
@@ -859,9 +863,8 @@ onclick="DOMOpenFolderAll()">
   <polygon points="32,32 17,64 0,64"  fill="hsl( 202, 100%, 50%)" />
 </svg>
     </label>
-    <label for="ca_media_3_uni_input"    id="ca_media_3_uni_label"    class="ca_media_3_pad_label" value="0"
-      title="uniformisation"
-      onclick="CA_media_o.M3_input_f( this.getAttribute( 'for'), this )">
+    <label for="ca_media_3_uni_input" id="ca_media_3_uni_label" class="ca_media_3_pad_label" value="0"
+      title="uniformisation">
     <svg  xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 64 64"
   class="svg_icon">
   <rect width="100%" height="50%" x="0" y="0" fill="#6ff" />
@@ -1013,25 +1016,25 @@ onclick="DOMOpenFolderAll()">
       <li class="ca_post_subtitle">
       <form id="ca_form_search" class="ca_inputbox_form">
 
-  <label class="ca_inputbox_label_solo">
-    <div class="ca_inputbox_label_text" onclick="searchSubmit()">RECHERCHER</div>
+  <label id="ca_form_search_submit" class="ca_inputbox_label_solo ca_inputbox_label_text">
+    RECHERCHER
     <input id="ca_form_input_search_needle" class="ca_inputbox_input_text" type="text" placeholder=" Mots recherchés...">
   </label>
 
-  <label class="ca_inputbox_label_solo" onclick="searchTagsDialog()">
-    <div class="ca_inputbox_label_text">CHAMP</div>
+  <label id="ca_form_search_tags" class="ca_inputbox_label_solo ca_inputbox_label_text">
+    CHAMP
     <span id="ca_form_input_search_tag" class="ca_input_text_dry">INDÉFINI</span>
   </label>
 
-  <label class="ca_inputbox_label_solo" onclick="searchPrevious()">
-    <div class="ca_inputbox_label_text">RECHERCHE PRÉCÉDENTE</div>
+  <label id="ca_form_search_previous" class="ca_inputbox_label_solo ca_inputbox_label_text">
+    RECHERCHE PRÉCÉDENTE
   </label>
-  <label class="ca_inputbox_label_solo" onclick="searchNext()">
-    <div class="ca_inputbox_label_text">RECHERCHE SUIVANTE</div>
+  <label id="ca_form_search_next" class="ca_inputbox_label_solo ca_inputbox_label_text">
+    RECHERCHE SUIVANTE
   </label>
 
-  <label class="ca_inputbox_label_solo" onclick="searchReset()">
-    <div class="ca_inputbox_label_text">EFFACER LA RECHERCHE</div>
+  <label id="ca_form_search_reset" class="ca_inputbox_label_solo ca_inputbox_label_text">
+    EFFACER LA RECHERCHE
   </label>
 
 </form>
@@ -1040,7 +1043,7 @@ onclick="DOMOpenFolderAll()">
     </ul>
   
     <div class="ca_fold_content">
-      <h3 class="ca_folder" onclick="DOMOpenFolder( this );">Résultat</h3>
+      <h3 class="ca_folder" onclick="DOMOpenFolder( this )">Résultat</h3>
       <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
         <div class="ca_fold_xcols_norule">
           <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
@@ -1148,127 +1151,100 @@ onclick="DOMOpenFolderAll()">
   
   
   <label for="ca_form_radiobox_0_is_search_tags"
-    id="ca_radiobox_label_0"
-    class="ca_inputbox_label">
-    <div class="ca_inputbox_label_text">
-    INDÉFINI
-    </div>
-    <input type="radio" name="radio_is_search_tags" value="0
+    class="ca_inputbox_label"
+    data-index="0">
+    <div class="ca_inputbox_label_text">INDÉFINI</div>
+    <input type="radio" name="radio_is_search_tags" value="0"
       id="ca_form_radiobox_0_is_search_tags"
-      class="ca_inputbox_input" checked
-      onclick="searchSetTag( 0 )">
+      class="ca_inputbox_input" checked>
   </label>
 
   
   
   <label for="ca_form_radiobox_1_is_search_tags"
-    id="ca_radiobox_label_1"
-    class="ca_inputbox_label">
-    <div class="ca_inputbox_label_text">
-    NOM DE PERSONNE
-    </div>
-    <input type="radio" name="radio_is_search_tags" value="1
+    class="ca_inputbox_label"
+    data-index="1">
+    <div class="ca_inputbox_label_text">NOM DE PERSONNE</div>
+    <input type="radio" name="radio_is_search_tags" value="1"
       id="ca_form_radiobox_1_is_search_tags"
-      class="ca_inputbox_input" 
-      onclick="searchSetTag( 1 )">
+      class="ca_inputbox_input" >
   </label>
 
   
   
   <label for="ca_form_radiobox_2_is_search_tags"
-    id="ca_radiobox_label_2"
-    class="ca_inputbox_label">
-    <div class="ca_inputbox_label_text">
-    NOM D&#39;ARTISTE
-    </div>
-    <input type="radio" name="radio_is_search_tags" value="2
+    class="ca_inputbox_label"
+    data-index="2">
+    <div class="ca_inputbox_label_text">NOM D&#39;ARTISTE</div>
+    <input type="radio" name="radio_is_search_tags" value="2"
       id="ca_form_radiobox_2_is_search_tags"
-      class="ca_inputbox_input" 
-      onclick="searchSetTag( 2 )">
+      class="ca_inputbox_input" >
   </label>
 
   
   
   <label for="ca_form_radiobox_3_is_search_tags"
-    id="ca_radiobox_label_3"
-    class="ca_inputbox_label">
-    <div class="ca_inputbox_label_text">
-    OEUVRE D&#39;ART
-    </div>
-    <input type="radio" name="radio_is_search_tags" value="3
+    class="ca_inputbox_label"
+    data-index="3">
+    <div class="ca_inputbox_label_text">OEUVRE D&#39;ART</div>
+    <input type="radio" name="radio_is_search_tags" value="3"
       id="ca_form_radiobox_3_is_search_tags"
-      class="ca_inputbox_input" 
-      onclick="searchSetTag( 3 )">
+      class="ca_inputbox_input" >
   </label>
 
   
   
   <label for="ca_form_radiobox_4_is_search_tags"
-    id="ca_radiobox_label_4"
-    class="ca_inputbox_label">
-    <div class="ca_inputbox_label_text">
-    COLLECTION
-    </div>
-    <input type="radio" name="radio_is_search_tags" value="4
+    class="ca_inputbox_label"
+    data-index="4">
+    <div class="ca_inputbox_label_text">COLLECTION</div>
+    <input type="radio" name="radio_is_search_tags" value="4"
       id="ca_form_radiobox_4_is_search_tags"
-      class="ca_inputbox_input" 
-      onclick="searchSetTag( 4 )">
+      class="ca_inputbox_input" >
   </label>
 
   
   
   <label for="ca_form_radiobox_5_is_search_tags"
-    id="ca_radiobox_label_5"
-    class="ca_inputbox_label">
-    <div class="ca_inputbox_label_text">
-    BIBLIOGRAPHIE
-    </div>
-    <input type="radio" name="radio_is_search_tags" value="5
+    class="ca_inputbox_label"
+    data-index="5">
+    <div class="ca_inputbox_label_text">BIBLIOGRAPHIE</div>
+    <input type="radio" name="radio_is_search_tags" value="5"
       id="ca_form_radiobox_5_is_search_tags"
-      class="ca_inputbox_input" 
-      onclick="searchSetTag( 5 )">
+      class="ca_inputbox_input" >
   </label>
 
   
   
   <label for="ca_form_radiobox_6_is_search_tags"
-    id="ca_radiobox_label_6"
-    class="ca_inputbox_label">
-    <div class="ca_inputbox_label_text">
-    TECHNOLOGIE
-    </div>
-    <input type="radio" name="radio_is_search_tags" value="6
+    class="ca_inputbox_label"
+    data-index="6">
+    <div class="ca_inputbox_label_text">TECHNOLOGIE</div>
+    <input type="radio" name="radio_is_search_tags" value="6"
       id="ca_form_radiobox_6_is_search_tags"
-      class="ca_inputbox_input" 
-      onclick="searchSetTag( 6 )">
+      class="ca_inputbox_input" >
   </label>
 
   
   
   <label for="ca_form_radiobox_7_is_search_tags"
-    id="ca_radiobox_label_7"
-    class="ca_inputbox_label">
-    <div class="ca_inputbox_label_text">
-    LOCALISATION
-    </div>
-    <input type="radio" name="radio_is_search_tags" value="7
+    class="ca_inputbox_label"
+    data-index="7">
+    <div class="ca_inputbox_label_text">LOCALISATION</div>
+    <input type="radio" name="radio_is_search_tags" value="7"
       id="ca_form_radiobox_7_is_search_tags"
-      class="ca_inputbox_input" 
-      onclick="searchSetTag( 7 )">
+      class="ca_inputbox_input" >
   </label>
 
   
   
   <label for="ca_form_radiobox_8_is_search_tags"
-    id="ca_radiobox_label_8"
-    class="ca_inputbox_label">
-    <div class="ca_inputbox_label_text">
-    DATE
-    </div>
-    <input type="radio" name="radio_is_search_tags" value="8
+    class="ca_inputbox_label"
+    data-index="8">
+    <div class="ca_inputbox_label_text">DATE</div>
+    <input type="radio" name="radio_is_search_tags" value="8"
       id="ca_form_radiobox_8_is_search_tags"
-      class="ca_inputbox_input" 
-      onclick="searchSetTag( 8 )">
+      class="ca_inputbox_input" >
   </label>
 
 </form>
@@ -1376,10 +1352,10 @@ onclick="DOMOpenFolderAll()">
 <template id="ca_search_result">
 <div id="ca_fold-search_resul" class="ca_fold_content">
   <h3 id="ca_search_result_title" class="ca_folder"
-    onclick="DOMOpenFolder( this );"><!-- 00 résultat(s) trouvé(s) dans (00) page(s) --></h3>
+    onclick="DOMOpenFolder( this )"></h3>
   <div class="ca_fold_content_item">
     <div class="ca_fold_xcols_norule">
-      <div class="ca_url_entries_list"><!-- SEARCH_ENTRIES --></div>
+      <div class="ca_url_entries_list"></div>
     </div>
   </div>
 </div>
