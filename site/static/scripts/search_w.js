@@ -30,7 +30,7 @@ const setupMap = ( url_s ) =>
   .catch( error => { console.log( `[ERROR] failed to fetch file <${url_s}> -- ${error}` )})
 }
 
-const  searchBMH__n = ( need_s, stack_s ) =>    //: SEARCH
+const  searchBMH__i = ( need_s, stack_s ) =>    //: SEARCH
 {
   const last_n = need_s.length - 1
   if ( last_n < 0 ) return 0
@@ -71,14 +71,14 @@ const entry__o = ( entry_s, need_s, tag_s ) =>
 const entry__a = ( need_s, stack_s ) =>
 {
   const entries_a = []
-  let foundAt_n = searchBMH__n( need_s, stack_s )
+  let foundAt_n = searchBMH__i( need_s, stack_s )
   if ( foundAt_n === -1 ) return entries_a    //: no match at all
   stack_s = stack_s.slice( foundAt_n )    //: strip up to 1st match
   const stack_a = stack_s.split( '}' )
   for ( let part_s of stack_a )
   {
     if ( part_s === '' ) continue
-    if ( ( foundAt_n = searchBMH__n( need_s, part_s ) ) === -1 ) continue
+    if ( ( foundAt_n = searchBMH__i( need_s, part_s ) ) === -1 ) continue
     const hash_s = part_s.slice( part_s.indexOf( '{') + 1 )
     entries_a.push( hash_s )
   }
