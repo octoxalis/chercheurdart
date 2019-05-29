@@ -341,7 +341,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
   <li class="ca_post_subtitle"></li>
   
 
-<li class="ca_post_signature"><address onclick="mailToClipDialog__s( '{ @author }}' )">A. Dupin</address></li>
+<li class="ca_post_signature"><address onclick="mailtoDialog__s( '{ @author }}' )">A. Dupin</address></li>
 
   
 </ul>
@@ -480,33 +480,34 @@ Version initiale.</li>
 
     </label>
   
-    <ul class="ca_post_header">
-      <li class="ca_post_title">Recherche</li>
-      <li></li>
+    <ul class="ca_duo_banner_header">
+      <li class="ca_banner_title_duo">Recherche</li>
       <li class="ca_post_subtitle">
-      <form id="ca_form_search" class="ca_inputbox_form">
-
-  <label id="ca_form_search_submit" class="ca_inputbox_label_solo ca_inputbox_label_text">
-    RECHERCHER
-    <input id="ca_form_input_search_needle" class="ca_inputbox_input_text" type="text" placeholder=" Mots recherchés...">
+      <form id="ca_form_is_search" class="ca_form_inputbox">
+  <label id="ca_form_is_search_submit" class="ca_form_inputbox_label_button">Rechercher</label>
+  <input id="ca_form_input_search_needle" class="ca_form_inputbox_input_text" type="text" placeholder=" Mots recherchés...">
+  <label id="ca_form_is_search_tags" class="ca_form_inputbox_label_button">
+    <span id="ca_form_input_search_tag" class="ca_form_inputbox_input_text">NON SPÉCIFIÉ</span>
   </label>
-
-  <label id="ca_form_search_tags" class="ca_inputbox_label_solo ca_inputbox_label_text">
-    CHAMP
-    <span id="ca_form_input_search_tag" class="ca_input_text_dry">INDÉFINI</span>
-  </label>
-
-  <label id="ca_form_search_previous" class="ca_inputbox_label_solo ca_inputbox_label_text">
-    RECHERCHE PRÉCÉDENTE
-  </label>
-  <label id="ca_form_search_next" class="ca_inputbox_label_solo ca_inputbox_label_text">
-    RECHERCHE SUIVANTE
-  </label>
-
-  <label id="ca_form_search_reset" class="ca_inputbox_label_solo ca_inputbox_label_text">
-    EFFACER LA RECHERCHE
-  </label>
-
+  <div id="ca_form_is_search_history" class="ca_form_optbox_icons">
+    <span id="ca_form_is_search_previous"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_svg_icon">
+  <circle cx="12" cy="12" r="10"/>
+  <path d="M12 8l-4 4 4 4M16 12H9"/>
+</svg>
+</span>
+    <span id="ca_form_is_search_reset"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_svg_icon">
+  <path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/>
+</svg>
+</span>
+    <span id="ca_form_is_search_next"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_svg_icon">
+  <circle cx="12" cy="12" r="10"/>
+  <path d="M12 8l4 4-4 4M8 12h7"/>
+</svg>
+</span>
+  </div>
 </form>
 
       </li>
@@ -581,19 +582,20 @@ Version initiale.</li>
   <dl class="ca_dialog_area"><!-- id="ca_status_dialog_area"-->
     <dt id="ca_dialog_header_is_status"  class="ca_dialog_header">status</dt>
     <dd id="ca_dialog_content_is_status" class="ca_dialog_content">
-      <form id="ca_form_is_annotations" class="ca_inputbox_form">
+      <form id="ca_form_is_annotations" class="ca_form_inputbox">
   <label for="ca_form_checkbox_is_annotations"
     id="ca_form_label_is_annotations"
-    class="ca_inputbox_label" title="Activer les annotations">
-    <div class="ca_inputbox_label_text">Annotations
-      <a href="https://web.hypothes.is" target="_blank" rel="noreferrer" class="ca_nodeco">
-        <img id="ca_form_img_is_annotations" src="https://www.chercheurd.art/static/media/images/hypothesis_small.png" alt="Hypothesis logo">
-      </a>
-    </div>
+    class="ca_form_optbox_label" title="Activer les annotations">
     <input type="checkbox" value="0"
       id="ca_form_checkbox_is_annotations"
-      class="ca_inputbox_input"
+      class="ca_form_optbox_input"
       onclick="if (this.value === '0' ) Annotations.setup();this.value='1' ">
+    <span class="ca_form_optbox_label_title">Annotations
+      <a href="https://web.hypothes.is" target="_blank" rel="noreferrer" class="ca_nodeco">
+        <img id="ca_form_img_is_annotations" src="https://www.chercheurd.art/static/media/images/hypothesis_small.png"
+             alt="Hypothesis logo">
+      </a>
+    </span>
   </label>
 </form>
 
@@ -612,109 +614,100 @@ Version initiale.</li>
 
   </div>
   <dl class="ca_dialog_area">
-    <dt id="ca_dialog_header_is_search"  class="ca_dialog_header">Filtres de recherche</dt>
+    <dt id="ca_dialog_header_is_search"  class="ca_dialog_header">Champ de recherche</dt>
     <dd id="ca_dialog_content_is_search" class="ca_dialog_content">
-      <form id="ca_form_is_search_tags" class="ca_optbox_form">
+      <form id="ca_form_is_search_tagSet" class="ca_form_optbox">
 
   
   
   
   
   <label for="ca_form_radiobox_0_is_search_tags"
-    class="ca_inputbox_label"
+    class="ca_form_optbox_label"
     data-index="0">
-    <div class="ca_inputbox_label_text">INDÉFINI</div>
     <input type="radio" name="radio_is_search_tags" value="0"
-      id="ca_form_radiobox_0_is_search_tags"
-      class="ca_inputbox_input" checked>
+      id="ca_form_radiobox_0_is_search_tags" class="ca_form_optbox_input" checked>
+    <span class="ca_form_optbox_label_title">NON SPÉCIFIÉ</span>
   </label>
 
   
   
   <label for="ca_form_radiobox_1_is_search_tags"
-    class="ca_inputbox_label"
+    class="ca_form_optbox_label"
     data-index="1">
-    <div class="ca_inputbox_label_text">NOM DE PERSONNE</div>
     <input type="radio" name="radio_is_search_tags" value="1"
-      id="ca_form_radiobox_1_is_search_tags"
-      class="ca_inputbox_input" >
+      id="ca_form_radiobox_1_is_search_tags" class="ca_form_optbox_input" >
+    <span class="ca_form_optbox_label_title">NOM DE PERSONNE</span>
   </label>
 
   
   
   <label for="ca_form_radiobox_2_is_search_tags"
-    class="ca_inputbox_label"
+    class="ca_form_optbox_label"
     data-index="2">
-    <div class="ca_inputbox_label_text">NOM D&#39;ARTISTE</div>
     <input type="radio" name="radio_is_search_tags" value="2"
-      id="ca_form_radiobox_2_is_search_tags"
-      class="ca_inputbox_input" >
+      id="ca_form_radiobox_2_is_search_tags" class="ca_form_optbox_input" >
+    <span class="ca_form_optbox_label_title">NOM D&#39;ARTISTE</span>
   </label>
 
   
   
   <label for="ca_form_radiobox_3_is_search_tags"
-    class="ca_inputbox_label"
+    class="ca_form_optbox_label"
     data-index="3">
-    <div class="ca_inputbox_label_text">OEUVRE D&#39;ART</div>
     <input type="radio" name="radio_is_search_tags" value="3"
-      id="ca_form_radiobox_3_is_search_tags"
-      class="ca_inputbox_input" >
+      id="ca_form_radiobox_3_is_search_tags" class="ca_form_optbox_input" >
+    <span class="ca_form_optbox_label_title">OEUVRE D&#39;ART</span>
   </label>
 
   
   
   <label for="ca_form_radiobox_4_is_search_tags"
-    class="ca_inputbox_label"
+    class="ca_form_optbox_label"
     data-index="4">
-    <div class="ca_inputbox_label_text">COLLECTION</div>
     <input type="radio" name="radio_is_search_tags" value="4"
-      id="ca_form_radiobox_4_is_search_tags"
-      class="ca_inputbox_input" >
+      id="ca_form_radiobox_4_is_search_tags" class="ca_form_optbox_input" >
+    <span class="ca_form_optbox_label_title">COLLECTION</span>
   </label>
 
   
   
   <label for="ca_form_radiobox_5_is_search_tags"
-    class="ca_inputbox_label"
+    class="ca_form_optbox_label"
     data-index="5">
-    <div class="ca_inputbox_label_text">BIBLIOGRAPHIE</div>
     <input type="radio" name="radio_is_search_tags" value="5"
-      id="ca_form_radiobox_5_is_search_tags"
-      class="ca_inputbox_input" >
+      id="ca_form_radiobox_5_is_search_tags" class="ca_form_optbox_input" >
+    <span class="ca_form_optbox_label_title">BIBLIOGRAPHIE</span>
   </label>
 
   
   
   <label for="ca_form_radiobox_6_is_search_tags"
-    class="ca_inputbox_label"
+    class="ca_form_optbox_label"
     data-index="6">
-    <div class="ca_inputbox_label_text">TECHNOLOGIE</div>
     <input type="radio" name="radio_is_search_tags" value="6"
-      id="ca_form_radiobox_6_is_search_tags"
-      class="ca_inputbox_input" >
+      id="ca_form_radiobox_6_is_search_tags" class="ca_form_optbox_input" >
+    <span class="ca_form_optbox_label_title">TECHNOLOGIE</span>
   </label>
 
   
   
   <label for="ca_form_radiobox_7_is_search_tags"
-    class="ca_inputbox_label"
+    class="ca_form_optbox_label"
     data-index="7">
-    <div class="ca_inputbox_label_text">LOCALISATION</div>
     <input type="radio" name="radio_is_search_tags" value="7"
-      id="ca_form_radiobox_7_is_search_tags"
-      class="ca_inputbox_input" >
+      id="ca_form_radiobox_7_is_search_tags" class="ca_form_optbox_input" >
+    <span class="ca_form_optbox_label_title">LOCALISATION</span>
   </label>
 
   
   
   <label for="ca_form_radiobox_8_is_search_tags"
-    class="ca_inputbox_label"
+    class="ca_form_optbox_label"
     data-index="8">
-    <div class="ca_inputbox_label_text">DATE</div>
     <input type="radio" name="radio_is_search_tags" value="8"
-      id="ca_form_radiobox_8_is_search_tags"
-      class="ca_inputbox_input" >
+      id="ca_form_radiobox_8_is_search_tags" class="ca_form_optbox_input" >
+    <span class="ca_form_optbox_label_title">DATE</span>
   </label>
 
 </form>
@@ -735,24 +728,26 @@ Version initiale.</li>
   <dl class="ca_dialog_area">
     <dt id="ca_dialog_header_is_user_file"  class="ca_dialog_header">fichier image</dt>
     <dd id="ca_dialog_content_is_user_file" class="ca_dialog_content">
-      <form id="ca_form_is_user_file" class="ca_filebox_form ca_layout_centered_block">
-  <img id="ca_form_img_thumb_is_user_file"/>
+      <form id="ca_form_is_user_file" class="ca_form_inputbox">
+
+  <img id="ca_form_is_user_file_img_thumb"/>
+  <label for="ca_form_is_user_file_input_file_s"
+         id="ca_form_is_user_file_setup_id_s" class="ca_form_inputbox_label ca_form_inputbox_label_button"
+         title="Sélectionnez un fichier image (JPEG)">Sélectionnez un fichier image (JPEG)</label>
   <input type="file" accept="image/jpeg"
-    id="ca_form_filebox_input_is_user_file" class="ca_filebox_input"
+    id="ca_form_is_user_file_input_file_s" class="ca_form_filebox_input"
     onchange="userImgToDataUrl( this )">
-  <label for="ca_form_filebox_input_is_user_file"
-         id="ca_form_img_label_is_user_file" class="ca_input_text_dry"
-         title="Sélectionnez un fichier image (JPEG)">
-  Sélectionnez un fichier image (JPEG)
-  </label>
-  <label for="ca_form_input_is_user_id" class="ca_inputbox_label_solo ca_inputbox_label_text"
-         title="Pour identifier l'image par un nom ou descriptif">Descriptif
-  </label>
-  <input id="ca_form_input_is_user_id" class="ca_inputbox_input_text" type="text" placeholder=" Descriptif de l'image...">
-  <label for="ca_form_input_is_user_tag" class="ca_inputbox_label_solo ca_inputbox_label_text"
-         title="Pour classer l'image dans une galerie nommée">Galerie
-  </label>
-  <input id="ca_form_input_is_user_tag" class="ca_inputbox_input_text" type="text" placeholder=" Nom de la galerie...">
+
+
+  <label for="ca_form_is_user_file_setup_id_s" class="ca_form_inputbox_label"
+         title="Pour identifier l'image par un nom ou descriptif">Descriptif</label>
+  <input type="text"
+         id="ca_form_is_user_file_setup_id_s" class="ca_form_inputbox_input_text"placeholder="Descriptif de l'image...">
+
+  <label for="ca_form_is_user_file_setup_tag_s" class="ca_form_inputbox_label"
+         title="Pour classer l'image dans une galerie nommée">Galerie</label>
+  <input type="text"
+         id="ca_form_is_user_file_setup_tag_s" class="ca_form_inputbox_input_text" placeholder="Nom de la galerie...">
 </form>
 
     </dd>
@@ -775,16 +770,14 @@ Version initiale.</li>
   <dl class="ca_dialog_area">
     <dt id="ca_dialog_header_is_user_file_modify"  class="ca_dialog_header">fichier image</dt>
     <dd id="ca_dialog_content_is_user_file_modify" class="ca_dialog_content">
-      <form id="ca_form_is_user_file_modify" class="ca_filebox_form ca_layout_centered_block">
-  <label for="ca_form_input_is_user_file_update_id" class="ca_inputbox_label_solo ca_inputbox_label_text"
-         title="Pour identifier l'image par un nom ou descriptif">Descriptif
-  </label>
-  <input  type="text" id="ca_form_input_is_user_file_update_id" class="ca_inputbox_input_text"
+      <form id="ca_form_is_user_file_update" class="ca_form_inputbox">
+  <label for="ca_form_is_user_file_update_id_s" class="ca_form_inputbox_label"
+         title="Pour identifier l'image par un nom ou descriptif">Descriptif</label>
+  <input  type="text" id="ca_form_is_user_file_update_id_s" class="ca_form_inputbox_input_text"
          placeholder=" Descriptif de l'image..." data-key="0">
-  <label for="ca_form_input_is_user_file_update_tag" class="ca_inputbox_label_solo ca_inputbox_label_text"
-         title="Pour classer l'image dans une galerie nommée">Galerie
-  </label>
-  <input  type="text" id="ca_form_input_is_user_file_update_tag" class="ca_inputbox_input_text"
+  <label for="ca_form_is_user_file_update_tag_s" class="ca_form_inputbox_label"
+         title="Pour classer l'image dans une galerie nommée">Galerie</label>
+  <input  type="text" id="ca_form_is_user_file_update_tag_s" class="ca_form_inputbox_input_text"
          placeholder=" Nom de la galerie..." data-key="0">
 </form>
 
