@@ -1,0 +1,54 @@
+---js
+{
+  layout:    `layouts/post/item.njk`,
+  permalink: `posts/items/2019-03-29-conversation-test.html`,
+  tags:      [ `post`, ],
+  areas:     [ `menu` ,`home` ,`gallery` ],
+  active:    `gallery`,
+  
+  image:     `image-@400`,
+  title:     `Conversation avec A. Dupin`,
+  subtitle:  `Test de vidéo`,
+  author:    `A. Dupin`,
+  date:      `2019-03-29`,
+  hdates:    [ `29 mars 2019` ],
+  abstract:  `A. Dupin: de la conception à la mise en ligne du site Chercheurd.art`,
+  annotations:  true,
+
+  media:
+  [
+    {
+      type:     `video`,
+      src:      `2015_0706_024801_038-lucca.MP4`,
+      alt:      `Conversation avec A. Dupin`,
+      title:    `Conversation avec A. Dupin`,
+      abstract: `Le 29 mars 2019`,
+    },
+  ],
+
+}
+---
+[comment]: # (======== Article ========)
+
+{% articleFolder %}
+
+{% contentFolder 1, "Conversation avec A. Dupin" %}
+
+{% endcontentFolder %}
+
+[comment]: # (======== Footnotes ========)
+
+{% contentFolder 201, "NOTES | VERSIONS" %}
+{% footerNote %}
+{% endfooterNote %}
+
+[comment]: # (======== Historique ========)
+
+### Versions { .ca_version_title }
+
+1. **29 mars 2019**  
+  Version initiale{ .ca_version_entry }  
+{ .ca_version_list }
+
+{% endcontentFolder %}
+{% endarticleFolder %}

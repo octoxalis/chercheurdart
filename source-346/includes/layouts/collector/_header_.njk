@@ -1,0 +1,9 @@
+{# @id, @author, @date #}
+{% set collector = collectors[ id ] %}
+
+<ul class="ca_post_header">
+  <li class="ca_post_title">{{ collector.location }}</li>
+  <li class="ca_post_signature">{{ @date }}</li>
+  <li class="ca_post_subtitle">{{ collector.place }}, {{ collector.country }}</li>
+  {% include "partials/_post_signature_.njk" %}
+ </ul>

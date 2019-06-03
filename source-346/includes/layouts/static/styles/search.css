@@ -1,0 +1,40 @@
+.ca_fold_search_form
+{
+  padding: var(--TXT_COLS_PADDING);
+}
+
+
+.ca_form_inputbox_terms
+{
+
+}
+
+.ca_form_inputbox_tags
+{
+
+}
+
+.ca_searchentry_mark    /* same as ca_urlentry_mark */
+{
+  padding: 0 1rem;
+  background-color: var(--COLOR_MEDIUM_TRANSPARENT);
+  border-radius: 4px;
+  opacity: 0.85;
+}
+.ca_searchentry_mark:hover
+{
+  color: var(--COLOR_MAXLIGHT);
+  background-color: var(--COLOR_DEEP_DARK_SEMI_OPAQUE);
+  opacity: 1;
+  transition: all 0.3s ease-in;
+}
+
+.ca_searchentry_mark::before
+{
+  position: relative;
+  left: -0.5rem;    /* see padding */
+  content: '➤';
+  color: var(--COLOR_MAXLIGHT);
+  background-color: transparent;
+  opacity: 1;
+}

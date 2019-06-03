@@ -1,0 +1,29 @@
+<template id="ca_search_result">
+<div id="ca_fold-search_resul" class="ca_fold_content">
+  <h3 id="ca_search_result_title" class="ca_folder"
+    onclick="DOMOpenFolder( this )"></h3>
+  <div class="ca_fold_content_item">
+    <div class="ca_fold_xcols_norule">
+      <div class="ca_url_entries_list"></div>
+    </div>
+  </div>
+</div>
+</template>
+
+<template id="ca_search_result_entry">
+<div class="ca_urlentry">
+  <dl>
+    <dt><a href="https://www.chercheurd.art/_ENTRY_URL_"><!--_ENTRY_LINK_--></a></dt>
+    <dd><!--_ENTRY_DATE_--> <em><!--_ENTRY_AUTHOR_--></em></dd>
+    <dd><!--_ENTRY_ABSTRACT_--></dd>
+  </dl>
+</div>
+</template>
+
+<template id="ca_search_result_entry_void">
+<div class="ca_urlentry">
+  <dl>
+    <dt></dt>
+  </dl>
+</div>
+</template>

@@ -1,0 +1,25 @@
+<ul id="ca_gallery_imgs_list" class="ca_gallery_imgs_list">
+  {% for atmedia in media %}
+    {% if atmedia.type === 'img' %}
+    <li class="ca_list_imgs_issmall" onclick="this.classList.toggle('ca_list_imgs_islarge')">
+      <img class="ca_list_imgs_img" src="{{ @SITE_URL }}{{ settings.distDirs.images }}{{ atmedia.src }}" loading="auto"/>
+      <ul class="ca_list_imgs_legend">
+        <li class="ca_list_imgs_legend_title">{{ atmedia.title }}</li>
+        <li class="ca_list_items_legend_abstract">{{ atmedia.abstract }}</li>
+      </ul>
+    </li>
+    {% elif atmedia.type === 'video' %}
+    <li class="ca_list_imgs_islarge">
+      <div class="ca_video_player">
+        <video class="ca_video_frame" controls preload="auto">
+          <source src="{{ @SITE_URL }}{{ settings.distDirs.videos }}{{ atmedia.src }}" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+        </video>
+      </div>
+      <ul class="ca_list_imgs_legend">
+        <li class="ca_list_imgs_legend_title">{{ atmedia.title }}</li>
+        <li class="ca_list_items_legend_abstract">{{ atmedia.abstract }}</li>
+      </ul>
+    </li>
+    {% endif  %}
+  {% endfor %}
+</ul>

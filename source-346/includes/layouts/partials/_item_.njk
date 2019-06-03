@@ -1,0 +1,20 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+{# REMOVE ??? #}{% set @is_open = 'ca_is_open' %}
+{% set @id       = id %}
+{% set @author   = author %}
+{% set @date     = hdates[0] %}
+{% set @dir      = itemDir %}
+{% set @inimgDir = 'partials' %}
+
+{% block text %}
+{% set @asList = '' %}
+{% include "partials/blocks/_area_text_.njk" %}
+{% endblock %}
+{% if itemImg %}
+{% block gallery %}{% include "partials/blocks/_area_gallery_.njk" %}{% endblock %}
+{% endif %}
+
+{% endblock %}

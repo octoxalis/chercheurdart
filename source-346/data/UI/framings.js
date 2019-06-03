@@ -1,0 +1,5 @@
+module.exports =
+{
+  srosa:    '--FRAMING_WIDTH:28;--FRAMING_SCALE_X:1.03;--FRAMING_SCALE_Y:1.03;',
+  cassetta: '--FRAMING_WIDTH:14;--FRAMING_SCALE_X:1.16;--FRAMING_SCALE_Y:1.16;',
+}

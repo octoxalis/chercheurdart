@@ -1,0 +1,16 @@
+<form id="ca_form_is_annotations" class="ca_form_inputbox">
+  <label for="ca_form_checkbox_is_annotations"
+    id="ca_form_label_is_annotations"
+    class="ca_form_optbox_label" title="Activer les annotations">
+    <input type="checkbox" value="0"
+      id="ca_form_checkbox_is_annotations"
+      class="ca_form_optbox_input"
+      onclick="if (this.value === '0' ) Annotations.setup();this.value='1' ">
+    <span class="ca_form_optbox_label_title">Annotations
+      <a href="https://web.hypothes.is" target="_blank" rel="noreferrer" class="ca_nodeco">
+        <img id="ca_form_img_is_annotations" src="{{ @SITE_URL }}{{ settings.distDirs.images }}hypothesis_small.png"
+             alt="Hypothesis logo">
+      </a>
+    </span>
+  </label>
+</form>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
+  class="ca_svg_icon">
+  <line id="ca_svg_icon_menu_1" x1="6"  y1="8"  x2="58" y2="8"  />
+  <line id="ca_svg_icon_menu_2" x1="12" y1="20" x2="52" y2="20" />
+  <line id="ca_svg_icon_menu_3" x1="18" y1="32" x2="46" y2="32" />
+  <line id="ca_svg_icon_menu_4" x1="24" y1="44" x2="40" y2="44" />
+  <line id="ca_svg_icon_menu_5" x1="30" y1="56" x2="34" y2="56" />
+</svg>

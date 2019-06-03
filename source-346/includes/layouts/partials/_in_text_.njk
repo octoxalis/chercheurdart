@@ -1,0 +1,8 @@
+{# @foldTitle, @id, @author, @date, @is_open, @ dir #}
+
+<div id="ca_blocktxt" class="ca_layout_blocktxt">
+  {% include @dir + "/_header_.njk" %}
+  {# ==============Markdown========= #}
+  {{ layoutContent | map( { permalink:permalink, date:date, title:title, subtitle:subtitle, abstract:abstract, author:author, img:image } ) | safe }}
+  {# =============================== #}
+</div>

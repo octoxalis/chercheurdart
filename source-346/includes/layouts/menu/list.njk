@@ -1,0 +1,14 @@
+---js
+{
+  pagination:
+  {
+    data: 'collections.menu',
+    size: 16,  // {{ settings.listItemsCapacity }}
+    alias: 'menu',
+  },
+//permalink: 'menu/list_{{ pagination.pageNumber }}.html'
+}
+---
+{% extends "base.njk" %}
+
+{% block content %}{% include "partials/blocks/_area_menu_.njk" %}{% endblock %}

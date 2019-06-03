@@ -1,0 +1,25 @@
+:root
+{
+  /* BORDERS */
+  --BORDER_MEDIUM: 8px;
+  --BORDER_XTHIN:  calc(var(--BORDER_MEDIUM) / 4);
+  --BORDER_THIN:   calc(var(--BORDER_MEDIUM) / 2);
+  --BORDER_LARGE:  calc(var(--BORDER_MEDIUM) * 2);
+  --BORDER_XLARGE: calc(var(--BORDER_MEDIUM) * 4);
+
+  --BORDER_FRAME:           var(--BORDER_MEDIUM);
+  --BORDER_FRAME_DARK:      var(--BORDER_FRAME) solid var(--COLOR_DARK);
+  --BORDER_FRAME_GOLD:      var(--BORDER_FRAME) solid var(--COLOR_GOLD);
+  --BORDER_FRAME_GOLD_TEXT: var(--BORDER_FRAME) solid var(--COLOR_GOLD);
+
+  --BORDER_LINK_THIN_TRANSPARENT:  4px solid var(--COLOR_MAXLIGHT_TRANSPARENT);
+  --BORDER_LINK_THIN_MEDIUM_LIGHT: 4px solid var(--COLOR_MEDIUM_LIGHT);
+  --BORDER_LINK_THIN_DEEP_DARK:    4px solid var(--COLOR_DEEP_DARK);
+
+  /* BOX SHADOW */
+  --BOX_SHADOW:      0 0 calc(var(--Uh) * 2) var(--COLOR_DARK);
+  --BOX_SHADOW_THIN: 0 0 var(--Uh) var(--COLOR_MEDIUM);
+  --BOX_SHADOW_UP:   var(--Um) var(--Um) calc( var(--Um) * 2) var(--COLOR_DARK);
+  --BOX_SHADOW_DOWN: calc( var(--Um) * 0.5) calc( var(--Um) * 0.5) calc( var(--Um) * 1) var(--COLOR_DARK);
+
+}

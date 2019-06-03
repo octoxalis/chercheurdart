@@ -1,0 +1,16 @@
+:root
+{
+  --VIEW_LIMIT: 0;
+  --VIEW_FULL_WIDTH:  100vw;
+  --VIEW_FULL_HEIGHT: 100vh;
+  --VIEW_HALF_WIDTH:   50vw;
+  --VIEW_HALF_HEIGHT:  50vh;
+  /*--VIEW_GOLD_WIDTH:  calc( 100vw * 0.618 );*/
+  /*--VIEW_GOLD_HEIGHT: calc( 100vh * 0.618 );*/
+  --CONTENT_RATIO:  0.9;
+  --CONTENT_WIDTH:  calc(var(--VIEW_FULL_WIDTH)  * var(--CONTENT_RATIO));
+  --CONTENT_HEIGHT: calc(var(--VIEW_FULL_HEIGHT) * var(--CONTENT_RATIO));
+
+  --CONTENT_MIN_WIDTH: 40%;
+  /*--CONTENT_BORDER_BREAK: 60rem;*/
+}

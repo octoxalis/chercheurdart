@@ -1,0 +1,230 @@
+:root
+{
+  --BOX_FORM_DIM: 2.5rem;
+
+  --CHECKBOX_COLOR_HIGH_FRONT:  var(--COLOR_MAXLIGHT);
+  --CHECKBOX_COLOR_HIGH_BACK:   var(--COLOR_MAXDARK);
+  --CHECKBOX_COLOR_HIGH:        var(--COLOR_LIGHT);
+  --CHECKBOX_COLOR_MEDIUM:      var(--COLOR_MEDIUM);
+  --CHECKBOX_COLOR_LOW:         var(--COLOR_DARK);
+  --CHECKBOX_COLOR_LOW_FRONT:   var(--COLOR_LIGHT);
+  --CHECKBOX_COLOR_LOW_BACK:    var(--COLOR_MEDIUM_DARK);
+
+}
+
+/* ---- USUAL --- */
+.ca_form_inputbox,
+.ca_form_filebox,
+.ca_form_optbox
+{
+  max-width:  var(--BOX_FORM_WIDTH);
+  min-width:  calc( var(--BOX_FORM_WIDTH) * 0.6 );
+  background-color: transparent;
+}
+
+.ca_form_optbox_icons,
+.ca_form_optbox
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.ca_form_optbox
+{
+  padding: var(--PAD_2) var(--PAD_4);
+}
+
+.ca_form_optbox_icons > span:hover
+{
+  cursor: pointer;
+}
+
+.ca_form_optbox_label
+{
+  flex: 0 32%;    /* 3 items per row */
+  /*height: 1.5rem;*/
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: nowrap;
+  cursor: pointer;
+  text-align: left;
+}
+.ca_form_optbox_label:hover
+{
+  background-color: var(--CHECKBOX_COLOR_LOW);
+  color: var(--CHECKBOX_COLOR_HIGH);
+  transition: .2s;
+}
+
+.ca_form_optbox_label > .ca_form_optbox_input
+{
+  flex-basis: 12.5%;
+  flex-grow:  1;
+  max-width:  1.6rem;
+  max-height: 1.6rem;
+  border: 2px solid var(--CHECKBOX_COLOR_LOW_BACK);
+}
+.ca_form_optbox_input:checked
+{
+  background-color: var(--CHECKBOX_COLOR_HIGH_FRONT);
+  border: 2px solid var(--CHECKBOX_COLOR_LOW_FRONT);
+}
+
+.ca_form_optbox_label > .ca_form_optbox_label_title
+{
+  flex-grow: 7;
+  padding-left: 0.75rem;
+  border-bottom: 2px solid transparent;
+  line-height: 1.5;
+}
+.ca_form_optbox_input:checked + .ca_form_optbox_label_title
+{
+  border-bottom: 2px solid var(--CHECKBOX_COLOR_LOW_FRONT);
+}
+
+.ca_form_inputbox
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.ca_form_inputbox > *
+{
+  width: 100%;
+}
+
+.ca_form_inputbox_label,
+.ca_form_inputbox_input_text
+{
+  padding-left: 0.25rem;
+  text-align: left;
+  width: auto;
+}
+
+.ca_form_inputbox_label
+{
+  margin-top: var(--PAD_4);
+}
+
+.ca_form_inputbox_label_button
+{
+  margin-top: 0;
+  padding: var(--PAD_1);
+  background-color: var(--CHECKBOX_COLOR_LOW_BACK);
+  border: 2px solid var(--COLOR_MEDIUM_LIGHT);
+}
+.ca_form_inputbox_label_button:hover
+{
+  background-color: var(--CHECKBOX_COLOR_LOW);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.ca_inputbox_label,
+.ca_inputbox_label_solo,
+.ca_inputbox_label_solo_inverse
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--PAD_1);
+  cursor: pointer;
+  text-align: left;
+}
+
+.ca_inputbox_label:hover,
+.ca_inputbox_label_solo:hover,
+.ca_inputbox_label_solo_inverse:hover
+{
+  background-color: var(--CHECKBOX_COLOR_LOW);
+  color: var(--CHECKBOX_COLOR_HIGH);
+  transition: .2s;
+}
+.ca_inputbox_label_solo_inverse
+{
+  --SVG_ICON_STROKE: var(--COLOR_MAXDARK);
+}
+.ca_inputbox_label_solo_inverse:hover
+{
+  --SVG_ICON_STROKE: var(--COLOR_MAXLIGHT);
+}
+
+.ca_inputbox_label_solo > *,
+.ca_inputbox_label_solo_inverse > *
+{
+  flex: 0 50%;
+}
+
+.ca_form_optbox_input
+{
+  -webkit-appearance: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ca_form_filebox_input
+{
+  opacity: 0;
+  transform: scale( 0.01 );
+}
+
+/* ============== CUSTOM FORMS ================*/
+
+
+#ca_form_is_confirm
+{
+  --BOX_FORM_WIDTH: 40vw;
+}
+
+#ca_form_is_annotations
+{
+  --BOX_FORM_WIDTH: 40vw;
+  padding: var(--PAD_2);
+}
+
+#ca_form_img_is_annotations
+{
+  float: right;
+  max-height: 24px;
+  margin: 0 8px;
+}
+
+#ca_form_is_search
+{
+  --BOX_FORM_WIDTH: 60vw;
+}
+#ca_form_is_search_history
+{
+  margin-top: var(--PAD_4);
+}
+
+#ca_form_is_search_tagSet
+{
+  --BOX_FORM_WIDTH: 60vw;
+}
+
+#ca_form_is_user_file
+{
+  --BOX_FORM_WIDTH: 40vw;
+  --CENTERED_GRID_MARGIN: 8px;
+  
+  max-width: var(--BOX_FORM_WIDTH);
+  min-width: 30rem;
+}
+
+#ca_form_is_user_file_update
+{
+  --BOX_FORM_WIDTH: 60vw;
+}
+
+#ca_form_is_user_file_img_thumb
+{
+  min-width:  calc( var(--BOX_FORM_WIDTH) * 0.9 );
+  object-fit: scale-down;
+}
+
+#ca_form_is_user_file_setup_id_s
+{
+  cursor: pointer;
+}

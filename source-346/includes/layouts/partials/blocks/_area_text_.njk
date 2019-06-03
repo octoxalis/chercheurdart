@@ -1,0 +1,28 @@
+{% if ( active === 'text' ) %}{% set @active = ' ca_area_active' %}{% endif %}
+{% if ( @asList === '') %}
+{% set @template = 'partials/_in_text_.njk' %}
+{% else %}
+{% set @template = 'partials/_fold_items_list_.njk' %}
+{% endif %}
+{% set @dialog = 'status' %}
+{% set @type = '' %}
+
+<section id="ca_area_section_text" class="ca_area_region">
+  <input id="ca_select_area_text" class="ca_area_switcher" value="ca_select_area_text" name="area" type="radio">
+  <div id="ca_area_text" class="ca_area_text ca_area{{ @active }}{{ @asList }}">
+    <label for="ca_select_area_text" class="ca_area_selector" onclick="AreaSwitch( this.getAttribute( 'for') )">
+      {% include "static/icons/menu.svg" %}
+    </label>
+    <label class="ca_select_context" onclick="{{ @dialog }}Dialog( {{ @type }} )">
+      {% include "static/icons/elipsis-v.svg" %}
+    </label>
+    {% if not isList and areas.length > 2 %}
+    <label class="ca_toggle_text_img" onclick="AreaSwap( 'text', 'gallery' )"
+           title="Voir les images">
+      {% include "static/icons/image.svg" %}
+    </label>
+    {% endif %}
+    {% include @template %}
+  </div>
+
+</section>

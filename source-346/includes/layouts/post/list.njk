@@ -1,0 +1,13 @@
+---js
+{
+  pagination:
+  {
+    data: 'collections.post',
+    size: 16,  // {{ settings.listItemsCapacity }}
+    alias: 'posts',
+  },
+  permalink: 'posts/list_{{ pagination.pageNumber }}.html'
+}
+---
+{% set @foldTitle = 'Répertoire des articles' %}
+{% include "post/_post_list_.njk" %}

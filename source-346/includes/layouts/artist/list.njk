@@ -1,0 +1,17 @@
+---js
+{
+pagination: {
+    data: 'collections.artist',
+    size: 8,
+    alias: 'artists',
+  },
+permalink: 'artists/list_{{ pagination.pageNumber }}.html'
+}
+---
+{% extends "base.njk" %}
+
+{% block content %}
+{% set @items = artists %}
+{% set @foldTitle = 'Répertoire des artistes' %}
+{% include "partials/_list_.njk" %}
+{% endblock %}

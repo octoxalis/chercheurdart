@@ -1,0 +1,47 @@
+{% if settings.develop === true %}
+{% set @SITE_URL = settings.devUrl %}
+{% else %}
+{% set @SITE_URL = settings.siteUrl %}
+{% endif %}
+<!doctype html>
+<html lang="fr">
+<head>{# ======== HEAD ======== #}
+{% block head %}{% include "partials/blocks/_head_.njk" %}{% endblock %}
+{% block seo %}{% include "partials/blocks/_seo_.njk" %}{% endblock %}
+{% block metatag %}{% include "partials/blocks/_description_.njk" %}{% endblock %}
+{% block fonts %}{% include "partials/blocks/_fonts_.njk" %}{% endblock %}
+{% block styles %}{% include "partials/blocks/_styles_.njk" %}{% endblock %}
+{% block styles_specifics %}{% endblock %}
+{% include "partials/_site_urls_.njk" %}{# TEMPORARY ??? #}{#% include "partials/_root_vars_.njk" %#}
+{% include "partials/addons/_script_load_.njk" %}
+{% if settings.develop === true %}{% include "partials/_LOG_.njk" %}{% endif %}
+</head>
+<body>{# ======== BODY ======== #}
+{% include "partials/blocks/_menu_background_.njk" %}
+<div id="ca_page" class="ca_page">
+  <main id="ca_content" class="ca_content">
+  {% block menu %}{% include "partials/blocks/_area_menu_.njk" %}{% endblock %}
+  {% block content %}{{ layoutContent | safe }}{% endblock %}
+  {% block search %}{% include "partials/blocks/_search_.njk" %}{% endblock %}
+  </main>
+  <aside>
+  {% block dialog %}{% include "partials/blocks/_dialog_.njk" %}{% endblock %}
+  {% block scroll %}{% include "partials/blocks/_scrollbar_.njk" %}{% endblock %}
+  </aside>
+</div>
+<div id="_templates_">{# ======== TEMPLATES ======== #}
+{% block templates %}{# child of body tag #}
+{% include "partials/_search_templates_.njk" %}
+{% if isUserCollection %}{% include "partials/_user_collection_templates_.njk" %}{% endif %}
+{% endblock %}
+</div>
+<div id="_scripts_">{# ======== SCRIPTS ======== #}
+{% block scripts %}{% include "partials/blocks/_scripts_.njk" %}{% endblock %}
+{% block scripts_specifics %}{% endblock %}
+{% block addons %}{# ======== ADDONS ======== #}
+{% if settings.develop === false %}{% include "partials/addons/_instant_page_.njk" %}{% endif %}
+{% include "partials/addons/_annotations_analytics_.njk" %}
+</div>
+{% endblock %}
+</body>
+</html>

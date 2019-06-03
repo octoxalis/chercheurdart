@@ -1,0 +1,9 @@
+<form id="ca_form_is_search_history" class="ca_form_inputbox">
+  <label id="ca_form_is_search_previous" class="ca_form_inputbox_label">Aller à la recherche</label>
+  <label id="ca_form_is_search_previous" class="ca_form_optbox_label">Précédente</label>
+  <label id="ca_form_is_search_next" class="ca_form_optbox_label">Suivante</label>
+
+  <label id="ca_form_is_search_reset" class="ca_form_inputbox_label">Effacer la recherche</label>
+  <!--<span id="" class="ca_input_text_dry"></span>-->
+  </div>
+</form>

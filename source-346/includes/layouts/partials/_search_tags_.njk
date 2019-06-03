@@ -1,0 +1,15 @@
+<form id="ca_form_is_search_tagSet" class="ca_form_optbox">
+{% for item in settings.search.titles %}
+  {% set checked = '' %}
+  {% if loop.index0 === 0 %}
+  {% set checked = 'checked' %}
+  {% endif %}
+  <label for="ca_form_radiobox_{{loop.index0}}_is_search_tags"
+    class="ca_form_optbox_label"
+    data-index="{{loop.index0}}">
+    <input type="radio" name="radio_is_search_tags" value="{{loop.index0}}"
+      id="ca_form_radiobox_{{loop.index0}}_is_search_tags" class="ca_form_optbox_input" {{checked}}>
+    <span class="ca_form_optbox_label_title">{{item}}</span>
+  </label>
+{% endfor %}
+</form>

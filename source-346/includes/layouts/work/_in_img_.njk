@@ -1,0 +1,8 @@
+<div class="ca_gallery_imgs_list">
+  {% set work = works[ id ] %}
+  {% set artist = artists[ work.artist ] %}
+  {% for src in work.sources %}
+    {% set @srcType = work.srcType %}
+    {% include "work/_img_legend_.njk" %}
+  {% endfor %}
+</div>

@@ -646,7 +646,23 @@ var CA_media_userImgUrl_s = 'USER_URL'
   <dl class="ca_dialog_area"><!-- id="ca_status_dialog_area"-->
     <dt id="ca_dialog_header_is_status"  class="ca_dialog_header">status</dt>
     <dd id="ca_dialog_content_is_status" class="ca_dialog_content">
-      
+      <form id="ca_form_is_annotations" class="ca_form_inputbox">
+  <label for="ca_form_checkbox_is_annotations"
+    id="ca_form_label_is_annotations"
+    class="ca_form_optbox_label" title="Activer les annotations">
+    <input type="checkbox" value="0"
+      id="ca_form_checkbox_is_annotations"
+      class="ca_form_optbox_input"
+      onclick="if (this.value === '0' ) Annotations.setup();this.value='1' ">
+    <span class="ca_form_optbox_label_title">Annotations
+      <a href="https://web.hypothes.is" target="_blank" rel="noreferrer" class="ca_nodeco">
+        <img id="ca_form_img_is_annotations" src="https://www.chercheurd.art/static/media/images/hypothesis_small.png"
+             alt="Hypothesis logo">
+      </a>
+    </span>
+  </label>
+</form>
+
 
     </dd>
   </dl>
@@ -900,7 +916,28 @@ var CA_media_userImgUrl_s = 'USER_URL'
 
 <script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn"></script>
 
+<script type="application/json" class="js-hypothesis-config">
+  {
+    "openSidebar": false,
+    "showHighlights": "whenSidebarOpen",
+    "enableExperimentalNewNoteButton": true,
+    "theme": "clean"
+  }
+</script>
+
 <script>
+
+const Annotations =
+{
+  isOn:     false,
+  setup: ( ) =>
+  {
+    if ( this.isOn ) return
+    //xx document.getElementById( 'ca_enable_annotations_label' ).classList.toggle( 'ca_inputAnnotation' )
+    loadJS( "https://hypothes.is/embed.js" )
+    this.isOn = true
+  }
+}
 
 
 //: blocking!!!

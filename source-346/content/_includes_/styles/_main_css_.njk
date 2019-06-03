@@ -1,0 +1,40 @@
+---js
+{
+  permalink: `static/styles/index.min.css`,
+}
+---
+{% set css %}
+{% include "static/styles/root_units.css" %}
+{% include "static/styles/root_grid.css" %}
+{% include "static/styles/root_dimensions.css" %}
+{% include "static/styles/root_fonts.css" %}
+{#% include "static/styles/root_space.css" %#}
+{% include "static/styles/root_layout.css" %}
+{% include "static/styles/root_cursor.css" %}
+{% include "static/styles/root_borderbox.css" %}
+{% include "static/styles/root_animation.css" %}
+{% include "static/styles/screen.css" %}
+{% include "static/styles/colors.css" %}
+{% include "static/styles/html-remedy.css" %}
+{% include "static/styles/html.css" %}
+{% include "static/styles/svg.css" %}
+{% include "static/styles/gradients.css" %}
+{% include "static/styles/palette.css" %}
+{% include "static/styles/layout.css" %}
+{% include "static/styles/area_sections.css" %}
+{% include "static/styles/areas.css" %}
+{% include "static/styles/home.css" %}
+{#% include "static/styles/img_bg.css" %#}
+{% include "static/styles/folder.css" %}
+{% include "static/styles/text_list.css" %}
+{% include "static/styles/text_item.css" %}
+{% include "static/styles/img_list.css" %}
+{% include "static/styles/gallery.css" %}
+{% include "static/styles/search.css" %}
+{% include "static/styles/form.css" %}
+{% include "static/styles/dialog.css" %}
+{% include "static/styles/url_entries.css" %}
+{% include "static/styles/scrollbar.css" %}
+{% include "static/styles/user.css" %}
+{% endset %}
+{{ css | cssmin | safe }}

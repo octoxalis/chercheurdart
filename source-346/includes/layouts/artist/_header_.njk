@@ -1,0 +1,8 @@
+{# @id, @author, @date #}
+{% set artist = artists[ @id ] %}
+<ul class="ca_post_header">
+  <li class="ca_post_title">{{ artist.forename }} {{ artist.name }}{% if artist.nickname %}, {{ artist.nickname }}{% endif %}</li>
+  <li class="ca_post_signature">{{ @date }}</li>
+  <li class="ca_post_subtitle">{{ artist.birthdate }}, {{ artist.birthplace }} - {{ artist.deathdate }}, {{ artist.deathplace }}</li>
+  {% include "partials/_post_signature_.njk" %}
+ </ul>

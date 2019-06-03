@@ -1,0 +1,189 @@
+:root
+{
+  --DIALOG_DIM: 32px;
+  /* BUGGY --DIALOG_BACKDROP: hsla( var(--COLOR_HUE), 0%, 15%, 0.75 ); */
+}
+
+.ca_dialog
+{
+  padding: 0;
+  background-image: var(--GRADIENT_TTTLE_MEDIUM);
+  color: var(--COLOR_LIGHT);
+}
+.ca_dialog[open]
+{
+  animation: dialog_enter 0.25s ease-out;
+}
+@keyframes dialog_enter
+{
+  0%
+  {
+    opacity: 0;
+    transform: scale( 0.1 );
+  }
+  
+  100%
+  {
+    opacity: 1;
+    transform: scale( 1 );
+  }
+}
+.ca_dialog::backdrop
+{
+  background-color: hsla( 218, 20%, 20%, 0.9 ); /* BUGGY: var(--DIALOG_BACKDROP); */
+}
+
+.ca_dialog_close
+{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: var(--DIALOG_DIM);
+  left: calc( var(--DIALOG_DIM) + 4px );
+  text-align: right;
+}
+
+.ca_dialog_close_icon,
+.ca_dialog_open_icon
+{
+  margin: 0;
+  padding: 0;
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: square;
+  stroke-linejoin: arcs;
+}
+.ca_dialog_close:hover .ca_dialog_close_icon
+{
+  stroke: var(--COLOR_MAXLIGHT);
+  transition: all 0.3s ease-in-out;
+}
+
+.ca_dialog_open_icon
+{
+  stroke: var(--COLOR_MEDIUM);
+  opacity: 0.25;
+}
+.ca_dialog_close_icon
+{
+  stroke: var(--COLOR_MEDIUM);
+}
+.ca_dialog_open_icon:hover,
+.ca_dialog_close:hover .ca_dialog_close_icon
+{
+  stroke: var(--COLOR_MAXLIGHT);
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.ca_dialog_option_list
+{
+  width: 100%;
+  height: var(--DIALOG_DIM);
+  margin: 0;
+  padding: 4px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  align-content: center;
+  color: inherit;
+  background-image: var(--GRADIENT_TTTLE_MEDIUM);
+  cursor: pointer;
+}
+
+.ca_dialog_option
+{
+  flex-grow: 1;
+  text-align: center;
+  transform: scale( 0.9 );
+}
+
+.ca_dialog_option:hover
+{
+  background-color: var(--COLOR_DARK);
+  transform: scale( 1 );
+  transition: all 0.3s ease;
+}
+
+.ca_dialog_option_hidden
+{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ca_dialog_area
+{
+  position: relative;
+  top: calc( var(--DIALOG_DIM) * -1 );
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.ca_dialog_header
+{
+  padding: 4px 16px;
+  color: inherit;
+  background-image: var(--GRADIENT_TTTLE_MEDIUM);
+  font-family: var(--FONT_TITLE);
+  font-weight: var(--FONT_WEIGHT_MEDIUM);
+  font-size:   var(--FONT_SIZE_MEDIUM_L);
+  text-transform: uppercase;
+}
+
+.ca_dialog_content
+{
+  position: relative;
+  font-family: var(--FONT_BODY);
+  font-weight: var(--FONT_WEIGHT_MEDIUM);
+}
+
+.ca_dialog_content mark
+{
+  padding: 0 8px;
+  background-color: var(--COLOR_LIGHT_TRANSPARENT);
+  font-size: calc( var(--FONT_SIZE_MEDIUM_L) * 0.8 );
+}
+
+/* ============== CUSTOM DIALOGS ================*/
+/*
+#ca_dialog_is_note
+{
+}
+
+#ca_dialog_is_status
+{
+}
+*/
+/*
+#ca_dialog_is_search
+{
+}
+
+#ca_dialog_is_user_file
+{
+}
+*/
+/* ??????????
+.ca_status_dialog_selector
+{
+  --selector-dim: 48px;
+  
+  position: fixed;
+  z-index: var(--AREA_SELECTOR_Z);
+  top:   0;
+  right: 0;
+  width:  var(--selector-dim);
+  height: var(--selector-dim);
+  background-color: transparent;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.ca_status_dialog_selector:hover
+{
+  box-shadow: 1vh 1vh 30vh 5vh var(--COLOR_NEUTRAL_MAXLIGHT);
+  cursor: pointer;
+  opacity: 1;
+}
+*/

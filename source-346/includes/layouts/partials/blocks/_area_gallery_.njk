@@ -1,0 +1,24 @@
+{# @inimgDir, @active, @checked (optional) #}
+{#% block gallery %#}
+{% if active === 'gallery' %}{% set @active = ' ca_area_active' %}{% endif %}
+<section id="ca_area_section_gallery" class="ca_area_region">
+  <input id="ca_select_area_gallery" class="ca_area_switcher" value="ca_select_area_gallery" name="area" type="radio">
+  <div id="ca_area_gallery" class="ca_area_gallery ca_area{{@active}}">
+    <label for="ca_select_area_gallery" class="ca_area_selector" onclick="AreaSwitch( this.getAttribute( 'for') )">
+      {% include "static/icons/menu.svg" %}
+    </label>
+    {% if isUserCollection %}
+    <label class="ca_select_context" onclick="contextDialog( 'user_file' )"
+    title="Ajouter une image à la collection">
+      {% include "static/icons/upload.svg" %}
+    </label>
+    {% endif %}
+    <label class="ca_toggle_text_img" onclick="AreaSwap( 'gallery', 'text' )"
+           title="Lire le texte">
+      {% include "static/icons/text.svg" %}
+    </label>
+    {% include @inimgDir + "/_in_image_.njk" %}
+  </div>
+</section>
+
+{#% endblock %#}

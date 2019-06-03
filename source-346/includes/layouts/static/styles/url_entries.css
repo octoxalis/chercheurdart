@@ -1,0 +1,46 @@
+.ca_url_entries_list
+{
+}
+
+.ca_urlentry
+{
+}
+
+.ca_urlentry > dl
+{
+  padding: 2px 0;
+  margin: 0 2rem 2rem 2rem;
+  break-inside: avoid;
+}
+
+.ca_urlentry > dl > dt  /* url entry link */
+{
+  font-weight: var(--FONT_WEIGHT_HEAVY);
+}
+
+.ca_urlentry > dl > dd  /* url entry abstract || date */
+{
+  padding-left: 4px;
+  border-left: 1px solid var(--COLOR_MEDIUM_LIGHT);
+}
+
+.ca_urlentry > dl > dd:first-of-type  /* url entry data + author */
+{
+  border-bottom: 1px solid var(--COLOR_MEDIUM_LIGHT);
+}
+
+.ca_urlentry > dl > dd > em  /* url entry author */
+{
+  font-style: normal;
+  text-transform: capitalize;
+}
+.ca_urlentry > dl > dd > em:before  /* url entry author */
+{
+  content: '⚪';
+  padding: 0 16px;
+}
+
+.ca_urlentry_mark
+{
+  background-color: var(--COLOR_LIGHT_TRANSPARENT);
+}

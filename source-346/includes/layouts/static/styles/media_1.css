@@ -1,0 +1,41 @@
+:root
+{
+  --M1_CONTROL_DIM: calc( 1rem + 108px );  /* 54px * 2 */
+  --M1_CONTROL_SCALE: 0.4;
+  --M1_CONTROL_OPACITY: 0.4;
+  --M1_CURSOR: 'auto';    /* var(--CURSOR_PLAY); */
+}
+
+.ca_media_1_control
+{
+  position: relative;
+  z-index: calc( var(--AREA_ACTIVE_Z) + 1 );
+  top:  0;
+  left: calc( 100vw - var(--M1_CONTROL_DIM) );
+  width: var(--M1_CONTROL_DIM);
+  border: 0.5rem solid hsla( var(--COLOR_HUE), var(--COLOR_SATUR_DEEP), 45%, 1);
+  cursor: pointer;
+  opacity: var(--M1_CONTROL_OPACITY);
+  transform-origin: top right;
+  transform: scale( var(--M1_CONTROL_SCALE) );
+  transition: all 0.4s ease;
+}
+.ca_media_1_control:hover
+{
+  background-color: var(--COLOR_DEEP_DARK);
+  opacity: 1;
+  transform: scale( 1 );
+  transition: all 0.4s ease;
+}
+
+#ca_media_1_control_pad
+{
+  display: grid;
+  grid-template-columns: repeat( 2, minmax(52px, calc(var(--M1_CONTROL_DIM) * 0.44)));
+  grid-gap: 3px;
+}
+
+#ca_media_1_processor_anim
+{
+  cursor: var(--M1_CURSOR);
+}

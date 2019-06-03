@@ -1,0 +1,8 @@
+{# @foldTitle, @is_open #}
+
+<div class="ca_fold_content">
+  {% if @foldTitle %}
+  <h3 class="ca_folder{{@listfolder}}" onclick="DOMOpenFolder( this );">{{ @foldTitle }}</h3>
+  {% endif %}
+  <div class="ca_fold_content_item {{ @is_open }}">
+    <div class="ca_fold_1col">

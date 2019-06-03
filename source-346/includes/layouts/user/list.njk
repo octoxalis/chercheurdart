@@ -1,0 +1,12 @@
+---js
+{
+pagination: {
+    data: 'collections.user',
+    size: 8,
+    alias: 'posts',
+  },
+permalink: 'user/list_{{ pagination.pageNumber }}.html'
+}
+---
+{% set @foldTitle = 'Répertoire de votre collection' %}
+{% include "post/_post_list_.njk" %}

@@ -1,0 +1,115 @@
+:root
+{
+  --M4_SELECTOR_OPACITY: 0.5;
+  --M4_SELECTOR_SCALE: 0.1;
+}
+
+.ca_media_4_selector_hue
+{
+  position: relative;
+  height: var(--VIEW_FULL_HEIGHT);
+  width:  var(--VIEW_FULL_WIDTH);
+  background-color: var(--COLOR_MAXLIGHT_TRANSPARENT);
+}
+
+.ca_media_4_centering,
+.ca_media_4_processor_satur,
+.ca_media_4_processor_lumen
+{
+  cursor: pointer;
+  opacity: var(--M4_SELECTOR_OPACITY);
+  transform-origin: top right;
+  transform: scale( var(--M4_SELECTOR_SCALE) );
+  transition: all 0.5s ease;
+}
+.ca_media_4_centering:hover,
+.ca_media_4_processor_satur:hover,
+.ca_media_4_processor_lumen:hover
+{
+  opacity: 1;
+  transform: scale( 1 );
+  transition: all 0.5s ease;
+}
+
+.ca_media_4_centering
+{
+  position: absolute;
+  top:   0;
+  right: 0;
+  width:  100vmin;
+  height: 100vmin;
+}
+.ca_media_4_centering:hover
+{
+}
+
+.ca_media_4_processor_satur,
+.ca_media_4_processor_lumen
+{
+  position: absolute;
+  width:  90vmin;
+  height: 90vmin;
+}
+.ca_media_4_processor_satur
+{
+  top:   0;
+  right: 10vmin;
+}
+
+.ca_media_4_processor_lumen
+{
+  top:   10vmin;
+  right: 0;
+}
+
+.ca_media_4_processor_trace
+{
+  display: grid;
+  grid-template-columns: [ca_media_4_processor_trace_H] 1ch [ca_media_4_processor_trace_H_v] 3ch
+                         [ca_media_4_processor_trace_P] 1ch [ca_media_4_processor_trace_P_v] 3ch;
+
+  grid-gap: 1ch;
+  justify-content: left;
+  align-items: end;
+	position: fixed;
+	right:  0;
+  bottom: 0;
+  width:  14ch;
+  height: calc( 3ch + 1rem );
+  padding: var(--PAD_2);
+  background-color: transparent;
+  color: var(--COLOR_SECOND_MAXLIGHT);
+  border: 1px solid hsla( var(--COLOR_HUE), var(--COLOR_SATUR_DEEP), 95%, 1 );
+  font-family: var(--FONT_NUMBER);
+  font-size: var(--FONT_SIZE_LARGE);
+  font-weight: var(--FONT_WEIGHT_HEAVY);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.ca_color_trace_show.ca_media_4_processor_trace
+{
+  opacity: 0.7;
+}
+
+#ca_media_4_processor_trace_H,
+#ca_media_4_processor_trace_P
+{
+  color: var(--COLOR_SECOND_MEDIUM_LIGHT);
+}
+#ca_media_4_processor_trace_H
+{
+  grid-column: ca_media_4_processor_trace_H;
+}
+#ca_media_4_processor_trace_P
+{
+  grid-column: ca_media_4_processor_trace_P;
+}
+#ca_media_4_processor_trace_H_v
+{
+  grid-column: ca_media_4_processor_trace_H_v;
+}
+#ca_media_4_processor_trace_P_v
+{
+  grid-column: ca_media_4_processor_trace_P_v;
+}
