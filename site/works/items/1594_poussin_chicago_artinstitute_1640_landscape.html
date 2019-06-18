@@ -16,10 +16,10 @@
 
 <style id="ca_fonts_latin">
 
-@font-face{font-display:swap;font-family:Antic;font-style:normal;font-weight:400;src:local('Antic Regular'),local('Antic-Regular'),url(https://www.chercheurd.art/static/fonts/antic-v10-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:Philosopher;font-style:normal;font-weight:400;src:local('Philosopher Regular'),local('Philosopher-Regular'),url(https://www.chercheurd.art/static/fonts/Philosopher-Regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:'Titillium Web';font-style:normal;font-weight:400;src:local('Titillium Web Regular'),local('TitilliumWeb-Regular'),url(https://www.chercheurd.art/static/fonts/titillium-web-v7-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('RenoMono-Regular'),local('RenoMono-Regular'),url(https://www.chercheurd.art/static/fonts/RenoMono.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('Josefin Slab Regular'),local('JosefinSlab-Regular'),url(https://www.chercheurd.art/static/fonts/josefin-slab-v9-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Harmattan;font-style:normal;font-weight:400;src:local('Harmattan'),local('Harmattan-Regular'),url(https://www.chercheurd.art/static/fonts/harmattan-v5-latin-regular.woff2) format('woff2')}@font-face{font-family:Athiti;font-style:normal;font-weight:400;src:local('Athiti'),local('Athiti-Regular'),url(https://www.chercheurd.art/static/fonts/athiti-v3-latin-regular.woff2) format('woff2')}@font-face{font-display:swap;font-family:'Titillium Web';font-style:normal;font-weight:400;src:local('Titillium Web Regular'),local('TitilliumWeb-Regular'),url(https://www.chercheurd.art/static/fonts/titillium-web-v7-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('RenoMono-Regular'),local('RenoMono-Regular'),url(https://www.chercheurd.art/static/fonts/RenoMono.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('Josefin Slab Regular'),local('JosefinSlab-Regular'),url(https://www.chercheurd.art/static/fonts/josefin-slab-v9-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 </style>
 
-<link rel="stylesheet" href="https://www.chercheurd.art/static/styles/index.min.css" />
+<link id="ca_index_style" rel="stylesheet" href="https://www.chercheurd.art/static/styles/index.min.css" />
 
 <link rel="stylesheet" href="https://www.chercheurd.art/static/styles/media.min.css" />
 
@@ -27,8 +27,6 @@
 const SITE_ROOT_URL='https://www.chercheurd.art/'
 var CA_media_userImgUrl_s = 'USER_URL'
 </script>
-
-<script src="https://www.chercheurd.art/static/scripts/script_load.min.js"></script>
 
 
 </head>
@@ -287,6 +285,14 @@ var CA_media_userImgUrl_s = 'USER_URL'
         </div>
       </div>
     </div>
+    <label class="ca_select_context" onclick="statusDialog()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  id="ca_svg_icon_elipsis-v" class="ca_svg_icon">
+<circle class="ca_svg_elipsis_icon_1" cx="12" cy="12" r="1"></circle>
+<circle class="ca_svg_elipsis_icon_2" cx="12" cy="5"  r="1"></circle>
+<circle class="ca_svg_elipsis_icon_3" cx="12" cy="19" r="1"></circle>
+</svg>
+    </label>
   </nav>
 </section>
   
@@ -324,14 +330,6 @@ var CA_media_userImgUrl_s = 'USER_URL'
 </svg>
 
     </label>
-    <label class="ca_select_context" onclick="statusDialog(  )">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-  id="ca_svg_icon_elipsis-v" class="ca_svg_icon">
-<circle class="ca_svg_elipsis_icon_1" cx="12" cy="12" r="1"></circle>
-<circle class="ca_svg_elipsis_icon_2" cx="12" cy="5"  r="1"></circle>
-<circle class="ca_svg_elipsis_icon_3" cx="12" cy="19" r="1"></circle>
-</svg>
-    </label>
     
     <label class="ca_toggle_text_img" onclick="AreaSwap( 'text', 'gallery' )"
            title="Voir les images">
@@ -356,13 +354,16 @@ var CA_media_userImgUrl_s = 'USER_URL'
 
 
   <li class="ca_post_title">Nicolas Poussin</li>
-  <li class="ca_post_signature">27 janvier 2019</li>
-  <li class="ca_post_subtitle">Landscape with Saint John on Patmos -1640-</li>
+  <li class="ca_post_subtitle">Landscape with Saint John on Patmos <small>⚪</small> 1640</li>
+  <li class="ca_post_subtitle ca_post_subtitle_small">Art Institute Museum <small>⚪</small> Chicago, U.S.A.</li>
   
 
-<li class="ca_post_signature"><address onclick="mailtoDialog__s( '{ @author }}' )">A. Dupin</address></li>
+<ul class="ca_post_author_date">
+  <li><address onclick="mailtoDialog__s( '{ @author }}' )">A. Dupin</address></li>
+  <li>27 janvier 2019</li>
+</ul>
 
-  <li class="ca_post_subtitle">Art Institute Museum - Chicago, U.S.A.</li>
+
 
 </ul>
 
@@ -372,40 +373,41 @@ var CA_media_userImgUrl_s = 'USER_URL'
 <div id="ca_folder_opener"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
 id="ca_svg_icon_ctrl_text" class="ca_svg_icon" title="Déplier-Replier"
 onclick="DOMOpenFolderAll()">
-<line x1="6" y1="8"  x2="48" y2="8"  />
-<line x1="6" y1="20" x2="58" y2="20" />
-<line x1="6" y1="32" x2="30" y2="32" />
-<line x1="6" y1="44" x2="40" y2="44" />
-<line x1="6" y1="56" x2="58" y2="56" />
+<line x1="4" y1="8"  x2="60" y2="8"  />
+<line x1="4" y1="20" x2="32" y2="20" />
+<line x1="4" y1="32" x2="12" y2="32" />
+<line x1="4" y1="44" x2="32" y2="44" />
+<line x1="4" y1="56" x2="60" y2="56" />
 </svg>
 </div>
 <div id="ca_fold_1" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Paysage Idéal</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Paysage Idéal</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<p class="ca_txt">Oeuvre clé du début de la maturité artistique de Poussin, cette toile, à laquelle fait pendant le <em>Paysage avec Saint Mathieu et l’Ange</em> (Gemäldegalerie, Berlin), fut peinte en 1640 pour l’échanson du francophile pape Urbain VIII, <a id="ca_from_note_1" href="#ca_to_note_1" aria-describedby="ca_note_label">Gian Maria Roscioli</a>. Peu de temps après l’achèvement de la commande, Poussin quitte Rome pour accepter l’invitation du roi Louis XIII à venir décorer la grande “Galerie du bord de l’eau” du Louvre, construite vingt ans auparavant. Séjour de deux courtes années, puisque Poussin renoncera rapidement au projet de <a id="ca_from_note_2" href="#ca_to_note_2" aria-describedby="ca_note_label">décor de la voute</a> afin de retrouver, loin du Palais, la quiétude de son chevalet romain.</p>
-<p>L’ouverture maximale de l’espace paysagé s’appuie sur une construction symétrique où les lois de la perspective réintroduites par un ouvrage de Girard Desargues (1636)imposent leur règle. L’<a id="ca_from_note_3" href="#ca_to_note_3" aria-describedby="ca_note_label">évangéliste</a> placé au centre et figuré dans des proportions réduites, en s’immergeant dans la nature omniprésente, retrouve avec une ampleur démultipliée le grand style du paysage idéalisé instauré par Annibale Carracci et son élève <a id="ca_from_note_4" href="#ca_to_note_4" aria-describedby="ca_note_label">Domenichino</a> au détour du Seicento. Plus qu’un retour sur l’art bolonais qu’il possédait à fond, Poussin trouve ici un élan qui le pousse dans une dimension nouvelle de son art, peut être, aussi, sous l’aiguillon de son alter-ego lorrain, Claude Gelée, qui, au même moment, avance toujours plus loin dans sa vision onirique des vastes horizons romains.</p>
+<p class="ca_txt">Oeuvre clé du début de la maturité artistique de Poussin, cette toile, à laquelle fait pendant le <em>Paysage avec Saint Mathieu et l’Ange</em> (Gemäldegalerie, Berlin), fut peinte en 1640 pour l’échanson du francophile pape Urbain VIII, Gian Maria Roscioli
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Le collectionneur, malheureusement, ne se “délecta” de ce chef-d’œuvre que quelques courtes années, puisqu’il mourut en 1644.
+</span></ins>
+. Peu de temps après l’achèvement de la commande, Poussin quitte Rome après avoir accepté l’invitation du roi Louis XIII et venir décorer la grande “Galerie du bord de l’eau” du Louvre, construite vingt ans auparavant. Séjour de deux courtes années, puisque Poussin renoncera rapidement au projet de décor de la voute
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Le décor d’Hercule qu’il avait peint sera détruit au XVIIIème siècle!
+</span></ins>
+afin de retrouver, loin du Palais, la quiétude de son chevalet romain.</p>
+<p>L’ouverture maximale de l’espace paysagé s’appuie sur une construction symétrique où les lois de la perspective réintroduites par un ouvrage de Girard Desargues (1636) imposent leur règle. L’évangéliste
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Dans une attitude quelque peu anti-naturelle, il faut bien le dire, et beaucoup plus âgé qu’il ne devrait l’être.
+</span></ins>
+placé au centre et figuré dans des proportions réduites, en s’immergeant dans la nature omniprésente, retrouve avec une ampleur démultipliée le grand style du paysage idéal instauré par Annibale Carracci et son élève Domenichino
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+À preuve, le magistral “Paesaggio con san Girolamo” conservé à Glasgow (Art Gallery and Museum).
+</span></ins>
+au détour du Seicento. Plus qu’un retour à l’art bolonais, qu’il possédait à fond, Poussin trouve ici un élan qui le pousse vers une dimension nouvelle de son inventivité; peut être, aussi, sous l’aiguillon de son alter-ego lorrain, Claude Gelée, qui, au même moment, déploie sa vision onirique des vastes horizons romains.</p>
 </div>
 </div></div>
 <div id="ca_fold_201" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">NOTES | VERSIONS</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>VERSIONS</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<footer><h2 class="visually-hidden" id="ca_footnote_label">notes</h2><ol>
-<li id="ca_to_note_1"><p class="ca_footnote">
-<p>Le collectionneur, malheureusement, ne se “délecta” de ce chef-d’œuvre que quelques courtes années, puisqu’il mourut en 1644.</p>
-</p><a href="#ca_from_note_1" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_2"><p class="ca_footnote">
-Dans une attitude quelque peu anti-naturelle, il faut bien le dire, et beaucoup plus âgé qu'il ne devrait l'être.
-</p><a href="#ca_from_note_2" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_3"><p class="ca_footnote">
-Le décor d'Hercule qui l'ornait sera détruit au XVIIIème siècle!
-</p><a href="#ca_from_note_3" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_4"><p class="ca_footnote">
-À preuve, le magistral "Paesaggio con san Girolamo" conservé à Glasgow (Art Gallery and Museum).
-</p><a href="#ca_from_note_4" aria-label="ca_back_to_text"></a></li>
-</ol></footer>
-<h3 class="ca_version_title">Versions</h3>
 <ol class="ca_version_list">
 <li class="ca_version_entry"><strong>28 janvier 2019</strong><br>
 Version initiale</li>
@@ -481,7 +483,7 @@ Version initiale</li>
   
   <ul class="ca_list_imgs_legend">
     <li class="ca_list_imgs_legend_title">
-      <a href="https://www.chercheurd.art/works/items/1594_poussin_chicago_artinstitute_1640_landscape.html" class="ca_nodeco">Landscape with Saint John on Patmos -1640-</a>
+      <a href="https://www.chercheurd.art/works/items/1594_poussin_chicago_artinstitute_1640_landscape.html" class="ca_nodeco">Landscape with Saint John on Patmos</a>
     </li>
     <li class="ca_list_imgs_legend_author">
       <a href="https://www.chercheurd.art/artists/items/1594_poussin.html" class="ca_nodeco">Nicolas Poussin</a>
@@ -1016,50 +1018,61 @@ Version initiale</li>
 
     </label>
   
-    <ul class="ca_duo_banner_header">
-      <li class="ca_banner_title_duo">Recherche</li>
-      <li class="ca_post_subtitle">
+    <div class="ca_post_header">
       <form id="ca_form_is_search" class="ca_form_inputbox">
-  <label id="ca_form_is_search_submit" class="ca_form_inputbox_label_button">Rechercher</label>
-  <input id="ca_form_input_search_needle" class="ca_form_inputbox_input_text" type="text" placeholder=" Mots recherchés...">
-  <label id="ca_form_is_search_tags" class="ca_form_inputbox_label_button">
-    <span id="ca_form_input_search_tag" class="ca_form_inputbox_input_text">NON SPÉCIFIÉ</span>
-  </label>
-  <div id="ca_form_is_search_history" class="ca_form_optbox_icons">
-    <span id="ca_form_is_search_previous"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  <div id="ca_form_is_search_history">
+    <label id="ca_form_is_search_title" class="ca_post_title">Recherche</label>
+    <div id="ca_form_is_search_actions">
+      <span id="ca_form_is_search_exec"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_svg_icon">
+  <circle cx="11" cy="11" r="8"></circle>
+  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+</svg>
+</span>
+      <span id="ca_form_is_search_previous"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_svg_icon">
   <circle cx="12" cy="12" r="10"/>
   <path d="M12 8l-4 4 4 4M16 12H9"/>
 </svg>
 </span>
-    <span id="ca_form_is_search_reset"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-  class="ca_svg_icon">
-  <path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/>
-</svg>
-</span>
-    <span id="ca_form_is_search_next"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+      <span id="ca_form_is_search_next"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_svg_icon">
   <circle cx="12" cy="12" r="10"/>
   <path d="M12 8l4 4-4 4M8 12h7"/>
 </svg>
 </span>
+      <span id="ca_form_is_search_reset"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_svg_icon">
+  <path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/>
+</svg>
+</span>
+    </div>
+  </div>
+  <div id="ca_form_is_search_input">
+    <input id="ca_form_is_search_needle" class="ca_form_inputbox_input_text" type="text" placeholder=" Mots recherchés...">
+    <label id="ca_form_is_search_tag" class="ca_form_inputbox_label_button">
+      <span id="ca_form_is_search_tag_input" class="ca_form_inputbox_input_text">NON SPÉCIFIÉ</span>
+    </label>
   </div>
 </form>
 
-      </li>
-    </ul>
+    </div>
   
-    <div class="ca_fold_content">
-      <h3 class="ca_folder" onclick="DOMOpenFolder( this )">Résultat</h3>
-      <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
-        <div class="ca_fold_xcols_norule">
-          <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
+    <div class="ca_folder_container">
+      <div id="ca_folder_container_inner">
+        <div class="ca_fold_content">
+          <h3 class="ca_folder" onclick="DOMOpenFolder( this )"><span>Résultat</span></h3>
+          <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
+            <div class="ca_fold_xcols_norule">
+              <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  
   </div>
 </section>
+
 
   </main>
   <aside>
@@ -1135,6 +1148,17 @@ Version initiale</li>
   </label>
 </form>
 
+<form id="ca_form_is_guide" class="ca_form_inputbox">
+  <label for="ca_form_checkbox_is_guide"
+    id="ca_form_label_is_guide"
+    class="ca_form_optbox_label" title="Suivre le Guide">
+    <input type="checkbox" value="0"
+      id="ca_form_checkbox_is_guide"
+      class="ca_form_optbox_input"
+      onclick="if (this.value === '0' ) Guide.setup();this.value='1' ">
+    <span class="ca_form_optbox_label_title">Guide</span>
+  </label>
+</form>
 
     </dd>
   </dl>
@@ -1406,7 +1430,7 @@ M1_anim_o.composite = 'replace'
 
 <script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn"></script>
 
-<script type="application/json" class="js-hypothesis-config">
+<script id="ca_hypothesis_settings" type="application/json" class="js-hypothesis-config">
   {
     "openSidebar": false,
     "showHighlights": "whenSidebarOpen",
@@ -1414,25 +1438,31 @@ M1_anim_o.composite = 'replace'
     "theme": "clean"
   }
 </script>
-
-<script>
-
-const Annotations =
-{
-  isOn:     false,
-  setup: ( ) =>
+<script id="ca_annotations_setup">
+  const Annotations =
   {
-    if ( this.isOn ) return
-    //xx document.getElementById( 'ca_enable_annotations_label' ).classList.toggle( 'ca_inputAnnotation' )
-    loadJS( "https://hypothes.is/embed.js" )
-    this.isOn = true
+    isOn: false,
+    setup: ( ) =>
+    {
+      if ( this.isOn ) return
+      DOMloadAsset( 'https://hypothes.is/embed.js', 'ca_annotations_setup' )
+      this.isOn = true
+    }
   }
-}
+</script>
 
-
-//: blocking!!!
-//window.onload = () => { loadJS( "https://plausible.io/js/plausible.js" ) }
-
+<script id="ca_guide_setup">
+  const Guide =
+  {
+    isOn: false,
+    setup: ( ) =>
+    {
+      if ( this.isOn ) return
+      DOMloadAsset( 'https://www.chercheurd.art/static/styles/driver.min.css', 'ca_index_style' )
+      DOMloadAsset( 'https://www.chercheurd.art/static/scripts/driver.min.js', 'ca_guide_setup' )
+      this.isOn = true
+    }
+  }
 </script>
 
 </div>

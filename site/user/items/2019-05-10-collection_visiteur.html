@@ -16,18 +16,16 @@
 
 <style id="ca_fonts_latin">
 
-@font-face{font-display:swap;font-family:Antic;font-style:normal;font-weight:400;src:local('Antic Regular'),local('Antic-Regular'),url(https://www.chercheurd.art/static/fonts/antic-v10-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:Philosopher;font-style:normal;font-weight:400;src:local('Philosopher Regular'),local('Philosopher-Regular'),url(https://www.chercheurd.art/static/fonts/Philosopher-Regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:'Titillium Web';font-style:normal;font-weight:400;src:local('Titillium Web Regular'),local('TitilliumWeb-Regular'),url(https://www.chercheurd.art/static/fonts/titillium-web-v7-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('RenoMono-Regular'),local('RenoMono-Regular'),url(https://www.chercheurd.art/static/fonts/RenoMono.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('Josefin Slab Regular'),local('JosefinSlab-Regular'),url(https://www.chercheurd.art/static/fonts/josefin-slab-v9-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Harmattan;font-style:normal;font-weight:400;src:local('Harmattan'),local('Harmattan-Regular'),url(https://www.chercheurd.art/static/fonts/harmattan-v5-latin-regular.woff2) format('woff2')}@font-face{font-family:Athiti;font-style:normal;font-weight:400;src:local('Athiti'),local('Athiti-Regular'),url(https://www.chercheurd.art/static/fonts/athiti-v3-latin-regular.woff2) format('woff2')}@font-face{font-display:swap;font-family:'Titillium Web';font-style:normal;font-weight:400;src:local('Titillium Web Regular'),local('TitilliumWeb-Regular'),url(https://www.chercheurd.art/static/fonts/titillium-web-v7-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('RenoMono-Regular'),local('RenoMono-Regular'),url(https://www.chercheurd.art/static/fonts/RenoMono.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('Josefin Slab Regular'),local('JosefinSlab-Regular'),url(https://www.chercheurd.art/static/fonts/josefin-slab-v9-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 </style>
 
-<link rel="stylesheet" href="https://www.chercheurd.art/static/styles/index.min.css" />
+<link id="ca_index_style" rel="stylesheet" href="https://www.chercheurd.art/static/styles/index.min.css" />
 
 
 <script>
 const SITE_ROOT_URL='https://www.chercheurd.art/'
 var CA_media_userImgUrl_s = 'USER_URL'
 </script>
-
-<script src="https://www.chercheurd.art/static/scripts/script_load.min.js"></script>
 
 
 </head>
@@ -286,6 +284,14 @@ var CA_media_userImgUrl_s = 'USER_URL'
         </div>
       </div>
     </div>
+    <label class="ca_select_context" onclick="statusDialog()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  id="ca_svg_icon_elipsis-v" class="ca_svg_icon">
+<circle class="ca_svg_elipsis_icon_1" cx="12" cy="12" r="1"></circle>
+<circle class="ca_svg_elipsis_icon_2" cx="12" cy="5"  r="1"></circle>
+<circle class="ca_svg_elipsis_icon_3" cx="12" cy="19" r="1"></circle>
+</svg>
+    </label>
   </nav>
 </section>
   
@@ -321,14 +327,6 @@ var CA_media_userImgUrl_s = 'USER_URL'
 </svg>
 
     </label>
-    <label class="ca_select_context" onclick="statusDialog(  )">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-  id="ca_svg_icon_elipsis-v" class="ca_svg_icon">
-<circle class="ca_svg_elipsis_icon_1" cx="12" cy="12" r="1"></circle>
-<circle class="ca_svg_elipsis_icon_2" cx="12" cy="5"  r="1"></circle>
-<circle class="ca_svg_elipsis_icon_3" cx="12" cy="19" r="1"></circle>
-</svg>
-    </label>
     
     
 
@@ -337,11 +335,12 @@ var CA_media_userImgUrl_s = 'USER_URL'
 <ul class="ca_post_header">
   <li class="ca_post_title">Votre collection avec Chercheurd.art</li>
   
-  <li class="ca_post_signature">10 mai 2019</li>
-  <li class="ca_post_subtitle"></li>
   
 
-<li class="ca_post_signature"><address onclick="mailtoDialog__s( '{ @author }}' )">A. Dupin</address></li>
+<ul class="ca_post_author_date">
+  <li><address onclick="mailtoDialog__s( '{ @author }}' )">A. Dupin</address></li>
+  <li>10 mai 2019</li>
+</ul>
 
   
 </ul>
@@ -352,29 +351,45 @@ var CA_media_userImgUrl_s = 'USER_URL'
 <div id="ca_folder_opener"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
 id="ca_svg_icon_ctrl_text" class="ca_svg_icon" title="Déplier-Replier"
 onclick="DOMOpenFolderAll()">
-<line x1="6" y1="8"  x2="48" y2="8"  />
-<line x1="6" y1="20" x2="58" y2="20" />
-<line x1="6" y1="32" x2="30" y2="32" />
-<line x1="6" y1="44" x2="40" y2="44" />
-<line x1="6" y1="56" x2="58" y2="56" />
+<line x1="4" y1="8"  x2="60" y2="8"  />
+<line x1="4" y1="20" x2="32" y2="20" />
+<line x1="4" y1="32" x2="12" y2="32" />
+<line x1="4" y1="44" x2="32" y2="44" />
+<line x1="4" y1="56" x2="60" y2="56" />
 </svg>
 </div>
 <div id="ca_fold_1" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Constituez votre <mark data-tag="ORD">collection</mark></h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Constituez votre <mark data-tag="ORD">collection</mark></span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<p class="ca_txt">Vous pouvez constituer une <mark data-tag="ORD">collection</mark> d’<mark data-tag="ORD">images</mark> d’<mark data-tag="ORD">oeuvres</mark> de votre choix en sélectionnant parmi les <a id="ca_from_note_3" href="#ca_to_note_3" aria-describedby="ca_note_label">fichiers</a> stockés dans la <mark data-tag="WEB">mémoire de masse</mark> de votre <mark data-tag="WEB">ordinateur</mark>, ceux que vous souhaitez <mark data-tag="ORD">analyser</mark> avec les <mark data-tag="ORD">outils d’analyse</mark> du site Chercheurd.art. Les <mark data-tag="WEB">fichiers</mark> de ces images <q>de <mark data-tag="ORD">collection</mark></q> seront répertoriés dans la <a id="ca_from_note_1" href="#ca_to_note_1" aria-describedby="ca_note_label"><mark data-tag="WEB">base de donnée</mark> interne</a> de votre <mark data-tag="WEB">navigateur</mark>. Cette <mark data-tag="WEB">mémoire</mark> à des <a id="ca_from_note_2" href="#ca_to_note_2" aria-describedby="ca_note_label">limites</a> mais peut toutefois accueillir plusieurs centaines ou même milliers d’<mark data-tag="WEB">images haute-définition</mark>.</p>
+<p class="ca_txt">Vous pouvez constituer une <mark data-tag="ORD">collection</mark> d’<mark data-tag="ORD">images</mark> d’<mark data-tag="ORD">oeuvres</mark> de votre choix en sélectionnant parmi les fichiers
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Seuls les <mark data-tag="WEB">fichiers</mark> de type <mark data-tag="WEB">JPEG</mark> (ou <mark data-tag="WEB">JPG</mark>) sont acceptés.
+</span></ins>
+stockés dans la <mark data-tag="WEB">mémoire de masse</mark> de votre <mark data-tag="WEB">ordinateur</mark>, ceux que vous souhaitez <mark data-tag="ORD">analyser</mark> avec les <mark data-tag="ORD">outils d’analyse</mark> du site Chercheurd.art. Les <mark data-tag="WEB">fichiers</mark> de ces images <q>de <mark data-tag="ORD">collection</mark></q> seront répertoriés dans la <mark data-tag="WEB">base de donnée</mark> interne
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Pour les connaisseurs, il s’agit de la <mark data-tag="WEB">base</mark> <a href="https://fr.wikipedia.org/wiki/Indexed_Database_API" target="_blank" rel="noreferrer"><mark data-tag="WEB">indexedDB</mark></a>.
+</span></ins>
+de votre <mark data-tag="WEB">navigateur</mark>. Cette <mark data-tag="WEB">mémoire</mark> à des limites
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+La <mark data-tag="WEB">taille</mark> de cette <mark data-tag="WEB">base de données</mark> <a href="https://developer.mozilla.org/fr/docs/Web/API/API_IndexedDB/Browser_storage_limits_and_eviction_criteria" target="_blank" rel="noreferrer">varie</a> en fonction de la <mark data-tag="WEB">capacité de stockage</mark> de votre <mark data-tag="WEB">disque dur</mark> principal.
+</span></ins>
+mais peut toutefois accueillir plusieurs centaines ou même milliers d’<mark data-tag="WEB">images haute-définition</mark>.</p>
 <p class="ca_txt">Il est important de noter qu’aucune <mark data-tag="ORD">image</mark> n’est envoyée vers le <mark data-tag="WEB">serveur</mark> du site Chercheurd.art: toutes les <mark data-tag="WEB">opérations</mark> ne concernent que votre <mark data-tag="WEB">ordinateur</mark> et votre <mark data-tag="WEB">navigateur</mark> et donc aucun problème de <mark data-tag="ORD">confidentialité</mark> ou de <mark data-tag="ORD">sécurité</mark> n’est à redouter.</p>
 <p class="ca_txt"><strong>Le <mark data-tag="WEB">serveur</mark> du site n’a aucune connaissance des actions que vous commandez et n’enregistre aucune donnée</strong>. </p>
 <p class="ca_txt">En particulier, Chercheurd.art n’a aucune connaissance des notes que vous pouvez adjoindre aux <mark data-tag="ORD">images</mark> de vos <mark data-tag="ORD">galeries</mark>.</p>
-<p class="ca_txt">Par ailleurs, vous ne pouvez conserver dans votre <mark data-tag="ORD">collection</mark> que les <mark data-tag="ORD">images</mark> qui figurent dans la <mark data-tag="WEB">mémoire</mark> de votre ordinateur: il est totalement impossible d’intégrer des <mark data-tag="ORD">images</mark> stockées sur les <mark data-tag="WEB">serveurs</mark> de sites différents de <a id="ca_from_note_4" href="#ca_to_note_4" aria-describedby="ca_note_label">Chercheurd.art</a>. </p>
+<p class="ca_txt">Par ailleurs, vous ne pouvez conserver dans votre <mark data-tag="ORD">collection</mark> que les <mark data-tag="ORD">images</mark> qui figurent dans la <mark data-tag="WEB">mémoire</mark> de votre ordinateur: il est totalement impossible d’intégrer des <mark data-tag="ORD">images</mark> stockées sur les <mark data-tag="WEB">serveurs</mark> de sites différents de Chercheurd.art
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Il est fort probable, en revanche, que très prochainement, les <mark data-tag="ORD">images</mark> intégrées au site lui-même pourront figurer dans votre <mark data-tag="ORD">collection</mark> sans qu’il soit nécessaire de les <mark data-tag="WEB">charger</mark> préalablement sur votre <mark data-tag="WEB">ordinateur</mark>.
+</span></ins>
+. </p>
 </div>
 </div></div>
 <div id="ca_fold_2" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Ajoutez des <mark data-tag="ORD">images</mark></h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Ajoutez des <mark data-tag="ORD">images</mark></span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<p>Pour ajouter les <mark data-tag="ORD">images</mark> de votre choix:</p>
+<p class="ca_txt">Pour ajouter les <mark data-tag="ORD">images</mark> de votre choix: </p>
 <ul>
 <li><strong>Accédez à la page</strong> <a href="https://www.chercheurd.art/user/items/2019-05-09-galleries_list.html"><q><mark data-tag="ORD">Collection</mark> &amp; <mark data-tag="ORD">Galeries</mark></q></a>;</li>
 <li><strong>Dépliez le paragraphe <q><mark data-tag="ORD">Collection</mark></q></strong></li>
@@ -386,7 +401,7 @@ class="ca_svg_icon_inline">
 </div>
 </div></div>
 <div id="ca_fold_3" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><mark data-tag="ORD">Classez</mark> vos <mark data-tag="ORD">images</mark></h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span><mark data-tag="ORD">Classez</mark> vos <mark data-tag="ORD">images</mark></span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">Pour faciliter le répérage dans votre <mark data-tag="ORD">collection</mark>, surtout si vous enregistrez plusieurs centaines d’éléments, vous pouvez définir des <mark data-tag="ORD">galeries</mark> d’<mark data-tag="ORD">images</mark> regroupées selon les <mark data-tag="ORD">critères</mark> de votre choix.</p>
@@ -395,36 +410,22 @@ class="ca_svg_icon_inline">
 </div>
 </div></div>
 <div id="ca_fold_4" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><mark data-tag="ORD">Analysez</mark> et <mark data-tag="ORD">consignez</mark></h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span><mark data-tag="ORD">Analysez</mark> et <mark data-tag="ORD">consignez</mark></span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">Toutes les <mark data-tag="ORD">méthodes d’analyse</mark> intégrées au site Chercheurd.art sont à votre disposition pour étudier les <mark data-tag="ORD">détails</mark> des <mark data-tag="ORD">images</mark> répertoriées dans votre <mark data-tag="ORD">collection</mark>. Il est donc de la plus grande importance de <mark data-tag="ORD">sélectionner</mark> des <mark data-tag="ORD">images</mark> <mark data-tag="ORD">haute-définition</mark> afin d’en tirer tout le bénéfice. Les <mark data-tag="ORD">images</mark> <mark data-tag="ORD">optimisées</mark> pour le <mark data-tag="WEB">web</mark> seront probablement décevantes, car une partie importante des <mark data-tag="ORD">données</mark> brutes du <mark data-tag="ORD">cliché</mark> original sont perdues dans cette phase d’<mark data-tag="ORD">optimisation</mark>, destinée à <mark data-tag="ORD">accélérer</mark> le <mark data-tag="WEB">chargement</mark> de l’<mark data-tag="ORD">image</mark> au travers du <mark data-tag="WEB">réseau Internet</mark>. Étant donné que les <mark data-tag="ORD">images</mark> de votre <mark data-tag="ORD">collection</mark> n’ont pas à transiter par ce <mark data-tag="WEB">réseau</mark>, il n’y a pas de <mark data-tag="ORD">délai</mark> de <mark data-tag="WEB">chargement</mark> à prendre en compte. </p>
-<p class="ca_txt">Le <mark data-tag="ORD">temps d’analyse</mark> lui même reste très court: quelques secondes tout au plus. Mais, en revanche, la <mark data-tag="WEB">taille</mark> de la <mark data-tag="WEB">mémoire</mark> requise par votre <mark data-tag="WEB">navigateur</mark> pour effectuer l’<mark data-tag="WEB">opération</mark> peut devenir un frein à la <mark data-tag="ORD">précision</mark> de l’<mark data-tag="ORD">image</mark> que vous allez <mark data-tag="ORD">analyser</mark>. Au-delà d’une dizaine de <mark data-tag="WEB">Mégaoctets</mark>, votre <mark data-tag="WEB">navigateur</mark> peut être pris en défaut et manquer de <mark data-tag="WEB">mémoire</mark> pour cette <mark data-tag="ORD">analyse</mark>. Cette <mark data-tag="WEB">taille</mark> de <mark data-tag="WEB">fichier</mark> correspond toutefois à une <mark data-tag="ORD">image</mark> de plus de 20 <mark data-tag="WEB">Mégapixels</mark>, ce qui donne déjà une très grande <mark data-tag="ORD">précision d’analyse</mark>. À titre d’exemple, le <mark data-tag="WEB">fichier</mark> de l’<mark data-tag="ORD">image</mark> du tab<mark data-tag="ORD"></mark>leau de <mark data-tag="ART">Nicolas Poussin</mark>, <a href="https://www.chercheurd.art/works/items/1594_poussin_madrid_prado_1648_paisaje_P002310.html"><mark data-tag="WORK">_Paisaje con edificios_</mark></a>, tel qu’il est disponible sur le site du <mark data-tag="COL">Museo del Prado</mark> à <mark data-tag="LOC">Madrid</mark>, a une <mark data-tag="WEB">taille</mark> de pratiquement 8 <mark data-tag="WEB">Mégaoctets</mark> correspondant à une <mark data-tag="ORD">image</mark> de 3051 <mark data-tag="ORD">pixels</mark> de largeur et 1937 <mark data-tag="ORD">pixels</mark> de hauteur, soit un peut moins de 6 <mark data-tag="WEB">Mégapixels</mark>.</p>
-<p>Afin de <mark data-tag="ORD">consigner</mark>, pour votre seul intérêt personnel, toutes vos <mark data-tag="ORD">observations</mark> concernant l’<mark data-tag="ORD">analyse</mark> des <mark data-tag="ORD">images</mark> de votre <mark data-tag="ORD">collection</mark>, la <mark data-tag="ORD">section</mark> de la page d’<mark data-tag="ORD">analyse</mark> intitulée <q><mark data-tag="ORD">Descriptif</mark></q> est destinée à recueillir toutes vos <mark data-tag="ORD">observations</mark>. Celles-ci peuvent même être <a id="ca_from_note_5" href="#ca_to_note_5" aria-describedby="ca_note_label"><mark data-tag="WEB">mises en forme</mark></a> avec les <mark data-tag="WEB">styles</mark> propres au site Chercheurd.art pour obtenir une <mark data-tag="ORD">présentation</mark> plus homogène.</p>
+<p class="ca_txt">Le <mark data-tag="ORD">temps d’analyse</mark> lui même reste très court: quelques secondes tout au plus. Mais, en revanche, la <mark data-tag="WEB">taille</mark> de la <mark data-tag="WEB">mémoire</mark> requise par votre <mark data-tag="WEB">navigateur</mark> pour effectuer l’<mark data-tag="WEB">opération</mark> peut devenir un frein à la <mark data-tag="ORD">précision</mark> de l’<mark data-tag="ORD">image</mark> que vous allez <mark data-tag="ORD">analyser</mark>. Au-delà d’une dizaine de <mark data-tag="WEB">Mégaoctets</mark>, votre <mark data-tag="WEB">navigateur</mark> peut être pris en défaut et manquer de <mark data-tag="WEB">mémoire</mark> pour cette <mark data-tag="ORD">analyse</mark>. Cette <mark data-tag="WEB">taille</mark> de <mark data-tag="WEB">fichier</mark> correspond toutefois à une <mark data-tag="ORD">image</mark> de plus de 20 <mark data-tag="WEB">Mégapixels</mark>, ce qui donne déjà une très grande <mark data-tag="ORD">précision d’analyse</mark>. À titre d’exemple, le <mark data-tag="WEB">fichier</mark> de l’<mark data-tag="ORD">image</mark> du tab<mark data-tag="ORD"></mark>leau de <mark data-tag="ART">Nicolas Poussin</mark>, <a href="https://www.chercheurd.art/works/items/1594_poussin_madrid_prado_1648_paisaje_P002310.html"><em><mark data-tag="WORK">Paisaje con edificios</mark></em></a>, tel qu’il est disponible sur le site du <mark data-tag="COL">Museo del Prado</mark> à <mark data-tag="LOC">Madrid</mark>, a une <mark data-tag="WEB">taille</mark> de pratiquement 8 <mark data-tag="WEB">Mégaoctets</mark> correspondant à une <mark data-tag="ORD">image</mark> de 3051 <mark data-tag="ORD">pixels</mark> de largeur et 1937 <mark data-tag="ORD">pixels</mark> de hauteur, soit un peut moins de 6 <mark data-tag="WEB">Mégapixels</mark>.</p>
+<p class="ca_txt">Si vous souhaitez <mark data-tag="ORD">consigner</mark> vos <mark data-tag="ORD">observations</mark> se rapportant aux <mark data-tag="ORD">images</mark> de votre <mark data-tag="ORD">collection</mark>, la <mark data-tag="ORD">section</mark> de la page d’<mark data-tag="ORD">analyse</mark> intitulée <q><mark data-tag="ORD">Descriptif</mark></q> dispose d’un champ de saisie destiné à cet effet. Le texte que vous y saisissez peut même être <mark data-tag="WEB">mis en forme</mark>
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Il est nécessaire pour bénéficier de cette possibilité de <mark data-tag="WEB">mise en forme</mark> de votre <mark data-tag="ORD">texte</mark> d’utiliser les <mark data-tag="WEB">balises</mark> fournies par le <mark data-tag="WEB">langage de balisage</mark> <a href="https://fr.wikipedia.org/wiki/Markdown" target="_blank" rel="noreferrer">Markdown</a>, très simple tout autant qu’efficace à utiliser.
+</span></ins>
+avec les <mark data-tag="WEB">styles</mark> propres au site Chercheurd.art afin d’obtenir une <mark data-tag="ORD">présentation</mark> homogène.</p>
 </div>
 </div></div>
 <div id="ca_fold_201" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">NOTES | VERSIONS</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>VERSIONS</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<footer><h2 class="visually-hidden" id="ca_footnote_label">notes</h2><ol>
-<li id="ca_to_note_1"><p class="ca_footnote">
-<p>Seuls les <mark data-tag="WEB">fichiers</mark> de type <mark data-tag="WEB">JPEG</mark> (ou <mark data-tag="WEB">JPG</mark>) sont acceptés.</p>
-</p><a href="#ca_from_note_1" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_2"><p class="ca_footnote">
-<p>Pour les connaisseurs, il s’agit de la <mark data-tag="WEB">base</mark> <a href="https://fr.wikipedia.org/wiki/Indexed_Database_API" target="_blank" rel="noreferrer"><mark data-tag="WEB">indexedDB</mark></a>.</p>
-</p><a href="#ca_from_note_2" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_3"><p class="ca_footnote">
-<p>La <mark data-tag="WEB">taille</mark> de cette <mark data-tag="WEB">base de données</mark> <a href="https://developer.mozilla.org/fr/docs/Web/API/API_IndexedDB/Browser_storage_limits_and_eviction_criteria" target="_blank" rel="noreferrer">varie</a> en fonction de la <mark data-tag="WEB">capacité de stockage</mark> de votre <mark data-tag="WEB">disque dur</mark> principal.</p>
-</p><a href="#ca_from_note_3" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_4"><p class="ca_footnote">
-<p>Il est est probable, en revanche, que très prochainement, les <mark data-tag="ORD">images</mark> intégrées au site lui-même pourront figurer dans votre <mark data-tag="ORD">collection</mark> sans qu’il soit nécessaire de les <mark data-tag="WEB">charger</mark> préalablement sur votre <mark data-tag="WEB">ordinateur</mark>.</p>
-</p><a href="#ca_from_note_4" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_5"><p class="ca_footnote">
-<p>Il est nécessaire pour bénéficier de cette possibilité de <mark data-tag="WEB">mise en forme</mark> de votre <mark data-tag="ORD">texte</mark> d’utiliser les <mark data-tag="WEB">balises</mark> fournies par le <mark data-tag="WEB">langage de balisage</mark> <a href="https://fr.wikipedia.org/wiki/Markdown" target="_blank" rel="noreferrer">Markdown</a>, très simple tout autant qu’efficace à utiliser.</p>
-</p><a href="#ca_from_note_5" aria-label="ca_back_to_text"></a></li>
-</ol></footer>
-<h3 class="ca_version_title">Versions</h3>
 <ol class="ca_version_list">
 <li class="ca_version_entry"><strong>8 mai 2019</strong><br>
 Ébauche initiale.</li>
@@ -465,50 +466,61 @@ class="ca_svg_icon_inline">
 
     </label>
   
-    <ul class="ca_duo_banner_header">
-      <li class="ca_banner_title_duo">Recherche</li>
-      <li class="ca_post_subtitle">
+    <div class="ca_post_header">
       <form id="ca_form_is_search" class="ca_form_inputbox">
-  <label id="ca_form_is_search_submit" class="ca_form_inputbox_label_button">Rechercher</label>
-  <input id="ca_form_input_search_needle" class="ca_form_inputbox_input_text" type="text" placeholder=" Mots recherchés...">
-  <label id="ca_form_is_search_tags" class="ca_form_inputbox_label_button">
-    <span id="ca_form_input_search_tag" class="ca_form_inputbox_input_text">NON SPÉCIFIÉ</span>
-  </label>
-  <div id="ca_form_is_search_history" class="ca_form_optbox_icons">
-    <span id="ca_form_is_search_previous"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  <div id="ca_form_is_search_history">
+    <label id="ca_form_is_search_title" class="ca_post_title">Recherche</label>
+    <div id="ca_form_is_search_actions">
+      <span id="ca_form_is_search_exec"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_svg_icon">
+  <circle cx="11" cy="11" r="8"></circle>
+  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+</svg>
+</span>
+      <span id="ca_form_is_search_previous"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_svg_icon">
   <circle cx="12" cy="12" r="10"/>
   <path d="M12 8l-4 4 4 4M16 12H9"/>
 </svg>
 </span>
-    <span id="ca_form_is_search_reset"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-  class="ca_svg_icon">
-  <path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/>
-</svg>
-</span>
-    <span id="ca_form_is_search_next"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+      <span id="ca_form_is_search_next"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_svg_icon">
   <circle cx="12" cy="12" r="10"/>
   <path d="M12 8l4 4-4 4M8 12h7"/>
 </svg>
 </span>
+      <span id="ca_form_is_search_reset"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_svg_icon">
+  <path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/>
+</svg>
+</span>
+    </div>
+  </div>
+  <div id="ca_form_is_search_input">
+    <input id="ca_form_is_search_needle" class="ca_form_inputbox_input_text" type="text" placeholder=" Mots recherchés...">
+    <label id="ca_form_is_search_tag" class="ca_form_inputbox_label_button">
+      <span id="ca_form_is_search_tag_input" class="ca_form_inputbox_input_text">NON SPÉCIFIÉ</span>
+    </label>
   </div>
 </form>
 
-      </li>
-    </ul>
+    </div>
   
-    <div class="ca_fold_content">
-      <h3 class="ca_folder" onclick="DOMOpenFolder( this )">Résultat</h3>
-      <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
-        <div class="ca_fold_xcols_norule">
-          <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
+    <div class="ca_folder_container">
+      <div id="ca_folder_container_inner">
+        <div class="ca_fold_content">
+          <h3 class="ca_folder" onclick="DOMOpenFolder( this )"><span>Résultat</span></h3>
+          <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
+            <div class="ca_fold_xcols_norule">
+              <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  
   </div>
 </section>
+
 
   </main>
   <aside>
@@ -584,6 +596,17 @@ class="ca_svg_icon_inline">
   </label>
 </form>
 
+<form id="ca_form_is_guide" class="ca_form_inputbox">
+  <label for="ca_form_checkbox_is_guide"
+    id="ca_form_label_is_guide"
+    class="ca_form_optbox_label" title="Suivre le Guide">
+    <input type="checkbox" value="0"
+      id="ca_form_checkbox_is_guide"
+      class="ca_form_optbox_input"
+      onclick="if (this.value === '0' ) Guide.setup();this.value='1' ">
+    <span class="ca_form_optbox_label_title">Guide</span>
+  </label>
+</form>
 
     </dd>
   </dl>
@@ -840,7 +863,7 @@ class="ca_svg_icon_inline">
 
 <script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn"></script>
 
-<script type="application/json" class="js-hypothesis-config">
+<script id="ca_hypothesis_settings" type="application/json" class="js-hypothesis-config">
   {
     "openSidebar": false,
     "showHighlights": "whenSidebarOpen",
@@ -848,25 +871,31 @@ class="ca_svg_icon_inline">
     "theme": "clean"
   }
 </script>
-
-<script>
-
-const Annotations =
-{
-  isOn:     false,
-  setup: ( ) =>
+<script id="ca_annotations_setup">
+  const Annotations =
   {
-    if ( this.isOn ) return
-    //xx document.getElementById( 'ca_enable_annotations_label' ).classList.toggle( 'ca_inputAnnotation' )
-    loadJS( "https://hypothes.is/embed.js" )
-    this.isOn = true
+    isOn: false,
+    setup: ( ) =>
+    {
+      if ( this.isOn ) return
+      DOMloadAsset( 'https://hypothes.is/embed.js', 'ca_annotations_setup' )
+      this.isOn = true
+    }
   }
-}
+</script>
 
-
-//: blocking!!!
-//window.onload = () => { loadJS( "https://plausible.io/js/plausible.js" ) }
-
+<script id="ca_guide_setup">
+  const Guide =
+  {
+    isOn: false,
+    setup: ( ) =>
+    {
+      if ( this.isOn ) return
+      DOMloadAsset( 'https://www.chercheurd.art/static/styles/driver.min.css', 'ca_index_style' )
+      DOMloadAsset( 'https://www.chercheurd.art/static/scripts/driver.min.js', 'ca_guide_setup' )
+      this.isOn = true
+    }
+  }
 </script>
 
 </div>

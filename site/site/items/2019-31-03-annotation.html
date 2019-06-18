@@ -16,18 +16,16 @@
 
 <style id="ca_fonts_latin">
 
-@font-face{font-display:swap;font-family:Antic;font-style:normal;font-weight:400;src:local('Antic Regular'),local('Antic-Regular'),url(https://www.chercheurd.art/static/fonts/antic-v10-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:Philosopher;font-style:normal;font-weight:400;src:local('Philosopher Regular'),local('Philosopher-Regular'),url(https://www.chercheurd.art/static/fonts/Philosopher-Regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:'Titillium Web';font-style:normal;font-weight:400;src:local('Titillium Web Regular'),local('TitilliumWeb-Regular'),url(https://www.chercheurd.art/static/fonts/titillium-web-v7-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('RenoMono-Regular'),local('RenoMono-Regular'),url(https://www.chercheurd.art/static/fonts/RenoMono.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('Josefin Slab Regular'),local('JosefinSlab-Regular'),url(https://www.chercheurd.art/static/fonts/josefin-slab-v9-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Harmattan;font-style:normal;font-weight:400;src:local('Harmattan'),local('Harmattan-Regular'),url(https://www.chercheurd.art/static/fonts/harmattan-v5-latin-regular.woff2) format('woff2')}@font-face{font-family:Athiti;font-style:normal;font-weight:400;src:local('Athiti'),local('Athiti-Regular'),url(https://www.chercheurd.art/static/fonts/athiti-v3-latin-regular.woff2) format('woff2')}@font-face{font-display:swap;font-family:'Titillium Web';font-style:normal;font-weight:400;src:local('Titillium Web Regular'),local('TitilliumWeb-Regular'),url(https://www.chercheurd.art/static/fonts/titillium-web-v7-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('RenoMono-Regular'),local('RenoMono-Regular'),url(https://www.chercheurd.art/static/fonts/RenoMono.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('Josefin Slab Regular'),local('JosefinSlab-Regular'),url(https://www.chercheurd.art/static/fonts/josefin-slab-v9-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 </style>
 
-<link rel="stylesheet" href="https://www.chercheurd.art/static/styles/index.min.css" />
+<link id="ca_index_style" rel="stylesheet" href="https://www.chercheurd.art/static/styles/index.min.css" />
 
 
 <script>
 const SITE_ROOT_URL='https://www.chercheurd.art/'
 var CA_media_userImgUrl_s = 'USER_URL'
 </script>
-
-<script src="https://www.chercheurd.art/static/scripts/script_load.min.js"></script>
 
 
 </head>
@@ -286,6 +284,14 @@ var CA_media_userImgUrl_s = 'USER_URL'
         </div>
       </div>
     </div>
+    <label class="ca_select_context" onclick="statusDialog()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  id="ca_svg_icon_elipsis-v" class="ca_svg_icon">
+<circle class="ca_svg_elipsis_icon_1" cx="12" cy="12" r="1"></circle>
+<circle class="ca_svg_elipsis_icon_2" cx="12" cy="5"  r="1"></circle>
+<circle class="ca_svg_elipsis_icon_3" cx="12" cy="19" r="1"></circle>
+</svg>
+    </label>
   </nav>
 </section>
   
@@ -321,14 +327,6 @@ var CA_media_userImgUrl_s = 'USER_URL'
 </svg>
 
     </label>
-    <label class="ca_select_context" onclick="statusDialog(  )">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-  id="ca_svg_icon_elipsis-v" class="ca_svg_icon">
-<circle class="ca_svg_elipsis_icon_1" cx="12" cy="12" r="1"></circle>
-<circle class="ca_svg_elipsis_icon_2" cx="12" cy="5"  r="1"></circle>
-<circle class="ca_svg_elipsis_icon_3" cx="12" cy="19" r="1"></circle>
-</svg>
-    </label>
     
     
 
@@ -337,11 +335,12 @@ var CA_media_userImgUrl_s = 'USER_URL'
 <ul class="ca_post_header">
   <li class="ca_post_title">Annotations &amp; commentaires</li>
   
-  <li class="ca_post_signature">28 janvier 2019</li>
-  <li class="ca_post_subtitle"></li>
   
 
-<li class="ca_post_signature"><address onclick="mailtoDialog__s( '{ @author }}' )">A. Dupin</address></li>
+<ul class="ca_post_author_date">
+  <li><address onclick="mailtoDialog__s( '{ @author }}' )">A. Dupin</address></li>
+  <li>28 janvier 2019</li>
+</ul>
 
   
 </ul>
@@ -352,15 +351,15 @@ var CA_media_userImgUrl_s = 'USER_URL'
 <div id="ca_folder_opener"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
 id="ca_svg_icon_ctrl_text" class="ca_svg_icon" title="Déplier-Replier"
 onclick="DOMOpenFolderAll()">
-<line x1="6" y1="8"  x2="48" y2="8"  />
-<line x1="6" y1="20" x2="58" y2="20" />
-<line x1="6" y1="32" x2="30" y2="32" />
-<line x1="6" y1="44" x2="40" y2="44" />
-<line x1="6" y1="56" x2="58" y2="56" />
+<line x1="4" y1="8"  x2="60" y2="8"  />
+<line x1="4" y1="20" x2="32" y2="20" />
+<line x1="4" y1="32" x2="12" y2="32" />
+<line x1="4" y1="44" x2="32" y2="44" />
+<line x1="4" y1="56" x2="60" y2="56" />
 </svg>
 </div>
 <div id="ca_fold_1" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Hypothesis Project</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Hypothesis Project</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">Le projet Hypothesis a été conçu pour répondre aux besoins de commenter les publications en ligne que la communauté scientifique suscite. Le <em>Web Annotation Working Group</em>, placé sous l’égide du <a href="https://www.w3.org/Consortium/" target="_blank" rel="noreferrer">W3C</a> (l’organisation internationale coordonnant le développement des spécifications standard pour le World Wide Web: <strong>WWW</strong>), a publié en 2017 les recommandations à suivre pour fournir la couche logicielle donnant à tout un chacun la possibilité d’ajouter des commentaires aux pages d’un site du Web.</p>
@@ -368,32 +367,32 @@ onclick="DOMOpenFolderAll()">
 </div>
 </div></div>
 <div id="ca_fold_2" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Inscrivez-vous...</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Inscrivez-vous...</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<p>L’inscription au service Hypothesis ne prend que quelques instants:</p>
+<p class="ca_txt">Pour accéder au système d’annotations, accédez à la section présentant le menu général du site et cliquez sur l’icône située à droite du titre Chercheurd.art puis, dans la boîte de dialogue qui s’ouvre, cliquez sur l’entrée <q>Annotations</q>.</p>
+<p class="ca_txt">L’inscription au service Hypothesis ne prend que quelques instants:</p>
 <ul>
-<li>activez, sur une page de ce site, le système d’annotation en cliquant sur la rubrique <em>ANNOTATIONS</em> figurant en bas du texte;</li>
-<li>sélectionnez le mot ou groupe de mots ou paragraphe que vous désirez annoter;</li>
-<li>un petit menu contextuel apparaît alors, proposant deux options: “<em>Annotate</em>” et “<em>Highlight</em>” (Annoter et Surligner);</li>
-<li>une barre latérale apparait alors sur la droite de la fenêtre présentant deux options marquées en rouge dans le coin supérieur droit: “<em>Sign up</em>” et “<em>Log in</em>” (S’enregistrer et Se loger );
+<li class="ca_list_entry">sélectionnez le mot ou groupe de mots ou paragraphe que vous désirez annoter;</li>
+<li class="ca_list_entry">un petit menu contextuel apparaît alors, proposant deux options: “<em>Annotate</em>” et “<em>Highlight</em>” (Annoter et Surligner);</li>
+<li class="ca_list_entry">une barre latérale apparait alors sur la droite de la fenêtre présentant deux options marquées en rouge dans le coin supérieur droit: “<em>Sign up</em>” et “<em>Log in</em>” (S’enregistrer et Se loger );
 <ul>
-<li>choisissez l’option “<em>Sign up</em>” si vous n’êtes pas encore accrédité auprès du service d’annotation Hypothesis;
+<li class="ca_list_entry">choisissez l’option “<em>Sign up</em>” si vous n’êtes pas encore accrédité auprès du service d’annotation Hypothesis;
 <ul>
-<li>dans les champs de dialogue sur la page du site Hypothesis où vous êtes redirigé, entrez votre nom d’utilisateur,</li>
-<li>votre adresse e-mail,</li>
-<li>un mot de passe de votre choix,</li>
-<li>après avoir coché la case d’acceptation des conditions d’inscription,</li>
-<li>cliquez sur le bouton “<em>Sign up</em>” pour finaliser votre enregistrement;</li>
+<li class="ca_list_entry">dans les champs de dialogue sur la page du site Hypothesis où vous êtes redirigé, entrez votre nom d’utilisateur,</li>
+<li class="ca_list_entry">votre adresse e-mail,</li>
+<li class="ca_list_entry">un mot de passe de votre choix,</li>
+<li class="ca_list_entry">après avoir coché la case d’acceptation des conditions d’inscription,</li>
+<li class="ca_list_entry">cliquez sur le bouton “<em>Sign up</em>” pour finaliser votre enregistrement;</li>
 </ul>
 </li>
-<li>sinon, choisissez l’option “<em>Log in</em>” si vous n’avez pas encore indiqué à Hypothesis votre visite du site Chercheurd.art;</li>
+<li class="ca_list_entry">sinon, choisissez l’option “<em>Log in</em>” si vous n’avez pas encore indiqué à Hypothesis votre visite du site Chercheurd.art;</li>
 </ul>
 </li>
-<li>vous pouvez ensuite introduire vos commentaires dans l’une des deux parties réservées à cet effet:
+<li class="ca_list_entry">vous pouvez ensuite introduire vos commentaires dans l’une des deux parties réservées à cet effet:
 <ul>
-<li>commentaire concernant une partie de la page visitée (“<em>Annotations</em>”);</li>
-<li>commentaire se rapportant à l’ensemble de la page (“Page Notes”).</li>
+<li class="ca_list_entry">commentaire concernant une partie de la page visitée (“<em>Annotations</em>”);</li>
+<li class="ca_list_entry">commentaire se rapportant à l’ensemble de la page (“Page Notes”).</li>
 </ul>
 </li>
 </ul>
@@ -401,24 +400,34 @@ onclick="DOMOpenFolderAll()">
 </div>
 </div></div>
 <div id="ca_fold_3" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Annotez</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Annotez</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p>Le service d’annotation permet quatre types d’annotation:</p>
 <ul>
-<li><strong>surlignage</strong> (une partie du texte):<br>
-une partie du texte de la page est surlignée (en jaune) afin d’être mise en évidence, mais <a id="ca_from_note_1" href="#ca_to_note_1" aria-describedby="ca_note_label">visible</a> uniquement (par défaut) par celui qui surligne;</li>
-<li><strong>annotation</strong> (une partie du texte):<br>
-le surlignage est complété par un commentaire rédigé par l’auteur de l’annotation; il est visible par <a id="ca_from_note_2" href="#ca_to_note_2" aria-describedby="ca_note_label">tous les visiteurs</a> du site;</li>
-<li><strong>note de page</strong> (la page entière):<br>
+<li class="ca_list_entry"><strong>surlignage</strong> (une partie du texte):<br>
+une partie du texte de la page est surlignée (en jaune) afin d’être mise en évidence, mais visible
+uniquement (par défaut) par celui qui surligne
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Par défaut, le surlignage n’est pas activé lorsque la page est à nouveau consultée.<br>
+Il est activé en faisant apparaître la barre d’annotation, donc en sélectionnant n’importe quelle partie de la page.
+</span></ins>
+;</li>
+<li class="ca_list_entry"><strong>annotation</strong> (une partie du texte):<br>
+le surlignage est complété par un commentaire rédigé par l’auteur de l’annotation; il est visible par tous les visiteurs
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Il est possible de définir des groupes de visiteurs et de poster des commentaires uniquement visibles par les membres dudit groupe: voir sur le site <a href="http://hypothes.is">hypothes.is</a> les <a href="https://web.hypothes.is/blog/introducing-groups/">modalités</a> d’utilisation.
+</span></ins>
+du site;</li>
+<li class="ca_list_entry"><strong>note de page</strong> (la page entière):<br>
 un commentaire (sans surlignage) concerne la totalité de la page visitée; comme l’annotation, la note est consultable par tous; pour la créer, il faut cliquer sur le bouton “+New note” situé dans l’espace d’annotation;</li>
-<li><strong>réponse</strong> à un commentaire:<br>
-un commentaire est destiné à répondre à un commentaire dejà publié; il est également visible publiquement.</li>
+<li class="ca_list_entry"><strong>réponse</strong> à un commentaire:<br>
+un commentaire est destiné à répondre à un commentaire déjà publié; il est également visible publiquement.</li>
 </ul>
 </div>
 </div></div>
 <div id="ca_fold_4" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Confidentialité</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Confidentialité</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">La <strong>politique de confidentialité</strong> du service d’annotation Hypothesis est <a href="https://web.hypothes.is/privacy/">consultable</a> (en anglais) sur le site <a href="http://Hypothes.is">Hypothes.is</a>.
@@ -428,18 +437,9 @@ Quant au site Chercheurd.art, il n’a <strong>aucun accès à l’adresse e-mai
 </div>
 </div></div>
 <div id="ca_fold_201" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">NOTES | VERSIONS</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>VERSIONS</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<footer><h2 class="visually-hidden" id="ca_footnote_label">notes</h2><ol>
-<li id="ca_to_note_1"><p class="ca_footnote">
-<p>Par défaut, le surlignage n’est pas activé lorsque la page est à nouveau consultée. Il est activé en faisant apparaître la barre d’annotation, donc en sélectionnant n’importe quelle partie de la page.</p>
-</p><a href="#ca_from_note_1" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_2"><p class="ca_footnote">
-<p>Il est possible de définir des groupes de visiteurs et de poster des commentaires uniquement visibles par les membres dudit groupe (voir sur le site <a href="http://hypothes.is">hypothes.is</a> les <a href="https://web.hypothes.is/blog/introducing-groups/">modalités</a> d’utilisation).</p>
-</p><a href="#ca_from_note_2" aria-label="ca_back_to_text"></a></li>
-</ol></footer>
-<h3 class="ca_version_title">Versions</h3>
 <ol class="ca_version_list">
 <li class="ca_version_entry"><strong>28 janvier 2019</strong>
 Version initiale.</li>
@@ -480,50 +480,61 @@ Version initiale.</li>
 
     </label>
   
-    <ul class="ca_duo_banner_header">
-      <li class="ca_banner_title_duo">Recherche</li>
-      <li class="ca_post_subtitle">
+    <div class="ca_post_header">
       <form id="ca_form_is_search" class="ca_form_inputbox">
-  <label id="ca_form_is_search_submit" class="ca_form_inputbox_label_button">Rechercher</label>
-  <input id="ca_form_input_search_needle" class="ca_form_inputbox_input_text" type="text" placeholder=" Mots recherchés...">
-  <label id="ca_form_is_search_tags" class="ca_form_inputbox_label_button">
-    <span id="ca_form_input_search_tag" class="ca_form_inputbox_input_text">NON SPÉCIFIÉ</span>
-  </label>
-  <div id="ca_form_is_search_history" class="ca_form_optbox_icons">
-    <span id="ca_form_is_search_previous"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  <div id="ca_form_is_search_history">
+    <label id="ca_form_is_search_title" class="ca_post_title">Recherche</label>
+    <div id="ca_form_is_search_actions">
+      <span id="ca_form_is_search_exec"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_svg_icon">
+  <circle cx="11" cy="11" r="8"></circle>
+  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+</svg>
+</span>
+      <span id="ca_form_is_search_previous"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_svg_icon">
   <circle cx="12" cy="12" r="10"/>
   <path d="M12 8l-4 4 4 4M16 12H9"/>
 </svg>
 </span>
-    <span id="ca_form_is_search_reset"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-  class="ca_svg_icon">
-  <path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/>
-</svg>
-</span>
-    <span id="ca_form_is_search_next"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+      <span id="ca_form_is_search_next"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_svg_icon">
   <circle cx="12" cy="12" r="10"/>
   <path d="M12 8l4 4-4 4M8 12h7"/>
 </svg>
 </span>
+      <span id="ca_form_is_search_reset"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_svg_icon">
+  <path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/>
+</svg>
+</span>
+    </div>
+  </div>
+  <div id="ca_form_is_search_input">
+    <input id="ca_form_is_search_needle" class="ca_form_inputbox_input_text" type="text" placeholder=" Mots recherchés...">
+    <label id="ca_form_is_search_tag" class="ca_form_inputbox_label_button">
+      <span id="ca_form_is_search_tag_input" class="ca_form_inputbox_input_text">NON SPÉCIFIÉ</span>
+    </label>
   </div>
 </form>
 
-      </li>
-    </ul>
+    </div>
   
-    <div class="ca_fold_content">
-      <h3 class="ca_folder" onclick="DOMOpenFolder( this )">Résultat</h3>
-      <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
-        <div class="ca_fold_xcols_norule">
-          <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
+    <div class="ca_folder_container">
+      <div id="ca_folder_container_inner">
+        <div class="ca_fold_content">
+          <h3 class="ca_folder" onclick="DOMOpenFolder( this )"><span>Résultat</span></h3>
+          <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
+            <div class="ca_fold_xcols_norule">
+              <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  
   </div>
 </section>
+
 
   </main>
   <aside>
@@ -599,6 +610,17 @@ Version initiale.</li>
   </label>
 </form>
 
+<form id="ca_form_is_guide" class="ca_form_inputbox">
+  <label for="ca_form_checkbox_is_guide"
+    id="ca_form_label_is_guide"
+    class="ca_form_optbox_label" title="Suivre le Guide">
+    <input type="checkbox" value="0"
+      id="ca_form_checkbox_is_guide"
+      class="ca_form_optbox_input"
+      onclick="if (this.value === '0' ) Guide.setup();this.value='1' ">
+    <span class="ca_form_optbox_label_title">Guide</span>
+  </label>
+</form>
 
     </dd>
   </dl>
@@ -855,7 +877,7 @@ Version initiale.</li>
 
 <script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn"></script>
 
-<script type="application/json" class="js-hypothesis-config">
+<script id="ca_hypothesis_settings" type="application/json" class="js-hypothesis-config">
   {
     "openSidebar": false,
     "showHighlights": "whenSidebarOpen",
@@ -863,25 +885,31 @@ Version initiale.</li>
     "theme": "clean"
   }
 </script>
-
-<script>
-
-const Annotations =
-{
-  isOn:     false,
-  setup: ( ) =>
+<script id="ca_annotations_setup">
+  const Annotations =
   {
-    if ( this.isOn ) return
-    //xx document.getElementById( 'ca_enable_annotations_label' ).classList.toggle( 'ca_inputAnnotation' )
-    loadJS( "https://hypothes.is/embed.js" )
-    this.isOn = true
+    isOn: false,
+    setup: ( ) =>
+    {
+      if ( this.isOn ) return
+      DOMloadAsset( 'https://hypothes.is/embed.js', 'ca_annotations_setup' )
+      this.isOn = true
+    }
   }
-}
+</script>
 
-
-//: blocking!!!
-//window.onload = () => { loadJS( "https://plausible.io/js/plausible.js" ) }
-
+<script id="ca_guide_setup">
+  const Guide =
+  {
+    isOn: false,
+    setup: ( ) =>
+    {
+      if ( this.isOn ) return
+      DOMloadAsset( 'https://www.chercheurd.art/static/styles/driver.min.css', 'ca_index_style' )
+      DOMloadAsset( 'https://www.chercheurd.art/static/scripts/driver.min.js', 'ca_guide_setup' )
+      this.isOn = true
+    }
+  }
 </script>
 
 </div>

@@ -16,18 +16,16 @@
 
 <style id="ca_fonts_latin">
 
-@font-face{font-display:swap;font-family:Antic;font-style:normal;font-weight:400;src:local('Antic Regular'),local('Antic-Regular'),url(https://www.chercheurd.art/static/fonts/antic-v10-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:Philosopher;font-style:normal;font-weight:400;src:local('Philosopher Regular'),local('Philosopher-Regular'),url(https://www.chercheurd.art/static/fonts/Philosopher-Regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:'Titillium Web';font-style:normal;font-weight:400;src:local('Titillium Web Regular'),local('TitilliumWeb-Regular'),url(https://www.chercheurd.art/static/fonts/titillium-web-v7-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('RenoMono-Regular'),local('RenoMono-Regular'),url(https://www.chercheurd.art/static/fonts/RenoMono.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('Josefin Slab Regular'),local('JosefinSlab-Regular'),url(https://www.chercheurd.art/static/fonts/josefin-slab-v9-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Harmattan;font-style:normal;font-weight:400;src:local('Harmattan'),local('Harmattan-Regular'),url(https://www.chercheurd.art/static/fonts/harmattan-v5-latin-regular.woff2) format('woff2')}@font-face{font-family:Athiti;font-style:normal;font-weight:400;src:local('Athiti'),local('Athiti-Regular'),url(https://www.chercheurd.art/static/fonts/athiti-v3-latin-regular.woff2) format('woff2')}@font-face{font-display:swap;font-family:'Titillium Web';font-style:normal;font-weight:400;src:local('Titillium Web Regular'),local('TitilliumWeb-Regular'),url(https://www.chercheurd.art/static/fonts/titillium-web-v7-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('RenoMono-Regular'),local('RenoMono-Regular'),url(https://www.chercheurd.art/static/fonts/RenoMono.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('Josefin Slab Regular'),local('JosefinSlab-Regular'),url(https://www.chercheurd.art/static/fonts/josefin-slab-v9-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 </style>
 
-<link rel="stylesheet" href="https://www.chercheurd.art/static/styles/index.min.css" />
+<link id="ca_index_style" rel="stylesheet" href="https://www.chercheurd.art/static/styles/index.min.css" />
 
 
 <script>
 const SITE_ROOT_URL='https://www.chercheurd.art/'
 var CA_media_userImgUrl_s = 'USER_URL'
 </script>
-
-<script src="https://www.chercheurd.art/static/scripts/script_load.min.js"></script>
 
 
 </head>
@@ -286,6 +284,14 @@ var CA_media_userImgUrl_s = 'USER_URL'
         </div>
       </div>
     </div>
+    <label class="ca_select_context" onclick="statusDialog()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  id="ca_svg_icon_elipsis-v" class="ca_svg_icon">
+<circle class="ca_svg_elipsis_icon_1" cx="12" cy="12" r="1"></circle>
+<circle class="ca_svg_elipsis_icon_2" cx="12" cy="5"  r="1"></circle>
+<circle class="ca_svg_elipsis_icon_3" cx="12" cy="19" r="1"></circle>
+</svg>
+    </label>
   </nav>
 </section>
   
@@ -321,14 +327,6 @@ var CA_media_userImgUrl_s = 'USER_URL'
 </svg>
 
     </label>
-    <label class="ca_select_context" onclick="statusDialog(  )">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-  id="ca_svg_icon_elipsis-v" class="ca_svg_icon">
-<circle class="ca_svg_elipsis_icon_1" cx="12" cy="12" r="1"></circle>
-<circle class="ca_svg_elipsis_icon_2" cx="12" cy="5"  r="1"></circle>
-<circle class="ca_svg_elipsis_icon_3" cx="12" cy="19" r="1"></circle>
-</svg>
-    </label>
     
     
 
@@ -337,11 +335,12 @@ var CA_media_userImgUrl_s = 'USER_URL'
 <ul class="ca_post_header">
   <li class="ca_post_title">Rechercher sur le site</li>
   
-  <li class="ca_post_signature">23 janvier 2019</li>
-  <li class="ca_post_subtitle"></li>
   
 
-<li class="ca_post_signature"><address onclick="mailtoDialog__s( '{ @author }}' )">A. Dupin</address></li>
+<ul class="ca_post_author_date">
+  <li><address onclick="mailtoDialog__s( '{ @author }}' )">A. Dupin</address></li>
+  <li>23 janvier 2019</li>
+</ul>
 
   
 </ul>
@@ -352,65 +351,64 @@ var CA_media_userImgUrl_s = 'USER_URL'
 <div id="ca_folder_opener"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
 id="ca_svg_icon_ctrl_text" class="ca_svg_icon" title="Déplier-Replier"
 onclick="DOMOpenFolderAll()">
-<line x1="6" y1="8"  x2="48" y2="8"  />
-<line x1="6" y1="20" x2="58" y2="20" />
-<line x1="6" y1="32" x2="30" y2="32" />
-<line x1="6" y1="44" x2="40" y2="44" />
-<line x1="6" y1="56" x2="58" y2="56" />
+<line x1="4" y1="8"  x2="60" y2="8"  />
+<line x1="4" y1="20" x2="32" y2="20" />
+<line x1="4" y1="32" x2="12" y2="32" />
+<line x1="4" y1="44" x2="32" y2="44" />
+<line x1="4" y1="56" x2="60" y2="56" />
 </svg>
 </div>
 <div id="ca_fold_1" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Recherche sémantique</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Recherche sémantique</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<p class="ca_txt">Chercheurd.art dispose d’une <mark data-tag="WEB">fonction de recherche</mark> d’un genre particulier qui s’apparente à la <mark data-tag="WEB">recherche sémantique</mark>, sans toutefois avoir recours à un moteur de recherche tel que <mark data-tag="WEB">Bing</mark>, <mark data-tag="WEB">DuckDuckGo</mark>, <mark data-tag="WEB">Yahoo</mark> ou <mark data-tag="WEB">Google</mark>. Il s’agit donc d’un outil totalement dédié, présentant le double avantage de ne laisser aucune trace dans des <mark data-tag="WEB">moteurs de recherche</mark> pouvant se révéler trop intrusif dans le domaine de la <mark data-tag="WEB">confidentialité</mark>, mais aussi et surtout d’être en parfaite adéquation avec l’esprit et le contenu du site.</p>
+<p class="ca_txt">Chercheurd.art dispose d’une <mark data-tag="WEB">fonction de recherche</mark> d’un genre particulier qui s’apparente à la <mark data-tag="WEB">recherche sémantique</mark>, sans toutefois avoir recours à un moteur de recherche tel que <a href="https://www.bing.com/?cc=fr"><mark data-tag="WEB">Bing</mark></a>, <a href="https://duckduckgo.com"><mark data-tag="WEB">DuckDuckGo</mark></a>, <a href="https://fr.yahoo.com/"><mark data-tag="WEB">Yahoo</mark></a> ou <a href="https://www.google.fr/"><mark data-tag="WEB">Google</mark></a>. Il s’agit donc d’un outil totalement dédié, présentant le double avantage de ne laisser aucune trace dans des <mark data-tag="WEB">moteurs de recherche</mark> pouvant se révéler trop intrusif dans le domaine de la <mark data-tag="WEB">confidentialité</mark>, mais aussi et surtout d’être en parfaite adéquation avec l’esprit et le contenu du site.</p>
 <p class="ca_txt">Ce type de recherche est en effet directement guidé par le <mark data-tag="WEB">balisage</mark> des pages du site mis en place au moment de la rédaction du contenu. Le choix des mots ou expressions qui pourront faire aboutir une recherche est donc du ressort du rédacteur du contenu et toute <mark data-tag="WEB">requête</mark> ne correspondant pas aux mots ou expressions choisis ne pouront être trouvés par le visiteur. Ce choix réduit donc le <mark data-tag="WEB">champ de recherche</mark> a parcourir lors de chaque <mark data-tag="WEB">requête</mark>, ce qui accélère le processus de manière significative, mais donne également la possibilité de signaler de façon spécifique les occurences des termes recherchés sur les pages où ils ont été trouvés.</p>
 </div>
 </div></div>
 <div id="ca_fold_2" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Une question de champ</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Une question de champ</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">La procédure de requête nécessite donc de définir deux composantes: le ou les termes recherchés, aussi bien nom communs que noms propres, puis de sélectionner le <mark data-tag="WEB">champ sémantique</mark> qui délimitera la recherche.</p>
 <p>Ces champs sémantiques sont, bien évidemment, fonction de la teneur spécifique du site et correspondent aux catégories suivantes:</p>
 <ul>
-<li><strong>Nom de personne</strong>, n’incluant pas les noms d’artistes;</li>
-<li><strong>Nom d’artiste</strong>, à l’exception des noms propres de la catégorie précédente;</li>
-<li><strong>Œuvre d’art</strong>, titre ou partie de titre;</li>
-<li><strong>Collection</strong>, publique ou privée;</li>
-<li><strong>Bibliographie</strong>, titre (ou partie) de la référence;</li>
-<li><strong>Technologie &amp; Web</strong>, sites, programmes, systèmes, ou technologies de l’image numérique;</li>
-<li><strong>Localisation</strong>, ville, pays, etc;</li>
-<li><strong>Date</strong>, année, siècle, période, etc;</li>
-<li><strong>Non spécifié</strong>, afin de rechercher les termes plus <a id="ca_from_note_1" href="#ca_to_note_1" aria-describedby="ca_note_label">généraux</a>;</li>
+<li class="ca_list_entry"><strong>Nom de personne</strong>, n’incluant pas les noms d’artistes;</li>
+<li class="ca_list_entry"><strong>Nom d’artiste</strong>, à l’exception des noms propres de la catégorie précédente;</li>
+<li class="ca_list_entry"><strong>Œuvre d’art</strong>, titre ou partie de titre;</li>
+<li class="ca_list_entry"><strong>Collection</strong>, publique ou privée;</li>
+<li class="ca_list_entry"><strong>Bibliographie</strong>, titre (ou partie) de la référence;</li>
+<li class="ca_list_entry"><strong>Technologie &amp; Web</strong>, sites, programmes, systèmes, ou technologies de l’image numérique;</li>
+<li class="ca_list_entry"><strong>Localisation</strong>, ville, pays, etc;</li>
+<li class="ca_list_entry"><strong>Date</strong>, année, siècle, période, etc;</li>
+<li class="ca_list_entry"><strong>Non spécifié</strong>, afin de rechercher les termes plus généraux
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Afin de ne pas multiplier le nombre d’entités sémantiques, au-delà de ce qui est nécessaire (pour reprendre l’excellente formule de <mark data-tag="PER">Guillaume d’Ockam</mark>).
+</span></ins>
+.</li>
 </ul>
 <p class="ca_txt">Si le besoin s’en fait sentir ultérieurement, le nombre de catégories pourra être enrichi.</p>
 <p>Afin d’indiquer les deux composantes de la recherche et de présenter le résultat obtenu, un section spécifique est accessible sur chaque page du site: le formulaire <q>Recherche</q>.</p>
 </div>
 </div></div>
 <div id="ca_fold_3" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Requête et résultat</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Requête et résultat</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 <p class="ca_txt">Les éléments de la recherche unene fois déterminés, le processus est initié en clicquant sur le bouton <q>Rechecher</q> du formulaire de requête et le résultat s’affiche sous la forme d’une liste de pages contenant les termes recherchés.</p>
 <p class="ca_txt">Chacune de ces pages est décrite par son titre, sa date de mise en ligne, son auteur et un bref résumé du contenu. Le titre sert de lien pour accéder directement à la page, en ouvrant un nouvel onglet du navigateur. Et là, la magie d’un système de recherche dédié commence…</p>
 <p class="ca_txt">En effet, à la différence des moteurs de recherche externes au site, qui stoppent leurs services après avoir affiché la liste de liens trouvés, le système dédié de Chercheurd.art accompagne le visiteur dans sa consultation en surlignant les occurences des termes trouvés. De plus, chaque page correspondant au résultat de la requête dispose, elle aussi, de liste des résultats de la recherche en cours, ce qui permet de naviguer de page en page en parcourant l’ensemble du résultat. Au fur et à mesure que les pages concernées sont visitées, les entrées de la liste correspondantes sont signalées parun surlignage spécifique.</p>
-<p class="ca_txt">Enfin, le formulaire de recherche comporte également des boutons de contrôle permettant de retrouver la liste des résultats d’une requête antérieure puis de reparcourir les résultats les plus récents. Cette fonctionnalité avancée est une des caractéristiques uniques de la recherche du contenu du site Chercheurd.art. Par ailleurs, autre singularité de ce système de recherche, les requêtes sont effectuées sans <a id="ca_from_note_2" href="#ca_to_note_2" aria-describedby="ca_note_label">bloquer</a> les actions de navigation.</p>
+<p class="ca_txt">Enfin, le formulaire de recherche comporte également des boutons de contrôle permettant de retrouver la liste des résultats d’une requête antérieure puis de reparcourir les résultats les plus récents. Cette fonctionnalité avancée est une des caractéristiques uniques de la recherche du contenu du site Chercheurd.art. Par ailleurs, autre singularité de ce système de recherche, les requêtes sont effectuées sans bloquer
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Je consacrerai un article complet sur les aspects techniques du système de recherche développé pour ce site.
+</span></ins>
+les actions de navigation.</p>
 </div>
 </div></div>
 <div id="ca_fold_201" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">NOTES | VERSIONS</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>VERSIONS</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<footer><h2 class="visually-hidden" id="ca_footnote_label">notes</h2><ol>
-<li id="ca_to_note_1"><p class="ca_footnote">
-<p>Afin de ne pas multiplier le nombre d’entités sémantiques, au-delà de ce qui est nécessaire (pour reprendre l’excellente formule de <mark data-tag="PER">Guillaume d’Ockam</mark>).</p>
-</p><a href="#ca_from_note_1" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_2"><p class="ca_footnote">
-<p>Je consacrerai un article complet sur les aspects techniques du système de recherche développé pour ce site.</p>
-</p><a href="#ca_from_note_2" aria-label="ca_back_to_text"></a></li>
-</ol></footer>
-<h3 class="ca_version_title">Versions</h3>
 <ol class="ca_version_list ca_version_list">
 <li class="ca_version_entry">
 <p><strong>25 janvier 2019</strong><br>
@@ -457,50 +455,61 @@ Version beta de la recherche sémantique.</p>
 
     </label>
   
-    <ul class="ca_duo_banner_header">
-      <li class="ca_banner_title_duo">Recherche</li>
-      <li class="ca_post_subtitle">
+    <div class="ca_post_header">
       <form id="ca_form_is_search" class="ca_form_inputbox">
-  <label id="ca_form_is_search_submit" class="ca_form_inputbox_label_button">Rechercher</label>
-  <input id="ca_form_input_search_needle" class="ca_form_inputbox_input_text" type="text" placeholder=" Mots recherchés...">
-  <label id="ca_form_is_search_tags" class="ca_form_inputbox_label_button">
-    <span id="ca_form_input_search_tag" class="ca_form_inputbox_input_text">NON SPÉCIFIÉ</span>
-  </label>
-  <div id="ca_form_is_search_history" class="ca_form_optbox_icons">
-    <span id="ca_form_is_search_previous"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  <div id="ca_form_is_search_history">
+    <label id="ca_form_is_search_title" class="ca_post_title">Recherche</label>
+    <div id="ca_form_is_search_actions">
+      <span id="ca_form_is_search_exec"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_svg_icon">
+  <circle cx="11" cy="11" r="8"></circle>
+  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+</svg>
+</span>
+      <span id="ca_form_is_search_previous"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_svg_icon">
   <circle cx="12" cy="12" r="10"/>
   <path d="M12 8l-4 4 4 4M16 12H9"/>
 </svg>
 </span>
-    <span id="ca_form_is_search_reset"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-  class="ca_svg_icon">
-  <path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/>
-</svg>
-</span>
-    <span id="ca_form_is_search_next"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+      <span id="ca_form_is_search_next"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_svg_icon">
   <circle cx="12" cy="12" r="10"/>
   <path d="M12 8l4 4-4 4M8 12h7"/>
 </svg>
 </span>
+      <span id="ca_form_is_search_reset"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_svg_icon">
+  <path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/>
+</svg>
+</span>
+    </div>
+  </div>
+  <div id="ca_form_is_search_input">
+    <input id="ca_form_is_search_needle" class="ca_form_inputbox_input_text" type="text" placeholder=" Mots recherchés...">
+    <label id="ca_form_is_search_tag" class="ca_form_inputbox_label_button">
+      <span id="ca_form_is_search_tag_input" class="ca_form_inputbox_input_text">NON SPÉCIFIÉ</span>
+    </label>
   </div>
 </form>
 
-      </li>
-    </ul>
+    </div>
   
-    <div class="ca_fold_content">
-      <h3 class="ca_folder" onclick="DOMOpenFolder( this )">Résultat</h3>
-      <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
-        <div class="ca_fold_xcols_norule">
-          <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
+    <div class="ca_folder_container">
+      <div id="ca_folder_container_inner">
+        <div class="ca_fold_content">
+          <h3 class="ca_folder" onclick="DOMOpenFolder( this )"><span>Résultat</span></h3>
+          <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
+            <div class="ca_fold_xcols_norule">
+              <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  
   </div>
 </section>
+
 
   </main>
   <aside>
@@ -576,6 +585,17 @@ Version beta de la recherche sémantique.</p>
   </label>
 </form>
 
+<form id="ca_form_is_guide" class="ca_form_inputbox">
+  <label for="ca_form_checkbox_is_guide"
+    id="ca_form_label_is_guide"
+    class="ca_form_optbox_label" title="Suivre le Guide">
+    <input type="checkbox" value="0"
+      id="ca_form_checkbox_is_guide"
+      class="ca_form_optbox_input"
+      onclick="if (this.value === '0' ) Guide.setup();this.value='1' ">
+    <span class="ca_form_optbox_label_title">Guide</span>
+  </label>
+</form>
 
     </dd>
   </dl>
@@ -832,7 +852,7 @@ Version beta de la recherche sémantique.</p>
 
 <script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn"></script>
 
-<script type="application/json" class="js-hypothesis-config">
+<script id="ca_hypothesis_settings" type="application/json" class="js-hypothesis-config">
   {
     "openSidebar": false,
     "showHighlights": "whenSidebarOpen",
@@ -840,25 +860,31 @@ Version beta de la recherche sémantique.</p>
     "theme": "clean"
   }
 </script>
-
-<script>
-
-const Annotations =
-{
-  isOn:     false,
-  setup: ( ) =>
+<script id="ca_annotations_setup">
+  const Annotations =
   {
-    if ( this.isOn ) return
-    //xx document.getElementById( 'ca_enable_annotations_label' ).classList.toggle( 'ca_inputAnnotation' )
-    loadJS( "https://hypothes.is/embed.js" )
-    this.isOn = true
+    isOn: false,
+    setup: ( ) =>
+    {
+      if ( this.isOn ) return
+      DOMloadAsset( 'https://hypothes.is/embed.js', 'ca_annotations_setup' )
+      this.isOn = true
+    }
   }
-}
+</script>
 
-
-//: blocking!!!
-//window.onload = () => { loadJS( "https://plausible.io/js/plausible.js" ) }
-
+<script id="ca_guide_setup">
+  const Guide =
+  {
+    isOn: false,
+    setup: ( ) =>
+    {
+      if ( this.isOn ) return
+      DOMloadAsset( 'https://www.chercheurd.art/static/styles/driver.min.css', 'ca_index_style' )
+      DOMloadAsset( 'https://www.chercheurd.art/static/scripts/driver.min.js', 'ca_guide_setup' )
+      this.isOn = true
+    }
+  }
 </script>
 
 </div>

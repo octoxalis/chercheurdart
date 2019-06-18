@@ -16,18 +16,16 @@
 
 <style id="ca_fonts_latin">
 
-@font-face{font-display:swap;font-family:Antic;font-style:normal;font-weight:400;src:local('Antic Regular'),local('Antic-Regular'),url(https://www.chercheurd.art/static/fonts/antic-v10-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:Philosopher;font-style:normal;font-weight:400;src:local('Philosopher Regular'),local('Philosopher-Regular'),url(https://www.chercheurd.art/static/fonts/Philosopher-Regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:'Titillium Web';font-style:normal;font-weight:400;src:local('Titillium Web Regular'),local('TitilliumWeb-Regular'),url(https://www.chercheurd.art/static/fonts/titillium-web-v7-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('RenoMono-Regular'),local('RenoMono-Regular'),url(https://www.chercheurd.art/static/fonts/RenoMono.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('Josefin Slab Regular'),local('JosefinSlab-Regular'),url(https://www.chercheurd.art/static/fonts/josefin-slab-v9-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Harmattan;font-style:normal;font-weight:400;src:local('Harmattan'),local('Harmattan-Regular'),url(https://www.chercheurd.art/static/fonts/harmattan-v5-latin-regular.woff2) format('woff2')}@font-face{font-family:Athiti;font-style:normal;font-weight:400;src:local('Athiti'),local('Athiti-Regular'),url(https://www.chercheurd.art/static/fonts/athiti-v3-latin-regular.woff2) format('woff2')}@font-face{font-display:swap;font-family:'Titillium Web';font-style:normal;font-weight:400;src:local('Titillium Web Regular'),local('TitilliumWeb-Regular'),url(https://www.chercheurd.art/static/fonts/titillium-web-v7-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('RenoMono-Regular'),local('RenoMono-Regular'),url(https://www.chercheurd.art/static/fonts/RenoMono.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:RenoMono;font-style:normal;font-weight:400;text-rendering:optimizeLegibility;src:local('Josefin Slab Regular'),local('JosefinSlab-Regular'),url(https://www.chercheurd.art/static/fonts/josefin-slab-v9-latin-regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 </style>
 
-<link rel="stylesheet" href="https://www.chercheurd.art/static/styles/index.min.css" />
+<link id="ca_index_style" rel="stylesheet" href="https://www.chercheurd.art/static/styles/index.min.css" />
 
 
 <script>
 const SITE_ROOT_URL='https://www.chercheurd.art/'
 var CA_media_userImgUrl_s = 'USER_URL'
 </script>
-
-<script src="https://www.chercheurd.art/static/scripts/script_load.min.js"></script>
 
 
 </head>
@@ -286,6 +284,14 @@ var CA_media_userImgUrl_s = 'USER_URL'
         </div>
       </div>
     </div>
+    <label class="ca_select_context" onclick="statusDialog()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  id="ca_svg_icon_elipsis-v" class="ca_svg_icon">
+<circle class="ca_svg_elipsis_icon_1" cx="12" cy="12" r="1"></circle>
+<circle class="ca_svg_elipsis_icon_2" cx="12" cy="5"  r="1"></circle>
+<circle class="ca_svg_elipsis_icon_3" cx="12" cy="19" r="1"></circle>
+</svg>
+    </label>
   </nav>
 </section>
   
@@ -321,14 +327,6 @@ var CA_media_userImgUrl_s = 'USER_URL'
 </svg>
 
     </label>
-    <label class="ca_select_context" onclick="statusDialog(  )">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-  id="ca_svg_icon_elipsis-v" class="ca_svg_icon">
-<circle class="ca_svg_elipsis_icon_1" cx="12" cy="12" r="1"></circle>
-<circle class="ca_svg_elipsis_icon_2" cx="12" cy="5"  r="1"></circle>
-<circle class="ca_svg_elipsis_icon_3" cx="12" cy="19" r="1"></circle>
-</svg>
-    </label>
     
     <label class="ca_toggle_text_img" onclick="AreaSwap( 'text', 'gallery' )"
            title="Voir les images">
@@ -349,11 +347,12 @@ var CA_media_userImgUrl_s = 'USER_URL'
 <ul class="ca_post_header">
   <li class="ca_post_title">Concevoir, construire</li>
   
-  <li class="ca_post_signature">23 janvier 2019</li>
-  <li class="ca_post_subtitle"></li>
   
 
-<li class="ca_post_signature"><address onclick="mailtoDialog__s( '{ @author }}' )">A. Dupin</address></li>
+<ul class="ca_post_author_date">
+  <li><address onclick="mailtoDialog__s( '{ @author }}' )">A. Dupin</address></li>
+  <li>23 janvier 2019</li>
+</ul>
 
   
 </ul>
@@ -364,106 +363,115 @@ var CA_media_userImgUrl_s = 'USER_URL'
 <div id="ca_folder_opener"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 64 64"
 id="ca_svg_icon_ctrl_text" class="ca_svg_icon" title="Déplier-Replier"
 onclick="DOMOpenFolderAll()">
-<line x1="6" y1="8"  x2="48" y2="8"  />
-<line x1="6" y1="20" x2="58" y2="20" />
-<line x1="6" y1="32" x2="30" y2="32" />
-<line x1="6" y1="44" x2="40" y2="44" />
-<line x1="6" y1="56" x2="58" y2="56" />
+<line x1="4" y1="8"  x2="60" y2="8"  />
+<line x1="4" y1="20" x2="32" y2="20" />
+<line x1="4" y1="32" x2="12" y2="32" />
+<line x1="4" y1="44" x2="32" y2="44" />
+<line x1="4" y1="56" x2="60" y2="56" />
 </svg>
 </div>
 <div id="ca_fold_1" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Concevoir</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Concevoir</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<p class="ca_txt">L’élaboration du site Chercheurd.art s’est étendu sur près d’une année, en partant de quelques idées qui me semblaient intéressantes à développer, à savoir: comment tirer parti de toutes les technologies foisonnant sur le Web pour mettre à la disposition de tous les collectionneurs et ammateurs de peinture le moyen de regarder d’une manière inédite les œuvres qu’ils apprécient ou qu’ils possèdent? Et par voie de conséquence, comment proposer de nouvelles voies d’exploration à une discipline, l’histoire de l’art, assez peu disposée, il faut bien l’avouer, à la réévaluation de ses méthodologies et de ses outils de recherche?</p>
-<p class="ca_txt">Je ne suis nullement un professionnel du développement Web, même si le premier site que j’ai mis en ligne, totalement programmé <q>à la main</q> comme de règle à l’époque, remonte à déjà vingt ans. Je ne suis pas plus un professionnel de l’histoire de l’art, même si une partie de mes études s’est déroulée à la Sorbonne, lorsque André Chastel y enseignait encore. Toutefois, la fréquentation régulière des salles de ventes, afin de débusquer les perles rares que tout collectionneur ne peut s’empêcher de poursuivre inlassablement, m’a conduit à l’étude permanente de certains domaines de l’histoire de l’art, non seulement afin d’alimenter la recherche d’authenticité ou d’attribution que chaque acquisition ne manque pas de susciter, mais aussi d’élargir sans relâche le champ de connaissances que tout collectionneur se doit de posséder. En effet, quel meilleur terrain de mise en pratique du savoir et de la <a id="ca_from_note_0" href="#ca_to_note_0" aria-describedby="ca_note_label">perspicacité</a> que celui de la vente aux enchères?</p>
+<p class="ca_txt">L’élaboration du site Chercheurd.art s’est étendu sur près d’une année, en partant de quelques idées qui me semblaient intéressantes à développer, à savoir: comment tirer parti de toutes les technologies foisonnant sur le Web pour mettre à la disposition de tous les collectionneurs et amateurs de peinture le moyen de regarder d’une manière inédite les œuvres qu’ils apprécient ou qu’ils possèdent? Et par voie de conséquence, comment proposer de nouvelles voies d’exploration à une discipline, l’histoire de l’art, assez peu disposée, il faut bien l’avouer, à la réévaluation de ses méthodologies et de ses outils de recherche?</p>
+<p class="ca_txt">Je ne suis nullement un professionnel du développement Web, même si le premier site que j’ai mis en ligne, totalement programmé <q>à la main</q> comme de règle à l’époque, remonte à déjà vingt ans. Je ne suis pas plus un professionnel de l’histoire de l’art, même si une partie de mes études s’est déroulée à la Sorbonne, lorsque André Chastel y enseignait encore. Toutefois, la fréquentation régulière des salles de ventes, afin de débusquer les perles rares que tout collectionneur ne peut s’empêcher de poursuivre inlassablement, m’a conduit à l’étude permanente de certains domaines de l’histoire de l’art, non seulement afin d’alimenter la recherche d’authenticité ou d’attribution que chaque acquisition ne manque pas de susciter, mais aussi d’élargir sans relâche le champ de connaissances que tout collectionneur se doit de posséder. En effet, quel meilleur terrain de mise en pratique du savoir et de la perspicacité
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+<cite>Je n’ai jamais cessé de m’y rendre. […]<br>
+Drouot est une drogue. L’“Hôtel”, comme on dit, […] m’a permis de faire régulièrement mes “gammes attributives”. […]<br>
+Jeunes conservateurs, n’oubliez pas, n’oubliez jamais de vous rendre quotidiennement à Drouot: c’est votre devoir.</cite>
+<u></u>
+<strong>Pierre Rosenberg</strong>,<br>
+<a href="https://www.chercheurd.art/biblio/items/2007_rosenberg_amoureuxlouvre.html"><em>Dictionnaire amoureux du Louvre</em></a>.
+</span></ins>
+que celui de la vente aux enchères?</p>
 <p class="ca_txt">C’est la visite quotidienne du Web qui m’a progressivement amené à mettre en place des procédures de recherche, de comparaison et d’analyse des reproductions d’œuvres que je voulais étudier, comme un expert doit le faire pour s’assurer de la valeur d’une peinture. Et c’est en poursuivant cette méthodologie que les outils d’investigation dont dispose le site ont été mis au point. Leur nombre peut sembler encore restreint, mais d’autres sont en cours de développement, tant sur le plan du traitement des informations que de celui des images. Qu’il me suffise de dire que le principal objectif est de mettre au point un traitement statistique des données recueillies afin de dégager des tendances, voire des invariants, dans les données colorimétriques que l’on peut accumuler à partir des images des peintures.</p>
-<p class="ca_txt">Pour ne prendre qu’un exemple, celui de l’analyse scientifique des peintures à l’aide des techniques, aujourd’hui devenues <q>classiques</q>, que sont la radiographie, la fluorescence, la réflectographie, la spectrométrie par fluorescence X, l’analyse stratigraphique de la couche picturale, l’analyse chimique des pigments, etc., appliquée aux œuvres de Caravaggio telle qu’elle a été <a id="ca_from_note_1" href="#ca_to_note_1" aria-describedby="ca_note_label">conduite</a> depuis près d’une dizaine d’années pour déboucher sur l’exposition <a id="ca_from_note_2" href="#ca_to_note_2" aria-describedby="ca_note_label"><em>Dentro Caravaggio</em></a> du Palazzo Ducale de Milan en 2017-2018: a-t-on seulement envisagé, avant de procéder à des analyses fort dispendieuses, l’utilisation d’outils logiciels de traitement numérique des images en haute définition?  Ce n’est pas le cas. Et je comprends fort bien la perplexité d’un Gianni Papi lorsqu’il soulève des <a id="ca_from_note_3" href="#ca_to_note_3" aria-describedby="ca_note_label">réserves</a> sur les résultats d’analyses aussi sophistiquées alors qu’aucune synthèse sur l’ensemble de la pratique picturale du milieu romain, et caravagesque en tout premier lieu, n’a été jusqu’alors entreprise.</p>
+<p class="ca_txt">Pour ne prendre qu’un exemple, celui de l’analyse scientifique des peintures à l’aide des techniques, aujourd’hui devenues <q>classiques</q>, que sont la radiographie, la fluorescence, la réflectographie, la spectrométrie par fluorescence X, l’analyse stratigraphique de la couche picturale, l’analyse chimique des pigments, etc., appliquée aux œuvres de Caravaggio telle qu’elle a été conduite
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Le résultat des recherches est exposé dans deux ouvrages monumentaux: <em>Caravaggio, Opere a Roma, Tecnica e stile</em>, 2016.
+</span></ins>
+depuis près d’une dizaine d’années pour déboucher sur l’exposition <em>Dentro Caravaggio</em>
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+<em>Dentro Caravaggio</em>, 2017.
+</span></ins>
+du Palazzo Ducale de Milan en 2017-2018: a-t-on seulement envisagé, avant de procéder à des analyses fort dispendieuses, l’utilisation d’outils logiciels de traitement numérique des images en haute définition?  Ce n’est pas le cas. Et je comprends fort bien la perplexité d’un Gianni Papi lorsqu’il soulève des réserves
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Consulter son article en ligne:<br>
+<a href="https://www.aboutartonline.com/quale-fu-veramente-liter-esecutivo-di-caravaggio-gianni-papi-riprende-il-tema-tuttaltro-che-chiuso-dalla-grande-mostra-dentro-caravaggio/" target="_blank" rel="noreferrer"><em>Quale fu veramente l’iter esecutivo di Caravaggio ?</em></a>
+</span></ins>
+sur les résultats d’analyses aussi sophistiquées alors qu’aucune synthèse sur l’ensemble de la pratique picturale du milieu romain, et caravagesque en tout premier lieu, n’a été jusqu’alors entreprise.</p>
 </div>
 </div></div>
 <div id="ca_fold_2" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Traitement d'image</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Traitement d'image</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<p class="ca_txt">À l’heure où les grands musées, le MET de New York, le Prado de Madrid, la National Gallery de Londres, la Pinacoteca Brera de Milan, le Rijks Museum d’Amsterdam<a id="ca_from_note_4" href="#ca_to_note_4" aria-describedby="ca_note_label">etc.</a> diffusent les images haute-définition de leurs <a id="ca_from_note_4b" href="#ca_to_note_4b" aria-describedby="ca_note_label">collections</a>, il devient incompréhensible que les techniques d’imagerie scientifique ne soient pas appliquées à la recherche en histoire de l’art. Car, si l’on considère la sensibilité des <a href="https://fr.wikipedia.org/wiki/Capteur_photographique" target="_blank" rel="noreferrer">capteurs lumineux</a> dont disposent aujourd’hui les appareils de photographie numérique, il est légitime de penser que, même avec une marge d’incertitude quant à la fidélité des données recueillies par rapport aux qualités physiques lumineuses de l’original, la peinture, l’analyse que l’on peut en obtenir reste dans une marge d’erreur très faible et peut donc servir de point de départ à une étude statistique scientifiquement valide.</p>
-<p class="ca_txt">Or, ces techniques sont aujourd’hui parfaitement adaptables à l’environnement du Web, grâce à l’évolution de la capacité de traitement de navigateurs Internet tels que <em>Chrome</em> et <em>Firefox</em>. L’analyse du contenu colorimétrique, pixel par pixel, d’une image de 2000 x 2000 pixels de résolution (ce qui est plus grand que la majorité des écrans en usage actuellement), est effectuée en moins <a id="ca_from_note_5" href="#ca_to_note_5" aria-describedby="ca_note_label">d’une seconde</a>, en utilisant l’algorithme de <em>scanning</em> que j’ai développé pour ce site, qui, de plus, grçace à une procédure de découpage et de <a id="ca_from_note_6" href="#ca_to_note_6" aria-describedby="ca_note_label">traitement en parallèle</a>, le temps de calcul peut être sensiblement réduit, sans bloquer l’interactivité du navigateur.</p>
+<p class="ca_txt">À l’heure où les grands musées, le MET de New York, le Prado de Madrid, la National Gallery de Londres, la Pinacoteca Brera de Milan, le Rijks Museum d’Amsterdam, etc.
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Singulièrement, le Louvre semble ignorer superbement ce mouvement de diffusion international, sans doute pour cause “d’exception culturelle”. Les quelques images publiées sur <a href="https://commons.wikimedia.org/wiki/Category:High-resolution_images_from_C2RMF?uselang=fr" target="_blank" rel="noreferrer">Wikimedia Commons</a> par le Centre de Recherche et de Restauration des Musées de France (C2RMF) sont loin de faire le compte.<br>
+Il suffit d’ailleurs de consulter la page consacrée à la <a href="http://technologies.c2rmf.fr/imaging/color" target="_blank" rel="noreferrer">colorimétrie</a> du site du C2RMF pour jauger l’état de la “recherche” dans ce domaine - qui s’adjoint pourtant les services d’un maître de conférence de l’université de St Etienne, spécialiste de la colorimétrie et du « color management », Philippe Colantoni, dont le site <a href="http://www.couleur.org/" target="_blank" rel="noreferrer">couleur.org</a> (en toute simplicité!) est… aux abonnés absents!<br>
+Quant à la galerie d’images en haute-définition, elle ne fonctionne tout simplement pas et réclame une version 9 du logiciel Flash Player d’Adobe, désormais tombé en désuétude en raison des possibilités d’animation intégrées aux navigateurs, logiciel qui, de plus, est parvenu à la version stable numéro 32!<br>
+Les images sont toutefois disponibles sur le site <a href="https://commons.wikimedia.org/wiki/Category:High-resolution_images_from_C2RMF" target="_blank" rel="noreferrer">Wikipedia Commons</a>.
+</span></ins>
+diffusent les images haute-définition de leurs collections
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Sans restrictions pour l’usage particulier, tel que celui ce site, non-commercial et totalement <em>open source</em>.
+</span></ins>
+, il devient incompréhensible que les techniques d’imagerie scientifique ne soient pas appliquées à la recherche en histoire de l’art. Car, si l’on considère la sensibilité des <a href="https://fr.wikipedia.org/wiki/Capteur_photographique" target="_blank" rel="noreferrer">capteurs lumineux</a> dont disposent aujourd’hui les appareils de photographie numérique, il est légitime de penser que, même avec une marge d’incertitude quant à la fidélité des données recueillies par rapport aux qualités physiques lumineuses de l’original, la peinture, l’analyse que l’on peut en obtenir reste dans une marge d’erreur très faible et peut donc servir de point de départ à une étude statistique scientifiquement valide.</p>
+<p class="ca_txt">Or, ces techniques sont aujourd’hui parfaitement adaptables à l’environnement du Web, grâce à l’évolution de la capacité de traitement de navigateurs Internet tels que <em>Chrome</em> et <em>Firefox</em>. L’analyse du contenu colorimétrique, pixel par pixel, d’une image de 2000 x 2000 pixels de résolution (ce qui est plus grand que la majorité des écrans en usage actuellement), est effectuée en moins d’une seconde
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Mesuré sur le système suivant:<br>
+o Processeur Intel® Core™ i7-6500U CPU @ 2.50GHz;<br>
+o Memoire 8076MB;<br>
+o Système d’exploitation Arch Linux Manjaro;<br>
+o Navigateur Google Chrome Version 71.0.3578.98 (Official Build) (64-bit).
+</span></ins>
+, en utilisant l’algorithme de <em>scanning</em> développé pour ce site. De plus, grâce à une procédure de découpage et de traitement en parallèle
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Utilisation de l’interface <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API" target="_blank" rel="noreferrer"><em>Web Workers API</em></a>.
+</span></ins>
+, le temps de calcul peut être sensiblement réduit, sans bloquer l’interactivité du navigateur.</p>
 <p class="ca_txt">En dressant la table des caractéristiques de chaque pixel, il devient possible, en modulant la transparence de chacun d’eux, de faire apparaître ou disparaître, totalement ou partiellement, n’importe quel point de l’image et de façon sélective quant à la composante choisie: teinte (la “couleur” dans le spectre chromatique allant du rouge au violet), saturation (l’intensité de la teinte) et luminosité (la luminance ou “brillance” de la teinte, c’est-à-dire le pourcentage de blanc qu’elle contient).</p>
-<p class="ca_txt">L’étude de la <a href="https://fr.wikipedia.org/wiki/Vision_humaine" target="_blank" rel="noreferrer">physiologie de la vision</a> a déterminé que l’appareil sensitif de l’œil, si cher aux <q>connaisseurs</q> du monde de l’art, est beaucoup plus performant pour distinguer les gradations de luminosité que de teinte ou de saturation. Ce qui explique que nombre de spécialistes de l’étude comparative des reproductions de peinture, tels le ô combien sagace Federico Zeri, privilégient les photographies monochromatiques (e.g. en niveaux de gris: gradations entre le noir et le blanc) aux reproductions en couleurs, afin de mieux en distinguer les différences. J’aime à penser que le délicieux historien collectionneur aurait apprécié les outils d’analyse de ce site puisqu’il donne la possibilité d’avoir recours à tous les types de sélection chromatique désirés: monochromatisme noir et blanc, monochromatisme couleur et toutes les <a id="ca_from_note_7" href="#ca_to_note_7" aria-describedby="ca_note_label">combinaisons</a> possibles, avec, de surplus, la comparaison interactive avec l’original de la reproduction.</p>
-<p class="ca_txt">Plusieurs modèles de représentation des couleurs ont cours dans le traitement informatique de l’image numérique, le plus usuel étant la représentation <q>additive</q> de trois composantes: Rouge, Vert, Bleu. Ce modèle ne singularise donc pas les composantes de luminosité et de saturation, ce qui le rend plus <q>artificiel</q> que le modèle, mis au point à partir des travaux du peintre américain <a href="https://en.wikipedia.org/wiki/Albert_Henry_Munsell" target="_blank" rel="noreferrer">Albert Henry Munsell</a> à la fin du XIXème siècle, modèle séparant les composantes teinte, saturation et luminosité (<a id="ca_from_note_8" href="#ca_to_note_8" aria-describedby="ca_note_label">HSL</a>). Il est possible de représenter ce modèle sous forme graphique à l’aide d’un cylindre dont la section circulaire forme un cercle chromatique des différentes teintes, partant du rouge et finissant, après une révolution de 360°, à nouveau au rouge, en passant par le vert et le bleu.</p>
+<p class="ca_txt">L’étude de la <a href="https://fr.wikipedia.org/wiki/Vision_humaine" target="_blank" rel="noreferrer">physiologie de la vision</a> a déterminé que l’appareil sensitif de l’œil, si cher aux <q>connaisseurs</q> du monde de l’art, est beaucoup plus performant pour distinguer les gradations de luminosité que de teinte ou de saturation. Ce qui explique que nombre de spécialistes de l’étude comparative des reproductions de peinture, tels le ô combien sagace Federico Zeri, privilégient les photographies monochromatiques (e.g. en niveaux de gris: gradations entre le noir et le blanc) aux reproductions en couleurs, afin de mieux en distinguer les différences. J’aime à penser que le délicieux historien collectionneur aurait apprécié les outils d’analyse de ce site puisqu’il donne la possibilité d’avoir recours à tous les types de sélection chromatique désirés: monochromatisme noir et blanc, monochromatisme couleur et toutes les combinaisons
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+C’est ce que met en exergue la page d’accueil de Chercheurd.art, en exposant, sous forme de vignettes animées, quelques-unes des sélections chromatiques qui peuvent être obtenues à partir de l’<a href="https://www.chercheurd.art/works/items/1703_boucher_princeton_university_1748_arion.html"><em>Arion</em></a> de François Boucher.
+</span></ins>
+possibles, avec, de surplus, la comparaison interactive avec l’original de la reproduction.</p>
+<p class="ca_txt">Plusieurs modèles de représentation des couleurs ont cours dans le traitement informatique de l’image numérique, le plus usuel étant la représentation <q>additive</q> de trois composantes: Rouge, Vert, Bleu. Ce modèle ne singularise donc pas les composantes de luminosité et de saturation, ce qui le rend plus <q>artificiel</q> que le modèle, mis au point à partir des travaux du peintre américain <a href="https://en.wikipedia.org/wiki/Albert_Henry_Munsell" target="_blank" rel="noreferrer">Albert Henry Munsell</a> à la fin du XIXème siècle, modèle séparant les composantes teinte, saturation et luminosité (HSL
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Acronyme de: Hue, Saturation, Luminosity.<br>
+<strong><br></strong>
+Il existe de nombreuses variantes du modèle de Munsell, de même que les termes peuvent différer (luminance, etc.), cependant la version HSL est celle qui prévaut dans les applications Web. Par ailleurs, chaque pixel peut être pourvu d’un indice d’opacité allant de l’opaque au transparent (HSLA).
+</span></ins>
+). Il est possible de représenter ce modèle sous forme graphique à l’aide d’un cylindre dont la section circulaire forme un cercle chromatique des différentes teintes, partant du rouge et finissant, après une révolution de 360°, à nouveau au rouge, en passant par le vert et le bleu.</p>
 </div>
 </div></div>
 <div id="ca_fold_3" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">Construction explosive</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Construction explosive</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<p class="ca_txt">C’est ce type de “projection” qui est utilisée pour les histogrammes rayonnants de répartition des teintes. Les histogrammes présentés dans chaque page du répertoire des peintures constituent un des outils d’investigation originaux proposés par Chercheurd.art. Ces modèles “explosifs” quantifient le nombre de pixels de chaque couleur du spectre présents dans l’image d’un tableau en utilisant une <a id="ca_from_note_10" href="#ca_to_note_10" aria-describedby="ca_note_label">échelle logarithmique</a>: chacune des 360 valeurs chromatiques est représentée par sa couleur spécifique (totalement saturée) et, pour chaque teinte, la répartition du nombre d’occurrences des différentes valeurs de luminance et de saturation, allant <a id="ca_from_note_11" href="#ca_to_note_11" aria-describedby="ca_note_label">de 0 à 100</a>, est projetée (en cliquant sur son rayon correspondant) de part et d’autre du cercle central.</p>
+<p class="ca_txt">C’est ce type de “projection” qui est utilisée pour les histogrammes rayonnants de répartition des teintes. Les histogrammes présentés dans chaque page du répertoire des peintures constituent un des outils d’investigation originaux proposés par Chercheurd.art. Ces modèles “explosifs” quantifient le nombre de pixels de chaque couleur du spectre présents dans l’image d’un tableau en utilisant une échelle logarithmique
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Compte tenu de la grande disparité du nombre de pixels pouvant être relevé pour chaque teinte dans la totalité du cercle chromatique, une échelle linéaire serait totalement inadéquate pour quantifier sur un écran dont la taille la plus commune, dans sa plus petite dimension, est à peine supérieure à un milliers de pixels, des valeurs de plusieurs dizaines ou centaines de milliers d’unités.
+</span></ins>
+: chacune des 360 valeurs chromatiques est représentée par sa couleur spécifique (totalement saturée) et, pour chaque teinte, la répartition du nombre d’occurrences des différentes valeurs de luminance et de saturation, allant de 0 à 100
+<ins class="ca_note_ins" onclick="this.getElementsByClassName('ca_note_content')[0].classList.toggle('ca_note_open')"><sup></sup><span id="note_1" class="ca_note_content">
+Pour la composante de luminance, la valeur 0 est le noir et la valeur 100 est le blanc; pour la composante de saturation, la valeur 0 est la désaturation totale de la teinte (gris), alors que la valeur 100 est la saturation totale (teinte pure).
+</span></ins>
+, est projetée (en cliquant sur son rayon correspondant) de part et d’autre du cercle central.</p>
 <p class="ca_txt">Ces histogrammes sont précieux, car l’ampleur de la palette utilisée par le peintre ainsi que la prépondérance ou l’absence de certaines tonalités sont discernables au premier regard, ce qui réserve souvent des surprises. Pour des raisons de commodité, le sélecteur de teintes pilotant la représentation “chromatographique” des images analysées, utilise une bande spectrale plane parcourant les 360 gradations chromatiques du cercle de Munsell et le degré d’opacité de tous les pixels correspondants à la teinte peut être varié dans une amplitude allant du totalement transparent au totalement opaque.</p>
 </div>
 </div></div>
 <div id="ca_fold_4" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">À suivre...</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>À suivre...</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
 </div>
 </div></div>
 <div id="ca_fold_201" class="ca_fold_content">
-<h3 class="ca_folder" onclick="DOMOpenFolder( this );">NOTES | VERSIONS</h3>
+<h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>VERSIONS</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<footer><h2 class="visually-hidden" id="ca_footnote_label">notes</h2><ol>
-<li id="ca_to_note_0"><p class="ca_footnote">
-<blockquote>
-<p><q>Je n’ai jamais cessé de m’y rendre. […] Drouot est une drogue. L’“Hôtel”, comme on dit, […] m’a permis de faire régulièrement mes “gammes attributives”. […] Jeunes conservateurs, n’oubliez pas, n’oubliez jamais de vous rendre quotidiennement à Drouot: c’est votre devoir</q>.</p>
-</blockquote>
-<p><strong>Pierre Rosenberg</strong>, <em>Dictionnaire amoureux du Louvre</em>. <a href="https://www.chercheurd.art/biblio/items/2007_rosenberg_amoureuxlouvre.html">chercheurdart_biblio_Rosenberg</a></p>
-</p><a href="#ca_from_note_0" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_1"><p class="ca_footnote">
-<p>Le résultat des recherches est exposé dans deux ouvrages monumentaux: <em>Caravaggio, Opere a Roma, Tecnica e stile</em>, 2016.</p>
-</p><a href="#ca_from_note_1" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_2"><p class="ca_footnote">
-<p><em>Dentro Caravaggio</em>, 2017.</p>
-</p><a href="#ca_from_note_2" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_3"><p class="ca_footnote">
-<p>Consulter son article en ligne: <a href="https://www.aboutartonline.com/quale-fu-veramente-liter-esecutivo-di-caravaggio-gianni-papi-riprende-il-tema-tuttaltro-che-chiuso-dalla-grande-mostra-dentro-caravaggio/" target="_blank" rel="noreferrer"><em>Quale fu veramente l’iter esecutivo di Caravaggio ?</em></a></p>
-</p><a href="#ca_from_note_3" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_4"><p class="ca_footnote">
-<p>Singulièrement, le Louvre semble ignorer superbement ce mouvement de diffusion international, sans doute pour cause “d’exception culturelle”. Les quelques images publiées sur <a href="https://commons.wikimedia.org/wiki/Category:High-resolution_images_from_C2RMF?uselang=fr" target="_blank" rel="noreferrer">Wikimedia Commons</a> par le <a id="ca_from_note_9" href="#ca_to_note_9" aria-describedby="ca_note_label">C2RMF</a> sont loin de faire le compte.
-Il suffit d’ailleurs de consulter la page consacrée à la <a href="http://technologies.c2rmf.fr/imaging/color" target="_blank" rel="noreferrer">colorimétrie</a> du site du C2RMF pour jauger l’état de la “recherche” dans ce domaine - qui s’adjoint pourtant les services d’un maître de conférence de l’université de St Etienne, spécialiste de la colorimétrie et du « color management », Philippe Colantoni, dont le site <a href="http://www.couleur.org/" target="_blank" rel="noreferrer">couleur.org</a> (en toute simplicité!) est… aux abonnés absents!
-Quant à la galerie d’images en haute-définition, elle ne fonctionne tout simplement pas et réclame une version 9 du logiciel Flash Player d’Adobe, non seulement largement tombé en désuétude avec les possibilités d’animation intégrés aux navigateurs, mais, de plus, étant parvenu à une version stable numéro 32!
-Les images sont toutefois disponibles sur le site <a href="https://commons.wikimedia.org/wiki/Category:High-resolution_images_from_C2RMF" target="_blank" rel="noreferrer">Wikipedia Commons</a>.</p>
-</p><a href="#ca_from_note_4" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_4b"><p class="ca_footnote">
-<p>Sans restrictions pour l’usage particulier tel que ce site, non-commercial et totalement <em>open source</em>.</p>
-</p><a href="#ca_from_note_4b" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_5"><p class="ca_footnote">
-<p>Mesuré sur le système suivant:</p>
-<ul>
-<li>Processeur Intel® Core™ i7-6500U CPU @ 2.50GHz; Memoire 8076MB;</li>
-<li>Système d’exploitation Arch Linux Manjaro; Navigateur Google Chrome Version 71.0.3578.98 (Official Build) (64-bit).</li>
-<li></li>
-</ul>
-</p><a href="#ca_from_note_5" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_6"><p class="ca_footnote">
-<p>Utilisation de la <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API" target="_blank" rel="noreferrer"><em>Web Workers API</em></a>.</p>
-</p><a href="#ca_from_note_6" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_7"><p class="ca_footnote">
-<p>C’est ce que met en exergue la page d’accueil de Chercheurd.art, en exposant, sous forme de vignettes animées, quelques-unes des sélections chromatiques qui peuvent être obtenues à partir de l’<a href="https://www.chercheurd.art/works/items/1703_boucher_princeton_university_1748_arion.html"><em>Arion</em></a> de François Boucher.</p>
-<p>La version bichromatique (noir-blanc ou couleur) du sélecteur de couleur n’est pas à ce jour mise en ligne.</p>
-</p><a href="#ca_from_note_7" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_8"><p class="ca_footnote">
-<p>Hue, Saturation, Luminosity. Il existe de nombreuses variantes du modèle de Munsell, de même que les termes peuvent différer (luminance, etc.), cependant la version HSL est celle qui prévaut dans les applications Web. Par ailleurs, chaque pixel peut être pourvu d’un indice d’opacité allant de l’opaque au transparent (HSLA).</p>
-</p><a href="#ca_from_note_8" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_9"><p class="ca_footnote">
-<p>Centre de Recherche et de Restauration des Musées de France.</p>
-</p><a href="#ca_from_note_9" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_10"><p class="ca_footnote">
-<p>Compte tenu de la grande disparité du nombre de pixels pouvant être relevé pour chaque teinte dans la totalité du cercle chromatique, une échelle linéaire serait totalement inadéquate pour quantifier sur un écran dont la taille la plus commune, dans sa plus petite dimension, est à peine supérieure à un milliers de pixels, des valeurs de plusieurs dizaines ou centaines de milliers d’unités.</p>
-</p><a href="#ca_from_note_10" aria-label="ca_back_to_text"></a></li>
-<li id="ca_to_note_11"><p class="ca_footnote">
-<p>La valeur 0 est le noir et la valeur 100 est le blanc pour la composante de luminance; la valeur 0 est la désaturation totale (gris) de la teinte alors que la valeur 100 est la saturation totale (teinte pure) pour la composante de saturation.</p>
-</p><a href="#ca_from_note_11" aria-label="ca_back_to_text"></a></li>
-</ol></footer>
-<h3 class="ca_version_title">Versions</h3>
 <ol class="ca_version_list">
 <li class="ca_version_entry"><strong>23 janvier 2019</strong><br>
 Ébauche initiale.</li>
@@ -574,50 +582,61 @@ Les images sont toutefois disponibles sur le site <a href="https://commons.wikim
 
     </label>
   
-    <ul class="ca_duo_banner_header">
-      <li class="ca_banner_title_duo">Recherche</li>
-      <li class="ca_post_subtitle">
+    <div class="ca_post_header">
       <form id="ca_form_is_search" class="ca_form_inputbox">
-  <label id="ca_form_is_search_submit" class="ca_form_inputbox_label_button">Rechercher</label>
-  <input id="ca_form_input_search_needle" class="ca_form_inputbox_input_text" type="text" placeholder=" Mots recherchés...">
-  <label id="ca_form_is_search_tags" class="ca_form_inputbox_label_button">
-    <span id="ca_form_input_search_tag" class="ca_form_inputbox_input_text">NON SPÉCIFIÉ</span>
-  </label>
-  <div id="ca_form_is_search_history" class="ca_form_optbox_icons">
-    <span id="ca_form_is_search_previous"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  <div id="ca_form_is_search_history">
+    <label id="ca_form_is_search_title" class="ca_post_title">Recherche</label>
+    <div id="ca_form_is_search_actions">
+      <span id="ca_form_is_search_exec"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_svg_icon">
+  <circle cx="11" cy="11" r="8"></circle>
+  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+</svg>
+</span>
+      <span id="ca_form_is_search_previous"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_svg_icon">
   <circle cx="12" cy="12" r="10"/>
   <path d="M12 8l-4 4 4 4M16 12H9"/>
 </svg>
 </span>
-    <span id="ca_form_is_search_reset"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-  class="ca_svg_icon">
-  <path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/>
-</svg>
-</span>
-    <span id="ca_form_is_search_next"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+      <span id="ca_form_is_search_next"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
   class="ca_svg_icon">
   <circle cx="12" cy="12" r="10"/>
   <path d="M12 8l4 4-4 4M8 12h7"/>
 </svg>
 </span>
+      <span id="ca_form_is_search_reset"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  class="ca_svg_icon">
+  <path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/>
+</svg>
+</span>
+    </div>
+  </div>
+  <div id="ca_form_is_search_input">
+    <input id="ca_form_is_search_needle" class="ca_form_inputbox_input_text" type="text" placeholder=" Mots recherchés...">
+    <label id="ca_form_is_search_tag" class="ca_form_inputbox_label_button">
+      <span id="ca_form_is_search_tag_input" class="ca_form_inputbox_input_text">NON SPÉCIFIÉ</span>
+    </label>
   </div>
 </form>
 
-      </li>
-    </ul>
+    </div>
   
-    <div class="ca_fold_content">
-      <h3 class="ca_folder" onclick="DOMOpenFolder( this )">Résultat</h3>
-      <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
-        <div class="ca_fold_xcols_norule">
-          <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
+    <div class="ca_folder_container">
+      <div id="ca_folder_container_inner">
+        <div class="ca_fold_content">
+          <h3 class="ca_folder" onclick="DOMOpenFolder( this )"><span>Résultat</span></h3>
+          <div class="ca_fold_content_item ca_is_open"><!-- ca_is_open !!! -->
+            <div class="ca_fold_xcols_norule">
+              <div id="ca_search_list" class="ca_url_entries_list"></div><!-- SEARCH RESULT -->
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  
   </div>
 </section>
+
 
   </main>
   <aside>
@@ -693,6 +712,17 @@ Les images sont toutefois disponibles sur le site <a href="https://commons.wikim
   </label>
 </form>
 
+<form id="ca_form_is_guide" class="ca_form_inputbox">
+  <label for="ca_form_checkbox_is_guide"
+    id="ca_form_label_is_guide"
+    class="ca_form_optbox_label" title="Suivre le Guide">
+    <input type="checkbox" value="0"
+      id="ca_form_checkbox_is_guide"
+      class="ca_form_optbox_input"
+      onclick="if (this.value === '0' ) Guide.setup();this.value='1' ">
+    <span class="ca_form_optbox_label_title">Guide</span>
+  </label>
+</form>
 
     </dd>
   </dl>
@@ -949,7 +979,7 @@ Les images sont toutefois disponibles sur le site <a href="https://commons.wikim
 
 <script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn"></script>
 
-<script type="application/json" class="js-hypothesis-config">
+<script id="ca_hypothesis_settings" type="application/json" class="js-hypothesis-config">
   {
     "openSidebar": false,
     "showHighlights": "whenSidebarOpen",
@@ -957,25 +987,31 @@ Les images sont toutefois disponibles sur le site <a href="https://commons.wikim
     "theme": "clean"
   }
 </script>
-
-<script>
-
-const Annotations =
-{
-  isOn:     false,
-  setup: ( ) =>
+<script id="ca_annotations_setup">
+  const Annotations =
   {
-    if ( this.isOn ) return
-    //xx document.getElementById( 'ca_enable_annotations_label' ).classList.toggle( 'ca_inputAnnotation' )
-    loadJS( "https://hypothes.is/embed.js" )
-    this.isOn = true
+    isOn: false,
+    setup: ( ) =>
+    {
+      if ( this.isOn ) return
+      DOMloadAsset( 'https://hypothes.is/embed.js', 'ca_annotations_setup' )
+      this.isOn = true
+    }
   }
-}
+</script>
 
-
-//: blocking!!!
-//window.onload = () => { loadJS( "https://plausible.io/js/plausible.js" ) }
-
+<script id="ca_guide_setup">
+  const Guide =
+  {
+    isOn: false,
+    setup: ( ) =>
+    {
+      if ( this.isOn ) return
+      DOMloadAsset( 'https://www.chercheurd.art/static/styles/driver.min.css', 'ca_index_style' )
+      DOMloadAsset( 'https://www.chercheurd.art/static/scripts/driver.min.js', 'ca_guide_setup' )
+      this.isOn = true
+    }
+  }
 </script>
 
 </div>
