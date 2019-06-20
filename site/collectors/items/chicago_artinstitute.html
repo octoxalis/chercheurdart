@@ -11,7 +11,7 @@
 
 
 
-<meta name="description" content="Art Institute Museum - Chicago,Un blog s&#39;adressant aux collectionneurs en utilisant les technologies de traitement de l&#39;image,Recherche en histoire de l&#39;Art,collections,peintures anciennes,XVIème,XVIIème,XVIIIème,XIXème,siècle">
+<meta name="description" content="Art Institute Museum,Un blog s&#39;adressant aux collectionneurs en utilisant les technologies de traitement de l&#39;image,Recherche en histoire de l&#39;Art,collections,peintures anciennes,XVIème,XVIIème,XVIIIème,XIXème,siècle">
 
 
 <style id="ca_fonts_latin">
@@ -23,7 +23,7 @@
 
 
 <script>
-const SITE_ROOT_URL='https://www.chercheurd.art/'
+const SITE_URL='https://www.chercheurd.art/'
 var CA_media_userImgUrl_s = 'USER_URL'
 </script>
 
@@ -381,7 +381,7 @@ onclick="DOMOpenFolderAll()">
 <h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Site Web</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<p><a href="https://www.artic.edu/" target="_blank" rel="noreferrer">Art Institute Museum - Chicago</a></p>
+<p><a href="https://www.artic.edu/" target="_blank" rel="noreferrer">Art Institute Museum ▫ Chicago</a></p>
 </div>
 </div></div>
 <div id="ca_fold_201" class="ca_fold_content">
@@ -933,12 +933,13 @@ Version initiale</li>
   const Guide =
   {
     isOn: false,
-    setup: ( ) =>
+    //setOn: () => this.isOn = true,
+    setup: () =>
     {
       if ( this.isOn ) return
       DOMloadAsset( 'https://www.chercheurd.art/static/styles/driver.min.css', 'ca_index_style' )
-      DOMloadAsset( 'https://www.chercheurd.art/static/scripts/driver.min.js', 'ca_guide_setup' )
-      this.isOn = true
+      DOMloadAsset( 'https://www.chercheurd.art/static/scripts/driver.min.js', 'ca_guide_setup',
+        () => DOMloadAsset( 'https://www.chercheurd.art/static/scripts/guide.js', 'ca_guide_setup', () => Guide.isOn = true ) )
     }
   }
 </script>

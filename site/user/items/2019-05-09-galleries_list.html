@@ -23,7 +23,7 @@
 
 
 <script>
-const SITE_ROOT_URL='https://www.chercheurd.art/'
+const SITE_URL='https://www.chercheurd.art/'
 var CA_media_userImgUrl_s = 'USER_URL'
 </script>
 
@@ -961,12 +961,13 @@ onclick="DOMOpenFolderAll()">
   const Guide =
   {
     isOn: false,
-    setup: ( ) =>
+    //setOn: () => this.isOn = true,
+    setup: () =>
     {
       if ( this.isOn ) return
       DOMloadAsset( 'https://www.chercheurd.art/static/styles/driver.min.css', 'ca_index_style' )
-      DOMloadAsset( 'https://www.chercheurd.art/static/scripts/driver.min.js', 'ca_guide_setup' )
-      this.isOn = true
+      DOMloadAsset( 'https://www.chercheurd.art/static/scripts/driver.min.js', 'ca_guide_setup',
+        () => DOMloadAsset( 'https://www.chercheurd.art/static/scripts/guide.js', 'ca_guide_setup', () => Guide.isOn = true ) )
     }
   }
 </script>
