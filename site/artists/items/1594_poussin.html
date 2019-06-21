@@ -30,12 +30,14 @@ var CA_media_userImgUrl_s = 'USER_URL'
 
 </head>
 <body>
-<div class="ca_menu_line"></div>
+<div class="ca_menu_line">
+  <label class="ca_menu_logo_text">&copy; chercheurd.art ▫ 2019</label>
+</div>
 
 <div id="ca_page" class="ca_page">
   <main id="ca_content" class="ca_content">
   <section id="ca_area_section_menu" class="ca_area_region">
-  <input id="ca_select_area_menu" class="ca_area_switcher" value="ca_select_area_menu" name="area" type="radio">
+  <input id="ca_select_area_menu" class="ca_unseen" value="ca_select_area_menu" name="area" type="radio">
   <nav id="ca_area_menu" class="ca_area_menu ca_area ca_area_list">
     <label for="ca_select_area_menu" class="ca_area_selector" onclick="AreaSwitch( this.getAttribute( 'for') )">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
@@ -313,7 +315,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
 
 
 <section id="ca_area_section_text" class="ca_area_region">
-  <input id="ca_select_area_text" class="ca_area_switcher" value="ca_select_area_text" name="area" type="radio">
+  <input id="ca_select_area_text" class="ca_unseen" value="ca_select_area_text" name="area" type="radio">
   <div id="ca_area_text" class="ca_area_text ca_area ca_area_active">
     <label for="ca_select_area_text" class="ca_area_selector" onclick="AreaSwitch( this.getAttribute( 'for') )">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
@@ -402,7 +404,7 @@ Première ébauche</li>
 
 
 <section id="ca_area_section_gallery" class="ca_area_region">
-  <input id="ca_select_area_gallery" class="ca_area_switcher" value="ca_select_area_gallery" name="area" type="radio">
+  <input id="ca_select_area_gallery" class="ca_unseen" value="ca_select_area_gallery" name="area" type="radio">
   <div id="ca_area_gallery" class="ca_area_gallery ca_area">
     <label for="ca_select_area_gallery" class="ca_area_selector" onclick="AreaSwitch( this.getAttribute( 'for') )">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
@@ -580,7 +582,7 @@ Première ébauche</li>
   
 
 <section id="ca_area_section_search" class="ca_area_region">
-  <input id="ca_select_area_search" class="ca_area_switcher" value="ca_select_area_search" name="area" type="radio">
+  <input id="ca_select_area_search" class="ca_unseen" value="ca_select_area_search" name="area" type="radio">
   <div id="ca_area_search" class="ca_area_search ca_area">
     <label for="ca_area_search" class="ca_area_selector" onclick="AreaSwitch( this.getAttribute( 'for') )">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
@@ -705,7 +707,7 @@ Première ébauche</li>
 
   </div>
   <dl class="ca_dialog_area"><!-- id="ca_status_dialog_area"-->
-    <dt id="ca_dialog_header_is_status"  class="ca_dialog_header">status</dt>
+    <dt id="ca_dialog_header_is_status"  class="ca_dialog_header">Status</dt>
     <dd id="ca_dialog_content_is_status" class="ca_dialog_content">
       <form id="ca_form_is_annotations" class="ca_form_inputbox">
   <label for="ca_form_checkbox_is_annotations"
@@ -713,8 +715,7 @@ Première ébauche</li>
     class="ca_form_optbox_label" title="Activer les annotations">
     <input type="checkbox" value="0"
       id="ca_form_checkbox_is_annotations"
-      class="ca_form_optbox_input"
-      onclick="if (this.value === '0' ) Annotations.setup();this.value='1' ">
+      class="ca_form_optbox_input">
     <span class="ca_form_optbox_label_title">Annotations
       <a href="https://web.hypothes.is" target="_blank" rel="noreferrer" class="ca_nodeco">
         <img id="ca_form_img_is_annotations" src="https://www.chercheurd.art/static/media/images/hypothesis_small.png"
@@ -730,8 +731,7 @@ Première ébauche</li>
     class="ca_form_optbox_label" title="Suivre le Guide">
     <input type="checkbox" value="0"
       id="ca_form_checkbox_is_guide"
-      class="ca_form_optbox_input"
-      onclick="if (this.value === '0' ) Guide.setup();this.value='1' ">
+      class="ca_form_optbox_input">
     <span class="ca_form_optbox_label_title">Guide</span>
   </label>
 </form>
@@ -862,7 +862,7 @@ Première ébauche</li>
 
   </div>
   <dl class="ca_dialog_area">
-    <dt id="ca_dialog_header_is_user_file"  class="ca_dialog_header">fichier image</dt>
+    <dt id="ca_dialog_header_is_user_file"  class="ca_dialog_header">Fichier image</dt>
     <dd id="ca_dialog_content_is_user_file" class="ca_dialog_content">
       <form id="ca_form_is_user_file" class="ca_form_inputbox">
 
@@ -1000,28 +1000,51 @@ Première ébauche</li>
   const Annotations =
   {
     isOn: false,
-    setup: ( ) =>
+    setup: () =>
     {
-      if ( this.isOn ) return
       DOMloadAsset( 'https://hypothes.is/embed.js', 'ca_annotations_setup' )
-      this.isOn = true
+      Annotations.isOn = true
     }
   }
+  document.getElementById( 'ca_form_checkbox_is_annotations' )
+    .addEventListener( 'click', ( click_e ) =>
+    {
+      if ( Annotations.isOn )
+      {
+        click_e.preventDefault()
+        return false
+      }
+      Annotations.setup()
+    } )
 </script>
 
 <script id="ca_guide_setup">
+
   const Guide =
   {
-    isOn: false,
-    //setOn: () => this.isOn = true,
+    driver: null,
+    isOn:  false,
+
     setup: () =>
     {
-      if ( this.isOn ) return
+      //if ( Guide.isOn ) return
       DOMloadAsset( 'https://www.chercheurd.art/static/styles/driver.min.css', 'ca_index_style' )
       DOMloadAsset( 'https://www.chercheurd.art/static/scripts/driver.min.js', 'ca_guide_setup',
-        () => DOMloadAsset( 'https://www.chercheurd.art/static/scripts/guide.js', 'ca_guide_setup', () => Guide.isOn = true ) )
+        () => DOMloadAsset( 'https://www.chercheurd.art/static/scripts/guide.min.js', 'ca_guide_setup' ) )
+      document.addEventListener( 'keyup', key_e => Guide.handle( key_e ) )
     }
   }
+
+  document.getElementById( 'ca_form_checkbox_is_guide' )
+    .addEventListener( 'click', ( click_e ) =>
+    {
+      if ( Guide.isOn )
+      {
+        Guide.isOn = false
+        return
+      }
+      if ( Guide.driver === null ) Guide.setup()
+    } )
 </script>
 
 </div>
