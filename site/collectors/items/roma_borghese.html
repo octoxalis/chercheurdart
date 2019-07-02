@@ -614,6 +614,7 @@ Version initiale.</li>
 
   </main>
   <aside>
+  
   <dialog id="ca_dialog_is_confirm" class="ca_dialog">
   <div id="ca_dialog_close_is_confirm" class="ca_dialog_close">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
@@ -881,79 +882,8 @@ Version initiale.</li>
   </ul>
 </dialog>
 
-<dialog id="ca_dialog_is_user_file" class="ca_dialog">
-  <div id="ca_dialog_close_is_user_file" class="ca_dialog_close">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-  class="ca_dialog_close_icon">
-  <line x1="18" y1="6" x2="6" y2="18"></line>
-  <line x1="6" y1="6" x2="18" y2="18"></line>
-</svg>
-
-  </div>
-  <dl class="ca_dialog_area">
-    <dt id="ca_dialog_header_is_user_file"  class="ca_dialog_header">Fichier image</dt>
-    <dd id="ca_dialog_content_is_user_file" class="ca_dialog_content">
-      <form id="ca_form_is_user_file" class="ca_form_inputbox">
-
-  <img id="ca_form_is_user_file_img_thumb"/>
-  <label for="ca_form_is_user_file_input_file_s"
-         id="ca_form_is_user_file_setup_id_s" class="ca_form_inputbox_label ca_form_inputbox_label_button"
-         title="Sélectionnez un fichier image (JPEG)">Sélectionnez un fichier image (JPEG)</label>
-  <input type="file" accept="image/jpeg"
-    id="ca_form_is_user_file_input_file_s" class="ca_form_filebox_input"
-    onchange="userImgToDataUrl( this )">
-
-
-  <label for="ca_form_is_user_file_setup_id_s" class="ca_form_inputbox_label"
-         title="Pour identifier l'image par un nom ou descriptif">Descriptif</label>
-  <input type="text"
-         id="ca_form_is_user_file_setup_id_s" class="ca_form_inputbox_input_text"placeholder="Descriptif de l'image...">
-
-  <label for="ca_form_is_user_file_setup_tag_s" class="ca_form_inputbox_label"
-         title="Pour classer l'image dans une galerie nommée">Galerie</label>
-  <input type="text"
-         id="ca_form_is_user_file_setup_tag_s" class="ca_form_inputbox_input_text" placeholder="Nom de la galerie...">
-</form>
-
-    </dd>
-  </dl>
-  <ul id="ca_dialog_options_is_user_file" class="ca_dialog_option_list">
-    <li id="ca_dialog_option_1_is_user_file" class="ca_dialog_option">Abandonner</li>
-    <li id="ca_dialog_option_0_is_user_file" class="ca_dialog_option">Analyser</li>
-  </ul>
-</dialog>
-
-<dialog id="ca_dialog_is_user_file_modify" class="ca_dialog">
-  <div id="ca_dialog_close_is_user_file_modify" class="ca_dialog_close">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-  class="ca_dialog_close_icon">
-  <line x1="18" y1="6" x2="6" y2="18"></line>
-  <line x1="6" y1="6" x2="18" y2="18"></line>
-</svg>
-
-  </div>
-  <dl class="ca_dialog_area">
-    <dt id="ca_dialog_header_is_user_file_modify"  class="ca_dialog_header">fichier image</dt>
-    <dd id="ca_dialog_content_is_user_file_modify" class="ca_dialog_content">
-      <form id="ca_form_is_user_file_update" class="ca_form_inputbox">
-  <label for="ca_form_is_user_file_update_id_s" class="ca_form_inputbox_label"
-         title="Pour identifier l'image par un nom ou descriptif">Descriptif</label>
-  <input  type="text" id="ca_form_is_user_file_update_id_s" class="ca_form_inputbox_input_text"
-         placeholder=" Descriptif de l'image..." data-key="0">
-  <label for="ca_form_is_user_file_update_tag_s" class="ca_form_inputbox_label"
-         title="Pour classer l'image dans une galerie nommée">Galerie</label>
-  <input  type="text" id="ca_form_is_user_file_update_tag_s" class="ca_form_inputbox_input_text"
-         placeholder=" Nom de la galerie..." data-key="0">
-</form>
-
-    </dd>
-  </dl>
-  <ul id="ca_dialog_options_is_user_file_modify" class="ca_dialog_option_list">
-    <li id="ca_dialog_option_1_is_user_file_modify" class="ca_dialog_option">Abandonner</li>
-    <li id="ca_dialog_option_0_is_user_file_modify" class="ca_dialog_option">Modifier</li>
-  </ul>
-</dialog>
-
+  
+  
   <div class="ca_scroll_nav">
   <svg class="ca_scroll_wheel" viewBox="0 0 18 14">
     <defs>

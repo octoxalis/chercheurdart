@@ -326,6 +326,18 @@ var CA_media_userImgUrl_s = 'USER_URL'
 
     </label>
     
+    <label class="ca_toggle_text_img" onclick="AreaSwap( 'text', 'gallery' )"
+           title="Voir les images">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  id="ca_svg_icon_image" class="ca_svg_icon">
+   <rect x="3"  y="3"   width="6" height="7"></rect>
+   <rect x="14" y="3"   width="7" height="5"></rect>
+   <rect x="14" y="14"  width="5" height="6"></rect>
+   <rect x="3"  y="14"  width="5" height="7"></rect>
+</svg>
+
+    </label>
+    
     
 
 <div id="ca_blocktxt" class="ca_layout_blocktxt">
@@ -360,8 +372,12 @@ onclick="DOMOpenFolderAll()">
 <h3 class="ca_folder" onclick="DOMOpenFolder( this );"><span>Que s'est-il passé?</span></h3>
 <div class="ca_fold_content_item">
 <div class="ca_fold_xcols">
-<p class="ca_txt">Lorsque l’adresse d’une page demandée par le navigateur que vous utilisez n’existe pas sur le site Chercheurd.art, le serveur renvoie une erreur portant le numéro <strong>404</strong>. C’est ce qui vient de se produire, soit parce qu’un lien figurant sur la page précédente était erroné, soit parce que l’adresse que vous avez saisie manuellement comporte une faute de frappe.</p>
-<p class="ca_txt">Dans le premier cas, n’hésitez pas à me <a href="#" onclick="mailtoDialog__s()">contacter</a> pour me signaler cette  erreur. Dans le second cas, il vous suffit de vérifiez l’adresse de la page que vous souhaitez atteindre.</p>
+<p class="ca_txt">Lorsque l’adresse d’une page demandée par le navigateur que vous utilisez n’existe pas sur le site Chercheurd.art, le serveur renvoie une erreur portant le numéro <strong>404</strong>.</p>
+<p class="ca_txt">C’est ce qui vient de se produire, soit parce qu’un lien figurant sur la page précédente était erroné, soit parce que l’adresse que vous avez saisie manuellement comporte une faute de frappe.</p>
+<ul>
+<li class="ca_list_entry">Dans le premier cas, n’hésitez pas à me <a href="#" onclick="mailtoDialog__s()">contacter</a> pour me signaler cette  erreur.</li>
+<li class="ca_list_entry">Dans le second cas, il vous suffit de vérifiez l’adresse de la page que vous souhaitez atteindre.</li>
+</ul>
 </div>
 </div></div>
 </div>
@@ -374,6 +390,88 @@ onclick="DOMOpenFolderAll()">
 
 </section>
 
+
+
+
+
+
+
+
+<section id="ca_area_section_gallery">
+  <input id="ca_select_area_gallery" class="ca_unseen" value="ca_select_area_gallery" name="area" type="radio">
+  <div id="ca_area_gallery" class="ca_area_gallery ca_area ca_area_active">
+    <label for="ca_select_area_gallery" class="ca_area_selector" onclick="AreaSwitch( this.getAttribute( 'for') )">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
+  class="ca_svg_icon">
+  <line id="ca_svg_icon_menu_1" x1="6"  y1="8"  x2="58" y2="8"  />
+  <line id="ca_svg_icon_menu_2" x1="12" y1="20" x2="52" y2="20" />
+  <line id="ca_svg_icon_menu_3" x1="18" y1="32" x2="46" y2="32" />
+  <line id="ca_svg_icon_menu_4" x1="24" y1="44" x2="40" y2="44" />
+  <line id="ca_svg_icon_menu_5" x1="30" y1="56" x2="34" y2="56" />
+</svg>
+
+    </label>
+    <label class="ca_toggle_text_img" onclick="AreaSwap( 'gallery', 'text' )"
+           title="Lire le texte">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+  id="ca_svg_icon_text" class="ca_svg_icon">
+  <line x1="3" y1="3" x2="10" y2="3"></line>
+  <line x1="3" y1="6" x2="21" y2="6"></line>
+  <line x1="3" y1="8" x2="21" y2="8"></line>
+  <line x1="3" y1="10" x2="18" y2="10"></line>
+  <line x1="3" y1="14" x2="16" y2="14"></line>
+  <line x1="3" y1="17" x2="21" y2="17"></line>
+  <line x1="3" y1="19" x2="21" y2="19"></line>
+  <line x1="3" y1="21" x2="10" y2="21"></line>
+</svg>
+
+    </label>
+    <div id="ca_home_back">
+  <div id="ca_home_back_top"    class="ca_home_back_side"></div>
+  <div id="ca_home_back_bottom" class="ca_home_back_side"></div>
+  <div id="ca_home_back_right"  class="ca_home_back_side"></div>
+</div>
+
+<svg id="ca_home_prim" width="80.9%" height="61.8%">
+  <defs>
+    <linearGradient id="ca_home_gradient" gradientTransform="rotate(75)">
+      <stop offset="15%" stop-color="hsla(220, 92%, 30%, 0.8)" />
+      <stop offset="80%" stop-color="hsla(240, 52%, 60%, 0.9)" />
+    </linearGradient>
+    <mask id="ca_home_mask">
+      <rect width="100%" height="100%" fill="#fff" />
+      <g class="ca_home_logo_text">
+        <text class="ca_home_logo_text_light">chercheur d</text>
+        <text class="ca_home_logo_text_heavy">.art</text>
+      </g>
+    </mask>
+  </defs>
+  <filter id="ca_home_prim_filter" color-interpolation-filters="sRGB">
+    <feColorMatrix id="ca_home_prim_filter_matrix"
+      type="matrix" values="0 0 0.4 0 0   0 0 1.2 0 0  0 0 1.5 0 0  0 0 0 1 0">
+    </feColorMatrix>
+  </filter>
+  <rect width="100%" height="100%" fill="url(#ca_home_gradient)" fill-opacity="0.65" mask="url(#ca_home_mask)" />
+</svg>
+
+<div id="ca_home_layers">
+  <a href="https://www.chercheurd.art/index.html" class="ca_nodeco">
+    <div id="ca_404_layer" class="ca_404_layer">
+      <dl class="ca_404_card">
+        <dt class="ca_404_title">Quelle erreur!!!</dt>
+        <dd class="ca_404_abstract">Une erreur d'adresse s'est produite (code 404).<br/>
+        Le lien que vous avez suivi ou l'adresse que vous cherchez n'aboutit nulle part.<br>
+        Il est sans doute préférable de retourner à la page d'Accueil ou au Menu du site.
+        </dd>
+      </dl>
+    </div>
+  </a>
+</div>
+
+
+
+  </div>
+</section>
 
 
 
@@ -456,6 +554,7 @@ onclick="DOMOpenFolderAll()">
 
   </main>
   <aside>
+  
   <dialog id="ca_dialog_is_confirm" class="ca_dialog">
   <div id="ca_dialog_close_is_confirm" class="ca_dialog_close">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
@@ -544,10 +643,10 @@ onclick="DOMOpenFolderAll()">
 
 
   <label for="ca_form_radiobox_0_is_conductor_parts"
-    class="ca_form_optbox_label" data-key="text">
+    class="ca_form_optbox_label" data-key="menu">
     <input type="radio" name="radio_is_conductor_parts" value="0"
       id="ca_form_radiobox_0_is_conductor_parts" class="ca_form_optbox_link">
-    <span class="ca_form_optbox_label_title">TEXTE</span>
+    <span class="ca_form_optbox_label_title">MENU</span>
   </label>
 
 
@@ -555,9 +654,20 @@ onclick="DOMOpenFolderAll()">
 
 
   <label for="ca_form_radiobox_1_is_conductor_parts"
-    class="ca_form_optbox_label" data-key="gallery">
+    class="ca_form_optbox_label" data-key="text">
     <input type="radio" name="radio_is_conductor_parts" value="1"
       id="ca_form_radiobox_1_is_conductor_parts" class="ca_form_optbox_link">
+    <span class="ca_form_optbox_label_title">TEXTE</span>
+  </label>
+
+
+
+
+
+  <label for="ca_form_radiobox_2_is_conductor_parts"
+    class="ca_form_optbox_label" data-key="gallery">
+    <input type="radio" name="radio_is_conductor_parts" value="2"
+      id="ca_form_radiobox_2_is_conductor_parts" class="ca_form_optbox_link">
     <span class="ca_form_optbox_label_title">GALERIE</span>
   </label>
 
@@ -566,10 +676,10 @@ onclick="DOMOpenFolderAll()">
 
 
 
-  <label for="ca_form_radiobox_2_is_conductor_parts"
+  <label for="ca_form_radiobox_3_is_conductor_parts"
     class="ca_form_optbox_label" data-key="search">
-    <input type="radio" name="radio_is_conductor_parts" value="2"
-      id="ca_form_radiobox_2_is_conductor_parts" class="ca_form_optbox_link">
+    <input type="radio" name="radio_is_conductor_parts" value="3"
+      id="ca_form_radiobox_3_is_conductor_parts" class="ca_form_optbox_link">
     <span class="ca_form_optbox_label_title">RECHERCHE</span>
   </label>
 
@@ -712,79 +822,8 @@ onclick="DOMOpenFolderAll()">
   </ul>
 </dialog>
 
-<dialog id="ca_dialog_is_user_file" class="ca_dialog">
-  <div id="ca_dialog_close_is_user_file" class="ca_dialog_close">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-  class="ca_dialog_close_icon">
-  <line x1="18" y1="6" x2="6" y2="18"></line>
-  <line x1="6" y1="6" x2="18" y2="18"></line>
-</svg>
-
-  </div>
-  <dl class="ca_dialog_area">
-    <dt id="ca_dialog_header_is_user_file"  class="ca_dialog_header">Fichier image</dt>
-    <dd id="ca_dialog_content_is_user_file" class="ca_dialog_content">
-      <form id="ca_form_is_user_file" class="ca_form_inputbox">
-
-  <img id="ca_form_is_user_file_img_thumb"/>
-  <label for="ca_form_is_user_file_input_file_s"
-         id="ca_form_is_user_file_setup_id_s" class="ca_form_inputbox_label ca_form_inputbox_label_button"
-         title="Sélectionnez un fichier image (JPEG)">Sélectionnez un fichier image (JPEG)</label>
-  <input type="file" accept="image/jpeg"
-    id="ca_form_is_user_file_input_file_s" class="ca_form_filebox_input"
-    onchange="userImgToDataUrl( this )">
-
-
-  <label for="ca_form_is_user_file_setup_id_s" class="ca_form_inputbox_label"
-         title="Pour identifier l'image par un nom ou descriptif">Descriptif</label>
-  <input type="text"
-         id="ca_form_is_user_file_setup_id_s" class="ca_form_inputbox_input_text"placeholder="Descriptif de l'image...">
-
-  <label for="ca_form_is_user_file_setup_tag_s" class="ca_form_inputbox_label"
-         title="Pour classer l'image dans une galerie nommée">Galerie</label>
-  <input type="text"
-         id="ca_form_is_user_file_setup_tag_s" class="ca_form_inputbox_input_text" placeholder="Nom de la galerie...">
-</form>
-
-    </dd>
-  </dl>
-  <ul id="ca_dialog_options_is_user_file" class="ca_dialog_option_list">
-    <li id="ca_dialog_option_1_is_user_file" class="ca_dialog_option">Abandonner</li>
-    <li id="ca_dialog_option_0_is_user_file" class="ca_dialog_option">Analyser</li>
-  </ul>
-</dialog>
-
-<dialog id="ca_dialog_is_user_file_modify" class="ca_dialog">
-  <div id="ca_dialog_close_is_user_file_modify" class="ca_dialog_close">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-  class="ca_dialog_close_icon">
-  <line x1="18" y1="6" x2="6" y2="18"></line>
-  <line x1="6" y1="6" x2="18" y2="18"></line>
-</svg>
-
-  </div>
-  <dl class="ca_dialog_area">
-    <dt id="ca_dialog_header_is_user_file_modify"  class="ca_dialog_header">fichier image</dt>
-    <dd id="ca_dialog_content_is_user_file_modify" class="ca_dialog_content">
-      <form id="ca_form_is_user_file_update" class="ca_form_inputbox">
-  <label for="ca_form_is_user_file_update_id_s" class="ca_form_inputbox_label"
-         title="Pour identifier l'image par un nom ou descriptif">Descriptif</label>
-  <input  type="text" id="ca_form_is_user_file_update_id_s" class="ca_form_inputbox_input_text"
-         placeholder=" Descriptif de l'image..." data-key="0">
-  <label for="ca_form_is_user_file_update_tag_s" class="ca_form_inputbox_label"
-         title="Pour classer l'image dans une galerie nommée">Galerie</label>
-  <input  type="text" id="ca_form_is_user_file_update_tag_s" class="ca_form_inputbox_input_text"
-         placeholder=" Nom de la galerie..." data-key="0">
-</form>
-
-    </dd>
-  </dl>
-  <ul id="ca_dialog_options_is_user_file_modify" class="ca_dialog_option_list">
-    <li id="ca_dialog_option_1_is_user_file_modify" class="ca_dialog_option">Abandonner</li>
-    <li id="ca_dialog_option_0_is_user_file_modify" class="ca_dialog_option">Modifier</li>
-  </ul>
-</dialog>
-
+  
+  
   <div class="ca_scroll_nav">
   <svg class="ca_scroll_wheel" viewBox="0 0 18 14">
     <defs>
@@ -877,7 +916,7 @@ onclick="DOMOpenFolderAll()">
 
 <script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn"></script>
 <script>
-var PAGE_AREAS_a = ['text','gallery',]
+var PAGE_AREAS_a = ['menu','text','gallery',]
 </script>
 <script src="https://www.chercheurd.art/static/scripts/main.min.js"></script>
 
@@ -907,7 +946,7 @@ const H_animate_a =
   { r0: 0.4, g0: 3.0, b0: 4.0,  r1: 0.6, g1: 0.6, b1: 0.6,  d: 8 },  // back to initial values
 ]
 // ?? const H_feMatrix =
-new DOM_FeColorMatrix( 'ca_home_prim_filter_matrix', 'ca_home_matrix_animate', H_animate_a )
+//new DOM_FeColorMatrix( 'ca_home_prim_filter_matrix', 'ca_home_matrix_animate', H_animate_a )
 </script>
 
 
