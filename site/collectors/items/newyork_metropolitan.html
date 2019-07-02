@@ -42,7 +42,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
   <main id="ca_content" class="ca_content">
   <section id="ca_area_section_menu">
   <input id="ca_select_area_menu" class="ca_unseen" value="ca_select_area_menu" name="area" type="radio">
-  <nav id="ca_area_menu" class="ca_area_menu ca_area ca_area_list">
+  <div id="ca_area_menu" class="ca_area_menu ca_area ca_area_list">
     <label for="ca_select_area_menu" class="ca_area_selector" onclick="AreaSwitch( this.getAttribute( 'for') )">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 64 64"
   class="ca_svg_icon">
@@ -290,7 +290,7 @@ var CA_media_userImgUrl_s = 'USER_URL'
         </div>
       </div>
     </div>
-  </nav>
+  </div>
 </section>
   
 
@@ -1022,7 +1022,7 @@ window.onload = () =>
 {
   onload_Status()    //: before onload_Annotations
   onload_Annotations()
-
+  Guide.launch()
 }
 </script>
 
