@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+User-agent: *
+Disallow: /search.ini
+
+Sitemap: https://www.chercheurd.art/sitemap.xml
